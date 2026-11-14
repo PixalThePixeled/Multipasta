@@ -1,0 +1,16 @@
+{
+    "sounds": [
+        {
+		"name": "entity/parrot/compromise_sounds/compromise_hurt1",
+		"weight": 1
+        },
+	{
+		"name": "entity/parrot/compromise_sounds/compromise_hurt2",
+		"weight": 1
+        },
+	{
+		"name": "entity/parrot/compromise_sounds/compromise_hurt3",
+		"weight": 1
+	}
+    ]
+}

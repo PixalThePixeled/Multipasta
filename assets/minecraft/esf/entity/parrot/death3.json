@@ -1,0 +1,16 @@
+{
+    "sounds": [
+        {
+		"name": "entity/parrot/pokemon_sounds/fainted",
+		"weight": 8
+        },
+	{
+		"name": "entity/parrot/pokemon_sounds/fainted",
+		"weight": 8
+        },
+	{
+		"name": "entity/parrot/pokemon_sounds/to_pokecenter",
+		"weight": 1
+	}
+    ]
+}

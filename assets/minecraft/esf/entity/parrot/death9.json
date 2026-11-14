@@ -1,0 +1,9 @@
+{
+    "sounds": [
+        {
+		"name": "entity/parrot/fuwatty_sounds/fuwatty_death",
+                "volume": 0.8,
+		"weight": 1
+	}
+    ]
+}

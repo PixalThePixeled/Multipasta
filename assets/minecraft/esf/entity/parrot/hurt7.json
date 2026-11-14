@@ -1,0 +1,8 @@
+{
+    "sounds": [
+        {
+		"name": "entity/parrot/uriel_sounds/uriel_hurt",
+		"weight": 1
+	}
+    ]
+}

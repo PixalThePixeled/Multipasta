@@ -1,0 +1,16 @@
+{
+    "sounds": [
+        {
+		"name": "entity/parrot/fuwatty_sounds/fuwatty_hurt1",
+		"weight": 1
+        },
+	{
+		"name": "entity/parrot/fuwatty_sounds/fuwatty_hurt2",
+		"weight": 1
+        },
+	{
+		"name": "entity/parrot/fuwatty_sounds/fuwatty_hurt2",
+		"weight": 1
+	}
+    ]
+}

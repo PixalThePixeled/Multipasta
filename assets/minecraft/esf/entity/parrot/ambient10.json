@@ -1,0 +1,16 @@
+{
+    "sounds": [
+        {
+		"name": "entity/parrot/bathysidus_sounds/bathysidus_ambient1",
+		"weight": 1
+        },
+	{
+		"name": "entity/parrot/bathysidus_sounds/bathysidus_ambient2",
+		"weight": 1
+        },
+	{
+		"name": "entity/parrot/bathysidus_sounds/bathysidus_ambient3",
+		"weight": 1
+	}
+    ]
+}

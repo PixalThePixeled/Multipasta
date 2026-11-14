@@ -1,0 +1,16 @@
+{
+    "sounds": [
+        {
+		"name": "entity/parrot/pepsiman_sounds/pepsiman_hurt1",
+		"weight": 1
+        },
+	{
+		"name": "entity/parrot/pepsiman_sounds/pepsiman_hurt2",
+		"weight": 1
+        },
+	{
+		"name": "entity/parrot/pepsiman_sounds/pepsiman_hurt3",
+		"weight": 1
+	}
+    ]
+}

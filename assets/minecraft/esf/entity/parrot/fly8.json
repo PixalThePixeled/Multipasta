@@ -1,0 +1,8 @@
+{
+    "sounds": [
+        {
+		"name": "entity/parrot/template_sounds/no_sound",
+		"weight": 1
+	}
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "sounds": [
+        {
+		"name": "entity/parrot/uriel_sounds/uriel_ambient1",
+                "volume": 0.45,
+		"weight": 12
+        },
+	{
+		"name": "entity/parrot/uriel_sounds/uriel_ambient2",
+                "volume": 0.45,
+		"weight": 12
+        },
+	{
+		"name": "entity/parrot/uriel_sounds/uriel_sing1",
+                "volume": 0.55,
+		"weight": 2
+        },
+	{
+		"name": "entity/parrot/uriel_sounds/uriel_sing2",
+                "volume": 0.55,
+		"weight": 2
+        },
+	{
+		"name": "entity/parrot/uriel_sounds/uriel_theme1",
+                "volume": 0.85,
+		"weight": 8
+        },
+	{
+		"name": "entity/parrot/uriel_sounds/uriel_theme2",
+                "volume": 1,
+		"weight": 6
+	}
+    ]
+}

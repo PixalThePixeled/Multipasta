@@ -1,0 +1,12 @@
+{
+    "sounds": [
+        {
+		"name": "entity/parrot/ngc_sounds/explosions",
+		"weight": 8
+        },
+	{
+		"name": "entity/parrot/orga_sounds/orga_death",
+		"weight": 1
+	}
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "sounds": [
+        {
+		"name": "entity/parrot/ngc_sounds/ngc_hurt",
+		"weight": 1
+        },
+	{
+		"name": "entity/parrot/nothedorah_sounds/hedorah_hurt1",
+		"weight": 1
+        },
+	{
+		"name": "entity/parrot/nothedorah_sounds/hedorah_hurt2",
+		"weight": 1
+        },
+	{
+		"name": "entity/parrot/nothedorah_sounds/hedorah_hurt3",
+		"weight": 1
+	}
+    ]
+}

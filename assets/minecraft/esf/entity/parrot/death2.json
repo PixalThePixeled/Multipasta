@@ -1,0 +1,12 @@
+{
+    "sounds": [
+        {
+		"name": "entity/parrot/puppetmouse_sounds/puppetmouse_death",
+		"weight": 16
+        },
+	{
+		"name": "entity/parrot/puppetmouse_sounds/the_gates_of_hell_beckon_the_curious",
+		"weight": 1
+	}
+    ]
+}

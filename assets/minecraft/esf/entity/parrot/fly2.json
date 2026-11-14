@@ -1,0 +1,8 @@
+{
+    "sounds": [
+        {
+		"name": "entity/parrot/puppetmouse_sounds/puppetmouse_fly",
+		"weight": 1
+	}
+    ]
+}

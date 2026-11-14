@@ -1,0 +1,36 @@
+{
+    "sounds": [
+        {
+		"name": "entity/parrot/orga_sounds/orga_ambient1",
+		"weight": 8
+        },
+	{
+		"name": "entity/parrot/orga_sounds/orga_ambient2",
+		"weight": 8
+        },
+	{
+		"name": "entity/parrot/orga_sounds/orga_ambient3",
+		"weight": 10
+        },
+	{
+		"name": "entity/parrot/orga_sounds/orga_ambient4",
+		"weight": 16
+        },
+	{
+		"name": "entity/parrot/orga_sounds/orga_ambient5",
+		"weight": 16
+        },
+	{
+		"name": "entity/parrot/orga_sounds/oneiroid1",
+		"weight": 1
+        },
+	{
+		"name": "entity/parrot/orga_sounds/oneiroid2",
+		"weight": 1
+        },
+	{
+		"name": "entity/parrot/orga_sounds/oneiroid3",
+		"weight": 1
+	}
+    ]
+}

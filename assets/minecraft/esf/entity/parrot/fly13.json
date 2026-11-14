@@ -1,0 +1,16 @@
+{
+    "sounds": [
+        {
+		"name": "entity/parrot/horsebat_sounds/horsebat_fly1",
+		"weight": 1
+        },
+	{
+		"name": "entity/parrot/horsebat_sounds/horsebat_fly2",
+		"weight": 1
+        },
+	{
+		"name": "entity/parrot/horsebat_sounds/horsebat_fly3",
+		"weight": 1
+	}
+    ]
+}

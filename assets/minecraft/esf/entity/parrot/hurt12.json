@@ -1,0 +1,16 @@
+{
+    "sounds": [
+        {
+		"name": "entity/parrot/red_sounds/red_hurt1",
+		"weight": 4
+        },
+	{
+                "name": "entity/parrot/red_sounds/red_hurt2",
+		"weight": 1
+        },
+	{
+                "name": "entity/parrot/red_sounds/red_hurt3",
+		"weight": 6
+	}
+    ]
+}

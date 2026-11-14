@@ -1,0 +1,8 @@
+{
+    "sounds": [
+        {
+		"name": "entity/parrot/ngc_sounds/ngc_hurt",
+		"weight": 1
+	}
+    ]
+}

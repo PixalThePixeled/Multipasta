@@ -1,0 +1,8 @@
+{
+    "sounds": [
+        {
+		"name": "entity/parrot/uriel_sounds/uriel_fly",
+                "volume": 0.25
+	}
+    ]
+}

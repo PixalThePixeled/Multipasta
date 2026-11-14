@@ -1,0 +1,23 @@
+{
+    "sounds": [
+        {
+		"name": "entity/parrot/template_sounds/no_sound",
+		"weight": 6
+        },
+	{
+		"name": "entity/parrot/gastly_sounds/gastly_ambient1",
+                "volume": 0.7,
+		"weight": 1
+        },
+	{
+		"name": "entity/parrot/gastly_sounds/gastly_ambient2",
+                "volume": 0.7,
+		"weight": 1
+        },
+	{
+		"name": "entity/parrot/gastly_sounds/gastly_ambient3",
+                "volume": 0.7,
+		"weight": 1
+	}
+    ]
+}

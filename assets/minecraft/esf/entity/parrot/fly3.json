@@ -1,0 +1,12 @@
+{
+    "sounds": [
+        {
+		"name": "entity/parrot/pokemon_sounds/pokeball_fly1",
+		"weight": 1
+        },
+	{
+		"name": "entity/parrot/pokemon_sounds/pokeball_fly2",
+		"weight": 1
+	}
+    ]
+}

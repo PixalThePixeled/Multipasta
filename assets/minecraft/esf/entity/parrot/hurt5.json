@@ -1,0 +1,20 @@
+{
+    "sounds": [
+        {
+		"name": "entity/parrot/black_triangle_sounds/black_triangle_hurt1",
+		"weight": 3
+        },
+	{
+		"name": "entity/parrot/black_triangle_sounds/black_triangle_hurt2",
+		"weight": 3
+        },
+	{
+		"name": "entity/parrot/black_triangle_sounds/black_triangle_hurt3",
+		"weight": 3
+        },
+	{
+		"name": "entity/parrot/black_triangle_sounds/black_triangle_hurt4",
+		"weight": 1
+	}
+    ]
+}

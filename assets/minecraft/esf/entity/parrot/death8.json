@@ -1,0 +1,8 @@
+{
+    "sounds": [
+        {
+            "name": "entity/parrot/bathysidus_sounds/bathysidus_death",
+            "volume": 0.6
+        }
+    ]
+}

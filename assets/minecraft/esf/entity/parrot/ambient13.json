@@ -1,0 +1,40 @@
+{
+    "sounds": [
+        {
+		"name": "entity/parrot/notmoguera_sounds/notmoguera_ambient1",
+		"weight": 6
+        },
+	{
+		"name": "entity/parrot/notmoguera_sounds/notmoguera_ambient2",
+		"weight": 2
+        },
+	{
+		"name": "entity/parrot/notmoguera_sounds/notmoguera_ambient3",
+		"weight": 2
+        },
+	{
+		"name": "entity/parrot/notmoguera_sounds/notmoguera_ambient4",
+		"weight": 2
+        },
+	{
+		"name": "entity/parrot/notmoguera_sounds/notmoguera_ambient5",
+		"weight": 2
+        },
+	{
+		"name": "entity/parrot/notmoguera_sounds/notmoguera_ambient6",
+		"weight": 2
+        },
+	{
+		"name": "entity/parrot/notmoguera_sounds/notmoguera_ambient7",
+		"weight": 2
+        },
+	{
+		"name": "entity/parrot/notmoguera_sounds/notmoguera_ambient8",
+		"weight": 2
+        },
+	{
+		"name": "entity/parrot/notmoguera_sounds/notmoguera_sing",
+		"weight": 1
+	}
+    ]
+}

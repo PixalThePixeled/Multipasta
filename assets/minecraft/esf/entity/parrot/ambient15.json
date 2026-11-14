@@ -1,0 +1,48 @@
+{
+    "sounds": [
+        {
+		"name": "entity/parrot/template_sounds/no_sound",
+		"weight": 18
+        },
+	{
+		"name": "entity/parrot/horsebat_sounds/horsebat_ambient1",
+                "volume": 0.6,
+		"weight": 16
+        },
+	{
+		"name": "entity/parrot/horsebat_sounds/horsebat_ambient2",
+                "volume": 0.5,
+		"weight": 16
+        },
+	{
+		"name": "entity/parrot/horsebat_sounds/horsebat_ambient3",
+                "volume": 0.5,
+		"weight": 16
+        },
+	{
+		"name": "entity/parrot/horsebat_sounds/horsebat_ambient4",
+                "volume": 0.6,
+		"weight": 16
+        },
+	{
+		"name": "entity/parrot/horsebat_sounds/horsebat_ambient5",
+                "volume": 0.5,
+		"weight": 16
+        },
+	{
+		"name": "entity/parrot/horsebat_sounds/horsebat_ambient6",
+                "volume": 0.5,
+		"weight": 16
+        },
+	{
+		"name": "entity/parrot/horsebat_sounds/horsebat_ambient7",
+                "volume": 0.6,
+		"weight": 16
+        },
+	{
+		"name": "entity/parrot/horsebat_sounds/horsebat_theme1",
+                "volume": 0.6,
+		"weight": 1
+	}
+    ]
+}

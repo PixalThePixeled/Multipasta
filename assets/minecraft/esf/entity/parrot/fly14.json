@@ -1,0 +1,44 @@
+{
+    "sounds": [
+        {
+		"name": "entity/parrot/mogueras_sounds/notmo_mk2_fly1",
+                "volume": 1,
+		"weight": 16
+        },
+	{
+		"name": "entity/parrot/mogueras_sounds/notmo_mk2_fly2",
+                "volume": 0.8,
+		"weight": 16
+        },
+	{
+		"name": "entity/parrot/mogueras_sounds/notmo_mk2_fly3",
+                "volume": 2,
+		"weight": 16
+        },
+	{
+		"name": "entity/parrot/mogueras_sounds/notmo_classic_fly1",
+                "volume": 1,
+		"weight": 4
+        },
+	{
+		"name": "entity/parrot/mogueras_sounds/notmo_classic_fly2",
+                "volume": 1,
+		"weight": 4
+        },
+	{
+		"name": "entity/parrot/mogueras_sounds/fetal_mo_fly1",
+                "volume": 1,
+		"weight": 8
+        },
+	{
+		"name": "entity/parrot/notmoguera_sounds/notmoguera_ambient1",
+                "volume": 0.8,
+		"weight": 1
+        },
+	{
+		"name": "entity/parrot/notmoguera_sounds/notmoguera_ambient2",
+                "volume": 0.7,
+		"weight": 1
+	}
+    ]
+}

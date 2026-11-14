@@ -1,0 +1,23 @@
+{
+    "sounds": [
+        {
+		"name": "entity/parrot/template_sounds/no_sound",
+		"weight": 16
+        },
+	{
+		"name": "entity/parrot/pepsiman_sounds/pepsiman_ambient1",
+                "volume": 0.6,
+		"weight": 1
+        },
+	{
+		"name": "entity/parrot/pepsiman_sounds/pepsiman_ambient2",
+                "volume": 0.6,
+		"weight": 1
+        },
+	{
+		"name": "entity/parrot/pepsiman_sounds/pepsiman_ambient3",
+                "volume": 0.6,
+		"weight": 1
+	}
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "sounds": [
+        {
+		"name": "entity/parrot/template_sounds/no_sound",
+		"weight": 10
+        },
+	{
+		"name": "entity/parrot/wigglytuff_sounds/wigglytuff_ambient1",
+                "volume": 0.5,
+		"weight": 4
+        },
+	{
+		"name": "entity/parrot/wigglytuff_sounds/wigglytuff_ambient2",
+                "volume": 0.5,
+		"weight": 4
+        },
+	{
+		"name": "entity/parrot/wigglytuff_sounds/wigglytuff_sing",
+                "volume": 0.6,
+		"weight": 1
+	}
+    ]
+}

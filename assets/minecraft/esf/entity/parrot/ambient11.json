@@ -1,0 +1,28 @@
+{
+    "sounds": [
+        {
+		"name": "entity/parrot/template_sounds/no_sound",
+		"weight": 2
+        },
+	{
+		"name": "entity/parrot/fuwatty_sounds/fuwatty_ambient1",
+                "volume": 0.9,
+		"weight": 1
+        },
+	{
+		"name": "entity/parrot/fuwatty_sounds/fuwatty_ambient2",
+                "volume": 0.9,
+		"weight": 1
+        },
+	{
+		"name": "entity/parrot/fuwatty_sounds/fuwatty_ambient3",
+                "volume": 0.9,
+		"weight": 1
+        },
+	{
+		"name": "entity/parrot/fuwatty_sounds/fuwatty_ambient4",
+                "volume": 0.9,
+		"weight": 1
+	}
+    ]
+}
