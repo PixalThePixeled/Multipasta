@@ -1,7 +1,0 @@
-{
-  "credit": "Made by PixalThePixeled",
-  "parent": "multipasta:item/custom_tabs/a",
-  "textures": {
-    "0": "multipasta:item/custom_tabs/mobs/horse"
-  }
-}
