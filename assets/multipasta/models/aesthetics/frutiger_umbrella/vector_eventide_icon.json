@@ -1,7 +1,0 @@
-{
-	"credit": "Made by Spoty, Adapted for icon by PixalThePixeled",
-	"parent": "minecraft:item/generated",
-	"textures": {
-		"layer0": "multipasta:item/aesthetics/frutiger_umbrella/vector_eventide_icon"
-	}
-}
