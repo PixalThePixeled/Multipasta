@@ -1,7 +1,0 @@
-{
-  "credit": "Texture by Sp0ty & moro2610, Animation by Kotisimo",
-  "parent": "minecraft:item/handheld",
-  "textures": {
-    "layer0": "multipasta:item/other/data_eater"
-  }
-}
