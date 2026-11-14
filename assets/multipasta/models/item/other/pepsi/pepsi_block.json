@@ -1,0 +1,8 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made by PixalThePixeled",
+	"parent": "multipasta:a/block",
+	"textures": {
+		"0": "multipasta:item/other/pepsi/pepsi_block"
+	}
+}

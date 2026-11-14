@@ -1,0 +1,83 @@
+{
+	"credit": "Made by PixalThePixeled, Kotisimo",
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "multipasta:item/other/undertale/mysteryman",
+		"particle": "multipasta:item/other/undertale/mysteryman"
+	},
+	"elements": [
+		{
+			"from": [3, 13, 2],
+			"to": [12, 27, 10],
+			"faces": {
+				"north": {"uv": [10, 2, 12.25, 5.5], "texture": "#0"},
+				"east": {"uv": [8, 2, 10, 5.5], "texture": "#0"},
+				"south": {"uv": [12.25, 2, 14.5, 5.5], "texture": "#0"},
+				"west": {"uv": [10, 2, 8, 5.5], "texture": "#0"},
+				"up": {"uv": [12.25, 2, 10, 0], "texture": "#0"},
+				"down": {"uv": [12.25, 5.5, 10, 7.5], "texture": "#0"}
+			}
+		},
+		{
+			"name": "cube inverted",
+			"from": [12.5, 27.5, 10.5],
+			"to": [2.5, 12.5, 1.5],
+			"faces": {
+				"north": {"uv": [0.25, 0.25, 0, 0], "texture": "#0"},
+				"east": {"uv": [0.25, 0.25, 0, 0], "texture": "#0"},
+				"south": {"uv": [0.25, 0.25, 0, 0], "texture": "#0"},
+				"west": {"uv": [0.25, 0.25, 0, 0], "texture": "#0"},
+				"up": {"uv": [0.25, 0.25, 0, 0], "texture": "#0"},
+				"down": {"uv": [0.25, 0.25, 0, 0], "texture": "#0"}
+			}
+		},
+		{
+			"from": [2, -7, 3],
+			"to": [13, 13, 13],
+			"faces": {
+				"north": {"uv": [2.5, 2.5, 5.25, 7.5], "texture": "#0"},
+				"east": {"uv": [0, 2.5, 2.5, 7.5], "texture": "#0"},
+				"south": {"uv": [5.25, 2.5, 8, 7.5], "texture": "#0"},
+				"west": {"uv": [2.5, 2.5, 0, 7.5], "texture": "#0"},
+				"up": {"uv": [5.25, 2.5, 2.5, 0], "texture": "#0"},
+				"down": {"uv": [5.25, 7.5, 2.5, 10], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [65, 0, 0],
+			"translation": [9, -4, 14.25]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [65, 0, 0],
+			"translation": [9, -4, 14.25]
+		},
+		"firstperson_righthand": {
+			"rotation": [2, 163, 3],
+			"translation": [3, -4.5, -10.25]
+		},
+		"firstperson_lefthand": {
+			"rotation": [2, 163, 3],
+			"translation": [3, -4.5, -10.25]
+		},
+		"ground": {
+			"translation": [0, 4, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"gui": {
+			"rotation": [-171.68, 19.86, -166.43],
+			"translation": [0, -0.6, 0],
+			"scale": [0.42, 0.42, 0.42]
+		},
+		"head": {
+			"translation": [0.75, 12, 22],
+			"scale": [1.6, 1.6, 1.6]
+		},
+		"fixed": {
+			"rotation": [-90, 0, 0],
+			"translation": [1, 0, -28],
+			"scale": [2, 2, 2]
+		}
+	}
+}

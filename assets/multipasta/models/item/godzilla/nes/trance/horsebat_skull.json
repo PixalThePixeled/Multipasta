@@ -1,0 +1,132 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Model by Kotisimo, Texture by moro2610",
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "multipasta:item/godzilla/nes/trance/horsebat_skull",
+		"particle": "multipasta:item/godzilla/nes/trance/horsebat_skull"
+	},
+	"elements": [
+		{
+			"name": "horsebat_skull",
+			"from": [4, 0, 7],
+			"to": [12, 7, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, -18.5, 11]},
+			"faces": {
+				"north": {"uv": [0, 0, 4, 3.5], "texture": "#0"},
+				"east": {"uv": [4, 0, 8, 3.5], "texture": "#0"},
+				"south": {"uv": [8, 0, 12, 3.5], "texture": "#0"},
+				"west": {"uv": [8, 0, 4, 3.5], "texture": "#0"},
+				"up": {"uv": [0, 3.5, 4, 7.5], "texture": "#0"},
+				"down": {"uv": [4, 3.5, 8, 7.5], "texture": "#0"}
+			}
+		},
+		{
+			"name": "horsebat_skull inverted",
+			"from": [12, 7, 15],
+			"to": [4, 0, 7],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, -18.5, 11]},
+			"faces": {
+				"north": {"uv": [8, 3.5, 12, 0], "texture": "#0"},
+				"east": {"uv": [8, 3.5, 4, 0], "texture": "#0"},
+				"south": {"uv": [0, 3.5, 4, 0], "texture": "#0"},
+				"west": {"uv": [4, 3.5, 8, 0], "texture": "#0"},
+				"up": {"uv": [8, 3.5, 4, 7.5], "texture": "#0"},
+				"down": {"uv": [4, 3.5, 0, 7.5], "texture": "#0"}
+			}
+		},
+		{
+			"name": "horsebat_skull",
+			"from": [5, 4, 3],
+			"to": [11, 6, 7],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, -18.5, 11]},
+			"faces": {
+				"east": {"uv": [0, 9.5, 2, 10.5], "texture": "#0"},
+				"west": {"uv": [2, 9.5, 0, 10.5], "texture": "#0"},
+				"up": {"uv": [3, 12.5, 0, 10.5], "texture": "#0"}
+			}
+		},
+		{
+			"name": "horsebat_skull inverted",
+			"from": [11, 6, 7],
+			"to": [5, 4, 3],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, -18.5, 11]},
+			"faces": {
+				"east": {"uv": [2, 10.5, 0, 9.5], "texture": "#0"},
+				"west": {"uv": [0, 10.5, 2, 9.5], "texture": "#0"},
+				"down": {"uv": [0, 12.5, 3, 10.5], "texture": "#0"}
+			}
+		},
+		{
+			"name": "horsebat_skull",
+			"from": [5, 0, 0],
+			"to": [11, 4, 7],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, -18.5, 11]},
+			"faces": {
+				"north": {"uv": [0, 7.5, 3, 9.5], "texture": "#0"},
+				"east": {"uv": [3, 7.5, 6.5, 9.5], "texture": "#0"},
+				"west": {"uv": [6.5, 7.5, 3, 9.5], "texture": "#0"},
+				"up": {"uv": [3.5, 13, 6.5, 9.5], "texture": "#0"},
+				"down": {"uv": [6.5, 7.5, 9.5, 11], "texture": "#0"}
+			}
+		},
+		{
+			"name": "horsebat_skull inverted",
+			"from": [11, 4, 7],
+			"to": [5, 0, 0],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, -18.5, 11]},
+			"faces": {
+				"east": {"uv": [6.5, 9.5, 3, 7.5], "texture": "#0"},
+				"south": {"uv": [0, 9.5, 3, 7.5], "texture": "#0"},
+				"west": {"uv": [3, 9.5, 6.5, 7.5], "texture": "#0"},
+				"up": {"uv": [9.5, 7.5, 6.5, 11], "texture": "#0"},
+				"down": {"uv": [6.5, 13, 3.5, 9.5], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [48, 52, 0],
+			"translation": [-0.25, 2.5, -1]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [48, 52, 0],
+			"translation": [-0.25, 2.5, -1]
+		},
+		"firstperson_righthand": {
+			"rotation": [-21, 38, 22],
+			"translation": [0, 3.25, -6]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-21, 38, 22],
+			"translation": [0, 3.25, -6]
+		},
+		"ground": {
+			"translation": [0, 1.5, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"gui": {
+			"rotation": [-124.85, 48.31, 154.14],
+			"translation": [-1.65, 3.25, 0],
+			"scale": [0.88, 0.88, 0.88]
+		},
+		"head": {
+			"translation": [0, 19.2, -4],
+			"scale": [1.6, 1.6, 1.6]
+		},
+		"fixed": {
+			"rotation": [-90, 0, 0],
+			"translation": [0, 0, -14.25],
+			"scale": [2, 2, 2]
+		}
+	},
+	"groups": [
+		{
+			"name": "horsebat_skull",
+			"origin": [0, 27, 1],
+			"scope": 0,
+			"color": 0,
+			"children": [0, 1, 2, 3, 4, 5]
+		}
+	]
+}

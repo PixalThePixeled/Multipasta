@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "multipasta:item/other/grinning_apple_pickaxe/diamond"
+  }
+}

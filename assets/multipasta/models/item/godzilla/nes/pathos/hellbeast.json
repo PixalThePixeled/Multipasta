@@ -1,0 +1,29 @@
+{
+	"credit": "Made by Sp0ty, moro2610 and PixalThePixeled",
+	"parent": "multipasta:a/4xhand",
+	"textures": {
+		"layer0": "multipasta:item/godzilla/nes/pathos/hellbeast"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [0, -90, 40],
+			"translation": [0, 13.75, 2.75],
+			"scale": [3.4, 3.4, 0.85]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [0, 90, -40],
+			"translation": [0, 13.75, 2.75],
+			"scale": [3.4, 3.4, 0.85]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, -90, 45],
+			"translation": [3.13, 9.6, -2.26],
+			"scale": [2.72, 2.72, 0.68]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 90, -45],
+			"translation": [3.13, 9.6, -2.26],
+			"scale": [2.72, 2.72, 0.68]
+		}
+	}
+}
