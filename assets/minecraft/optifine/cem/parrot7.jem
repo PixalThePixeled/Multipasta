@@ -1,0 +1,244 @@
+{
+	"credit": "Model & Texture by Primal, Animations by kotisimo",
+	"texture": "textures/entity/multipasta/uriel/uriel.png",
+	"textureSize": [64, 64],
+	"models": [
+		{
+			"part": "head",
+			"id": "head",
+			"invertAxis": "xy",
+			"translate": [0, -8, 0.5],
+			"animations": [
+				{
+					"body.rx": 0,
+					"body.tx": 0,
+					"body.ty": 16.5,
+					"body.tz": 0,
+					"rotation.rx": "-body.rx",
+					"rotation.rz": "if(death_time > 0, -torad(min(sqrt((death_time - 1) / 20 * 1.6), 1) * 90), 0)"
+				},
+				{
+					"var.uriel_shoulder": "todeg(sin(torad(clamp(if(is_on_shoulder, var.uriel_shoulder-0.08 * frame_time * 20, var.uriel_shoulder+0.15 * frame_time * 20), 0, 1))))",
+					"var.uriel_sit": "todeg(sin(torad(clamp(if(is_sitting, var.uriel_sit-0.06 * frame_time * 20, var.uriel_sit+0.06 * frame_time * 20), 0, 1))))",
+					"uriel.tx": "+var.damage +lerp(var.uriel_sit, (0 -sin(time/7.5) * 3), 0)",
+					"uriel.ty": "lerp(var.uriel_sit, (-14.5 -cos(time/7.5) * 4), -13.5 +cos(time/7.5) * 2) -lerp(var.uriel_shoulder, 5, 0) +if(is_riding, -3, 0)",
+					"uriel.tz": "lerp(var.uriel_shoulder, 14.5, 0)",
+					"uriel.rx": "if(is_riding, 0, -torad(head_pitch/6))",
+					"uriel.ry": "if(is_riding, 0, torad(head_yaw)) +if(is_riding, -torad(90), 0)",
+					"urielhead_rotation.rx": "if(is_riding, 0, +torad(max(head_pitch,-30))/2)",
+					"urielhead_rotation.ry": "if(is_riding, 0, torad(head_yaw/4))",
+					"urielhead_rotation.rz": "if(is_riding, 0, torad(head_yaw/3))",
+					"urielhead.ty": "0 -death_time*64",
+					"urielhead.rz": "+torad(45)",
+					"uriel_ring_medium.rx": "0 +death_time*20",
+					"uriel_ring_medium.rz": "torad(45) +(time/13) +(hurt_time *torad(50))",
+					"uriel_ring_big.rx": "0 +death_time*20",
+					"uriel_ring_big.rz": "torad(45) -(time/13) -(hurt_time *torad(50))",
+					"uriel_wing_front_left.rx": "-torad(9)",
+					"uriel_wing_front_left.ry": "-torad(20) -pow(sin(time/13+pi/4), 4)/2",
+					"uriel_wing_front_left.rz": "torad(24) -pow(sin(time/13), 2)",
+					"uriel_wing_front_left.tx": "-4 -death_time*16",
+					"uriel_wing_front_right.rx": "-uriel_wing_front_left.rx",
+					"uriel_wing_front_right.ry": "-uriel_wing_front_left.ry",
+					"uriel_wing_front_right.rz": "-uriel_wing_front_left.rz",
+					"uriel_wing_front_right.tx": "+4 +death_time*19",
+					"uriel_wing_back_left.ry": "+pow(sin(time/13+pi/4), 4)",
+					"uriel_wing_back_left.rz": "-torad(16) +pow(sin(time/13+pi/4), 4)",
+					"uriel_wing_back_left.tx": "-4.5 -death_time*14",
+					"uriel_wing_back_right.ry": "-uriel_wing_back_left.ry",
+					"uriel_wing_back_right.rz": "-uriel_wing_back_left.rz",
+					"uriel_wing_back_right.tx": "+4.5 +death_time*16",
+					"uriel_wing_top_left.ry": "+pow(sin(time/13+pi/4), 4)/2",
+					"uriel_wing_top_left.rz": "torad(40) +pow(sin(time/13), 2)/2",
+					"uriel_wing_top_left.tx": "-2.5 -death_time*20",
+					"uriel_wing_top_left.ty": "-2.5 -death_time*6",
+					"uriel_wing_top_right.ry": "-uriel_wing_top_left.ry",
+					"uriel_wing_top_right.rz": "-uriel_wing_top_left.rz",
+					"uriel_wing_top_right.tx": "+2.5 +death_time*20",
+					"uriel_wing_top_right.ty": "-2.5 -death_time*6",
+					"uriel_wing_down_left.ry": "+pow(sin(time/13), 2)/2",
+					"uriel_wing_down_left.rz": "-torad(45) -pow(sin(time/13+pi/4), 6)/2",
+					"uriel_wing_down_left.tx": "-4 -death_time*18",
+					"uriel_wing_down_right.ry": "-uriel_wing_down_left.ry",
+					"uriel_wing_down_right.rz": "-uriel_wing_down_left.rz",
+					"uriel_wing_down_right.tx": "+4 +death_time*26"
+				}
+			]
+		},
+		{
+			"part": "body",
+			"id": "body",
+			"invertAxis": "xy",
+			"translate": [0, -7.5, 1],
+			"submodels": [
+				{
+					"id": "rotation",
+					"invertAxis": "xy",
+					"translate": [0, 7.5, -1],
+					"submodels": [
+						{
+							"id": "dreamcore",
+							"invertAxis": "xy",
+							"translate": [0, 1.5, 1],
+							"submodels": [
+								{
+									"id": "uriel",
+									"invertAxis": "xy",
+									"translate": [0, 9, 0],
+									"submodels": [
+										{
+											"id": "urielhead_rotation",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"submodels": [
+												{
+													"id": "urielhead",
+													"invertAxis": "xy",
+													"translate": [0, 0, 0],
+													"boxes": [
+														{"coordinates": [-4, -4, -1.5, 8, 8, 3], "textureOffset": [0, 42]}
+													],
+													"submodels": [
+														{
+															"id": "urielhead_ring",
+															"invertAxis": "xy",
+															"translate": [0, 0, 0],
+															"boxes": [
+																{"coordinates": [-4, -4, -1.5, 8, 8, 3], "textureOffset": [38, 29], "sizeAdd": 0.75}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"id": "uriel_rings",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"submodels": [
+												{
+													"id": "uriel_ring_medium",
+													"invertAxis": "xy",
+													"translate": [0, 0, -0.1],
+													"boxes": [
+														{"coordinates": [-9, -9, 0.1, 18, 18, 0], "textureOffset": [0, 24]}
+													]
+												},
+												{
+													"id": "uriel_ring_big",
+													"invertAxis": "xy",
+													"translate": [0, 0, 0],
+													"boxes": [
+														{"coordinates": [-12, -12, -0.1, 24, 24, 0], "textureOffset": [0, 0]}
+													]
+												}
+											]
+										},
+										{
+											"id": "uriel_wing_front_left",
+											"invertAxis": "xy",
+											"mirrorTexture": "u",
+											"translate": [3.94717, -0.81333, 0.12493],
+											"boxes": [
+												{"coordinates": [0, -4, 0, 21, 10, 0], "textureOffset": [22, 46]}
+											]
+										},
+										{
+											"id": "uriel_wing_front_right",
+											"invertAxis": "xy",
+											"translate": [-3.94717, -0.81333, 0.12493],
+											"boxes": [
+												{"coordinates": [-21, -4, 0, 21, 10, 0], "textureOffset": [22, 46]}
+											]
+										},
+										{
+											"id": "uriel_wing_back_left",
+											"invertAxis": "xy",
+											"mirrorTexture": "u",
+											"translate": [3, 0, 0],
+											"boxes": [
+												{"coordinates": [0, -5, 0.5, 21, 10, 0], "textureOffset": [22, 46]}
+											]
+										},
+										{
+											"id": "uriel_wing_back_right",
+											"invertAxis": "xy",
+											"translate": [-3, 0, 0],
+											"boxes": [
+												{"coordinates": [-21, -5, 0.5, 21, 10, 0], "textureOffset": [22, 46]}
+											]
+										},
+										{
+											"id": "uriel_wing_top_left",
+											"invertAxis": "xy",
+											"mirrorTexture": "u",
+											"translate": [2, 2.5, 0.4],
+											"boxes": [
+												{"coordinates": [0, -3.5, 0, 18, 7, 0], "textureOffset": [26, 56]}
+											]
+										},
+										{
+											"id": "uriel_wing_top_right",
+											"invertAxis": "xy",
+											"translate": [-2, 2.5, 0.4],
+											"boxes": [
+												{"coordinates": [-18, -3.5, 0, 18, 7, 0], "textureOffset": [26, 56]}
+											]
+										},
+										{
+											"id": "uriel_wing_down_left",
+											"invertAxis": "xy",
+											"mirrorTexture": "u",
+											"translate": [2, -2.5, 0.4],
+											"boxes": [
+												{"coordinates": [0, -2.5, 0, 18, 7, 0], "textureOffset": [26, 56]}
+											]
+										},
+										{
+											"id": "uriel_wing_down_right",
+											"invertAxis": "xy",
+											"translate": [-2, -2.5, 0.4],
+											"boxes": [
+												{"coordinates": [-18, -2.5, 0, 18, 7, 0], "textureOffset": [26, 56]}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"part": "left_wing",
+			"id": "left_wing",
+			"invertAxis": "xy",
+			"translate": [1.5, -7.1, 0.8]
+		},
+		{
+			"part": "right_wing",
+			"id": "right_wing",
+			"invertAxis": "xy",
+			"translate": [-1.5, -7.1, 0.8]
+		},
+		{
+			"part": "left_leg",
+			"id": "left_leg",
+			"invertAxis": "xy",
+			"translate": [1, -2, 1]
+		},
+		{
+			"part": "right_leg",
+			"id": "right_leg",
+			"invertAxis": "xy",
+			"translate": [-1, -2, 1]
+		},
+		{
+			"part": "tail",
+			"id": "tail",
+			"invertAxis": "xy",
+			"translate": [0, -2.9, -1.2]
+		}
+	]
+}

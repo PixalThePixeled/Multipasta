@@ -1,0 +1,134 @@
+{
+	"credit": "Model & Animations by kotisimo, Texture by moro2610",
+	"texture": "textures/entity/multipasta/bathysidus.png",
+	"textureSize": [32, 32],
+	"models": [
+		{
+			"part": "head",
+			"id": "head",
+			"invertAxis": "xy",
+			"translate": [0, -8, 0.5],
+			"animations": [
+				{
+					"var.time": "time - pi/random(id)",
+					"body.rx": 0,
+					"body.tx": 0,
+					"body.ty": 16.5,
+					"body.tz": 0,
+					"rotation.rz": "if(death_time > 0, -torad(min(sqrt((death_time - 1) / 20 * 1.6), 1) * 90), 0)",
+					"var.dance": "todeg(sin(torad(clamp(if(right_leg.rz!=0&&is_on_ground, var.dance-0.15 * frame_time * 20, var.dance+0.15 * frame_time * 20), 0, 1))))",
+					"var.bathysidus_shoulder": "todeg(sin(torad(clamp(if(is_on_shoulder, var.bathysidus_shoulder-0.07 * frame_time * 20, var.bathysidus_shoulder+0.05 * frame_time * 20), 0, 1))))",
+					"var.bathysidus_sit": "todeg(sin(torad(clamp(if(is_sitting || is_riding, var.bathysidus_sit-0.35 * frame_time * 20, var.bathysidus_sit+0.13 * frame_time * 20), 0, 1))))"
+				},
+				{
+					"bathysidus.ty": "     lerp(var.dance, -4 -pow(sin(var.time/3+pi/6), 2)*5.3,         lerp(var.bathysidus_sit, 4.5 -cos(var.time/1) * 2, -1.5 -cos(var.time/6) * 2) -lerp(var.bathysidus_shoulder, 6, 0)   )",
+					"bathysidus.tz": "     lerp(var.dance, -1,                                           lerp(var.bathysidus_sit, -0.7, -1 -sin(var.time/6) * 2) +lerp(var.bathysidus_shoulder, 16, 0)   )",
+					"bathysidus.rx": "     lerp(var.dance, -torad(75) +pow(sin(var.time/3), 2)/3,        lerp(var.bathysidus_sit, 0, +torad(head_pitch))   )",
+					"bathysidus.ry": "     lerp(var.dance, -pow(sin(var.time/3+pi/6), 3)/1.5,            lerp(var.bathysidus_sit, +sin(var.time/1) / 6, +torad(head_yaw) -cos(var.time/1) / 6)   )",
+					"bathysidus.rz": "     lerp(var.dance, +sin(var.time/3) * torad(42),                 lerp(var.bathysidus_sit, -torad(90), +torad(head_pitch/2))   )",
+					"bathysidus_tail.tx": "lerp(var.dance, -cos(var.time/1) * torad(44),                 lerp(var.bathysidus_sit, -cos(var.time/0.5 * torad(42)), -cos(var.time/1) * torad(42))   )",
+					"bathysidus_tail.ry": "lerp(var.dance, -sin(var.time/1) * torad(46),                 lerp(var.bathysidus_sit, -sin(var.time/0.5 * torad(42)), -sin(var.time/1) * torad(42))   )",
+					"bathysidus_left_fin.rx": "if(is_on_ground, 0, -torad(16))",
+					"bathysidus_left_fin.ry": "-torad(26) +(cos(var.time/0.5) * torad(55))",
+					"bathysidus_right_fin.rx": "+bathysidus_left_fin.rx",
+					"bathysidus_right_fin.ry": "-bathysidus_left_fin.ry"
+				}
+			]
+		},
+		{
+			"part": "body",
+			"id": "body",
+			"invertAxis": "xy",
+			"translate": [0, -7.5, 1],
+			"submodels": [
+				{
+					"id": "rotation",
+					"invertAxis": "xy",
+					"translate": [0, 7.5, -1],
+					"submodels": [
+						{
+							"id": "bathysidus",
+							"invertAxis": "xy",
+							"translate": [0, -3, 1],
+							"submodels": [
+								{
+									"id": "bathysidus_body",
+									"invertAxis": "xy",
+									"translate": [0, 0, 0],
+									"boxes": [
+										{"coordinates": [-1, -4.5, -5, 2, 9, 10], "textureOffset": [0, 0]}
+									],
+									"submodels": [
+										{
+											"id": "bathysidus_bodyfin",
+											"invertAxis": "xy",
+											"translate": [0, 0, 2.5],
+											"boxes": [
+												{"coordinates": [0, -6.5, -4.5, 0, 13, 9], "textureOffset": [0, 10]}
+											]
+										},
+										{
+											"id": "bathysidus_tail",
+											"invertAxis": "xy",
+											"translate": [0, 0, 5],
+											"boxes": [
+												{"coordinates": [0, -2.5, 0, 0, 5, 6], "textureOffset": [18, 13]}
+											]
+										},
+										{
+											"id": "bathysidus_left_fin",
+											"invertAxis": "xy",
+											"translate": [-1, -1.5, -3],
+											"boxes": [
+												{"coordinates": [-3, -1, 0, 3, 2, 0], "textureOffset": [15, 7]}
+											]
+										},
+										{
+											"id": "bathysidus_right_fin",
+											"invertAxis": "xy",
+											"mirrorTexture": "u",
+											"translate": [1, -1.5, -3],
+											"boxes": [
+												{"coordinates": [0, -1, 0, 3, 2, 0], "textureOffset": [15, 7]}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"part": "left_wing",
+			"id": "left_wing",
+			"invertAxis": "xy",
+			"translate": [1.5, -7.1, 0.8]
+		},
+		{
+			"part": "right_wing",
+			"id": "right_wing",
+			"invertAxis": "xy",
+			"translate": [-1.5, -7.1, 0.8]
+		},
+		{
+			"part": "left_leg",
+			"id": "left_leg",
+			"invertAxis": "xy",
+			"translate": [1, -2, 1]
+		},
+		{
+			"part": "right_leg",
+			"id": "right_leg",
+			"invertAxis": "xy",
+			"translate": [-1, -2, 1]
+		},
+		{
+			"part": "tail",
+			"id": "tail",
+			"invertAxis": "xy",
+			"translate": [0, -2.9, -1.2]
+		}
+	]
+}

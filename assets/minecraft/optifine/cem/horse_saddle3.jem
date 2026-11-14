@@ -1,0 +1,353 @@
+{
+	"credit": "Texture by Sp0ty",
+	"textureSize": [128, 64],
+	"texture": "textures/entity/multipasta/doomer_ponypuff/pojhgjkjhghjh_sdllhsdll.png",
+	"models": [
+		{
+			"part": "head",
+			"id": "head",
+			"invertAxis": "xy",
+			"translate": [0, -22, 9],
+			"animations": [
+				{
+					"var.time": "time - pi/random(id)",
+					"body.rx": 0,
+					"body.tx": -0.5,
+					"body.ty": 11,
+					"body.tz": -2,
+					"rotation.rz": "if(death_time > 0, -torad(min(sqrt((death_time - 1) / 20 * 1.6), 1) * 90), 0)",
+					"rotation.ty": "lerp(var.ponypuff_water, 0, +sin(time/7.5) *(1-var.ponypuff_rid) -1*var.ponypuff_rid)",
+					"var.ponypuff_water": "  todeg(sin(torad(clamp(if(is_in_water, var.ponypuff_water+0.1   * frame_time * 20, var.ponypuff_water-0.3   * frame_time * 20), 0, 1))))",
+					"var.doomerpuff_water": "todeg(sin(torad(clamp(if(is_in_water, var.doomerpuff_water+0.2 * frame_time * 20, var.doomerpuff_water-0.3 * frame_time * 20), 0, 1))))",
+					"var.ponypuff_rid": "    todeg(sin(torad(clamp(if(is_ridden,   var.ponypuff_rid+0.2     * frame_time * 20, var.ponypuff_rid-0.06    * frame_time * 20), 0, 1))))",
+					"var.doomerpuff_st": "   todeg(sin(torad(clamp(if(is_in_water, var.doomerpuff_st+0.1    * frame_time * 20, var.doomerpuff_st-0.2    * frame_time * 20), 0, 1))))",
+					"var.ingui": "if(is_in_gui, 0, 1)",
+					"var.eat": "max(neck.ty - 4, 0)/7",
+					"var.inhale": "clamp(if(var.eat==0, var.inhale -0.04* frame_time * 20, var.inhale +0.015 * frame_time * 20), 0, 1)",
+					"var.inhale2": "max(var.inhale-0.75, 0)*4",
+					"var.smoke": "min(if(var.eat==0, var.smoke+0.1 * frame_time * 20, 0), 8)",
+					"var.damage": "hurt_time/0.25",
+					"var.fainted": "death_time",
+					"var.jump": "-min(neck.ty-4, 0)/8",
+					"var.swj": "1-var.jump",
+					"render.leash_offset_x": "0",
+					"render.leash_offset_y": "-9/16 -lerp(var.ponypuff_water, +lerp(var.ponypuff_rid, 0, -9), 0)/16",
+					"render.leash_offset_z": "0",
+					"render.shadow_size": "0.55",
+					"render.shadow_opacity": "lerp(var.ponypuff_water, +lerp(var.ponypuff_rid, 1, 0.75), 1)",
+					"render.shadow_offset_x": "2/16 *-sin(rot_y)",
+					"render.shadow_offset_z": "2/16 * cos(rot_y)"
+				},
+				{
+					"pony_doomerpuff_head.sx": "1+var.inhale/3",
+					"pony_doomerpuff_head.sy": "pony_doomerpuff_head.sx",
+					"pony_doomerpuff_head.sz": "1-var.inhale/4",
+					"pony_doomerpuff.rx": "if(is_in_gui, -sin(var.time/12) * torad(26), lerp(var.ponypuff_water, 0, -torad(6)))",
+					"pony_doomerpuff.rz": "if(is_in_gui, +cos(var.time/12) * torad(26), 0)",
+					"pony_doomerpuff.tx": "+cos(var.damage)*2 -2.5",
+					"pony_doomerpuff.ty": "var.fainted*1.5 +lerp(var.ponypuff_water, 0, -8 -sin(var.time/7.5) * torad(16))",
+					"pony_doomerpuff_neck.rx": "torad(18.5) -sin(var.time/7.5) * torad(3) + var.inhale2 * sin(time*4)/128",
+					"pony_doomerpuff_neck.ry": "var.inhale2 * sin(time*4+pi/4)/128",
+					"pony_doomerpuff_neck.rz": "var.inhale2 * sin(time*4+pi/2)/128",
+					"pony_doomerpuff_body.ry": "torad(head_yaw)/3 +lerp(var.ponypuff_water, +(sin(limb_swing*2) * limb_speed)/12, 0)",
+					"pony_doomerpuff_body.ty": "-13 +lerp(var.ponypuff_water, +lerp(var.ponypuff_rid, 0, -9), 0)",
+					"pony_doomerpuff_legs.ry": "torad(head_yaw)/4",
+					"pony_doomerpuff_legs.ty": "-8 +lerp(var.ponypuff_water, +lerp(var.ponypuff_rid, 0, -8), 0)",
+					"pony_doomerpuff_legs.sy": "1 +lerp(var.ponypuff_water, +lerp(var.ponypuff_rid,  0, 1), 0)",
+					"pony_doomerpuff_tail.rx": "torad(17.5) +lerp(var.ponypuff_water, +limb_speed * torad(38) +(cos(limb_swing*2) * limb_speed)/6 , 0)",
+					"pony_doomerpuff_tail.rz": "torad(head_yaw)/8 +lerp(var.ponypuff_water, -(sin(limb_swing*2) * limb_speed)/6 , 0)"
+				},
+				{
+					"pony_doomerpuff_leftleg.sy": "if(is_in_gui, 2 +sin(var.time/12) * 1, 1)",
+					"pony_doomerpuff_leftleg.rx": "lerp(var.ponypuff_water, +(sin(limb_swing*4) * limb_speed)/1.5, -torad(32))",
+					"pony_doomerpuff_leftleg.rz": "-torad(head_yaw)/8 +if(is_in_gui, -torad(34) +sin(var.time/12) * torad(26), lerp(var.ponypuff_water, 0, -torad(12)))",
+					"pony_doomerpuff_rightleg.sy": "if(is_in_gui, 1.5 +cos(var.time/12) * 1, 1)",
+					"pony_doomerpuff_rightleg.rx": "lerp(var.ponypuff_water, -(sin(limb_swing*4) * limb_speed)/1.5, -torad(32))",
+					"pony_doomerpuff_rightleg.rz": "-torad(head_yaw)/8 +if(is_in_gui, +torad(34) -cos(var.time/12) * torad(26), lerp(var.ponypuff_water, 0, torad(12)))",
+					"pony_doomerpuff_leftbackleg.sy": "if(is_in_gui, 1.5 -sin(var.time/12) * 1, 1)",
+					"pony_doomerpuff_leftbackleg.tx": "+3.5 +torad(head_yaw)/6",
+					"pony_doomerpuff_leftbackleg.rx": "lerp(var.ponypuff_water, -(sin(limb_swing*4) * limb_speed)/1.5, +torad(38))",
+					"pony_doomerpuff_leftbackleg.rz": "+torad(head_yaw)/8 +if(is_in_gui, -torad(34) +cos(var.time/12) * torad(26), lerp(var.ponypuff_water, 0, -torad(11)))",
+					"pony_doomerpuff_rightbackleg.sy": "if(is_in_gui, 1.5 -cos(var.time/12) * 1, 1)",
+					"pony_doomerpuff_rightbackleg.tx": "-2.5 +torad(head_yaw)/6",
+					"pony_doomerpuff_rightbackleg.rx": "lerp(var.ponypuff_water, +(sin(limb_swing*4) * limb_speed)/1.5, +torad(38))",
+					"pony_doomerpuff_rightbackleg.rz": "+torad(head_yaw)/8 +if(is_in_gui, +torad(34) -sin(var.time/12) * torad(26), lerp(var.ponypuff_water, 0, torad(11)))"
+				}
+			]
+		},
+		{
+			"part": "mouth",
+			"id": "mouth",
+			"invertAxis": "xy",
+			"translate": [0, -22, 9]
+		},
+		{
+			"part": "left_ear",
+			"id": "left_ear",
+			"invertAxis": "xy",
+			"translate": [0, -23, 9.01]
+		},
+		{
+			"part": "right_ear",
+			"id": "right_ear",
+			"invertAxis": "xy",
+			"translate": [0, -23, 9.01]
+		},
+		{
+			"part": "neck",
+			"id": "neck",
+			"invertAxis": "xy",
+			"translate": [0, -22, 9]
+		},
+		{
+			"part": "mane",
+			"id": "mane",
+			"invertAxis": "xy",
+			"translate": [0, -22, 9.01]
+		},
+		{
+			"part": "body",
+			"id": "body",
+			"invertAxis": "xy",
+			"translate": [0, -13, -6],
+			"submodels": [
+				{
+					"id": "rotation",
+					"invertAxis": "xy",
+					"translate": [-0.5, 0, 6],
+					"submodels": [
+						{
+							"id": "pony_doomerpuff",
+							"invertAxis": "xy",
+							"translate": [0.5, 0, -1],
+							"submodels": [
+								{
+									"id": "pony_doomerpuff_body",
+									"invertAxis": "xy",
+									"translate": [0, 13, 0],
+									"boxes": [
+										{"coordinates": [-4, -7, -6, 7, 7, 13], "textureOffset": [0, 0], "sizeAdd": 0.25}
+									],
+									"submodels": [
+										{
+											"id": "pony_doomerpuff_tail",
+											"invertAxis": "xy",
+											"translate": [-0.5, -1.5, 7],
+											"rotate": [-17.5, 0, 0],
+											"boxes": [
+												{"coordinates": [-1.5, -7.20077, -0.54701, 3, 8, 3], "textureOffset": [27, 0], "sizeAdd": 0.25}
+											]
+										},
+										{
+											"id": "pony_doomerpuff_neck",
+											"invertAxis": "xy",
+											"translate": [-0.5, -4.4, -4],
+											"rotate": [-17.5, 0, 0],
+											"boxes": [
+												{"coordinates": [-1.5, -0.5, -2, 3, 7, 4], "textureOffset": [24, 20], "sizeAdd": 0.24}
+											],
+											"submodels": [
+												{
+													"id": "pony_doomerpuff_head",
+													"invertAxis": "xy",
+													"translate": [-1, 8.3, 0.1],
+													"boxes": [
+														{"coordinates": [0, -6.8, -1.1, 2, 11, 5], "textureOffset": [0, 32], "sizeAdd": 0.25}
+													],
+													"submodels": [
+														{
+															"id": "pony_doomerpuff_head1",
+															"invertAxis": "xy",
+															"translate": [1.5, -16.9, -1.1],
+															"boxes": [
+																{"coordinates": [-2, 15.1, -5, 3, 2, 2], "textureOffset": [40, 11], "sizeAdd": 0.25},
+																{"coordinates": [-3, 15.1, -3, 5, 5, 6], "textureOffset": [40, 0], "sizeAdd": 0.25}
+															]
+														},
+														{
+															"id": "pony_doomerpuff_hair",
+															"invertAxis": "xy",
+															"translate": [1.1, 3.2, -2.9],
+															"rotate": [49.64969, -10.75868, 9.01161],
+															"boxes": [
+																{"coordinates": [-0.5, -2, -1, 2, 4, 2], "textureOffset": [56, 0], "sizeAdd": 0.25}
+															]
+														},
+														{
+															"id": "pony_doomerpuff_leftear",
+															"invertAxis": "xy",
+															"translate": [-2, 3.5, -0.6],
+															"rotate": [0, 0, 27.5],
+															"boxes": [
+																{"coordinates": [-1.21326, -1.61486, -0.6, 3, 4, 1], "textureOffset": [0, 8], "sizeAdd": 0.25}
+															]
+														},
+														{
+															"id": "pony_doomerpuff_rightear",
+															"invertAxis": "xy",
+															"mirrorTexture": "u",
+															"translate": [2, 3.5, -0.6],
+															"rotate": [0, 0, -27.5],
+															"boxes": [
+																{"coordinates": [-0.01272, -0.69137, -0.6, 3, 4, 1], "textureOffset": [0, 8], "sizeAdd": 0.25}
+															]
+														},
+														{
+															"id": "pony_doomerpuff_cube",
+															"invertAxis": "xy",
+															"translate": [3.38674, -1.41343, -6.57527],
+															"rotate": [19.43613, 50.6661, 8.77782],
+															"submodels": [
+																{
+																	"id": "pony_doomerpuff_cube1",
+																	"invertAxis": "xy",
+																	"translate": [-1.88674, -15.48657, 5.47527],
+																	"boxes": [
+																		{"coordinates": [-1.61326, 14.98657, -5.97527, 7, 1, 1], "textureOffset": [48, 11], "sizeAdd": 0.25}
+																	]
+																},
+																{
+																	"id": "pony_doomerpuff_cube2",
+																	"invertAxis": "xy",
+																	"translate": [-1.88674, -15.48657, 5.47527],
+																	"boxes": [
+																		{"coordinates": [-1.61326, 14.98657, -5.97527, 7, 1, 1], "textureOffset": [48, 26], "sizeAdd": 0.25}
+																	]
+																},
+																{
+																	"id": "pony_doomerpuff_cube3",
+																	"invertAxis": "xy",
+																	"translate": [-1.88674, -15.48657, 5.47527],
+																	"boxes": [
+																		{"coordinates": [-1.61326, 14.98657, -5.97527, 7, 1, 1], "textureOffset": [48, 41], "sizeAdd": 0.25}
+																	]
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"id": "pony_doomerpuff_legs",
+									"invertAxis": "xy",
+									"translate": [0, 8, 1],
+									"submodels": [
+										{
+											"id": "pony_doomerpuff_leftbackleg",
+											"invertAxis": "xy",
+											"translate": [-3.5, -0.5, 3.5],
+											"boxes": [
+												{"coordinates": [-1.5, -7.5, -1.5, 3, 9, 3], "textureOffset": [0, 20], "sizeAdd": 0.25}
+											]
+										},
+										{
+											"id": "pony_doomerpuff_rightbackleg",
+											"invertAxis": "xy",
+											"mirrorTexture": "u",
+											"translate": [2.5, -0.5, 3.5],
+											"boxes": [
+												{"coordinates": [-1.5, -7.5, -1.5, 3, 9, 3], "textureOffset": [0, 20], "sizeAdd": 0.25}
+											]
+										},
+										{
+											"id": "pony_doomerpuff_leftleg",
+											"invertAxis": "xy",
+											"translate": [-3.5, -0.5, -3.5],
+											"boxes": [
+												{"coordinates": [-1.5, -7.5, -1.5, 3, 8, 3], "textureOffset": [12, 20], "sizeAdd": 0.25}
+											]
+										},
+										{
+											"id": "pony_doomerpuff_rightleg",
+											"invertAxis": "xy",
+											"mirrorTexture": "u",
+											"translate": [2.5, -0.5, -3.5],
+											"boxes": [
+												{"coordinates": [-1.5, -7.5, -1.5, 3, 8, 3], "textureOffset": [12, 20], "sizeAdd": 0.25}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"part": "tail",
+			"id": "tail",
+			"invertAxis": "xy",
+			"translate": [0, -21, -11]
+		},
+		{
+			"part": "front_left_leg",
+			"id": "front_left_leg",
+			"invertAxis": "xy",
+			"translate": [4, -10, 9]
+		},
+		{
+			"part": "front_right_leg",
+			"id": "front_right_leg",
+			"invertAxis": "xy",
+			"translate": [-4, -10, 9]
+		},
+		{
+			"part": "back_left_leg",
+			"id": "back_left_leg",
+			"invertAxis": "xy",
+			"translate": [4, -10, -8]
+		},
+		{
+			"part": "back_right_leg",
+			"id": "back_right_leg",
+			"invertAxis": "xy",
+			"translate": [-4, -10, -8]
+		},
+		{
+			"part": "right_saddle_line",
+			"id": "right_saddle_line",
+			"invertAxis": "xy",
+			"translate": [0, -25.5, 5.5]
+		},
+		{
+			"part": "saddle",
+			"id": "saddle",
+			"invertAxis": "xy",
+			"translate": [0, -13, -6]
+		},
+		{
+			"part": "head_saddle",
+			"id": "head_saddle",
+			"invertAxis": "xy",
+			"translate": [0, -22, 8.9]
+		},
+		{
+			"part": "mouth_saddle_wrap",
+			"id": "mouth_saddle_wrap",
+			"invertAxis": "xy",
+			"translate": [0, -22, 9]
+		},
+		{
+			"part": "left_saddle_mouth",
+			"id": "left_saddle_mouth",
+			"invertAxis": "xy",
+			"translate": [0, -22, 9]
+		},
+		{
+			"part": "right_saddle_mouth",
+			"id": "right_saddle_mouth",
+			"invertAxis": "xy",
+			"translate": [0, -22, 9]
+		},
+		{
+			"part": "left_saddle_line",
+			"id": "left_saddle_line",
+			"invertAxis": "xy",
+			"translate": [0, -25.5, 5.5]
+		}
+	]
+}

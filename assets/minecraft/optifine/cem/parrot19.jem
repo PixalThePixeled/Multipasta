@@ -1,0 +1,318 @@
+{
+	"credit": "Textures by Moro2610, Model & Animations by Kotisimo",
+	"textureSize": [128, 64],
+	"texture": "textures/entity/multipasta/pepsiman.png",
+	"models": [
+		{
+			"part": "head",
+			"id": "head",
+			"invertAxis": "xy",
+			"translate": [0, -8, 0.5],
+			"animations": [
+				{
+					"var.time": "time - pi/random(id)",
+					"body.rx": 0,
+					"body.tx": 0,
+					"body.ty": 16.5,
+					"body.tz": 0,
+					"rotation.rz": "if(death_time > 0, -torad(min(sqrt((death_time - 1) / 20 * 1.6), 1) * 90), 0)",
+					"varb.ifdance": "right_leg.rz!=0&&is_on_ground",
+					"var.limb_swing_fly": "limb_swing*2",
+					"var.limb_speed_fly": "limb_speed*2",
+					"var.limb_swing": "limb_swing*1",
+					"var.limb_speed": "limb_speed*10",
+					"var.death": "death_time",
+					"var.skatehide": "if(is_riding || varb.ifdance, 0, 1)",
+					"var.dance": "           todeg(sin(torad(clamp(if(varb.ifdance, var.dance-0.09 * frame_time * 20, var.dance+0.085 * frame_time * 20), 0, 1))))",
+					"var.riding": "          todeg(sin(torad(clamp(if(is_riding, var.riding-0.08 * frame_time * 20, var.riding+0.09 * frame_time * 20), 0, 1))))",
+					"var.riding2": "         todeg(sin(torad(clamp(if(is_riding, var.riding2-0.26 * frame_time * 20, var.riding2+0.44 * frame_time * 20), 0, 1))))",
+					"var.pm_stand": "        todeg(sin(torad(clamp(if((is_on_ground || is_sitting) && !is_on_shoulder && is_alive, var.pm_stand-0.12 * frame_time * 20, var.pm_stand+0.15 * frame_time * 20), 0, 1))))",
+					"var.pm_sit": "          todeg(sin(torad(clamp(if(is_sitting && !is_on_shoulder, var.pm_sit-0.15 * frame_time * 20, var.pm_sit+0.1 * frame_time * 20), 0, 1))))",
+					"var.skate_st": "        todeg(sin(torad(clamp(if((is_on_ground || is_sitting || varb.ifdance) && !is_on_shoulder && is_alive, var.skate_st-0.09 * frame_time * 20, var.skate_st+0.4 * frame_time * 20), 0, 1))))",
+					"var.skate_appearalt": " todeg(sin(torad(clamp(if((is_on_ground || is_sitting) && !is_on_shoulder && is_alive, var.skate_appearalt-0.14 * frame_time * 20, var.skate_appearalt+0.3 * frame_time * 20), 0, 1))))",
+					"var.skate_appearalt2": "todeg(sin(torad(clamp(if((is_on_ground || is_sitting) && !is_on_shoulder && is_alive, var.skate_appearalt2-0.4 * frame_time * 20, var.skate_appearalt2+0.09 * frame_time * 20), 0, 1))))",
+					"var.skate_appear": "    todeg(sin(torad(clamp(if((is_on_ground || is_sitting || varb.ifdance) && !is_on_shoulder && is_alive, var.skate_appear-0.4 * frame_time * 20, var.skate_appear+0.14 * frame_time * 20), 0, 1))))"
+				},
+				{
+					"pepsiman.tx": "           lerp(var.dance, 0,                                                        lerp(var.riding, 0,                                                     lerp(var.pm_stand,    lerp(var.pm_sit, 0,                                                                                                                                                                      0     ),                                                                   0)      )      )",
+					"pepsiman.ty": "           lerp(var.dance, +7.7,                                                     lerp(var.riding2, +17.5,                                                if(is_on_shoulder, 2, lerp(var.pm_stand,    lerp(var.pm_sit, +13.5,                                                                                                                                          +8.3    ),                                                             +7.5)  )      )      )",
+					"pepsiman.tz": "           lerp(var.dance, -1,                                                       if(is_riding, 2.8,                                                      if(is_on_shoulder, 12, lerp(var.pm_stand,    lerp(var.pm_sit, 4,                                                                                                                                               0     ),                                                                0)  )      )      )",
+					"pepsiman_body_RTY.tx": "  lerp(var.dance, 0,                                                        lerp(var.riding, 0, lerp(var.skate_appearalt, 0, 1.8)   )   )",
+					"pepsiman_body_RTY.ty": "  lerp(var.dance, 0,                                                        lerp(var.riding, 0, lerp(var.skate_appearalt, 0, -13.5 -hurt_time *1.2)   )   )",
+					"pepsiman_body_RTY.tz": "  lerp(var.dance, 0,                                                        lerp(var.riding, 0, lerp(var.skate_appearalt, 0, -2.5)   )   )",
+					"pepsiman_body_RTY.rx": "  lerp(var.dance, 0,                                                        lerp(var.riding, 0, lerp(var.skate_appearalt, 0, torad(14))   )   )",
+					"pepsiman_body_RTY.ry": "  lerp(var.dance, 0,                                                        lerp(var.riding, 0, lerp(var.skate_appearalt, 0, -torad(20))  -hurt_time *torad(6) )  )",
+					"pepsiman_body_RT.ty": "   lerp(var.dance, 0,                                                        lerp(var.riding, 0, lerp(var.skate_appear, 0, 13.5)   )   )",
+					"pepsiman_body_RT.rx": "   lerp(var.dance, 0,                                                        lerp(var.riding, 0,                                                     lerp(var.pm_stand,    lerp(var.pm_sit, torad(22),                                                                                                0     -(( sin(var.limb_swing+pi/2)/16)-torad(22)) *var.limb_speed/22),                                                          -torad(14))      )      )",
+					"pepsiman_body_RT.ry": "   lerp(var.dance, +torad(head_yaw/3.5),                                     lerp(var.riding, 0,                                                     lerp(var.pm_stand,    lerp(var.pm_sit, -torad(8),                                                                      torad(26) +torad(max(head_yaw,-94))/8 +(( sin(var.limb_swing)/2)-torad(90)) *var.limb_speed/30),                                                           torad(30))      )      )",
+					"pepsiman_body_RT.rz": "   lerp(var.dance, 0,                                                        lerp(var.riding, 0,                                                     lerp(var.pm_stand,    lerp(var.pm_sit, -torad(8),                                                                                                                               torad(1) +sin(var.time/10) * torad(2)),                                      -torad(7) -hurt_time *torad(1))      )      )",
+					"pepsiman_head.ty": "      lerp(var.dance,   -12   +(pow(sin(var.time/3+pi/2), 2)/5),    -12    )",
+					"pepsiman_head.rx": "      lerp(var.dance, 0,                                                        lerp(var.riding, torad(1.5) +cos(var.time/10) * torad(2),               lerp(var.pm_stand,    lerp(var.pm_sit, -torad(22) +cos(var.time/10) * torad(4) +torad(max(head_pitch,-45))/2,   torad(2) +torad(max(head_pitch,-35))/5 +(( sin(var.limb_swing+pi/2)/16)-torad(22)) *var.limb_speed/22),      -torad(8) +hurt_time *torad(2.5) -torad(max(head_pitch,-32))/4)      )      )",
+					"pepsiman_head.ry": "      lerp(var.dance, -cos(var.time/3) * torad(12),                             lerp(var.riding, 0,                                                     lerp(var.pm_stand,    lerp(var.pm_sit, torad(8) +torad(head_yaw/3.5),                                            -torad(26) +torad(max(head_yaw,-65))/1.8 -(( sin(var.limb_swing+pi/2))-torad(55)) *var.limb_speed/26),                  torad(head_yaw/2) +hurt_time *torad(4)  -torad(16))      )      )",
+					"pepsiman_head.rz": "      lerp(var.dance, -sin(var.time/3+pi/1.8) * torad(22),                      lerp(var.riding, 0,                                                     lerp(var.pm_stand,    lerp(var.pm_sit, torad(9),                                                                                                                                         -sin(var.time/10) * torad(4)),         torad(6.5) -torad(head_yaw/7) +sin(var.time/4) * torad(2.5))      )      )",
+					"pepsiman_body.tx": "      lerp(var.dance, -(pow(sin(var.time/3+pi/2), 1)*2),                        lerp(var.riding, 0,                                                     lerp(var.pm_stand,    lerp(var.e63_sit, 0,                                                                                                                                                                     0     ),                                                                -0.1)      )      )",
+					"pepsiman_body.ty": "      lerp(var.dance, -12 +(pow(sin(var.time/3+pi/2), 2)/2),                    lerp(var.riding, -12,                                                   lerp(var.pm_stand,    lerp(var.pm_sit, -12,                                                                               -12 +(pow(sin(var.time/10+pi/4.5), 8)/2.4) -(( sin(var.limb_swing*1.3))) *var.limb_speed/10),                                                               -11.5)      )      )",
+					"pepsiman_body.rx": "      lerp(var.dance, 0,                                                        lerp(var.riding, torad(2) +sin(var.time/10) * torad(3),                 lerp(var.pm_stand,    lerp(var.pm_sit, torad(7) -sin(var.time/10) * torad(4),                                                                                                 -torad(1) ), torad(12) -hurt_time *torad(2) +(( sin(var.limb_swing_fly/28))+torad(88)) *var.limb_speed_fly/5 )      )      )",
+					"pepsiman_body.ry": "      lerp(var.dance, +cos(var.time/3) * torad(13) +torad(head_yaw/4),          lerp(var.riding, 0,                                                     lerp(var.pm_stand,    lerp(var.pm_sit, -torad(2) +torad(head_yaw/6),                                                             +torad(max(head_yaw,-64))/3.5 +(( cos(var.limb_swing))+torad(34)) *var.limb_speed/26),                               torad(18) -max(0, -torad(head_yaw/2)))      )      )",
+					"pepsiman_body.rz": "      lerp(var.dance, +cos(var.time/3) * torad(24),                             lerp(var.riding, 0,                                                     lerp(var.pm_stand,    lerp(var.pm_sit, -torad(4),                                                                                                                                         cos(var.time/10) * torad(4)),                             -torad(4) -sin(var.time/4) * torad(2.5))      )      )",
+					"pepsiman_leftarm.tx": "   lerp(var.dance, 4,                                                        lerp(var.riding, 4,                                                     lerp(var.pm_stand,    lerp(var.pm_sit, 3,                                                                                                                                                                      5     ),                                                                   4)      )      )",
+					"pepsiman_leftarm.ty": "   lerp(var.dance, -11,                                                      lerp(var.riding, -11,                                                   lerp(var.pm_stand,    lerp(var.pm_sit, -10,                                                                                                    -6.3                    +(( sin(var.limb_swing))-8) *var.limb_speed/26),                                                                -9.5)      )      )",
+					"pepsiman_leftarm.tz": "   lerp(var.dance, 0,                                                        lerp(var.riding, 0,                                                     lerp(var.pm_stand,    lerp(var.pm_sit, +1,                                                                                                      2.2                                                                  ),                                                                   0)      )      )",
+					"pepsiman_leftarm.rx": "   lerp(var.dance, -(pow(sin(var.time/6), 2)*2.2),                           lerp(var.riding, -torad(19) -sin(var.time/10+pi/5) * torad(3),          lerp(var.pm_stand,    lerp(var.pm_sit, torad(34) -cos(var.time/10) * torad(4),                       -torad(110) +(pow(sin(var.time/10+pi/4.5), 2)/4.5) -(( -cos(var.limb_swing+pi/2))-torad(190)) *var.limb_speed/26),  -torad(48) +hurt_time *torad(8) +sin(var.time/8+pi/5.5) * torad(8) +(( sin(var.limb_swing_fly/28))+torad(168)) *var.limb_speed_fly/5)      )      )",
+					"pepsiman_leftarm.ry": "   lerp(var.dance, sin(var.time/3+pi/2) * torad(32),                         lerp(var.riding, torad(8),                                              lerp(var.pm_stand,    lerp(var.pm_sit, torad(22),                                                                                                0     ),       torad(10) -hurt_time *torad(8) +cos(var.time/8) * torad(2) -(( sin(var.limb_swing_fly/28))+torad(64)) *var.limb_speed_fly/5)      )      )",
+					"pepsiman_leftarm.rz": "   lerp(var.dance, -(pow(sin(var.time/6+pi/4), 2)/2.5),                      lerp(var.riding, -torad(8) +cos(var.time/10) * torad(3.3),              lerp(var.pm_stand,    lerp(var.pm_sit, -torad(12),                                                    -torad(16) -(pow(sin(var.time/10+pi/4.8), 2)/4.5)),                                                       -torad(16) -(( sin(var.limb_swing_fly/28))+torad(64)) *var.limb_speed_fly/5)      )      )",
+					"pepsiman_rightarm.tx": "  lerp(var.dance, -4,                                                       lerp(var.riding, -4,                                                    lerp(var.pm_stand,    lerp(var.pm_sit, -3.2,                                                                                                                                                                  -5     ),                                                                  -4)      )      )",
+					"pepsiman_rightarm.ty": "  lerp(var.dance, -11,                                                      lerp(var.riding, -11,                                                   lerp(var.pm_stand,    lerp(var.pm_sit, -8.5 +(pow(sin(var.time/10), 1)/2) +max(0, -torad(head_yaw/1.8)),                                                                                                      -9    ),-10 +(( sin(var.limb_swing_fly/28))+torad(168)) *var.limb_speed_fly/5)      )      )",
+					"pepsiman_rightarm.tz": "  lerp(var.dance, 0,                                                        lerp(var.riding, 0,                                                     lerp(var.pm_stand,    lerp(var.pm_sit, -1.8,                                                                                                                                                                   3     ),   -(( sin(var.limb_swing_fly/28))+torad(168)) *var.limb_speed_fly/4)      )      )",
+					"pepsiman_rightarm.rx": "  lerp(var.dance, -(pow(cos(var.time/6), 2)*2.2),                           lerp(var.riding, -torad(19) -sin(var.time/10+pi/2.5) * torad(3),        lerp(var.pm_stand,    lerp(var.pm_sit, -torad(26) -max(0, torad(head_yaw/7)),                           -torad(68) +(pow(sin(var.time/10+pi/4), 2)/4.5) +(( sin(var.limb_swing))+torad(90)) *var.limb_speed/26),  torad(26) -hurt_time *torad(6) +cos(var.time/8) * torad(8) -(( sin(var.limb_swing_fly/28))+torad(168)) *var.limb_speed_fly/5)      )      )",
+					"pepsiman_rightarm.ry": "  lerp(var.dance, -sin(var.time/3-pi/2) * torad(32),                        lerp(var.riding, -torad(8),                                             lerp(var.pm_stand,    lerp(var.pm_sit, -torad(14) +max(0, torad(head_yaw/6)),                                                                -torad(18)),                          torad(16) -hurt_time *torad(7) +sin(var.time/8+pi/5.5) * torad(2) -(( sin(var.limb_swing_fly/28))+torad(64)) *var.limb_speed_fly/5)      )      )",
+					"pepsiman_rightarm.rz": "  lerp(var.dance, (pow(sin(var.time/6-pi/4), 2)/2.5),                       lerp(var.riding, torad(8) -cos(var.time/10) * torad(3.3),               lerp(var.pm_stand,    lerp(var.pm_sit, torad(24) -torad(head_yaw/4),                                     torad(28) +(pow(sin(var.time/10+pi/4.5), 2)/6)),                          torad(32) +hurt_time *torad(2) -(( sin(var.limb_swing_fly/28))+torad(64)) *var.limb_speed_fly/5)      )      )"
+				},
+				{
+					"pepsiman_legs.ry": "      lerp(var.dance, 0,                                                        lerp(var.riding, 0,                                                     lerp(var.pm_stand,    lerp(var.pm_sit,  0,                                                                                                       0     ),                          torad(34))      )      )",
+					"pepsiman_leftleg.tx": "   lerp(var.dance, 1,                                                        lerp(var.riding, 1,                                                     lerp(var.pm_stand,    lerp(var.pm_sit,  2,                                                                                                       2     ),                          2)      )      )",
+					"pepsiman_leftleg.ty": "   lerp(var.dance, 0,                                                        lerp(var.riding, 0,                                                     lerp(var.pm_stand,    lerp(var.pm_sit, -6.3,                                                                                                     0     +min(0, (-sin(var.limb_swing+pi/2)+0.3)*var.limb_speed/1.3)   ),                          -0.5)      )      )",
+					"pepsiman_leftleg.tz": "   lerp(var.dance, -0.15,                                                    if(is_riding, +1.5,                                                     lerp(var.pm_stand,    lerp(var.pm_sit, -2,                                                                                -1 -max(0, torad(head_yaw/2))),                          -1)      )      )",
+					"pepsiman_leftlegRT.rx": " lerp(var.dance, 0,                                                        if(is_riding, 0,                                                        lerp(var.pm_stand,    lerp(var.pm_sit, +(pow(-sin(var.time/10), 1)/15),                                             -(pow(sin(var.time/10+pi/4), 4)/16)),                          0)      )      )",
+					"pepsiman_leftlegRT.ry": " lerp(var.dance, 0,                                                        if(is_riding, 0,                                                        lerp(var.pm_stand,    lerp(var.pm_sit,  0,                                                                           (pow(sin(var.time/10+pi/4), 2)/16)),                          0)      )      )",
+					"pepsiman_leftlegRT.rz": " lerp(var.dance, -(pow(sin(var.time/3+pi/2), 1)/9),                        lerp(var.riding, 0,                                                     lerp(var.pm_stand,    lerp(var.e63_sit, 0,                                                                                                       0     ),                          0)      )      )",
+					"pepsiman_leftleg.rx": "   lerp(var.dance, torad(head_yaw/6),                                        if(is_riding, -torad(90),                                               lerp(var.pm_stand,    lerp(var.pm_sit, -torad(15) -max(-torad(head_yaw/9), torad(head_yaw/9)),                  -torad(12) +max(0, +torad(head_yaw/7)) -(( sin(var.limb_swing))-torad(34)) *var.limb_speed/12),                          -torad(16) -hurt_time *torad(2))      )      )",
+					"pepsiman_leftleg.ry": "   lerp(var.dance, -torad(13),                                               if(is_riding, -torad(16),                                               lerp(var.pm_stand,    lerp(var.pm_sit, torad(12),                                                                                           -torad(16) ),                          -torad(16) -hurt_time *torad(5))      )      )",
+					"pepsiman_leftleg.rz": "   lerp(var.dance, -torad(6) -max(0, torad(head_yaw/9)),                     if(is_riding, 0,                                                        lerp(var.pm_stand,    lerp(var.pm_sit, -torad(13) -max(0, torad(head_yaw/12)),               -torad(12) -max(+torad(head_yaw/16), +torad(head_yaw/10)) +var.limb_speed*torad(1.6)),                          -torad(2) -hurt_time *torad(5))      )      )",
+					"pepsiman_rightleg.tx": "  lerp(var.dance, -1,                                                       lerp(var.riding, -1,                                                    lerp(var.pm_stand,    lerp(var.pm_sit, -2.5,                                                                                                   -1.5    ),                         -1.5)      )      )",
+					"pepsiman_rightleg.ty": "  lerp(var.dance, 0,                                                        lerp(var.riding, 0,                                                     lerp(var.pm_stand,    lerp(var.pm_sit, -1.9 +max(0, -torad(head_yaw)),                                                                           0 +min(0, (sin(var.limb_swing+pi/2)+0.3)*var.limb_speed/1.3)  ),                          0)      )      )",
+					"pepsiman_rightleg.tz": "  lerp(var.dance, -0.15,                                                    if(is_riding, +1.5,                                                     lerp(var.pm_stand,    lerp(var.pm_sit, -3 -max(0, -torad(head_yaw/2)),                                                                         -0.8    ),                          -2.8)      )      )",
+					"pepsiman_rightlegRT.rx": "lerp(var.dance, 0,                                                        if(is_riding, 0,                                                        lerp(var.pm_stand,    lerp(var.pm_sit, +(pow(-sin(var.time/10), 1)/22),                                              (pow(sin(var.time/10+pi/4), 4)/16)),                          0)      )      )",
+					"pepsiman_rightlegRT.ry": "lerp(var.dance, 0,                                                        if(is_riding, 0,                                                        lerp(var.pm_stand,    lerp(var.pm_sit,  0,                                                                          -(pow(sin(var.time/10+pi/4), 2)/16)),                          0)      )      )",
+					"pepsiman_rightlegRT.rz": "lerp(var.dance, -(pow(sin(var.time/3+pi/2), 1)/9),                        lerp(var.riding, 0,                                                     lerp(var.pm_stand,    lerp(var.e63_sit, 0,                                                                                                       0     ),                          0)      )      )",
+					"pepsiman_rightleg.rx": "  lerp(var.dance, -torad(head_yaw/6),                                       if(is_riding, -torad(90),                                               lerp(var.pm_stand,    lerp(var.pm_sit, torad(44) +max(0, -torad(head_yaw/7)),                                                                torad(16)  +(( sin(var.limb_swing)/6)) *var.limb_speed/2),                          torad(29) -hurt_time *torad(5))      )      )",
+					"pepsiman_rightleg.ry": "  lerp(var.dance, torad(13),                                                if(is_riding, torad(16),                                                lerp(var.pm_stand,    lerp(var.pm_sit, torad(16),                                                                                            torad(16) ),                          torad(17) +hurt_time *torad(2))      )      )",
+					"pepsiman_rightleg.rz": "  lerp(var.dance, torad(6) +max(0, -torad(head_yaw/9)),                     if(is_riding, 0,                                                        lerp(var.pm_stand,    lerp(var.pm_sit, torad(16) -max(-torad(head_yaw/9),-torad(head_yaw/9)),                                                torad(16) -var.limb_speed*torad(2)),                          torad(14) +hurt_time *torad(5))      )      )"
+				},
+				{
+					"skateboard_RT.visible": "between(var.skatehide, 1, 1)",
+					"skateboard_RT.tz": "      lerp(var.skate_appearalt2, 0, 12)",
+					"skateboard_RT_alt.tz": "  lerp(var.skate_appear, 0, -13 )",
+					"skateboard_RT_alt.rx": "  lerp(var.skate_appear, 0, hurt_time *torad(78) )",
+					"skateboard_RT_alt.rz": "  lerp(var.skate_appear, 0, torad(head_yaw/2.5) )",
+					"skateboard_RT.sx": "      lerp(var.skate_st, 0, 1)",
+					"skateboard_RT.sy": "skateboard_RT.sx",
+					"skateboard_RT.sz": "skateboard_RT.sx",
+					"skateboard.ty": "         lerp(var.riding, 0, lerp(var.skate_appear, 0, (pow(sin(var.time/8+pi/1.5), 1)*1.5))   )",
+					"skateboard.rx": "         lerp(var.riding, 0, lerp(var.skate_appear, 0, -(( sin(var.limb_swing_fly/28))+torad(74)) *var.limb_speed_fly/6 )  )",
+					"skateboard.ry": "         lerp(var.riding, 0, lerp(var.skate_appear, 0, torad(head_yaw/1.5))   )",
+					"skateboard.rz": "         lerp(var.riding, 0, lerp(var.skate_appear, 0, torad(1.2) +cos(var.time/4) * torad(2))  )",
+					"skateboard_RT.rx": "      lerp(var.skate_appear, torad(116), 0)"
+				}
+			]
+		},
+		{
+			"part": "body",
+			"id": "body",
+			"invertAxis": "xy",
+			"translate": [0, -7.5, 1],
+			"submodels": [
+				{
+					"id": "rotation",
+					"invertAxis": "xy",
+					"translate": [0, 7.5, -1],
+					"submodels": [
+						{
+							"id": "pepsiman",
+							"invertAxis": "xy",
+							"translate": [0, -7.5, 0],
+							"submodels": [
+								{
+									"id": "skateboard",
+									"invertAxis": "xy",
+									"translate": [0, 0, 1],
+									"submodels": [
+										{
+											"id": "skateboard_RT",
+											"invertAxis": "xy",
+											"translate": [0, 100, 0],
+											"submodels": [
+												{
+													"id": "skateboard_RT_alt",
+													"invertAxis": "xy",
+													"translate": [0, -98, 0],
+													"boxes": [
+														{"coordinates": [-4, -2, -9, 8, 2, 18], "textureOffset": [76, 0]},
+														{
+															"coordinates": [-4, 0, -14, 8, 0, 5],
+															"uvUp": [120, 5, 112, 0],
+															"uvDown": [128, 0, 120, 5],
+															"sizeAdd": 0.01
+														},
+														{
+															"coordinates": [-4, 0, 9, 8, 0, 5],
+															"uvUp": [120, 11, 112, 6],
+															"uvDown": [128, 6, 120, 11],
+															"sizeAdd": 0.01
+														}
+													],
+													"submodels": [
+														{
+															"id": "left_wheel",
+															"invertAxis": "xy",
+															"translate": [-4, -2.5, -5.5],
+															"boxes": [
+																{"coordinates": [-1, -1.5, -3.5, 2, 3, 3], "textureOffset": [111, 11], "sizeAdd": 0.01}
+															]
+														},
+														{
+															"id": "right_wheel",
+															"invertAxis": "xy",
+															"mirrorTexture": "u",
+															"translate": [4, -2.5, -5.5],
+															"boxes": [
+																{"coordinates": [-1, -1.5, -3.5, 2, 3, 3], "textureOffset": [111, 11], "sizeAdd": 0.01}
+															]
+														},
+														{
+															"id": "leftback_wheel",
+															"invertAxis": "xy",
+															"translate": [-4, -2.5, 5.5],
+															"boxes": [
+																{"coordinates": [-1, -1.5, 0.5, 2, 3, 3], "textureOffset": [111, 11], "sizeAdd": 0.01}
+															]
+														},
+														{
+															"id": "rightback_wheel",
+															"invertAxis": "xy",
+															"mirrorTexture": "u",
+															"translate": [4, -2.5, 5.5],
+															"boxes": [
+																{"coordinates": [-1, -1.5, 0.5, 2, 3, 3], "textureOffset": [111, 11], "sizeAdd": 0.01}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"id": "pepsiman_body_RT",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"submodels": [
+												{
+													"id": "pepsiman_body_RTY",
+													"invertAxis": "xy",
+													"translate": [0, 0, 0],
+													"submodels": [
+														{
+															"id": "pepsiman_body",
+															"invertAxis": "xy",
+															"translate": [0, 12, 0],
+															"boxes": [
+																{"coordinates": [-4, 0, -2, 8, 12, 4], "textureOffset": [16, 16]},
+																{"coordinates": [-4, 0, -2, 8, 12, 4], "textureOffset": [16, 32], "sizeAdd": 0.25}
+															],
+															"submodels": [
+																{
+																	"id": "pepsiman_head",
+																	"invertAxis": "xy",
+																	"translate": [0, 12, 0],
+																	"boxes": [
+																		{"coordinates": [-4, 0, -4, 8, 8, 8], "textureOffset": [0, 0]}
+																	]
+																},
+																{
+																	"id": "pepsiman_leftarm",
+																	"invertAxis": "xy",
+																	"translate": [-4, 11, 0],
+																	"boxes": [
+																		{"coordinates": [-4, -11, -2, 4, 12, 4], "textureOffset": [40, 32]}
+																	]
+																},
+																{
+																	"id": "pepsiman_rightarm",
+																	"invertAxis": "xy",
+																	"translate": [4, 11, 0],
+																	"boxes": [
+																		{"coordinates": [0, -11, -2, 4, 12, 4], "textureOffset": [40, 16]}
+																	]
+																}
+															]
+														},
+														{
+															"id": "pepsiman_legs",
+															"invertAxis": "xy",
+															"translate": [0, 12, 0],
+															"submodels": [
+																{
+																	"id": "pepsiman_leftleg",
+																	"invertAxis": "xy",
+																	"translate": [-1, 0, 0],
+																	"submodels": [
+																		{
+																			"id": "pepsiman_leftlegRT",
+																			"invertAxis": "xy",
+																			"translate": [0, -12, 0],
+																			"boxes": [
+																				{"coordinates": [-3, 0, -2, 4, 12, 4], "textureOffset": [0, 32]}
+																			]
+																		}
+																	]
+																},
+																{
+																	"id": "pepsiman_rightleg",
+																	"invertAxis": "xy",
+																	"translate": [1, 0, 0],
+																	"submodels": [
+																		{
+																			"id": "pepsiman_rightlegRT",
+																			"invertAxis": "xy",
+																			"translate": [0, -12, 0],
+																			"boxes": [
+																				{"coordinates": [-1, 0, -2, 4, 12, 4], "textureOffset": [0, 16]}
+																			]
+																		}
+																	]
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"part": "left_wing",
+			"id": "left_wing",
+			"invertAxis": "xy",
+			"translate": [1.5, -7.1, 0.8]
+		},
+		{
+			"part": "right_wing",
+			"id": "right_wing",
+			"invertAxis": "xy",
+			"translate": [-1.5, -7.1, 0.8]
+		},
+		{
+			"part": "left_leg",
+			"id": "left_leg",
+			"invertAxis": "xy",
+			"translate": [1, -2, 1]
+		},
+		{
+			"part": "right_leg",
+			"id": "right_leg",
+			"invertAxis": "xy",
+			"translate": [-1, -2, 1]
+		},
+		{
+			"part": "tail",
+			"id": "tail",
+			"invertAxis": "xy",
+			"translate": [0, -2.9, -1.2]
+		}
+	]
+}

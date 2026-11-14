@@ -1,0 +1,323 @@
+{
+	"credit": "Model by kotisimo, Texture by moro2610, Animations by kotisimo and PixalThePixeled",
+	"texture": "textures/entity/multipasta/fuwatty/fuwatty.png",
+	"textureSize": [128, 64],
+	"models": [
+		{
+			"part": "head",
+			"id": "head",
+			"invertAxis": "xy",
+			"translate": [0, -8, 0.5],
+			"animations": [
+				{
+					"body.rx": 0,
+					"body.tx": 0,
+					"body.ty": 16.5,
+					"body.tz": 0,
+					"rotation.rz": "if(death_time > 0, -torad(min(sqrt((death_time - 1) / 20 * 1.6), 1) * 90), 0)",
+					"var.dance": "todeg(sin(torad(clamp(if(right_leg.rz!=0&&is_on_ground, var.dance-0.15 * frame_time * 20, var.dance+0.15 * frame_time * 20), 0, 1))))",
+					"var.batoni_appear": "todeg(sin(torad(clamp(if((is_on_ground||is_sitting||is_on_shoulder||is_riding) || (right_leg.rz!=0&&is_on_ground), var.batoni_appear-0.09 * frame_time * 20, var.batoni_appear+0.15 * frame_time * 20), 0, 1))))",
+					"var.batoni_st": "  todeg(sin(torad(clamp(if((is_on_ground||is_sitting||is_on_shoulder||is_riding) || (right_leg.rz!=0&&is_on_ground), var.batoni_st-0.05 * frame_time * 20, var.batoni_st+0.4 * frame_time * 20), 0, 1))))",
+					"var.fuwatty_fly": "todeg(sin(torad(clamp(if(is_on_ground||is_sitting||is_on_shoulder||is_riding, var.fuwatty_fly-0.15 * frame_time * 20, var.fuwatty_fly+0.06 * frame_time * 20), 0, 1))))",
+					"var.fuwatty_sit": "todeg(sin(torad(clamp(if(is_sitting||is_on_shoulder||is_riding, var.fuwatty_sit-0.66 * frame_time * 20, var.fuwatty_sit+0.4 * frame_time * 20), 0, 1))))"
+				},
+				{
+					"oni.ty": "lerp(var.dance, 0,   lerp(var.fuwatty_fly, 0, -sin((time/4)*1.5) * 2)   ) -14.5",
+					"oni.rx": "lerp(var.dance, 0,   lerp(var.fuwatty_fly, 0, +cos((time/4)*1.5) * torad(1.8))    )",
+					"oni.ry": "lerp(var.fuwatty_fly, 0, +torad(head_yaw/2))"
+				},
+				{
+					"bat_oni.ty": "lerp(var.batoni_appear, -154, -8.5)",
+					"bat_oni.tz": "lerp(var.batoni_appear, 154, -0.5)",
+					"bat_oni.sx": "lerp(var.batoni_st, 0, 1)",
+					"bat_oni.sy": "bat_oni.sx",
+					"bat_oni.sz": "bat_oni.sx",
+					"bat_oni.rx": "lerp(var.fuwatty_fly, 0, +torad(max(head_pitch,-40))/6)",
+					"bat_oni.ry": "lerp(var.fuwatty_fly, 0, +torad(head_yaw/2))",
+					"bat_oni.rz": "lerp(var.fuwatty_fly, 0, +torad(head_yaw/6))",
+					"bat_oni_leftwing.rx": "+torad(48)",
+					"bat_oni_leftwing.ry": "-torad(24) +sin((time/4)*1.5) * torad(44)",
+					"bat_oni_leftwing.rz": "+torad(20) +sin((time/4)*1.5) * torad(58)",
+					"bat_oni_rightwing.rx": "bat_oni_leftwing.rx",
+					"bat_oni_rightwing.ry": "-bat_oni_leftwing.ry",
+					"bat_oni_rightwing.rz": "-bat_oni_leftwing.rz",
+					"bat_oni_leftear.rx": "+torad(14) +cos((time/4)*1.5) * torad(8)",
+					"bat_oni_leftear.rz": "+torad(23) +cos((time/4)*1.5) * torad(6)",
+					"bat_oni_rightear.rx": "bat_oni_leftear.rx",
+					"bat_oni_rightear.rz": "-bat_oni_leftear.rz"
+				},
+				{
+					"fuwa_rotation.ty": "      lerp(var.dance, -0.5,                                  lerp(var.fuwatty_fly, +limb_speed * -sin(time/1) * 0.5 +lerp(var.fuwatty_sit, +3, 0), 0)   )",
+					"fuwa_rotation.rx": "      lerp(var.dance, 0,                                     lerp(var.fuwatty_fly, 0, +sin((time/4)*1.5) * torad(3.5) +sin(time/6) * hurt_time *torad(5))   )",
+					"fuwa_rotation.ry": "      lerp(var.dance, +(cos(time/2) * torad(12)),            lerp(var.fuwatty_fly, +(sin(limb_swing) * limb_speed/7) +cos(time/6) * hurt_time *torad(2), -cos((time/4)*1.5) * torad(3.5) +cos(time/6) * hurt_time *torad(2))   )",
+					"fuwa_rotation.rz": "      lerp(var.dance, 0,                                     lerp(var.fuwatty_fly, 0, +torad(head_yaw/8) -cos(time/6) * hurt_time *torad(2))   )",
+					"fuwatty_body_dance.rx": " lerp(var.dance,                                       -(pow(sin(time/2+pi/6), 2)/12), 0)",
+					"fuwatty_body_dance.rz": " lerp(var.dance,                                       -(pow(sin(time/2+pi/6), 3)/8), 0)",
+					"fuwatty_body_dance.tx": " lerp(var.dance,                                       +(pow(sin(time/2+pi/6), 3)*2.3), 0)",
+					"fuwatty_body_dance.ty": " lerp(var.dance,                                       +(pow(sin(time/2), 2)*1.2), 0)",
+					"fuwatty_body_dance.tz": " lerp(var.dance,                                       -(pow(sin(time/2+pi/6), 2)*1.5), 0)",
+					"fuwatty.rx": "            lerp(var.dance, 0,                                     lerp(var.fuwatty_fly, +limb_speed * -cos(time/1) * torad(2), 0)   )",
+					"fuwatty.rz": "            lerp(var.dance, 0,                                     lerp(var.fuwatty_fly, +cos(time/6) * torad(1), 0)   )",
+					"fuwatty_body.rx": "       lerp(var.dance, 0,                                     lerp(var.fuwatty_fly, +sin(time/6) * hurt_time *torad(4) +cos(time/6) * torad(2) +if(is_riding, 0, +torad(max(head_pitch,-35))/5), 0)   )",
+					"fuwatty_body.ry": "       lerp(var.dance, 0,                                     lerp(var.fuwatty_fly, if(is_riding, 0, +torad(head_yaw/2)), 0)   )",
+					"fuwatty_body.rz": "       lerp(var.dance, 0,                                     lerp(var.fuwatty_fly, +limb_speed * -cos(time/1) * torad(16) -sin(time/6) * torad(2) +if(is_riding, 0, +torad(head_yaw/8)), 0)   )",
+					"fuwatty_lefthand_rt.ry": "lerp(var.dance, +(pow(sin(time/2+pi/3), 1)/3), 0)",
+					"fuwatty_lefthand_rt.rz": "lerp(var.dance, +(pow(sin(time/2), 1)/4), 0)",
+					"fuwatty_lefthand.rx": "   lerp(var.dance, 0,                                     lerp(var.fuwatty_fly, +cos(time/6) * torad(6.5) +limb_speed * -cos(time/1) * torad(34), -sin(time/4) * torad(16)) +sin(time/6) * hurt_time *torad(6)   )",
+					"fuwatty_lefthand.ry": "   lerp(var.dance, +torad(164),                           lerp(var.fuwatty_fly, 0, 0) -cos(time/6) * hurt_time *torad(8)   )",
+					"fuwatty_lefthand.rz": "   lerp(var.dance, +torad(122),                           lerp(var.fuwatty_fly, +torad(75) +sin(time/6) * torad(4) , torad(46) -cos(time/4) * torad(16)) -(torad(4) * hurt_time)   )",
+					"sheetghost_lefthand.rz": "lerp(var.dance, 0,                                     lerp(var.fuwatty_fly, 0, -torad(4)+sin(time/4) * torad(8))   )",
+					"fuwatty_righthand_rt.ry": "fuwatty_lefthand_rt.ry",
+					"fuwatty_righthand_rt.rz": "fuwatty_lefthand_rt.rz",
+					"fuwatty_righthand.rx": "  -fuwatty_lefthand.rx",
+					"fuwatty_righthand.ry": "  -fuwatty_lefthand.ry",
+					"fuwatty_righthand.rz": "  -fuwatty_lefthand.rz",
+					"sheetghost_righthand.rz": "-sheetghost_lefthand.rz"
+				},
+				{
+					"fuwatty_leftleg_rt.rx": " lerp(var.dance,                  +(pow(sin(time/2+pi/6), 2)/3), 0)",
+					"fuwatty_rightleg_rt.rx": "fuwatty_leftleg_rt.rx",
+					"fuwatty_leftleg_rt.rz": " lerp(var.dance,                  +(pow(sin(time/2+pi/6), 3)/2), 0)",
+					"fuwatty_rightleg_rt.rz": "lerp(var.dance,                  +(pow(sin(time/2+pi/6), 3)/2), 0)",
+					"fuwatty_legs.ry": "       lerp(var.dance, 0,                lerp(var.fuwatty_fly, if(is_riding, 0, +torad(head_yaw/3)), 0)   )",
+					"fuwatty_leftleg.rx": "    lerp(var.dance, 0,                if(is_on_ground, if(is_riding, 0, +torad(head_yaw)/6) +limb_speed * -sin(time/1) * torad(46), 0) +lerp(var.fuwatty_fly, 0, -sin(time/1) * torad(12)) +if((is_sitting||is_on_shoulder||is_riding) || (is_on_shoulder||is_riding && !is_on_ground), -torad(90), 0)   )",
+					"fuwatty_leftleg.ry": "    lerp(var.dance, torad(4),         if((is_sitting||is_on_shoulder||is_riding) || (is_on_shoulder||is_riding && !is_on_ground), -torad(24), 0)   )",
+					"fuwatty_leftleg.rz": "    lerp(var.dance, torad(6),         if(is_on_ground, +limb_speed * -cos(time/1) * torad(34), 0) +lerp(var.fuwatty_fly, 0, -cos(time/1) * torad(12)) +if((is_sitting||is_on_shoulder||is_riding) || (is_on_shoulder||is_riding && !is_on_ground), -torad(6), 0)   )",
+					"fuwatty_leftleg.tz": "    lerp(var.dance, 0,                if(is_on_ground, if(is_riding, 0, -torad(head_yaw)/2), 0) +if((is_sitting||is_on_shoulder||is_riding) || (is_on_shoulder||is_riding && !is_on_ground), -2, 0)   )",
+					"fuwatty_leftleg.ty": "    lerp(var.dance, -3,               if((is_sitting||is_on_shoulder||is_riding) || (is_on_shoulder||is_riding && !is_on_ground), -4.5, -3)   )",
+					"fuwatty_rightleg.rx": "   lerp(var.dance, 0,               -if(is_on_ground, if(is_riding, 0, +torad(head_yaw)/6) +limb_speed * -sin(time/1) * torad(34), 0) +lerp(var.fuwatty_fly, 0, +sin(time/1) * torad(12)) +if((is_sitting||is_on_shoulder||is_riding) || (is_on_shoulder||is_riding && !is_on_ground), -torad(90), 0)   )",
+					"fuwatty_rightleg.ry": "-fuwatty_leftleg.ry",
+					"fuwatty_rightleg.rz": "   lerp(var.dance, -torad(6),       -if(is_on_ground, +limb_speed * -cos(time/1) * torad(34), 0) +lerp(var.fuwatty_fly, 0, +cos(time/1) * torad(12)) -if((is_sitting||is_on_shoulder||is_riding) || (is_on_shoulder||is_riding && !is_on_ground), -torad(6), 0)   )",
+					"fuwatty_rightleg.tz": "   lerp(var.dance, 0,                if(is_on_ground, if(is_riding, 0, +torad(head_yaw)/2), 0) +if((is_sitting||is_on_shoulder||is_riding) || (is_on_shoulder||is_riding && !is_on_ground), -2, 0)   )",
+					"fuwatty_rightleg.ty": "fuwatty_leftleg.ty"
+				}
+			]
+		},
+		{
+			"part": "body",
+			"id": "body",
+			"invertAxis": "xy",
+			"translate": [0, -7.5, 1],
+			"submodels": [
+				{
+					"id": "rotation",
+					"invertAxis": "xy",
+					"translate": [0, 7.5, -1],
+					"submodels": [
+						{
+							"id": "oni",
+							"invertAxis": "xy",
+							"translate": [0, 14.5, 0.5],
+							"submodels": [
+								{
+									"id": "bat_oni",
+									"invertAxis": "xy",
+									"translate": [-0.1, 8.5, 0],
+									"boxes": [
+										{"coordinates": [-7, -9, -6, 14, 18, 12], "textureOffset": [44, 0]}
+									],
+									"submodels": [
+										{
+											"id": "bat_oni_rightwing",
+											"invertAxis": "xy",
+											"translate": [7, 0.5, 1],
+											"boxes": [
+												{"coordinates": [0, -2.5, 0, 22, 17, 0], "textureOffset": [69, 30]}
+											]
+										},
+										{
+											"id": "bat_oni_leftwing",
+											"invertAxis": "xy",
+											"mirrorTexture": "u",
+											"translate": [-7, 0.5, 1],
+											"boxes": [
+												{"coordinates": [-22, -2.5, 0, 22, 17, 0], "textureOffset": [69, 30]}
+											]
+										},
+										{
+											"id": "bat_oni_leftear",
+											"invertAxis": "xy",
+											"translate": [-5.5, 8, -1],
+											"boxes": [
+												{"coordinates": [-2.5, 0, -1, 5, 7, 2], "textureOffset": [84, 3]}
+											]
+										},
+										{
+											"id": "bat_oni_rightear",
+											"invertAxis": "xy",
+											"mirrorTexture": "u",
+											"translate": [5.5, 8, -1],
+											"boxes": [
+												{"coordinates": [-2.5, 0, -1, 5, 7, 2], "textureOffset": [84, 3]}
+											]
+										}
+									]
+								},
+								{
+									"id": "fuwa_rotation",
+									"invertAxis": "xy",
+									"translate": [0, 0, -0.5],
+									"submodels": [
+										{
+											"id": "fuwatty",
+											"invertAxis": "xy",
+											"translate": [0, -22, 0],
+											"submodels": [
+												{
+													"id": "fuwatty_body_dance",
+													"invertAxis": "xy",
+													"translate": [0, 0, 0],
+													"submodels": [
+														{
+															"id": "fuwatty_body",
+															"invertAxis": "xy",
+															"translate": [0, 4, 0],
+															"boxes": [
+																{"coordinates": [-6.5, -1, -2.5, 13, 19, 5], "textureOffset": [0, 0]}
+															],
+															"submodels": [
+																{
+																	"id": "fuwatty_lefthand_rt",
+																	"invertAxis": "xy",
+																	"mirrorTexture": "u",
+																	"translate": [-6.5, 8.5, 0],
+																	"submodels": [
+																		{
+																			"id": "fuwatty_lefthand",
+																			"invertAxis": "xy",
+																			"mirrorTexture": "u",
+																			"translate": [0, 0, 0],
+																			"boxes": [
+																				{"coordinates": [-8, -0.5, -1.5, 8, 2, 4], "textureOffset": [20, 24]}
+																			],
+																			"submodels": [
+																				{
+																					"id": "sheetghost_lefthand",
+																					"invertAxis": "xy",
+																					"mirrorTexture": "u",
+																					"translate": [0, 0, 0],
+																					"boxes": [
+																						{"coordinates": [-8, -0.5, -1.5, 8, 2, 4], "textureOffset": [32, 56], "sizeAdd": 0.5}
+																					]
+																				}
+																			]
+																		}
+																	]
+																},
+																{
+																	"id": "fuwatty_righthand_rt",
+																	"invertAxis": "xy",
+																	"translate": [6.5, 8.5, 0],
+																	"submodels": [
+																		{
+																			"id": "fuwatty_righthand",
+																			"invertAxis": "xy",
+																			"translate": [0, 0, 0],
+																			"boxes": [
+																				{"coordinates": [0, -0.5, -1.5, 8, 2, 4], "textureOffset": [20, 24]}
+																			],
+																			"submodels": [
+																				{
+																					"id": "sheetghost_righthand",
+																					"invertAxis": "xy",
+																					"translate": [0, 0, 0],
+																					"boxes": [
+																						{"coordinates": [0, -0.5, -1.5, 8, 2, 4], "textureOffset": [32, 56], "sizeAdd": 0.5}
+																					]
+																				}
+																			]
+																		}
+																	]
+																},
+																{
+																	"id": "sheetghost",
+																	"invertAxis": "xy",
+																	"translate": [0, -4, 0],
+																	"boxes": [
+																		{"coordinates": [-6.5, 2, -2.5, 13, 20, 5], "textureOffset": [20, 30], "sizeAdd": 0.8}
+																	]
+																}
+															]
+														}
+													]
+												},
+												{
+													"id": "fuwatty_legs",
+													"invertAxis": "xy",
+													"translate": [0, 4, 0],
+													"submodels": [
+														{
+															"id": "fuwatty_rightleg_rt",
+															"invertAxis": "xy",
+															"translate": [4, -4, 0],
+															"submodels": [
+																{
+																	"id": "fuwatty_rightleg",
+																	"invertAxis": "xy",
+																	"translate": [0, 3, 0],
+																	"boxes": [
+																		{"coordinates": [-2.5, -3, -2.5, 5, 4, 5], "textureOffset": [0, 24]}
+																	]
+																}
+															]
+														},
+														{
+															"id": "fuwatty_leftleg_rt",
+															"invertAxis": "xy",
+															"translate": [-4, -4, 0],
+															"submodels": [
+																{
+																	"id": "fuwatty_leftleg",
+																	"invertAxis": "xy",
+																	"mirrorTexture": "u",
+																	"translate": [0, 3, 0],
+																	"boxes": [
+																		{"coordinates": [-2.5, -3, -2.5, 5, 4, 5], "textureOffset": [0, 24]}
+																	]
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"part": "left_wing",
+			"id": "left_wing",
+			"invertAxis": "xy",
+			"translate": [1.5, -7.1, 0.8]
+		},
+		{
+			"part": "right_wing",
+			"id": "right_wing",
+			"invertAxis": "xy",
+			"translate": [-1.5, -7.1, 0.8]
+		},
+		{
+			"part": "left_leg",
+			"id": "left_leg",
+			"invertAxis": "xy",
+			"translate": [1, -2, 1]
+		},
+		{
+			"part": "right_leg",
+			"id": "right_leg",
+			"invertAxis": "xy",
+			"translate": [-1, -2, 1]
+		},
+		{
+			"part": "tail",
+			"id": "tail",
+			"invertAxis": "xy",
+			"translate": [0, -2.9, -1.2]
+		}
+	]
+}

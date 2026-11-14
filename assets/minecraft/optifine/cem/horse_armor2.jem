@@ -1,0 +1,245 @@
+{
+	"credit": "Textures by PixalThePixeled",
+	"textureSize": [128, 64],
+	"models": [
+		{
+			"part": "head",
+			"id": "head",
+			"invertAxis": "xy",
+			"translate": [0, -22, 9],
+			"animations": [
+				{
+					"var.time": "time - pi/random(id)",
+					"rotation.rz": "if(death_time > 0, -torad(min(sqrt((death_time - 1) / 20 * 1.6), 1) * 90), 0)",
+					"var.ponytahurt": "todeg(sin(torad(clamp(if(is_hurt || !is_alive, var.ponytahurt+0.25 * frame_time * 20, var.ponytahurt-0.13 * frame_time * 20), 0, 1))))",
+					"var.damage": "hurt_time/0.25",
+					"var.fainted": "death_time",
+					"var.eat": "max(neck.ty - 4, 0)/7",
+					"var.jump": "-min(neck.ty-4, 0)/8",
+					"var.swj": "1-var.jump",
+					"var.limb_swing": "limb_swing*2",
+					"var.limb_speed": "limb_speed*2.5",
+					"render.leash_offset_x": "0",
+					"render.leash_offset_y": "0    +9/16*var.jump",
+					"render.leash_offset_z": "6/16 -8/16*var.jump",
+					"render.shadow_offset_x": "5/16 *-sin(rot_y)",
+					"render.shadow_offset_z": "5/16 * cos(rot_y)"
+				},
+				{
+					"ponyta.tx": "+cos(var.damage)*2 -2.5",
+					"ponyta.ty": "var.fainted*2",
+					"ponyta.tz": "-9 +var.jump*3",
+					"ponyta_body.rx": "+cos(var.time/12) * torad(3)",
+					"ponyta_body.ry": "+if(is_hurt || !is_alive, 0, -(cos(var.limb_swing/2+pi/2) * var.limb_speed)/20)",
+					"ponyta_body.rz": "+if(is_hurt || !is_alive, 0, +(sin(var.limb_swing/2+pi/2) * var.limb_speed)/18)",
+					"ponyta_neck.rx": "torad(23) +sin(var.time/12) *torad(6) +if(is_hurt || !is_alive, 0, +limb_speed * torad(12)) +var.jump/1.5 +(torad(100)*var.eat)+(sin(var.time)/24*var.eat)",
+					"ponyta_neck.ry": "if(is_riding, 0, torad(head_yaw)/6)",
+					"ponyta_neck.rz": "+if(is_hurt || !is_alive, 0, -(sin(var.limb_swing/2+pi/2) * var.limb_speed)/16)",
+					"ponyta_head.rx": "if(is_riding, 0, -torad(max(head_pitch,-40))/8)",
+					"ponyta_head.ry": "if(is_riding, 0, torad(head_yaw)/5)",
+					"ponyta_head.rz": "if(is_riding, 0, -torad(head_yaw)/5)",
+					"ponyta_leftear.rx": "-torad(26) -cos(var.time/12) * torad(6) +if(is_hurt || !is_alive, 0, -limb_speed * torad(18))",
+					"ponyta_leftear.rz": "torad(49) -sin(var.time/12) * torad(8)",
+					"ponyta_rightear.rx": "-torad(26) -cos(var.time/12) * torad(6) +if(is_hurt || !is_alive, 0, -limb_speed * torad(18))",
+					"ponyta_rightear.rz": "-torad(49) +sin(var.time/12) * torad(8)"
+				},
+				{
+					"ponyta_leftleg.rx": "           if(is_hurt || !is_alive, 0, +(     sin(var.limb_swing/2+pi/2)     * var.limb_speed     *var.swj)/3 -limb_speed *torad(7)) -(sin((age*1.25)/1.5)/1.5*var.jump)",
+					"ponyta_leftleg.ty": "      4.5 +if(is_hurt || !is_alive, 0, +(-pow(sin(var.limb_swing/4+pi/3), 2) *(    limb_speed*1.5 *var.swj))                       )",
+					"ponyta_rightleg.rx": "          if(is_hurt || !is_alive, 0, -(     sin(var.limb_swing/2+pi/2)     * var.limb_speed     *var.swj)/3 -limb_speed *torad(7)) +(sin((age*1.25)/1.5)/1.5*var.jump) +lerp(var.ponytahurt,   0, torad(8))",
+					"ponyta_rightleg.ty": "     4.5 +if(is_hurt || !is_alive, 0, -(-pow(sin(var.limb_swing/4+pi/3), 2) *(    limb_speed*1.5 *var.swj))                       ) -limb_speed                         +lerp(var.ponytahurt,   0, -2.2)",
+					"ponyta_rightleg.tz": "                                                                                                                                                                        +lerp(var.ponytahurt,  -8, -12)",
+					"ponyta_back_leftleg.rx": "      if(is_hurt || !is_alive, 0, -(     sin(var.limb_swing/2+pi/2)     * var.limb_speed)/3              +limb_speed *torad(9)) +var.jump",
+					"ponyta_back_leftleg.ty": " 4.5 +if(is_hurt || !is_alive, 0, -(-pow(sin(var.limb_swing/4+pi/3), 2) *(    limb_speed*1.5))           -limb_speed          )",
+					"ponyta_back_rightleg.rx": "     if(is_hurt || !is_alive, 0, +     (sin(var.limb_swing/2+pi/2)     * var.limb_speed)/3              +limb_speed *torad(9)) +var.jump",
+					"ponyta_back_rightleg.ty": "4.5 +if(is_hurt || !is_alive, 0, +(-pow(sin(var.limb_swing/4+pi/3), 2) *(    limb_speed*1.5))                                )"
+				}
+			]
+		},
+		{
+			"part": "mouth",
+			"id": "mouth",
+			"invertAxis": "xy",
+			"translate": [0, -22, 9]
+		},
+		{
+			"part": "left_ear",
+			"id": "left_ear",
+			"invertAxis": "xy",
+			"translate": [0, -23, 9.01]
+		},
+		{
+			"part": "right_ear",
+			"id": "right_ear",
+			"invertAxis": "xy",
+			"translate": [0, -23, 9.01]
+		},
+		{
+			"part": "neck",
+			"id": "neck",
+			"invertAxis": "xy",
+			"translate": [0, -20, 9]
+		},
+		{
+			"part": "mane",
+			"id": "mane",
+			"invertAxis": "xy",
+			"translate": [0, -22, 9.01]
+		},
+		{
+			"part": "body",
+			"id": "body",
+			"invertAxis": "xy",
+			"translate": [0, -13, -6],
+			"submodels": [
+				{
+					"id": "rotation",
+					"invertAxis": "xy",
+					"translate": [-0.5, 0, 6],
+					"submodels": [
+						{
+							"id": "ponyta",
+							"invertAxis": "xy",
+							"translate": [0.5, 0, -9],
+							"submodels": [
+								{
+									"id": "ponyta_body",
+									"invertAxis": "xy",
+									"translate": [0, 16, -0.5],
+									"boxes": [
+										{"coordinates": [-5, -5, -10.5, 10, 10, 21], "textureOffset": [0, 0], "sizeAdd": 0.2}
+									],
+									"submodels": [
+										{
+											"id": "ponyta_neck",
+											"invertAxis": "xy",
+											"translate": [0, -0.5, -7],
+											"boxes": [
+												{"coordinates": [-2, -2.5, -3.5, 4, 14, 7], "textureOffset": [41, 0], "sizeAdd": 0.1}
+											],
+											"submodels": [
+												{
+													"id": "ponyta_head",
+													"invertAxis": "xy",
+													"translate": [0, 10.5, -0.4],
+													"boxes": [
+														{"coordinates": [-2, 0, -8, 4, 4, 4], "textureOffset": [65, 42], "sizeAdd": 0.1}
+													],
+													"submodels": [
+														{
+															"id": "ponyta_head_anim",
+															"invertAxis": "xy",
+															"translate": [0, 0, 0],
+															"boxes": [
+																{"coordinates": [-3, 0, -4, 6, 6, 8], "textureOffset": [53, 50], "sizeAdd": 0.1}
+															]
+														},
+														{
+															"id": "ponyta_leftear",
+															"invertAxis": "xy",
+															"translate": [-2, 3.5, 2],
+															"rotate": [0, 0, 47.5],
+															"boxes": [
+																{"coordinates": [-1.07441, -0.30426, -1, 3, 5, 2], "textureOffset": [55, 43], "sizeAdd": 0.1}
+															]
+														},
+														{
+															"id": "ponyta_rightear",
+															"invertAxis": "xy",
+															"mirrorTexture": "u",
+															"translate": [2, 3.5, 2],
+															"rotate": [0, 0, -47.5],
+															"boxes": [
+																{"coordinates": [-1.92559, -0.30426, -1, 3, 5, 2], "textureOffset": [55, 43], "sizeAdd": 0.1}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"id": "ponyta_firetail",
+											"invertAxis": "xy",
+											"translate": [0, 2, 10.5]
+										}
+									]
+								},
+								{
+									"id": "ponyta_legs",
+									"invertAxis": "xy",
+									"translate": [0, 16, 0],
+									"submodels": [
+										{
+											"id": "ponyta_leftleg",
+											"invertAxis": "xy",
+											"mirrorTexture": "u",
+											"translate": [-4, -4.5, -7.9],
+											"boxes": [
+												{"coordinates": [-2, -11.5, -2, 4, 14, 4], "textureOffset": [63, 21], "sizeAdd": 0.1}
+											]
+										},
+										{
+											"id": "ponyta_rightleg",
+											"invertAxis": "xy",
+											"translate": [4, -4.5, -7.9],
+											"boxes": [
+												{"coordinates": [-2, -11.5, -2, 4, 14, 4], "textureOffset": [63, 21], "sizeAdd": 0.1}
+											]
+										},
+										{
+											"id": "ponyta_back_leftleg",
+											"invertAxis": "xy",
+											"mirrorTexture": "u",
+											"translate": [-4, -4.5, 7],
+											"boxes": [
+												{"coordinates": [-2, -11.5, -2, 4, 17, 4], "textureOffset": [63, 0], "sizeAdd": 0.1}
+											]
+										},
+										{
+											"id": "ponyta_back_rightleg",
+											"invertAxis": "xy",
+											"translate": [4, -4.5, 7],
+											"boxes": [
+												{"coordinates": [-2, -11.5, -2, 4, 17, 4], "textureOffset": [63, 0], "sizeAdd": 0.1}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"part": "tail",
+			"id": "tail",
+			"invertAxis": "xy",
+			"translate": [0, -21, -11]
+		},
+		{
+			"part": "front_left_leg",
+			"id": "front_left_leg",
+			"invertAxis": "xy",
+			"translate": [4, -10, 9]
+		},
+		{
+			"part": "front_right_leg",
+			"id": "front_right_leg",
+			"invertAxis": "xy",
+			"translate": [-4, -10, 9]
+		},
+		{
+			"part": "back_left_leg",
+			"id": "back_left_leg",
+			"invertAxis": "xy",
+			"translate": [4, -10, -8]
+		},
+		{
+			"part": "back_right_leg",
+			"id": "back_right_leg",
+			"invertAxis": "xy",
+			"translate": [-4, -10, -8]
+		}
+	]
+}

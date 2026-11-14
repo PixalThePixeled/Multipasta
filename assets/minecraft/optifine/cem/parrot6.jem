@@ -1,0 +1,183 @@
+{
+	"credit": "Model & Texture by Primal, Animations by kotisimo",
+	"texture": "textures/entity/multipasta/mothman/mothman.png",
+	"textureSize": [128, 128],
+	"models": [
+		{
+			"part": "head",
+			"id": "head",
+			"invertAxis": "xy",
+			"translate": [0, -8, 0.5],
+			"animations": [
+				{
+					"var.time": "time - pi/random(id)",
+					"body.rx": 0,
+					"body.tx": 0,
+					"body.ty": 16.5,
+					"body.tz": 0,
+					"rotation.rz": "if(death_time > 0, -torad(min(sqrt((death_time - 1) / 20 * 1.6), 1) * 90), 0)",
+					"var.mothman_shoulder": "todeg(sin(torad(clamp(if(is_on_shoulder, var.mothman_shoulder-0.03 * frame_time * 20, var.mothman_shoulder+0.05 * frame_time * 20), 0, 1))))",
+					"var.mothman_fly": "todeg(sin(torad(clamp(if(is_on_ground && !is_on_shoulder, var.mothman_fly-0.05 * frame_time * 20, var.mothman_fly+0.08 * frame_time * 20), 0, 1))))",
+					"var.mothman_sit": "todeg(sin(torad(clamp(if(is_sitting || is_riding, var.mothman_sit-0.55 * frame_time * 20, var.mothman_sit+0.4 * frame_time * 20), 0, 1))))",
+					"var.limb_swing": "limb_swing*1.5",
+					"var.limb_speed": "limb_speed*8.5"
+				},
+				{
+					"mothman.ty": "if(is_riding, -0.5, lerp(var.mothman_sit, +3.5, -2.5) +lerp(var.mothman_fly, 0, -1.5 -cos(var.time/4) * 2.5)  ) -lerp(var.mothman_shoulder, 6, 0)",
+					"mothman.tz": "lerp(var.mothman_shoulder, 24, 0)",
+					"mothman.rx": "if(is_riding, -torad(28) , 0) +lerp(var.mothman_fly, 0, torad(8) -cos(var.time/4) * torad(8))",
+					"mothman.ry": "if(is_riding, 0, torad(head_yaw/2))",
+					"moth_body.ty": "+lerp(var.mothman_fly, 2 +(( sin(var.limb_swing)/4)+torad(1.5)) *var.limb_speed*1.3, 2)",
+					"moth_body.rz": "+lerp(var.mothman_fly, -sin(var.time/8) * torad(3), 0)",
+					"moth_head.rx": "if(is_riding, 0, torad(max(head_pitch,-15))) +lerp(var.mothman_fly, 0, +0.1 -sin(var.time/4) * torad(8))",
+					"moth_head.ry": "if(is_riding, 0, torad(head_yaw/2))",
+					"moth_head.rz": "if(is_riding, 0, torad(head_yaw/5)) +lerp(var.mothman_fly, +cos(var.time/8) * torad(3), 0)",
+					"moth_leftleg.ty": "if(is_sitting || is_riding, 2, 3) +lerp(var.mothman_fly, min(0, (sin(var.limb_swing+pi/2)+0.3)*var.limb_speed*1.5), 0 )",
+					"moth_leftleg.tz": "if(is_sitting || is_riding, -4, 0)",
+					"moth_rightleg.ty": "if(is_sitting || is_riding, 2, 3) +lerp(var.mothman_fly, min(0, (-sin(var.limb_swing+pi/2)+0.3)*var.limb_speed*1.5), 0 )",
+					"moth_rightleg.tz": "moth_leftleg.tz",
+					"moth_leftleg.rx": "if(is_sitting || is_riding, torad(-90), 0) +lerp(var.mothman_fly, (( sin(var.limb_swing)/6)) *var.limb_speed/2, -0.1 -sin(var.time/4) * torad(8))",
+					"moth_leftleg.ry": "if(is_sitting || is_riding, torad(10), 0) +lerp(var.mothman_fly, if(is_riding, 0, max(0, torad(head_yaw/3.5))), +0.1 -sin(var.time/4) * torad(8))",
+					"moth_rightleg.rx": "if(is_sitting || is_riding, torad(-90), 0) +lerp(var.mothman_fly, (( -sin(var.limb_swing)/6)) *var.limb_speed/2, -0.1 -sin(var.time/4) * torad(8))",
+					"moth_rightleg.ry": "if(is_sitting || is_riding, -torad(10), 0) +lerp(var.mothman_fly, if(is_riding, 0, min(0, torad(head_yaw/3.5))), -0.1 +sin(var.time/4) * torad(8))",
+					"moth_leftwing.tz": "lerp(var.mothman_fly, +0.5, +sin(var.time/4) * torad(80))",
+					"moth_leftwing.rz": "lerp(var.mothman_fly, +(( cos(var.limb_swing)/6)+torad(12)) *var.limb_speed/6.5, +sin(var.time/4) * torad(10))",
+					"moth_leftwing.ry": "lerp(var.mothman_fly, -0.7, -0.3 -cos(var.time/4) * torad(40))",
+					"moth_leftwing_other.ry": "lerp(var.mothman_fly, -2, -0.07 -cos(var.time/4) * torad(40))",
+					"moth_rightwing.tz": "+moth_leftwing.tz",
+					"moth_rightwing.rz": "-moth_leftwing.rz",
+					"moth_rightwing.ry": "-moth_leftwing.ry",
+					"moth_rightwing_other.ry": "-moth_leftwing_other.ry"
+				}
+			]
+		},
+		{
+			"part": "body",
+			"id": "body",
+			"invertAxis": "xy",
+			"translate": [0, -7.5, 1],
+			"submodels": [
+				{
+					"id": "rotation",
+					"invertAxis": "xy",
+					"translate": [0, 7.5, -1],
+					"submodels": [
+						{
+							"id": "mothman",
+							"invertAxis": "xy",
+							"translate": [0, 2.5, 2],
+							"submodels": [
+								{
+									"id": "moth_body",
+									"invertAxis": "xy",
+									"translate": [0, -2, 0],
+									"boxes": [
+										{"coordinates": [-6, 9, -4, 12, 9, 8], "textureOffset": [0, 57], "sizeAdd": 0.6},
+										{"coordinates": [-6, -1, -4, 12, 19, 8], "textureOffset": [0, 30]}
+									],
+									"submodels": [
+										{
+											"id": "moth_head",
+											"invertAxis": "xy",
+											"translate": [0, 16.5, -2],
+											"boxes": [
+												{"coordinates": [-7, -0.5, -4, 14, 9, 8], "textureOffset": [40, 42]}
+											]
+										},
+										{
+											"id": "moth_leftwing",
+											"invertAxis": "xy",
+											"translate": [6, 8, 0],
+											"boxes": [
+												{"coordinates": [0, -17, 0, 8, 30, 0], "textureOffset": [24, 0]}
+											],
+											"submodels": [
+												{
+													"id": "moth_leftwing_other",
+													"invertAxis": "xy",
+													"mirrorTexture": "u",
+													"translate": [7.999, 0, 0],
+													"boxes": [
+														{"coordinates": [0.001, -17, 0, 12, 30, 0], "textureOffset": [40, 12]}
+													]
+												}
+											]
+										},
+										{
+											"id": "moth_rightwing",
+											"invertAxis": "xy",
+											"mirrorTexture": "u",
+											"translate": [-6, 8, 0],
+											"boxes": [
+												{"coordinates": [-8, -17, 0, 8, 30, 0], "textureOffset": [24, 0]}
+											],
+											"submodels": [
+												{
+													"id": "moth_rightwing_other",
+													"invertAxis": "xy",
+													"translate": [-8, 0, 0.001],
+													"boxes": [
+														{"coordinates": [-12, -17, -0.001, 12, 30, 0], "textureOffset": [40, 12]}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"id": "moth_leftleg",
+									"invertAxis": "xy",
+									"translate": [3.3, -3, 0],
+									"boxes": [
+										{"coordinates": [-2.5, -7, -2, 5, 8, 4], "textureOffset": [54, 0]},
+										{"coordinates": [-2.5, -7, -4, 7, 0, 6], "textureOffset": [34, 0]}
+									]
+								},
+								{
+									"id": "moth_rightleg",
+									"invertAxis": "xy",
+									"mirrorTexture": "u",
+									"translate": [-3.3, -3, 0],
+									"boxes": [
+										{"coordinates": [-2.5, -7, -2, 5, 8, 4], "textureOffset": [54, 0]},
+										{"coordinates": [-4.5, -7, -4, 7, 0, 6], "textureOffset": [34, 0]}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"part": "left_wing",
+			"id": "left_wing",
+			"invertAxis": "xy",
+			"translate": [1.5, -7.1, 0.8]
+		},
+		{
+			"part": "right_wing",
+			"id": "right_wing",
+			"invertAxis": "xy",
+			"translate": [-1.5, -7.1, 0.8]
+		},
+		{
+			"part": "left_leg",
+			"id": "left_leg",
+			"invertAxis": "xy",
+			"translate": [1, -2, 1]
+		},
+		{
+			"part": "right_leg",
+			"id": "right_leg",
+			"invertAxis": "xy",
+			"translate": [-1, -2, 1]
+		},
+		{
+			"part": "tail",
+			"id": "tail",
+			"invertAxis": "xy",
+			"translate": [0, -2.9, -1.2]
+		}
+	]
+}

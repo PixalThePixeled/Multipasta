@@ -1,0 +1,238 @@
+{
+	"credit": "Model & Animations by kotisimo, Texture by moro2610",
+	"texture": "textures/entity/multipasta/horsebat.png",
+	"textureSize": [64, 64],
+	"models": [
+		{
+			"part": "head",
+			"id": "head",
+			"invertAxis": "xy",
+			"translate": [0, -8, 0.5],
+			"animations": [
+				{
+					"body.rx": 0,
+					"body.tx": 0,
+					"body.ty": 16.5,
+					"body.tz": 0,
+					"var.time": "time - pi/random(id)",
+					"rotation.rz": "if(death_time > 0, -torad(min(sqrt((death_time - 1) / 20 * 1.6), 1) * 90), 0)",
+					"var.alive": "if(is_alive, 0, 1)",
+					"var.death": "death_time",
+					"var.horsebat_sit_wings": "  todeg(sin(torad(clamp(if(((is_sitting && is_on_ground) || is_riding) && !is_on_shoulder, var.horsebat_sit_wings-0.02 * frame_time * 20, var.horsebat_sit_wings+0.03 * frame_time * 20), 0, 1))))",
+					"var.horsebat_sit": "  todeg(sin(torad(clamp(if(((is_sitting && is_on_ground) || is_riding) && !is_on_shoulder, var.horsebat_sit-0.03 * frame_time * 20, var.horsebat_sit+0.02 * frame_time * 20), 0, 1))))",
+					"var.horsebat_death_wings": "  todeg(sin(torad(clamp(if(is_alive, var.horsebat_death_wings-0.09 * frame_time * 20, var.horsebat_death_wings+0.1 * frame_time * 20), 0, 1))))",
+					"var.horsebat_death": "  todeg(sin(torad(clamp(if(is_alive, var.horsebat_death-0.06 * frame_time * 20, var.horsebat_death+0.075 * frame_time * 20), 0, 1))))",
+					"var.horsebat_death2": "  todeg(sin(torad(clamp(if(is_alive, var.horsebat_death2-0.045 * frame_time * 20, var.horsebat_death2+0.055 * frame_time * 20), 0, 1))))"
+				},
+				{
+					"var.horsebat_hurt": "+if(round(age/1.2) % 2 < 1, 0, -9999999)",
+					"horsebat_body_rotation.ty": "lerp(var.horsebat_sit, +16, +2.5 +(sin(var.time/4) * 4)/2) +if(is_on_shoulder, -8, 0)",
+					"horsebat_body_rotation.tz": "+if(is_on_shoulder, +9, 0)",
+					"horsebat_body_rotation.rx": "lerp(var.horsebat_sit, +torad(64) -(torad(8) * hurt_time) +limb_speed * -torad(32) -(cos(var.time/8)/2 * torad(2)), +torad(32) -torad(max(head_pitch,-30)) -(torad(8) * hurt_time) +(cos(var.time/4) * torad(4)))",
+					"horsebat_body_rotation.ry": "lerp(var.horsebat_sit, if(is_riding, 0, +torad(head_yaw/2)), +torad(head_yaw/2))",
+					"horsebat_body.sx": "lerp(var.horsebat_death, 1, 0)",
+					"horsebat_body.sy": "lerp(var.horsebat_death, 1, 0)",
+					"horsebat_body.sz": "lerp(var.horsebat_death2, 1, 0)",
+					"horsebat_body.tz": "if(is_alive, 0 +(var.horsebat_hurt * hurt_time), 0)",
+					"horsebat_neck_rt.tz": "if(is_alive, 0 +(var.horsebat_hurt * hurt_time), 0)",
+					"horsebat_neck_rt.sx": "lerp(var.horsebat_death, 1, 0)",
+					"horsebat_neck_rt.sy": "lerp(var.horsebat_death, 1, 0)",
+					"horsebat_neck_rt.sz": "lerp(var.horsebat_death2, 1, 0)",
+					"horsebat_neck.rx": "lerp(var.horsebat_sit, -torad(16) +torad(max(head_pitch,-10)) +limb_speed * +torad(32) -(cos(var.time/8) * torad(3)), +torad(26) +(torad(2) * hurt_time) +torad(max(head_pitch,-20)) -(cos(var.time/4) * torad(6)))",
+					"horsebat_neck.ry": "lerp(var.horsebat_sit, if(is_riding, 0, +torad(head_yaw/2)/4), +torad(head_yaw/2)/2)",
+					"horsebat_neck.rz": "lerp(var.horsebat_sit, if(is_riding, 0, -torad(head_yaw/2)/2), -torad(head_yaw/2)/4)",
+					"horsebat_neck.ty": "lerp(var.horsebat_sit, -5, -4.5)",
+					"horsebat_neck.tz": "lerp(var.horsebat_sit, -2, -3)",
+					"horsebat_skull.ty": "-8 +(var.death*2.1)",
+					"horsebat_skull.tz": "0 -(var.death*3.6)",
+					"horsebat_skull.rx": "lerp(var.horsebat_sit, -torad(50) +torad(max(head_pitch,-20)) -(sin(var.time/8) * torad(3)), -torad(50) -(torad(4) * hurt_time) +torad(head_pitch/2) +(sin(var.time/4) * torad(4)))",
+					"horsebat_skull.ry": "lerp(var.horsebat_sit, if(is_riding, 0, +torad(head_yaw/2)/4), +torad(head_yaw/2)/2)",
+					"horsebat_skull.rz": "lerp(var.horsebat_sit, if(is_riding, 0, -torad(head_yaw/2)/2), -torad(head_yaw/2)/4)",
+					"horsebat_tail.rx": "lerp(var.horsebat_sit, -torad(64) -(cos(var.time/8)/2 * torad(6)), -torad(32) +torad(max(head_pitch,+15)) +(sin(var.time/4) * torad(12)))",
+					"horsebat_tail.ry": "lerp(var.horsebat_sit, -torad(180), 0)",
+					"horsebat_tail.rz": "lerp(var.horsebat_sit, 0, -(cos(var.time/4) * torad(12)))",
+					"horsebat_tail.sx": "lerp(var.horsebat_death_wings, 1, 0)",
+					"horsebat_tail.sy": "lerp(var.horsebat_death_wings, 1, 0)",
+					"horsebat_tail.sz": "lerp(var.horsebat_death_wings, 1, 0)"
+				},
+				{
+					"horsebat_leftwing.rx": "lerp(var.horsebat_sit_wings, +torad(52) +limb_speed * +sin(var.time/4) * torad(46), -torad(32))",
+					"horsebat_leftwing.ry": "lerp(var.horsebat_sit_wings, +torad(6) +limb_speed * +cos(var.time/4) * torad(56), +torad(84) -(cos(var.time/4) * torad(74)))",
+					"horsebat_leftwing.rz": "lerp(var.horsebat_sit_wings, +torad(46), +torad(16) +(sin(var.time/4) * torad(16)))",
+					"horsebat_rightwing.rx": "lerp(var.horsebat_sit_wings, +torad(52) +limb_speed * +cos(var.time/4) * torad(46), -torad(32))",
+					"horsebat_rightwing.ry": "-lerp(var.horsebat_sit_wings, +torad(6) +limb_speed * -sin(var.time/4) * torad(56), +torad(84) -(cos(var.time/4) * torad(74)))",
+					"horsebat_rightwing.rz": "-horsebat_leftwing.rz",
+					"horsebat_leftwing.sx": "lerp(var.horsebat_death_wings, 1, 0)",
+					"horsebat_leftwing.sz": "lerp(var.horsebat_death_wings, 1, 0)",
+					"horsebat_rightwing.sx": "horsebat_leftwing.sx",
+					"horsebat_rightwing.sz": "horsebat_leftwing.sz"
+				}
+			]
+		},
+		{
+			"part": "body",
+			"id": "body",
+			"invertAxis": "xy",
+			"translate": [0, -7.5, 1],
+			"submodels": [
+				{
+					"id": "rotation",
+					"invertAxis": "xy",
+					"translate": [0, 7.5, -1],
+					"submodels": [
+						{
+							"id": "horsebat",
+							"invertAxis": "xy",
+							"translate": [0, 13.5, 4],
+							"submodels": [
+								{
+									"id": "horsebat_body_rotation",
+									"invertAxis": "xy",
+									"translate": [0, -6, 0],
+									"submodels": [
+										{
+											"id": "horsebat_body",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"boxes": [
+												{
+													"coordinates": [-3, -5, -4, 6, 10, 8],
+													"uvNorth": [24, 0, 30, 10],
+													"uvEast": [30, 0, 38, 10],
+													"uvSouth": [38, 0, 44, 10],
+													"uvWest": [38, 0, 30, 10],
+													"uvUp": [30, 10, 36, 18],
+													"uvDown": [36, 18, 42, 10]
+												},
+												{
+													"coordinates": [-3, -5, -4, 6, 10, 8],
+													"uvNorth": [58, 0, 64, 10],
+													"uvEast": [44, 0, 52, 10],
+													"uvSouth": [52, 0, 58, 10],
+													"uvWest": [52, 0, 44, 10],
+													"uvUp": [44, 10, 50, 18],
+													"uvDown": [50, 18, 56, 10],
+													"sizeAdd": 0.65
+												}
+											],
+											"submodels": [
+												{
+													"id": "horsebat_tail",
+													"invertAxis": "xy",
+													"translate": [0, -5, -3],
+													"boxes": [
+														{"coordinates": [0, -8, -11, 0, 9, 15], "textureOffset": [0, 21]}
+													]
+												},
+												{
+													"id": "horsebat_leftwing",
+													"invertAxis": "xy",
+													"mirrorTexture": "u",
+													"translate": [-3, 1, 2],
+													"boxes": [
+														{"coordinates": [0, -1, -3, 0, 17, 23], "textureOffset": [0, 24], "sizeAdd": 0.015}
+													]
+												},
+												{
+													"id": "horsebat_rightwing",
+													"invertAxis": "xy",
+													"translate": [3, 1, 2],
+													"boxes": [
+														{"coordinates": [0, -1, -3, 0, 17, 23], "textureOffset": [0, 24], "sizeAdd": 0.015}
+													]
+												}
+											]
+										},
+										{
+											"id": "horsebat_neck",
+											"invertAxis": "xy",
+											"translate": [0, 4.2, -3],
+											"submodels": [
+												{
+													"id": "horsebat_neck_rt",
+													"invertAxis": "xy",
+													"translate": [0, 3, 0],
+													"boxes": [
+														{
+															"coordinates": [-1.5, -5, -2, 3, 10, 4],
+															"uvNorth": [10, 26, 7, 36],
+															"uvEast": [3, 26, 7, 36],
+															"uvSouth": [0, 26, 3, 36],
+															"uvWest": [7, 26, 3, 36],
+															"uvUp": [13, 30, 10, 26],
+															"uvDown": [13, 26, 10, 30]
+														}
+													]
+												},
+												{
+													"id": "horsebat_skull",
+													"invertAxis": "xy",
+													"translate": [0, 7.8, 1],
+													"boxes": [
+														{
+															"coordinates": [-4, -2.5, -5, 8, 7, 8],
+															"uvNorth": [0, 0, 8, 7],
+															"uvEast": [8, 0, 16, 7],
+															"uvSouth": [16, 0, 24, 7],
+															"uvWest": [16, 0, 8, 7],
+															"uvUp": [0, 7, 8, 15],
+															"uvDown": [8, 7, 16, 15]
+														},
+														{
+															"coordinates": [-3, 1.5, -9, 6, 2, 4],
+															"uvEast": [0, 19, 4, 21],
+															"uvWest": [4, 19, 0, 21],
+															"uvUp": [6, 25, 0, 21]
+														},
+														{
+															"coordinates": [-3, -2.5, -12, 6, 4, 7],
+															"uvNorth": [0, 15, 6, 19],
+															"uvEast": [6, 15, 13, 19],
+															"uvWest": [13, 15, 6, 19],
+															"uvUp": [7, 26, 13, 19],
+															"uvDown": [13, 15, 19, 22]
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"part": "left_wing",
+			"id": "left_wing",
+			"invertAxis": "xy",
+			"translate": [1.5, -7.1, 0.8]
+		},
+		{
+			"part": "right_wing",
+			"id": "right_wing",
+			"invertAxis": "xy",
+			"translate": [-1.5, -7.1, 0.8]
+		},
+		{
+			"part": "left_leg",
+			"id": "left_leg",
+			"invertAxis": "xy",
+			"translate": [1, -2, 1]
+		},
+		{
+			"part": "right_leg",
+			"id": "right_leg",
+			"invertAxis": "xy",
+			"translate": [-1, -2, 1]
+		},
+		{
+			"part": "tail",
+			"id": "tail",
+			"invertAxis": "xy",
+			"translate": [0, -2.9, -1.2]
+		}
+	]
+}

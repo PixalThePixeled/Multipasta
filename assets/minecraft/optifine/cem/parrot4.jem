@@ -1,0 +1,509 @@
+{
+	"credit": "Model & Animations by kotisimo, Texture by moro2610",
+	"textureSize": [128, 128],
+	"texture": "textures/entity/multipasta/compromise/compromise.png",
+	"models": [
+		{
+			"part": "head",
+			"id": "head",
+			"invertAxis": "xy",
+			"translate": [0, -8, 0.5],
+			"animations": [
+				{
+					"var.time": "time - pi/random(id)",
+					"body.rx": 0,
+					"body.tx": 0,
+					"body.ty": 16.5,
+					"body.tz": 0
+				},
+				{
+					"var.dance": "todeg(sin(torad(clamp(if(right_leg.rz!=0&&is_on_ground, var.dance-0.09 * frame_time * 20, var.dance+0.085 * frame_time * 20), 0, 1))))",
+					"var.cmprms_sit": "todeg(sin(torad(clamp(if(is_sitting || is_riding, var.cmprms_sit-0.2 * frame_time * 20, var.cmprms_sit+0.2 * frame_time * 20), 0, 1))))",
+					"var.cmprms_ground": "  todeg(sin(torad(clamp(if((is_on_ground||is_riding) && !is_on_shoulder, var.cmprms_ground-0.055 * frame_time * 20, var.cmprms_ground+0.08 * frame_time * 20), 0, 1))))",
+					"var.limb_swing": "limb_swing*2.1",
+					"var.limb_speed": "limb_speed"
+				},
+				{
+					"compromise.ty": "       lerp(var.dance, -0.7,                                              lerp(var.cmprms_ground, lerp(var.cmprms_sit, 2, -0.7), -4.6 -sin(var.time/7) * 1.9  ) +if(is_on_shoulder, -5, 0)      )",
+					"compromise.tz": "       lerp(var.dance, -5.5,                                              if(is_on_shoulder, 7, 0)   -5.5   )",
+					"compromise.rx": "       lerp(var.dance, 0,                                                 lerp(var.cmprms_ground, +lerp(var.cmprms_sit, -torad(2), 0), torad(10) -sin(var.time/7) * torad(3) +cos(var.time/6) * hurt_time *torad(3.5)  )      )",
+					"compromise.rz": "       lerp(var.dance, 0,                                                 lerp(var.cmprms_ground, 0, +cos(var.time/14) * torad(5)  )      )",
+					"glare_head.ty": "-7.5",
+					"glare_head.rx": "       lerp(var.dance, -torad(8),                                         lerp(var.cmprms_ground, if(is_riding, 0, +torad(max(head_pitch,-35))/5) -torad(8) -cos(var.time/11) * torad(3) +(cos(var.limb_swing) * var.limb_speed/16), torad(7.5) +torad(head_pitch/6) +cos(var.time/7) * torad(3))      )",
+					"glare_head.ry": "       lerp(var.dance, +sin(var.time/2) * torad(8),                       lerp(var.cmprms_ground, if(is_riding, 0, +torad(head_yaw/2) ), +torad(head_yaw/1.8) -sin(var.time/6) * hurt_time *torad(4)  )      )",
+					"glare_head.rz": "       lerp(var.dance, 0,                                                 lerp(var.cmprms_ground, 0, if(is_riding, 0, -torad(head_yaw/9)) )      )",
+					"armadillo_leftear.rx": "lerp(var.dance, torad(16),                                         lerp(var.cmprms_ground, +lerp(var.cmprms_sit, torad(18), torad(16)) +(sin(var.limb_swing) * var.limb_speed/5), torad(18) -cos(var.time/6) * hurt_time *torad(6)  )      )",
+					"armadillo_leftear.rz": "lerp(var.dance, +torad(26) -(pow(sin(var.time+pi/3), 1)/4) ,       lerp(var.cmprms_ground, +lerp(var.cmprms_sit, torad(48) -sin(var.time/11) * torad(5), -sin(var.time/11) * torad(5) +torad(26) ), +cos(var.time/7) * torad(6) +torad(28) -hurt_time *torad(3)  )      )",
+					"armadillo_rightear.rx": "armadillo_leftear.rx",
+					"armadillo_rightear.rz": "-armadillo_leftear.rz"
+				},
+				{
+					"penguin_body.rx": "     lerp(var.dance, torad(14) -(pow(sin(var.time/2), 2)/4),            lerp(var.cmprms_ground, torad(14) +sin(var.time/11) * torad(3.5), 0  )      )",
+					"penguin_body.ry": "     lerp(var.dance, +cos(var.time/2) * torad(12),                      lerp(var.cmprms_ground,  if(is_riding, 0, +torad(head_yaw/3)), +torad(head_yaw/2.5)  )      )",
+					"penguin_body.rz": "     lerp(var.dance, +cos(var.time/2) * torad(17),       0     )",
+					"penguin_body.tx": "     lerp(var.dance, -4 -cos(var.time/2) * 2.6,       -4     )",
+					"penguin_body.ty": "     lerp(var.dance, -6.8 +(pow(sin(var.time/2), 2)*4),                 lerp(var.cmprms_ground, -6.8 +pow(sin(var.time/22+pi/3), 2)*1.5 -(sin(var.limb_swing) * var.limb_speed) +var.limb_speed*1.5, -6.5  )      )",
+					"tentacle_left.rx": "    lerp(var.dance, torad(2) +(pow(sin(var.time/2), 1)/2),             lerp(var.cmprms_ground, -torad(7) -pow(sin(var.time/22+pi/2), 2)/1.5 +lerp(var.cmprms_sit, torad(13), 0), -pow(sin(var.time/14+pi/2), 2) +sin(var.time/2) * hurt_time *torad(3)  )      )",
+					"tentacle_left.rz": "    lerp(var.dance, 0,                                                 lerp(var.cmprms_ground, (( cos(var.limb_swing)/3)-torad(70)) *var.limb_speed/4, 0  )      )-torad(90)",
+					"tentacle_right.rx": "tentacle_left.rx",
+					"tentacle_right.rz": "-tentacle_left.rz",
+					"buttercup_left.ry": "   lerp(var.dance, -torad(40),                                        lerp(var.cmprms_ground, -torad(40), -torad(65) -sin(var.time/1) * -torad(30)  )      )",
+					"buttercup_right.ry": "  lerp(var.dance, -torad(40),                                        lerp(var.cmprms_ground, -torad(40), -torad(67) -cos(var.time/1) * -torad(30)  )      )",
+					"buttercup_front.rx": "  lerp(var.dance, 0,                                                 lerp(var.cmprms_ground, 0, -sin(var.time/1) * -torad(26)  )      )",
+					"buttercup_front.ry": "  lerp(var.dance, 0,                                                 lerp(var.cmprms_ground, 0, -cos(var.time/1) * -torad(26)  )      )",
+					"allay_winglefttop.ry": "lerp(var.dance, +torad(29) -cos(var.time/0.7) * torad(12),         lerp(var.cmprms_ground, -cos(var.time/0.8) * torad(3) +torad(29), torad(22) -cos(var.time/0.55) * torad(30)  )      )",
+					"allay_wingrighttop.ry": "-allay_winglefttop.ry",
+					"allay_wingleftdown.ry": "lerp(var.dance, +torad(22) -sin(var.time/0.7) * torad(10),        lerp(var.cmprms_ground, -sin(var.time/0.8) * torad(3) +torad(22), torad(16) -sin(var.time/0.55) *torad(30)  )      )",
+					"allay_wingrightdown.ry": "-allay_wingleftdown.ry"
+				},
+				{
+					"crab_clawleft_rt.rx": " lerp(var.dance, -torad(19) +(pow(sin(var.time/2+pi/4), 1)),        lerp(var.cmprms_ground, torad(13) -cos(var.time/14) * torad(4.5), 0  )      )",
+					"crab_clawleft_rt.ry": " lerp(var.dance, -torad(6),        0      )",
+					"crab_clawleft_rt.rz": " lerp(var.dance, torad(16),                                         lerp(var.cmprms_ground, (( -cos(var.limb_swing)/4)-torad(22)) *var.limb_speed/2, -sin(var.time/14) * torad(9) +sin(var.time/6) * hurt_time *torad(4.4)  )      )",
+					"crab_clawright_rt.rx": "lerp(var.dance, -torad(19) -(pow(sin(var.time/2+pi/5), 1)),        lerp(var.cmprms_ground, torad(13) -cos(var.time/14) * torad(4.5), 0  )      )",
+					"crab_clawright_rt.ry": "lerp(var.dance, torad(6),        0      )",
+					"crab_clawright_rt.rz": "lerp(var.dance, -torad(16),                                        lerp(var.cmprms_ground, -(( sin(var.limb_swing)/4)-torad(22)) *var.limb_speed/2, -sin(var.time/14+pi/4) * torad(10.5) -sin(var.time/6) * hurt_time *torad(4.4) )      )",
+					"crab_clawleft.tx": "    lerp(var.dance, 1.85,       1.85      )",
+					"crab_clawleft.ty": "    lerp(var.dance, -1.5,                                              lerp(var.cmprms_ground, -1.5 -cos(var.time/11) * torad(40), -0.7 +cos(var.time/7) * 0.7  )      )",
+					"crab_clawleft.tz": "    lerp(var.dance, -0.75,                                             lerp(var.cmprms_ground, -0.75 -sin(var.time/11) * torad(10), -0.75  )      )",
+					"crab_clawleft.rx": "    lerp(var.dance, -torad(24),                                        lerp(var.cmprms_ground, -cos(var.time/11) * torad(5) -torad(24), -torad(24)  )        )",
+					"crab_clawleft.ry": "    lerp(var.dance, +torad(130),                                       lerp(var.cmprms_ground, -sin(var.time/11) * torad(4) +torad(130), +torad(145)  )      )",
+					"crab_clawleft.rz": "    lerp(var.dance, -torad(55),                                        lerp(var.cmprms_ground, -torad(55), -torad(65)  )      )",
+					"crab_clawright.tx": "-crab_clawleft.tx",
+					"crab_clawright.ty": "crab_clawleft.ty",
+					"crab_clawright.tz": "crab_clawleft.tz",
+					"crab_clawright.rx": "crab_clawleft.rx",
+					"crab_clawright.ry": "-crab_clawleft.ry",
+					"crab_clawright.rz": "-crab_clawleft.rz"
+				},
+				{
+					"crabsticks.rx": "              lerp(var.dance, torad(13),                                  lerp(var.cmprms_ground, torad(13), -torad(2) -pow(sin(var.time/14+pi/2), 2)/4 -cos(var.time/6) * hurt_time *torad(2) )      )",
+					"crabsticks.ry": "              lerp(var.dance, 0,                                          lerp(var.cmprms_ground, if(is_riding, 0, +torad(head_yaw/13)), +torad(head_yaw/8.5)  )      )",
+					"crabsticks.tz": "5.5",
+					"crabstick_leftback.rx": "      lerp(var.dance, torad(14),                                  lerp(var.cmprms_ground, torad(13), torad(17.5)  )      )",
+					"crabstick_leftback.ry": "      lerp(var.dance, -torad(26),                                 lerp(var.cmprms_ground, -torad(26), torad(32)  )      )",
+					"crabstick_leftback.rz": "      lerp(var.dance, -torad(36),                                 lerp(var.cmprms_ground, +min(0, (cos(var.limb_swing)+0.3)*var.limb_speed*1.6) +lerp(var.cmprms_sit,-0.4,0) -torad(36), -torad(3) -sin(var.time/14) * torad(12) -sin(var.time/1) * hurt_time *torad(2) )      )",
+					"crabstick_leftcenter.rx": "    lerp(var.dance, -torad(13),                                 lerp(var.cmprms_ground, -torad(13), torad(4)  )      )",
+					"crabstick_leftcenter.rz": "    lerp(var.dance, -torad(48),                                 lerp(var.cmprms_ground, +min(0, (sin(var.limb_swing)+0.3)*var.limb_speed*1.4) +lerp(var.cmprms_sit,-0.3,0) -torad(46), -torad(22) +sin(var.time/7) * torad(8) -cos(var.time/1) * hurt_time *torad(4)  )      )",
+					"crabstick_left.rx": "          lerp(var.dance, -torad(76),                                 lerp(var.cmprms_ground, -torad(76) -min(0, (-sin(var.limb_swing+pi/2)+0.3)*var.limb_speed), -torad(16)  )      )",
+					"crabstick_left.ry": "          lerp(var.dance, torad(25),                                  lerp(var.cmprms_ground, torad(26) +min(0, (-sin(var.limb_swing+pi/2)+0.3)*var.limb_speed*1.1), torad(40)  )      )",
+					"crabstick_left.rz": "          lerp(var.dance, -torad(80),                                 lerp(var.cmprms_ground, +min(0, (-cos(var.limb_swing)+0.3)*var.limb_speed*1.2) +lerp(var.cmprms_sit,-0.7,0) -torad(80), -torad(16) +cos(var.time/7) * torad(4) +sin(var.time/1) * hurt_time *torad(2)  )      )",
+					"crabstick_rightback.rx": "crabstick_leftback.rx",
+					"crabstick_rightback.ry": "-crabstick_leftback.ry",
+					"crabstick_rightback.rz": "     lerp(var.dance, torad(36),                                  lerp(var.cmprms_ground, -min(0, (-cos(var.limb_swing)+0.3)*var.limb_speed*1.6) +lerp(var.cmprms_sit, 0.4,0) +torad(36), torad(3) +sin(var.time/14) * torad(12) +sin(var.time/1) * hurt_time *torad(2) )      )",
+					"crabstick_rightcenter.rx": "crabstick_leftcenter.rx",
+					"crabstick_rightcenter.rz": "   lerp(var.dance, torad(48),                                  lerp(var.cmprms_ground, -min(0, (-sin(var.limb_swing)+0.3)*var.limb_speed*1.3) +lerp(var.cmprms_sit, 0.3,0) +torad(46), torad(22) -sin(var.time/7) * torad(8) -cos(var.time/1) * hurt_time *torad(4)  )      )",
+					"crabstick_right.rx": "         lerp(var.dance, -torad(76),                                 lerp(var.cmprms_ground, -torad(76) -min(0, (sin(var.limb_swing+pi/2)+0.3)*var.limb_speed), -torad(16)  )      )",
+					"crabstick_right.ry": "         lerp(var.dance, -torad(25),                                 lerp(var.cmprms_ground, -torad(26) -min(0, (sin(var.limb_swing+pi/2)+0.3)*var.limb_speed*1.1), -torad(40)  )      )",
+					"crabstick_right.rz": "         lerp(var.dance, torad(80),                                  lerp(var.cmprms_ground, -min(0, (cos(var.limb_swing)+0.3)*var.limb_speed*1.2) +lerp(var.cmprms_sit, 0.7,0) +torad(80), torad(16) -cos(var.time/7) * torad(4) -sin(var.time/1) * hurt_time *torad(2)  )      )",
+					"crabsticks_left.rz": "         lerp(var.dance, 0,                                          lerp(var.cmprms_ground, 0, +sin(var.time/14+pi/6) * torad(8)  )      )",
+					"crabsticks_right.rz": "crabsticks_left.rz",
+					"crabstick_left_rt.rx": "       lerp(var.dance, +(pow(sin(var.time/2+pi/2), 1)/5),   0    )",
+					"crabstick_left_rt.rz": "       lerp(var.dance, -(pow(sin(var.time/2+pi/2), 1)/6),          lerp(var.cmprms_ground, torad(1) -pow(sin(var.time/22+pi/3), 2)/6, 0  )      )",
+					"crabstick_leftcenter_rt.rz": " lerp(var.dance, -(pow(sin(var.time/2+pi/2), 1)/4),          lerp(var.cmprms_ground, -pow(sin(var.time/22+pi/3), 2)/7, 0  )      )",
+					"crabstick_leftback_rt.rz": "   lerp(var.dance, -(pow(sin(var.time/2+pi/2), 1)/4),          lerp(var.cmprms_ground, -pow(sin(var.time/22+pi/3), 2)/7, 0  )      )",
+					"crabstick_right_rt.rx": "      lerp(var.dance, -(pow(sin(var.time/2+pi/2), 1)/5),   0    )",
+					"crabstick_right_rt.rz": "      lerp(var.dance, -(pow(sin(var.time/2+pi/2), 1)/6),          lerp(var.cmprms_ground, -torad(1) +pow(sin(var.time/22+pi/3), 2)/6, 0  )      )",
+					"crabstick_rightcenter_rt.rz": "lerp(var.dance, -(pow(sin(var.time/2+pi/2), 1)/4),          lerp(var.cmprms_ground, +pow(sin(var.time/22+pi/3), 2)/7, 0  )      )",
+					"crabstick_rightback_rt.rz": "  lerp(var.dance, -(pow(sin(var.time/2+pi/2), 1)/4),          lerp(var.cmprms_ground, +pow(sin(var.time/22+pi/3), 2)/7, 0  )      )"
+				}
+			]
+		},
+		{
+			"part": "body",
+			"id": "body",
+			"invertAxis": "xy",
+			"translate": [0, -7.5, 1],
+			"submodels": [
+				{
+					"id": "rotation",
+					"invertAxis": "xy",
+					"translate": [0, 7.5, -1],
+					"submodels": [
+						{
+							"id": "compromise",
+							"invertAxis": "xy",
+							"translate": [-4, 4.5, -3],
+							"submodels": [
+								{
+									"id": "penguin_body",
+									"invertAxis": "xy",
+									"translate": [4, 7, 4],
+									"boxes": [
+										{"coordinates": [-5, -7, -5, 10, 14, 10], "textureOffset": [0, 24]}
+									],
+									"submodels": [
+										{
+											"id": "glare_head",
+											"invertAxis": "xy",
+											"translate": [0, 8, 0],
+											"boxes": [
+												{"coordinates": [-6, 0, -4, 12, 10, 9], "textureOffset": [48, 3]}
+											],
+											"submodels": [
+												{
+													"id": "armadillo_leftear",
+													"invertAxis": "xy",
+													"mirrorTexture": "u",
+													"translate": [-5, 10.75, -2.5],
+													"boxes": [
+														{"coordinates": [-2, 0, 0, 3, 6, 0], "textureOffset": [47, 6]}
+													]
+												},
+												{
+													"id": "armadillo_rightear",
+													"invertAxis": "xy",
+													"translate": [5, 10.75, -2.5],
+													"boxes": [
+														{"coordinates": [-1, 0, 0, 3, 6, 0], "textureOffset": [47, 6]}
+													]
+												},
+												{
+													"id": "copper_rod",
+													"invertAxis": "xy",
+													"translate": [0, 10, 0],
+													"boxes": [
+														{
+															"coordinates": [-1, 0, -1, 2, 4, 2],
+															"uvNorth": [53, 8, 55, 12],
+															"uvEast": [53, 8, 55, 12],
+															"uvSouth": [53, 8, 55, 12],
+															"uvWest": [53, 8, 55, 12],
+															"uvUp": [55, 10, 53, 8],
+															"uvDown": [55, 8, 53, 10]
+														},
+														{
+															"coordinates": [-2, 4, -2, 4, 4, 4],
+															"uvNorth": [53, 4, 57, 8],
+															"uvEast": [53, 4, 57, 8],
+															"uvSouth": [53, 4, 57, 8],
+															"uvWest": [53, 4, 57, 8],
+															"uvUp": [57, 8, 53, 4],
+															"uvDown": [57, 4, 53, 8]
+														}
+													]
+												},
+												{
+													"id": "glare_headlayer",
+													"invertAxis": "xy",
+													"translate": [0, 0, 0],
+													"boxes": [
+														{"coordinates": [-6, -1, -6, 12, 12, 12], "textureOffset": [0, 0]}
+													]
+												}
+											]
+										},
+										{
+											"id": "allay_wings",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"submodels": [
+												{
+													"id": "allay_wings_top",
+													"invertAxis": "xy",
+													"translate": [0, 4, 5.5],
+													"submodels": [
+														{
+															"id": "allay_winglefttop",
+															"invertAxis": "xy",
+															"translate": [-4, 2.5, 0],
+															"boxes": [
+																{"coordinates": [0, -4.5, 0, 0, 5, 10], "textureOffset": [30, 14]}
+															]
+														},
+														{
+															"id": "allay_wingrighttop",
+															"invertAxis": "xy",
+															"translate": [4, 2.5, 0],
+															"boxes": [
+																{"coordinates": [0, -4.5, 0, 0, 5, 10], "textureOffset": [30, 14]}
+															]
+														}
+													]
+												},
+												{
+													"id": "allay_wings_down",
+													"invertAxis": "xy",
+													"translate": [0, -2, 5.5],
+													"submodels": [
+														{
+															"id": "allay_wingleftdown",
+															"invertAxis": "xy",
+															"translate": [-4, 2.5, 0],
+															"boxes": [
+																{"coordinates": [0, -4.5, 0, 0, 5, 8], "textureOffset": [30, 21]}
+															]
+														},
+														{
+															"id": "allay_wingrightdown",
+															"invertAxis": "xy",
+															"translate": [4, 2.5, 0],
+															"boxes": [
+																{"coordinates": [0, -4.5, 0, 0, 5, 8], "textureOffset": [30, 21]}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"id": "sniffer_layer",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"boxes": [
+												{"coordinates": [-5, -7, -4.6, 10, 14, 10], "textureOffset": [40, 24], "sizeAdd": 0.5}
+											],
+											"submodels": [
+												{
+													"id": "moobloom_flowers",
+													"invertAxis": "xy",
+													"translate": [0, 0, 0],
+													"submodels": [
+														{
+															"id": "buttercup_left",
+															"invertAxis": "xy",
+															"translate": [-4.999, -1, 5],
+															"rotate": [0, 90, 180],
+															"boxes": [
+																{"coordinates": [0, -3, 0, 0, 6, 6], "textureOffset": [40, 42]}
+															]
+														},
+														{
+															"id": "buttercup_right",
+															"invertAxis": "xy",
+															"translate": [4.999, 4, 5],
+															"rotate": [0, 90, 0],
+															"boxes": [
+																{"coordinates": [0, -3, 0, 0, 6, 6], "textureOffset": [40, 42]}
+															]
+														},
+														{
+															"id": "buttercup_front",
+															"invertAxis": "xy",
+															"translate": [-0.001, 2.5, 5],
+															"boxes": [
+																{"coordinates": [0, -3.5, 0, 0, 6, 6], "textureOffset": [40, 42]}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"id": "crab",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"submodels": [
+												{
+													"id": "crab_clawleft_rt",
+													"invertAxis": "xy",
+													"translate": [-5, 3, -4.5],
+													"submodels": [
+														{
+															"id": "crab_clawleft",
+															"invertAxis": "xy",
+															"translate": [0, 0, 0],
+															"boxes": [
+																{"coordinates": [-11, -4, -2.5, 11, 8, 5], "textureOffset": [0, 48]}
+															]
+														}
+													]
+												},
+												{
+													"id": "crab_clawright_rt",
+													"invertAxis": "xy",
+													"translate": [5, 3, -4.5],
+													"submodels": [
+														{
+															"id": "crab_clawright",
+															"invertAxis": "xy",
+															"mirrorTexture": "u",
+															"translate": [0, 0.5, 0],
+															"boxes": [
+																{"coordinates": [0, -2.5, -2.5, 7, 5, 5], "textureOffset": [0, 61]}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"id": "glow_tentacles",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"submodels": [
+												{
+													"id": "tentacle_left",
+													"invertAxis": "xy",
+													"translate": [-4, 0, -2],
+													"rotate": [0, -90, -90],
+													"boxes": [
+														{"coordinates": [-1, -18, -1, 2, 18, 2], "textureOffset": [32, 48]}
+													]
+												},
+												{
+													"id": "tentacle_right",
+													"invertAxis": "xy",
+													"mirrorTexture": "u",
+													"translate": [4, 0, -2],
+													"rotate": [0, 90, 90],
+													"boxes": [
+														{"coordinates": [-1, -18, -1, 2, 18, 2], "textureOffset": [32, 48]}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"id": "crabsticks",
+									"invertAxis": "xy",
+									"translate": [4, 1, 4],
+									"submodels": [
+										{
+											"id": "crabsticks_left",
+											"invertAxis": "xy",
+											"translate": [-4, 0, 0],
+											"submodels": [
+												{
+													"id": "crabstick_leftback",
+													"invertAxis": "xy",
+													"translate": [0, -1, 3],
+													"submodels": [
+														{
+															"id": "crabstick_leftback_rt",
+															"invertAxis": "xy",
+															"translate": [0, -12, 0],
+															"boxes": [
+																{"coordinates": [0, 0, -1, 0, 16, 2], "textureOffset": [24, 59]}
+															]
+														}
+													]
+												},
+												{
+													"id": "crabstick_leftcenter",
+													"invertAxis": "xy",
+													"translate": [0, -1, 0],
+													"submodels": [
+														{
+															"id": "crabstick_leftcenter_rt",
+															"invertAxis": "xy",
+															"translate": [0, -12, 0],
+															"boxes": [
+																{"coordinates": [0, 0, -1, 0, 16, 2], "textureOffset": [24, 59]}
+															]
+														}
+													]
+												},
+												{
+													"id": "crabstick_left",
+													"invertAxis": "xy",
+													"translate": [0, -1, -3],
+													"submodels": [
+														{
+															"id": "crabstick_left_rt",
+															"invertAxis": "xy",
+															"translate": [0, -12, 0],
+															"boxes": [
+																{"coordinates": [0, 0, -1, 0, 16, 2], "textureOffset": [24, 59]}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"id": "crabsticks_right",
+											"invertAxis": "xy",
+											"translate": [4, 0, 0],
+											"submodels": [
+												{
+													"id": "crabstick_rightback",
+													"invertAxis": "xy",
+													"translate": [0, -1, 3],
+													"submodels": [
+														{
+															"id": "crabstick_rightback_rt",
+															"invertAxis": "xy",
+															"mirrorTexture": "u",
+															"translate": [0, -12, 0],
+															"boxes": [
+																{"coordinates": [0, 0, -1, 0, 16, 2], "textureOffset": [24, 59]}
+															]
+														}
+													]
+												},
+												{
+													"id": "crabstick_rightcenter",
+													"invertAxis": "xy",
+													"translate": [0, -1, 0],
+													"submodels": [
+														{
+															"id": "crabstick_rightcenter_rt",
+															"invertAxis": "xy",
+															"mirrorTexture": "u",
+															"translate": [0, -12, 0],
+															"boxes": [
+																{"coordinates": [0, 0, -1, 0, 16, 2], "textureOffset": [24, 59]}
+															]
+														}
+													]
+												},
+												{
+													"id": "crabstick_right",
+													"invertAxis": "xy",
+													"translate": [0, -1, -3],
+													"submodels": [
+														{
+															"id": "crabstick_right_rt",
+															"invertAxis": "xy",
+															"mirrorTexture": "u",
+															"translate": [0, -12, 0],
+															"boxes": [
+																{"coordinates": [0, 0, -1, 0, 16, 2], "textureOffset": [24, 59]}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"part": "left_wing",
+			"id": "left_wing",
+			"invertAxis": "xy",
+			"translate": [1.5, -7.1, 0.8]
+		},
+		{
+			"part": "right_wing",
+			"id": "right_wing",
+			"invertAxis": "xy",
+			"translate": [-1.5, -7.1, 0.8]
+		},
+		{
+			"part": "left_leg",
+			"id": "left_leg",
+			"invertAxis": "xy",
+			"translate": [1, -2, 1]
+		},
+		{
+			"part": "right_leg",
+			"id": "right_leg",
+			"invertAxis": "xy",
+			"translate": [-1, -2, 1]
+		},
+		{
+			"part": "tail",
+			"id": "tail",
+			"invertAxis": "xy",
+			"translate": [0, -2.9, -1.2]
+		}
+	]
+}

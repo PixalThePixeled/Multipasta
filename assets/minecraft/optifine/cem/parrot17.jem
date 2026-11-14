@@ -1,0 +1,1868 @@
+{
+	"credit": "Model & Animations by Kotisimo, Not Hedorah & Horsebats textures by Moro2610, Hedorah texture by Shitov, NotVaran Keyano by Primal, Ghigan by PixalThePixeled",
+	"textureSize": [128, 64],
+	"texture": "textures/entity/multipasta/nothedorah/nothedorah.png",
+	"models": [
+		{
+			"part": "head",
+			"id": "head",
+			"invertAxis": "xy",
+			"translate": [0, -8, 0.5],
+			"animations": [
+				{
+					"var.time": "time - pi/random(id)",
+					"body.rx": 0,
+					"body.tx": 0,
+					"body.ty": 16.5,
+					"body.tz": 0,
+					"rotation.rz": "if(death_time > 0, -torad(min(sqrt((death_time - 1) / 20 * 1.6), 1) * 90), 0)",
+					"varb.ifdance": "right_leg.rz!=0&&is_on_ground",
+					"var.riding": "if(is_riding, 0, 1)",
+					"var.death": "death_time"
+				},
+				{
+					"var.nothedorah_ground": "todeg(sin(torad(clamp(if(is_on_ground && !is_on_shoulder, var.nothedorah_ground-0.15 * frame_time * 20, var.nothedorah_ground+0.07 * frame_time * 20), 0, 1))))",
+					"var.nothedorah_sit": "   todeg(sin(torad(clamp(if(is_sitting, var.nothedorah_sit-0.08 * frame_time * 20, var.nothedorah_sit+0.09 * frame_time * 20), 0, 1))))",
+					"var.nothedorah_sit2": "  todeg(sin(torad(clamp(if(is_sitting, var.nothedorah_sit2-0.3 * frame_time * 20, var.nothedorah_sit2+0.02 * frame_time * 20), 0, 1))))",
+					"var.nothedorah_sit3": "  todeg(sin(torad(clamp(if(is_sitting, var.nothedorah_sit3-0.5 * frame_time * 20, var.nothedorah_sit3+0.04 * frame_time * 20), 0, 1))))",
+					"var.dance": "            todeg(sin(torad(clamp(if(varb.ifdance, var.dance-0.15 * frame_time * 20, var.dance+0.15 * frame_time * 20), 0, 1))))",
+					"var.dancearms": "        todeg(sin(torad(clamp(if(varb.ifdance, var.dancearms-0.04 * frame_time * 20, var.dancearms+0.2 * frame_time * 20), 0, 1))))",
+					"var.dancealt": "         todeg(sin(torad(clamp(if(varb.ifdance, var.dancealt-0.025 * frame_time * 20, var.dancealt+0.25 * frame_time * 20), 0, 1))))",
+					"var.horsebat1_appear": " todeg(sin(torad(clamp(if(is_on_ground && !is_on_shoulder, var.horsebat1_appear-0.085 * frame_time * 20, var.horsebat1_appear+0.16 * frame_time * 20), 0, 1))))",
+					"var.horsebat2_appear": " todeg(sin(torad(clamp(if(is_on_ground && !(is_on_shoulder||varb.ifdance), var.horsebat2_appear-0.045 * frame_time * 20, var.horsebat2_appear+0.05 * frame_time * 20), 0, 1))))",
+					"var.horsebat1_st": "     todeg(sin(torad(clamp(if(is_on_ground && !is_on_shoulder, var.horsebat1_st-0.09 * frame_time * 20, var.horsebat1_st+0.4 * frame_time * 20), 0, 1))))",
+					"var.horsebat2_st": "     todeg(sin(torad(clamp(if(is_on_ground && !(is_on_shoulder||varb.ifdance), var.horsebat2_st-0.075 * frame_time * 20, var.horsebat2_st+0.4 * frame_time * 20), 0, 1))))",
+					"var.horsebat_death": "   todeg(sin(torad(clamp(if(is_alive, var.horsebat_death-0.06 * frame_time * 20, var.horsebat_death+0.075 * frame_time * 20), 0, 1))))",
+					"var.noth_riding": "      todeg(sin(torad(clamp(if(is_riding, var.noth_riding-0.08 * frame_time * 20, var.noth_riding+0.09 * frame_time * 20), 0, 1))))",
+					"var.noth_riding2": "     todeg(sin(torad(clamp(if(is_riding, var.noth_riding2-0.03 * frame_time * 20, var.noth_riding2+0.4 * frame_time * 20), 0, 1))))"
+				},
+				{
+					"horsebat.visible": "between(var.riding, 1, 1)",
+					"horsebat.tx": "lerp(var.horsebat1_appear, -80, -2.5)",
+					"horsebat.ty": "lerp(var.horsebat1_appear, -256, -16.5)",
+					"horsebat.tz": "lerp(var.horsebat1_appear, 128, +8.5)",
+					"horsebat.rx": "+torad(6)",
+					"horsebat.ry": "+torad(6)",
+					"horsebat.rz": "-torad(16)",
+					"horsebat.sx": "lerp(var.horsebat1_st, 0, 1)",
+					"horsebat.sy": "horsebat.sx",
+					"horsebat.sz": "horsebat.sx",
+					"horsebat_body_rotation.rx": "+torad(29) +(cos(var.time/4) * torad(6))",
+					"horsebat_neck.rx": "-torad(8) -(cos(var.time/4) * torad(6)) ",
+					"horsebat_neck.ry": "+torad(2) -(cos(var.time/4) * torad(6) +torad(head_yaw/4))",
+					"horsebat_neck.rz": "-torad(14) -(cos(var.time/4) * torad(6) +torad(head_yaw/4))",
+					"horsebat_skull.rx": "-torad(36) +(sin(var.time/4) * torad(4))",
+					"horsebat_skull.ry": "+torad(2)",
+					"horsebat_skull.rz": "+torad(12)",
+					"horsebat_tail.rx": "-torad(22) +(sin(var.time/4) * torad(12))",
+					"horsebat_tail.ry": "-torad(160)",
+					"horsebat_tail.rz": "-(cos(var.time/4) * torad(12))",
+					"horsebat_leftwing.rx": "-torad(32)",
+					"horsebat_leftwing.ry": "+torad(84) -(cos(var.time/4) * torad(74))",
+					"horsebat_leftwing.rz": "+torad(16) +(sin(var.time/4) * torad(16))",
+					"horsebat_rightwing.rx": "-torad(32)",
+					"horsebat_rightwing.ry": "-torad(84) +(cos(var.time/4) * torad(74))",
+					"horsebat_rightwing.rz": "-horsebat_leftwing.rz"
+				},
+				{
+					"horsebat_body.sx": "horsebat_body2.sx",
+					"horsebat_body.sy": "horsebat_body2.sy",
+					"horsebat_body.sz": "horsebat_body2.sz",
+					"horsebat_body2.sx": "lerp(var.horsebat_death, 1, 0)",
+					"horsebat_body2.sy": "horsebat_body2.sx",
+					"horsebat_body2.sz": "horsebat_body2.sx",
+					"horsebat_body2_alt.sx": "horsebat_body2.sx",
+					"horsebat_body2_alt.sy": "horsebat_body2.sy",
+					"horsebat_body2_alt.sz": "horsebat_body2.sz",
+					"horsebat_neck2_rt.sx": "horsebat_body2.sx",
+					"horsebat_neck2_rt.sy": "horsebat_body2.sy",
+					"horsebat_neck2_rt.sz": "horsebat_body2.sz",
+					"horsebat_neck2_alt_rt.sx": "horsebat_body2.sx",
+					"horsebat_neck2_alt_rt.sy": "horsebat_body2.sy",
+					"horsebat_neck2_alt_rt.sz": "horsebat_body2.sz"
+				},
+				{
+					"horsebat_body2.visible": "between(var.dance, 0.9, 1) || between(var.dance, 0.4, 0.5) || between(var.dance, 0, 0.1)",
+					"horsebat_body2_alt.visible": "between(var.dance, 0.6 ,0.8) || between(var.dance, 0.2, 0.3)",
+					"horsebat_neck2_rt.visible": "horsebat_body2.visible",
+					"horsebat_neck2_alt_rt.visible": "horsebat_body2_alt.visible"
+				},
+				{
+					"horsebat2.visible": "between(var.riding, 1, 1)",
+					"horsebat2.ry": "-rot_y +if(varb.ifdance, +(var.time/26), 0)",
+					"horsebat_body_rotation2.tx": "lerp(var.horsebat2_appear, +80, +34.5) +lerp(var.dance, 14, 0)",
+					"horsebat_body_rotation2.ty": "lerp(var.horsebat2_appear, -256, +12 -(sin(var.time/4) * 4)/1.5) +lerp(var.dance, -13, 0)",
+					"horsebat_body_rotation2.tz": "lerp(var.horsebat2_appear, 30, +24)",
+					"horsebat_body_rotation2.sx": "lerp(var.horsebat2_st, 0, 1)",
+					"horsebat_body_rotation2.sy": "horsebat_body_rotation2.sx",
+					"horsebat_body_rotation2.sz": "horsebat_body_rotation2.sx",
+					"horsebat_body_rotation2.rx": "lerp(var.dance, torad(58), torad(29)) -(cos(var.time/4) * torad(6))",
+					"horsebat_body_rotation2.ry": "lerp(var.dance, -torad(16), player_rot_y+pi)",
+					"horsebat_neck2.rx": "lerp(var.dance, -torad(6), torad(18)) -(sin(var.time/4) * torad(8)) ",
+					"horsebat_neck2.ry": "+torad(2) +(sin(var.time/4) * torad(6))",
+					"horsebat_skull2.ty": "-7.8 +(var.death*3.4)",
+					"horsebat_skull2.tz": "0 -(var.death*4.1)",
+					"horsebat_skull2.rx": "lerp(var.dance, -torad(32), -torad(36)) -(sin(var.time/4) * torad(4))",
+					"horsebat_tail2.rx": "lerp(var.dance, torad(50), -torad(18)) -(sin(var.time/4) * torad(12))",
+					"horsebat_tail2.rz": "-(cos(var.time/4) * torad(12))",
+					"horsebat_leftwing2.rx": "-torad(32)",
+					"horsebat_leftwing2.ry": "+torad(84) +(cos(var.time/4) * torad(74))",
+					"horsebat_leftwing2.rz": "+torad(16) -(sin(var.time/4) * torad(16))",
+					"horsebat_rightwing2.rx": "-torad(32)",
+					"horsebat_rightwing2.ry": "-torad(84) -(cos(var.time/4) * torad(74))",
+					"horsebat_rightwing2.rz": "-horsebat_leftwing2.rz"
+				},
+				{
+					"horsebat_tail2_alt.rx": "horsebat_tail2.rx",
+					"horsebat_tail2_alt.rz": "horsebat_tail2.rz",
+					"horsebat_leftwing2_alt.rx": "horsebat_leftwing2.rx",
+					"horsebat_leftwing2_alt.ry": "horsebat_leftwing2.ry",
+					"horsebat_leftwing2_alt.rz": "horsebat_leftwing2.rz",
+					"horsebat_rightwing2_alt.rx": "horsebat_rightwing2.rx",
+					"horsebat_rightwing2_alt.ry": "horsebat_rightwing2.ry",
+					"horsebat_rightwing2_alt.rz": "-horsebat_leftwing2.rz"
+				},
+				{
+					"var.alive": "if(is_alive, 0, 1)",
+					"nothedorah_explosions.visible": "between(var.alive, 1, 1)",
+					"nothedorah_explosions.ty": "-9",
+					"nothedorah_explosions.rx": "-player_rot_x",
+					"nothedorah_explosions.ry": "player_rot_y-rot_y+pi"
+				},
+				{
+					"var.noalive": "if(!is_alive, 0, 1)",
+					"nothedorah_eyes.visible": "between(var.noalive, 1, 1)",
+					"var.floor": "floor(time / 3) % 7",
+					"nothedorah_eyes1.visible": "var.floor == 0 || var.floor == 5 || var.floor == 6",
+					"nothedorah_eyes2.visible": "var.floor == 1 || var.floor == 4",
+					"nothedorah_eyes3.visible": "var.floor == 2 || var.floor == 3",
+					"nothedorah_deatheyes.visible": "between(var.alive, 1, 1)"
+				},
+				{
+					"nothedorah.rx": "         lerp(var.noth_riding, 0,                                              lerp(var.nothedorah_ground, 0 +lerp(var.nothedorah_sit, -torad(2), 0), -(cos(var.time/4) * torad(4)))   )",
+					"nothedorah.ry": "         lerp(var.noth_riding, 0,                                              lerp(var.nothedorah_ground, +torad(head_yaw/6), +torad(head_yaw/4))   )",
+					"nothedorah.rz": "         lerp(var.noth_riding, 0,                                              lerp(var.nothedorah_ground, 0, +(cos(var.time/4) * torad(2)))   )",
+					"nothedorah_rotation.ty": "lerp(var.noth_riding, 2.2,                                            lerp(var.nothedorah_ground, +lerp(var.nothedorah_sit3, +2.5, +6.2), -20 +(sin(var.time/4) * 4)/2)   )",
+					"nothedorah_rotation.tz": "lerp(var.noth_riding, -4,                                             if(is_on_shoulder, 22, 0) -2   )",
+					"nothedorah_rotation.rx": "lerp(var.noth_riding, 0,                                              lerp(var.nothedorah_ground, 0, torad(6) -(torad(3) * hurt_time) +(sin(var.time/4) * torad(5)))   )"
+				},
+				{
+					"nothedorah_head.tz": "lerp(var.noth_riding, 0,                     lerp(var.nothedorah_ground,  lerp(var.nothedorah_sit,  torad(head_yaw/6), 0 ), 0)   )",
+					"nothedorah_head.rx": "lerp(var.noth_riding, +torad(14) +pow(sin(var.time/16+pi/2), 6)/12,       lerp(var.nothedorah_ground, -torad(20) +lerp(var.nothedorah_sit, +torad(36)  +(torad(2) * hurt_time) +torad(max(head_pitch,-60))/6,  +(torad(5) * hurt_time) +torad(max(head_pitch,-60))/6 +pow(sin(var.time/16+pi/4), 2)/6), +torad(6) -(sin(var.time/4) * torad(6)))   )",
+					"nothedorah_head.ry": "lerp(var.noth_riding, 0 -sin(var.time/16) * torad(6),                     lerp(var.nothedorah_ground, 0 +lerp(var.nothedorah_sit, -torad(head_yaw/3.5) +(cos(var.time/8) * torad(6)), -torad(head_yaw/2) +cos(var.time/16) * torad(6) +(cos(limb_swing/2) * limb_speed)/4), 0 +torad(head_yaw/2))   )",
+					"nothedorah_head.rz": "lerp(var.noth_riding, 0 -sin(var.time/16) * torad(8),                     lerp(var.nothedorah_ground, 0 +lerp(var.nothedorah_sit,  torad(head_yaw/6) +(sin(var.time/8) * torad(8)), +torad(head_yaw/1.8) -cos(var.time/16) * torad(6)), 0)   )",
+					"nothedorah_jaw.rx": "lerp(var.noth_riding, 0,  +(torad(5) * hurt_time))",
+					"nothedorah_neck.rx": "lerp(var.noth_riding, +torad(22) +pow(sin(var.time/16+pi/2), 2)/6,        lerp(var.nothedorah_ground, +torad(36) +lerp(var.nothedorah_sit, +torad(28)  -(torad(3) * hurt_time) +(sin(var.time/8) * torad(2)) +torad(max(head_pitch,-60))/6, +torad(max(head_pitch,-10))/6  -(torad(5) * hurt_time) +pow(sin(var.time/16+pi/4), 2)/6), +torad(56) -(cos(var.time/4) * torad(4)))   )",
+					"nothedorah_neck.ry": "lerp(var.noth_riding, 0 -cos(var.time/16) * torad(6),                     lerp(var.nothedorah_ground, 0 +lerp(var.nothedorah_sit, 0 +torad(head_yaw/6) +(cos(var.time/8) * torad(5)), +torad(head_yaw/6) -(sin(limb_swing/2) * limb_speed)), -torad(head_yaw/10))   )",
+					"nothedorah_neck.rz": "lerp(var.noth_riding, 0 +cos(var.time/16) * torad(6),                     lerp(var.nothedorah_ground, 0 +lerp(var.nothedorah_sit, 0 -torad(head_yaw/2) -(cos(var.time/8) * torad(5)), -torad(head_yaw/3.8) -cos(var.time/16) * torad(6)), 0)   )",
+					"nothedorah_body_rotation.ty": "lerp(var.noth_riding, 0,                                         lerp(var.nothedorah_ground, -0 +lerp(var.nothedorah_sit, -1, 0), 0)   )",
+					"nothedorah_body_rotation.tz": "lerp(var.noth_riding, 0,                                         lerp(var.nothedorah_ground, -0 +lerp(var.nothedorah_sit, -1, 0), 0)   )",
+					"nothedorah_body_rotation.rx": "lerp(var.noth_riding, 0,                                         lerp(var.nothedorah_ground, -torad(8) +lerp(var.nothedorah_sit, -(torad(2) * hurt_time) -torad(max(head_pitch,-60))/6, 0), 0)   )",
+					"nothedorah_body_rotation.ry": "lerp(var.noth_riding, 0,                                         lerp(var.nothedorah_ground, 0 +lerp(var.nothedorah_sit, 0 +(sin(var.time/8) * torad(8)), 0), 0)   )",
+					"nothedorah_body_rotation.rz": "lerp(var.noth_riding, 0,                                         lerp(var.nothedorah_ground, 0 +lerp(var.nothedorah_sit, 0 +torad(head_yaw/3), 0), 0)   )",
+					"nothedorah_body.rx": "lerp(var.noth_riding, -torad(26) -sin(var.time/8) * torad(4),             lerp(var.nothedorah_ground, -torad(11) +pow(sin(var.time/16+pi/2), 4)/6 +lerp(var.nothedorah_sit, -torad(56), 0 -(torad(3) * hurt_time)), -torad(36))   )",
+					"nothedorah_body.ry": "lerp(var.noth_riding, 0,                                                  lerp(var.nothedorah_ground, 0 +lerp(var.nothedorah_sit, 0 +(sin(var.time/8) * torad(1)), 0 +(sin(limb_swing/2) * limb_speed)), 0)   )",
+					"nothedorah_body.rz": "lerp(var.noth_riding, 0 -cos(var.time/16) * torad(2),                     lerp(var.nothedorah_ground, 0 +sin(var.time/16) * torad(4) +lerp(var.nothedorah_sit, 0 +(cos(var.time/8) * torad(1)), 0), 0)   )",
+					"nothedorah_bodytail.tx": "lerp(var.noth_riding, 0,                                              lerp(var.nothedorah_ground, 0 +lerp(var.nothedorah_sit, -1 +(sin(var.time/8) * 1.2), 0), 0)   )",
+					"nothedorah_bodytail.ty": "lerp(var.noth_riding, 1.5,                                            lerp(var.nothedorah_ground, +lerp(var.nothedorah_sit, -0.5, 1.5), -1)   )",
+					"nothedorah_bodytail.tz": "lerp(var.noth_riding, 7,                                              lerp(var.nothedorah_ground, 6 +lerp(var.nothedorah_sit, 2.2, 0), 6)   )",
+					"nothedorah_bodytail.rx": "lerp(var.noth_riding, +torad(46) +cos(var.time/8) * torad(4),         lerp(var.nothedorah_ground, 0 +(torad(5) * hurt_time) +lerp(var.nothedorah_sit, -torad(142), +torad(10.5) +pow(sin(var.time/16+pi/3), 4)/12), -torad(30) -(cos(var.time/4) * torad(6)))   )",
+					"nothedorah_bodytail.ry": "lerp(var.noth_riding, 0,                                              lerp(var.nothedorah_ground, 0 +lerp(var.nothedorah_sit, +torad(65), -torad(head_yaw/7) -cos(var.time/16) * torad(12) +(cos(limb_swing/2) * limb_speed)), 0)   )",
+					"nothedorah_bodytail.rz": "lerp(var.noth_riding2, 0,                                             lerp(var.nothedorah_ground, 0 +lerp(var.nothedorah_sit2, -torad(90) +torad(head_yaw/9), +sin(var.time/16) * torad(14)), 0 +cos(time/4) * hurt_time *torad(2))   )",
+					"nothedorah_bodytail2.tz": "lerp(var.noth_riding, 13,                                            lerp(var.nothedorah_ground, 11 +lerp(var.nothedorah_sit, 2.2, 0), 12)   )",
+					"nothedorah_bodytail2.rx": "lerp(var.noth_riding, +torad(54) +cos(var.time/8) * torad(4),        lerp(var.nothedorah_ground, -torad(6) +lerp(var.nothedorah_sit, -torad(120) +pow(sin(time/16), 4)/5, +pow(sin(var.time/16), 4)/6), -torad(51) -(cos(var.time/4) * torad(4)))   )",
+					"nothedorah_bodytail2.ry": "lerp(var.noth_riding, 0,                                             lerp(var.nothedorah_ground, 0 +lerp(var.nothedorah_sit, -torad(6), -torad(head_yaw/5.5) -sin(var.time/16) * torad(14) -(sin(limb_swing/2) * limb_speed)*1.5), 0)   )",
+					"nothedorah_bodytail2.rz": "lerp(var.noth_riding, 0,                                             lerp(var.nothedorah_ground, 0 +lerp(var.nothedorah_sit, +torad(8), -cos(var.time/16) * torad(14)), 0 +sin(time/4) * hurt_time *torad(2))   )",
+					"nothedorah_bodytail3.rx": "lerp(var.noth_riding, +torad(34) +sin(var.time/8) * torad(6),        lerp(var.nothedorah_ground, +torad(32) +lerp(var.nothedorah_sit, -torad(125) +pow(cos(time/16+pi/4), 4)/4, -pow(sin(var.time/16+pi/2), 4)/4), -torad(58) -(cos(var.time/4) * torad(2)))   )",
+					"nothedorah_bodytail3.ry": "lerp(var.noth_riding, 0,                                             lerp(var.nothedorah_ground, 0 +lerp(var.nothedorah_sit, -torad(26), -torad(head_yaw/4) -sin(var.time/16) * torad(12) -(sin(limb_swing/2) * limb_speed)*1.5), 0)   )",
+					"nothedorah_bodytail3.rz": "lerp(var.noth_riding, 0,                                             lerp(var.nothedorah_ground, 0 +lerp(var.nothedorah_sit, +torad(6), -sin(var.time/16) * torad(8)), 0 +sin(time/4) * hurt_time *torad(2))   )",
+					"nothedorah_bodytail4.rx": "lerp(var.noth_riding, -torad(85) +cos(var.time/8) * torad(12),       lerp(var.nothedorah_ground, -torad(40) +lerp(var.nothedorah_sit, -torad(76) +pow(sin(time/16), 4)/5, +pow(sin(var.time/16+pi/4), 4)/4), -torad(84) -(sin(var.time/4) * torad(6)))   )",
+					"nothedorah_bodytail4.ry": "lerp(var.noth_riding, 0,                                             lerp(var.nothedorah_ground, 0 +lerp(var.nothedorah_sit, -torad(6), -torad(head_yaw/4) -sin(var.time/16) * torad(28) -(sin(limb_swing/2) * limb_speed)*1.5), 0)   )",
+					"nothedorah_bodytail4.rz": "lerp(var.noth_riding, -torad(180),                                   lerp(var.nothedorah_ground, 0 +lerp(var.nothedorah_sit, +torad(36), -cos(var.time/16) * torad(8)), 0 -cos(time/4) * hurt_time *torad(4))   )"
+				},
+				{
+					"nothedorah_leftshoulder.rx": "lerp(var.noth_riding, +torad(40) -pow(sin(var.time/16), 2)/5,     lerp(var.nothedorah_ground, +torad(16) +lerp(var.nothedorah_sit, +torad(18) -(cos(var.time/8) * torad(14)), -pow(sin(var.time/16+pi/2), 4)/4), +torad(41) +(cos(var.time/4) * torad(5)))   )",
+					"nothedorah_leftshoulder.rz": "lerp(var.noth_riding, -torad(11),                                 lerp(var.nothedorah_ground, -torad(9) +lerp(var.nothedorah_sit, -torad(6) -(sin(var.time/8) * torad(12)), 0), -torad(18) -(torad(3) * hurt_time))   )",
+					"nothedorah_lefthand.rx": "lerp(var.noth_riding, -torad(38) -pow(sin(var.time/16), 2)/5,         lerp(var.nothedorah_ground, -torad(36) +lerp(var.nothedorah_sit, +torad(34) -(cos(var.time/16) * torad(12)), +pow(sin(var.time/16+pi/4), 6)/6), -torad(21) +(sin(var.time/4) * torad(6)))   )",
+					"nothedorah_lefthand.rz": "lerp(var.noth_riding, +torad(18),                                     lerp(var.nothedorah_ground, +torad(16), +torad(16) +(torad(4) * hurt_time))   )",
+					"nothedorah_lefthand.ry": "lerp(var.noth_riding, +torad(18),                                     lerp(var.nothedorah_ground, -torad(8), +torad(24))   )",
+					"nothedorah_leftclaw1.rx": "lerp(var.noth_riding, -torad(3) +pow(sin(var.time/16+pi/2), 8)/4,    lerp(var.nothedorah_ground, -torad(2) +lerp(var.nothedorah_sit, +torad(16) -pow(sin(var.time/16+pi/3),2), +pow(sin(var.time/16), 4)/3), +torad(16))   )",
+					"nothedorah_leftclaw1.ry": "lerp(var.noth_riding, +torad(8),                                     lerp(var.nothedorah_ground, +torad(6) +lerp(var.nothedorah_sit, +torad(8), 0), +torad(8))   )",
+					"nothedorah_leftclaw2.rx": "lerp(var.noth_riding, +torad(3) +pow(sin(var.time/16+pi/2), 8)/4,    lerp(var.nothedorah_ground, -torad(5) +lerp(var.nothedorah_sit, +torad(12) -pow(sin(var.time/16+pi/3),2)/2, +pow(sin(var.time/16), 4)/3), +torad(12))   )",
+					"nothedorah_leftclaw2.ry": "lerp(var.noth_riding, -torad(10),                                    lerp(var.nothedorah_ground, -torad(6) +lerp(var.nothedorah_sit, -torad(8), 0), -torad(8))   )",
+					"nothedorah_rightshoulder.rx": "lerp(var.noth_riding, +torad(40) -pow(sin(var.time/16), 2)/5,    lerp(var.nothedorah_ground, +torad(16) -pow(sin(var.time/16+pi/2), 4)/4 +lerp(var.nothedorah_sit, +torad(18) -(sin(var.time/8) * torad(14)), 0), +torad(41) +(cos(var.time/4) * torad(5)))   )",
+					"nothedorah_rightshoulder.rz": "lerp(var.noth_riding, +torad(11),                                lerp(var.nothedorah_ground, +torad(9) +lerp(var.nothedorah_sit, +torad(6) -(cos(var.time/8) * torad(12)), 0), +torad(18) +(torad(3) * hurt_time))   )",
+					"nothedorah_righthand.rx": "lerp(var.noth_riding, -torad(38) -pow(sin(var.time/16), 2)/5,        lerp(var.nothedorah_ground, -torad(36) +lerp(var.nothedorah_sit, +torad(34) -(sin(var.time/16) * torad(12)), +pow(sin(var.time/16+pi/4), 6)/6), -torad(21) +(sin(var.time/4) * torad(6)))   )",
+					"nothedorah_righthand.rz": "lerp(var.noth_riding, -torad(18),                                    lerp(var.nothedorah_ground, -torad(16), -torad(16) -(torad(4) * hurt_time))   )",
+					"nothedorah_righthand.ry": "lerp(var.noth_riding, -torad(18),                                    lerp(var.nothedorah_ground, +torad(8), -torad(24))   )",
+					"nothedorah_rightclaw1.rx": "lerp(var.noth_riding, -torad(3) +pow(sin(var.time/16+pi/2), 8)/4,   lerp(var.nothedorah_ground, -torad(2) +lerp(var.nothedorah_sit, +torad(16) -pow(sin(var.time/16+pi/3),2), +pow(sin(var.time/16), 4)/3), +torad(16))   )",
+					"nothedorah_rightclaw1.ry": "lerp(var.noth_riding, -torad(8),                                    lerp(var.nothedorah_ground, -torad(6) +lerp(var.nothedorah_sit, -torad(8), 0), -torad(6))   )",
+					"nothedorah_rightclaw2.rx": "lerp(var.noth_riding, +torad(3) +pow(sin(var.time/16+pi/2), 8)/5,   lerp(var.nothedorah_ground, -torad(5) +lerp(var.nothedorah_sit, +torad(12) -pow(sin(var.time/16+pi/3),2)/2, +pow(sin(var.time/16), 4)/3), +torad(12))   )",
+					"nothedorah_rightclaw2.ry": "lerp(var.noth_riding, +torad(10),                                   lerp(var.nothedorah_ground, +torad(6) +lerp(var.nothedorah_sit, +torad(8), 0), +torad(6))   )"
+				},
+				{
+					"var.hedorah_ground": "todeg(sin(torad(clamp(if((is_on_ground||is_riding) && !is_on_shoulder, var.hedorah_ground-0.15 * frame_time * 20, var.hedorah_ground+0.07 * frame_time * 20), 0, 1))))",
+					"var.Hdance": "        todeg(sin(torad(clamp(if(varb.ifdance, var.Hdance-0.05 * frame_time * 20, var.Hdance+0.09 * frame_time * 20), 0, 1))))",
+					"var.Hdance_sizeY": "  todeg(sin(torad(clamp(if(varb.ifdance, var.Hdance_sizeY-0.065 * frame_time * 20, var.Hdance_sizeY+0.08 * frame_time * 20), 0, 1))))",
+					"var.Hdance_size": "   todeg(sin(torad(clamp(if(varb.ifdance, var.Hdance_size-0.2 * frame_time * 20, var.Hdance_size+0.2 * frame_time * 20), 0, 1))))",
+					"var.Hdance_legsize": "todeg(sin(torad(clamp(if(varb.ifdance, var.Hdance_legsize-0.05 * frame_time * 20, var.Hdance_legsize+0.35 * frame_time * 20), 0, 1))))",
+					"var.hedorahhurt": "if(is_hurt || !is_alive, 1, 0)",
+					"var.ifHdance": "if(varb.ifdance, 1, 0)",
+					"var.Hflrtime": "floor(time / 2.4) % 2",
+					"var.Hfloor": "if((is_hurt || !is_alive) && !varb.ifdance, var.Hflrtime, 0)",
+					"var.NOTHfloor": "if(is_hurt || !is_alive, var.Hflrtime, 1)",
+					"hedorah.visible": "between(var.hedorahhurt, 1, 1) || between(var.dance, 0.85, 0.95) || between(var.dance, 0, 0.7)",
+					"hedorah_rt.visible": "+var.Hfloor == 0",
+					"nothedorah.visible": "between(var.dance, 0.95, 1) || between(var.dance, 0.75, 0.8)",
+					"nothedorah_body.visible": "var.NOTHfloor == 1"
+				},
+				{
+					"synth_notvaran4.visible": "between(var.Hdance, 0.6, 0.9) || between(var.Hdance, 0.45, 0.55)",
+					"synth_notvaran3.visible": "between(var.Hdance, 0.35, 0.45) || between(var.Hdance, 0.2, 0.25)",
+					"synth_notvaran2.visible": "between(var.Hdance, 0.55, 0.6) || between(var.Hdance, 0.25, 0.35)",
+					"synth_notvaran.visible": " between(var.Hdance, 0, 0.2)",
+					"synth_notvaran_rt.tz": "   lerp(var.Hdance, -15, -42)",
+					"synth_notvaran_rt.ry": "   lerp(var.Hdance_sizeY, -torad(head_yaw/6), torad(222))",
+					"synth_notvaran_rt.sx": "   lerp(var.Hdance_size, 1, 0)",
+					"synth_notvaran_rt.sy": "   lerp(var.Hdance_sizeY, 1, 0)",
+					"synth_notvaran_rt.sz": "synth_notvaran_rt.sx"
+				},
+				{
+					"synth_notvaran_body.ty": "     lerp(var.dancealt, (pow(sin(var.time/2+pi/4.3), 8)*1.5), 0) -13.7",
+					"synth_notvaran_body.rx": "     lerp(var.dancealt, -(pow(sin(var.time/2+pi/4.3), 8)/9.5), 0) -torad(12.5)",
+					"synth_notvaran_body.rz": "     lerp(var.dancealt, -(pow(sin(var.time/2+pi/4.5), 7)/12), 0)",
+					"synth_notvaran_neck.rx": "torad(17) +cos(var.time/10) * torad(6)",
+					"synth_notvaran_neck.rz": "     lerp(var.dancealt, -(pow(sin(var.time/2), 7)/8), 0)",
+					"synth_notvaran_head.rx": "(pow(sin(var.time/16+pi), 2)/2)",
+					"synth_notvaran_head.ry": "var.time/8",
+					"synth_notvaran_neck2.rx": "    synth_notvaran_neck.rx",
+					"synth_notvaran_head2.ry": "    synth_notvaran_head.ry",
+					"synth_notvaran_neck3.rx": "    synth_notvaran_neck.rx",
+					"synth_notvaran_head3.ry": "    synth_notvaran_head.ry",
+					"synth_notvaran_neck4.rx": "    synth_notvaran_neck.rx",
+					"synth_notvaran_head4.ry": "    synth_notvaran_head.ry",
+					"synth_notvaranlegs.ty": "      lerp(var.dancealt, (pow(sin(var.time/2+pi/4.5), 6)/1.62), 0)",
+					"synth_notvaran_leftleg.rz": "  lerp(var.dancealt, -(pow(sin(var.time/2+pi/4.5), 6)/8.5), 0) -torad(22.5)",
+					"synth_notvaran_rightleg.rz": "-synth_notvaran_leftleg.rz",
+					"synth_notvaran_leftleg.sy": "  lerp(var.Hdance_legsize, 1, 0)",
+					"synth_notvaran_rightleg.sy": " synth_notvaran_leftleg.sy",
+					"synth_notvaran_leftleg2.sy": " synth_notvaran_leftleg.sy",
+					"synth_notvaran_rightleg2.sy": "synth_notvaran_leftleg.sy",
+					"synth_notvaran_leftleg3.sy": " synth_notvaran_leftleg.sy",
+					"synth_notvaran_rightleg3.sy": "synth_notvaran_leftleg.sy",
+					"synth_notvaran_leftleg4.sy": " synth_notvaran_leftleg.sy",
+					"synth_notvaran_rightleg4.sy": "synth_notvaran_leftleg.sy"
+				},
+				{
+					"hedorah_rt.rx": "       lerp(var.dance, 0,                                                      lerp(var.hedorah_ground, 0, torad(22) +sin(var.time/4) * torad(5) -(torad(5) * hurt_time))      )",
+					"hedorah.ty": "          lerp(var.dance, 7.48,                                                   lerp(var.hedorah_ground, 7.48, -12 +(sin(var.time/4) * 4)/2)      )",
+					"hedorah.tz": "          lerp(var.dance, 3,                                                      lerp(var.hedorah_ground, 3, if(is_on_shoulder, 17, -6))      )",
+					"hedorah_head.ry": "     lerp(var.dancearms, +torad(head_yaw/14.8),                              lerp(var.hedorah_ground, if(!is_riding, torad(head_yaw/14.8), 0), torad(head_yaw/14.8))      )",
+					"hedorah_head_rt.rx": "  lerp(var.dance, 0,                                                      lerp(var.hedorah_ground, +(torad(1.5) * hurt_time), -torad(16) +(torad(2) * hurt_time) +pow(sin(var.time/8+pi/2), 2)/6)      )",
+					"hedorah_head_rt.ry": "  lerp(var.dancearms, +torad(head_yaw/2),                               lerp(var.hedorah_ground, if(!is_riding, torad(head_yaw/3.5),0 ), torad(head_yaw/3))      )",
+					"hedorah_head_rt.rz": "  lerp(var.dancearms, -sin(var.time/2) * torad(6),                        lerp(var.hedorah_ground, -sin(var.time/8) * torad(2.5), 0)      )",
+					"hedorah_mane.rx": "     lerp(var.dance, 0,                                                      lerp(var.hedorah_ground, 0, -pow(sin(var.time/8), 2)/12)      )",
+					"hedorah_mane.rz": "     lerp(var.dance, 0,                                                      lerp(var.hedorah_ground, +sin(var.time/8) * torad(3), 0)      )",
+					"hedorah_body.rx": "     lerp(var.dance, 0,                                                      lerp(var.hedorah_ground, -sin(var.time/8) * torad(2) -(torad(2.2) * hurt_time), 0)      )",
+					"hedorah_body.ry": "     lerp(var.dancearms, +torad(head_yaw/4),                                 lerp(var.hedorah_ground, if(!is_riding, torad(head_yaw/6), 0), torad(head_yaw/3))      )",
+					"hedorah_body.rz": "     lerp(var.dance, -cos(var.time/2) * torad(6),                            lerp(var.hedorah_ground, -cos(var.time/8) * torad(3), 0)      )",
+					"hedorah_tail.rx": "     lerp(var.dance, -torad(50),                                             lerp(var.hedorah_ground, -torad(60), -torad(68)  -cos(var.time/4) * torad(6))      )",
+					"hedorah_tail.ry": "     lerp(var.dance, -sin(var.time/4) * torad(21),                           lerp(var.hedorah_ground, -sin(var.time/8) * torad(12), +cos(time/8) * hurt_time *torad(6))      )",
+					"hedorah_tail2.rx": "    lerp(var.dance, torad(88),                                              lerp(var.hedorah_ground, torad(88), -torad(32) -cos(var.time/4) * torad(6))      )",
+					"hedorah_tail2.ry": "    lerp(var.dance, +cos(var.time/4) * torad(17),                           lerp(var.hedorah_ground, +cos(var.time/8) * torad(12), +sin(time/8) * hurt_time *torad(6))      )",
+					"hedorah_tail2.rz": "    lerp(var.dance, +cos(var.time/4) * torad(16),                           lerp(var.hedorah_ground, 0, +cos(time/8) * hurt_time *torad(4))      )",
+					"hedorah_tail3.rx": "    lerp(var.dance, -torad(40),                                             lerp(var.hedorah_ground, -torad(40), -torad(40) -sin(var.time/4) * torad(10))      )",
+					"hedorah_tail3.ry": "    lerp(var.dance, +cos(var.time/4) * torad(24),                           lerp(var.hedorah_ground, +cos(var.time/8) * torad(22), -sin(time/8) * hurt_time *torad(6))      )",
+					"hedorah_tail3.rz": "    lerp(var.dance, -cos(var.time/4) * torad(22),                           lerp(var.hedorah_ground, -cos(var.time/8) * torad(18), +cos(time/8) * hurt_time *torad(6))      )",
+					"hedorah_lefthand.rx": " lerp(var.dancearms, torad(4) -(pow(sin(var.time/4+pi/4), 2)/2.5),       lerp(var.hedorah_ground, torad(24) +sin(var.time/8) * torad(5) -(torad(2) * hurt_time), torad(16) +pow(sin(var.time/8), 2)/4 -(torad(4) * hurt_time))      )",
+					"hedorah_lefthand.ry": " lerp(var.dancearms, -torad(8),                                          lerp(var.hedorah_ground, -torad(24) -cos(var.time/8) * torad(5) +cos(time/8) * hurt_time *torad(4), -torad(20) -(torad(3) * hurt_time))      )",
+					"hedorah_lefthand.rz": " lerp(var.dancearms, 0,                                                  lerp(var.hedorah_ground, torad(8) +sin(time/8) * hurt_time *torad(4), torad(8) +pow(sin(var.time/8+pi/2), 2)/5)      )",
+					"hedorah_righthand.rx": "lerp(var.dancearms, torad(4) -(pow(sin(-var.time/4+pi/4), 2)/2.5),      lerp(var.hedorah_ground, torad(24) -cos(var.time/8) * torad(5) -(torad(2) * hurt_time), torad(16) +pow(sin(var.time/8), 2)/4 -(torad(4) * hurt_time))      )",
+					"hedorah_righthand.ry": "lerp(var.dancearms, torad(11),                                          lerp(var.hedorah_ground, torad(24) +sin(var.time/8) * torad(5) -sin(time/8) * hurt_time *torad(4), torad(20) +(torad(3) * hurt_time))      )",
+					"hedorah_righthand.rz": "lerp(var.dancearms, 0,                                                  lerp(var.hedorah_ground, -torad(8) +cos(time/8) * hurt_time *torad(4), -torad(8) -pow(sin(var.time/8+pi/2), 2)/5)      )",
+					"hedorah_leftleg.rx": "                                                                          lerp(var.hedorah_ground, 0, -torad(18) -cos(var.time/4) * torad(4))",
+					"hedorah_rightleg.rx": "hedorah_leftleg.rx",
+					"hedorah_leftleg.ry": "  lerp(var.hedorah_ground, -torad(12), -torad(8))",
+					"hedorah_rightleg.ry": "-hedorah_leftleg.ry",
+					"hedorah_leftleg.rz": "                                                                          lerp(var.hedorah_ground, 0, -torad(3.5)  -sin(var.time/4+pi/7) * torad(2.5) -(torad(1) * hurt_time))",
+					"hedorah_rightleg.rz": "-hedorah_leftleg.rz"
+				},
+				{
+					"var.GHspawn": "     todeg(sin(torad(clamp(if(varb.ifdance, var.GHspawn-0.075 * frame_time * 20, var.GHspawn+0.2 * frame_time * 20), 0, 1))))",
+					"var.GHappearSlow": "todeg(sin(torad(clamp(if(varb.ifdance, var.GHappearSlow-0.038 * frame_time * 20, var.GHappearSlow+0.15 * frame_time * 20), 0, 1))))",
+					"var.GHappear": "    todeg(sin(torad(clamp(if(varb.ifdance, var.GHappear-0.065 * frame_time * 20, var.GHappear+0.2 * frame_time * 20), 0, 1))))",
+					"var.GHboom": "      todeg(sin(torad(clamp(if(varb.ifdance, var.GHboom-0.15 * frame_time * 20, var.GHboom+0.09 * frame_time * 20), 0, 1))))"
+				},
+				{
+					"ghigan_rt.visible": "between(var.GHappear, 0.58, 0.6) || between(var.GHappear, 0, 0.4)",
+					"ghigan_rt_void.visible": "between(var.GHappear, 0.6, 1) || between(var.GHappear, 0.4, 0.58)",
+					"ghigan_spawn.ry": "player_rot_y+pi",
+					"ghigan_spawn.visible": "between(var.ifHdance, 1, 1)",
+					"ghigan_spawn_fr4.visible": "between(var.GHspawn, 0.8, 1)",
+					"ghigan_spawn_fr3.visible": "between(var.GHspawn, 0.7, 0.8)",
+					"ghigan_spawn_fr2.visible": "between(var.GHspawn, 0.15, 0.7)",
+					"ghigan_spawn_fr1.visible": "between(var.GHspawn, 0.05, 0.15)",
+					"ghigan_spawn.ty": "-4 +ghigan_rt.ty",
+					"ghigan_boom.ty": "-6 +ghigan_rt.ty",
+					"ghigan_boom.rx": "-player_rot_x",
+					"ghigan_boom.ry": "player_rot_y+pi",
+					"ghigan_boom.visible": "between(var.ifHdance, 0, 0)",
+					"ghigan_boom_fr1.visible": "between(var.GHboom, 0.85, 0.95)",
+					"ghigan_boom_fr2.visible": "between(var.GHboom, 0.7, 0.85)",
+					"ghigan_boom_fr3.visible": "between(var.GHboom, 0.5, 0.7)",
+					"ghigan_boom_fr4.visible": "between(var.GHboom, 0.3, 0.5)"
+				},
+				{
+					"void3.ry": "-rot_y",
+					"void3stuff.tx": "-23",
+					"void3stuff.ty": "-49",
+					"ghigan_rt.ty": "  lerp(var.GHappearSlow, +cos(var.time/5) * 1, -6)",
+					"ghigan.ry": "player_rot_y+pi +torad(39.5)",
+					"ghigan.rz": "lerp(var.GHappearSlow, +sin(var.time/5) * torad(5), 0)",
+					"ghigan_neckleft.rx": "-torad(16)",
+					"ghigan_neckleft.ry": "-torad(28)",
+					"ghigan_headleft.rx": "torad(56)",
+					"ghigan_neckright.rx": "-torad(46)",
+					"ghigan_neckright.ry": "torad(5)",
+					"ghigan_headright.rx": "torad(64)",
+					"ghigan_headright.ry": "-torad(4)",
+					"ghigan_body_low.visible": "between(var.GHappearSlow, 0.25, 1) || between(var.GHappearSlow, 0.19, 0.23)",
+					"ghigan_body_low2.visible": "between(var.GHappearSlow, 0.23, 0.25) || between(var.GHappearSlow, 0, 0.19)",
+					"var.GHfloor": "floor(var.time / 2.5) %8",
+					"ghigan_pendulum_fr0.visible": "var.GHfloor == 0 || var.GHfloor == 4",
+					"ghigan_pendulum_fr1.visible": "var.GHfloor == 1",
+					"ghigan_pendulum_fr2.visible": "var.GHfloor == 2",
+					"ghigan_pendulum_fr3.visible": "var.GHfloor == 3",
+					"ghigan_pendulum_fr4.visible": "var.GHfloor == 5",
+					"ghigan_pendulum_fr5.visible": "var.GHfloor == 6",
+					"ghigan_pendulum_fr6.visible": "var.GHfloor == 7"
+				}
+			]
+		},
+		{
+			"part": "body",
+			"id": "body",
+			"invertAxis": "xy",
+			"translate": [0, -7.5, 1],
+			"submodels": [
+				{
+					"id": "rotation",
+					"invertAxis": "xy",
+					"translate": [0, 7.5, -1],
+					"submodels": [
+						{
+							"id": "horsebat2",
+							"invertAxis": "xy",
+							"translate": [0, 32.5, 0],
+							"texture": "textures/entity/multipasta/nothedorah/horsebat.png",
+							"submodels": [
+								{
+									"id": "horsebat_body_rotation2",
+									"invertAxis": "xy",
+									"translate": [0, -6, 1],
+									"submodels": [
+										{
+											"id": "horsebat_body2",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"boxes": [
+												{"coordinates": [-3, -5, -4, 6, 10, 8], "textureOffset": [36, 0]},
+												{"coordinates": [-3, -5, -4, 6, 10, 8], "textureOffset": [36, 18], "sizeAdd": 0.65}
+											],
+											"submodels": [
+												{
+													"id": "horsebat_tail2",
+													"invertAxis": "xy",
+													"translate": [0, -5, -3],
+													"boxes": [
+														{
+															"coordinates": [0, -8, -11, 0, 9, 15],
+															"uvEast": [15, 27, 30, 36]
+														}
+													]
+												},
+												{
+													"id": "horsebat_leftwing2",
+													"invertAxis": "xy",
+													"mirrorTexture": "u",
+													"translate": [-3, 1, 2],
+													"boxes": [
+														{"coordinates": [0, -1, -3, 0, 17, 23], "textureOffset": [0, 24], "sizeAdd": 0.015}
+													]
+												},
+												{
+													"id": "horsebat_rightwing2",
+													"invertAxis": "xy",
+													"translate": [3, 1, 2],
+													"boxes": [
+														{"coordinates": [0, -1, -3, 0, 17, 23], "textureOffset": [0, 24], "sizeAdd": 0.015}
+													]
+												}
+											]
+										},
+										{
+											"id": "horsebat_body2_alt",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"boxes": [
+												{"coordinates": [-3, -5, -4, 6, 10, 8], "textureOffset": [100, 0]},
+												{"coordinates": [-3, -5, -4, 6, 10, 8], "textureOffset": [100, 18], "sizeAdd": 0.65}
+											],
+											"submodels": [
+												{
+													"id": "horsebat_tail2_alt",
+													"invertAxis": "xy",
+													"translate": [0, -5, -3],
+													"boxes": [
+														{
+															"coordinates": [0, -8, -11, 0, 9, 15],
+															"uvEast": [79, 27, 94, 36]
+														}
+													]
+												},
+												{
+													"id": "horsebat_leftwing2_alt",
+													"invertAxis": "xy",
+													"mirrorTexture": "u",
+													"translate": [-3, 1, 2],
+													"boxes": [
+														{"coordinates": [0, -1, -3, 0, 17, 23], "textureOffset": [64, 24], "sizeAdd": 0.015}
+													]
+												},
+												{
+													"id": "horsebat_rightwing2_alt",
+													"invertAxis": "xy",
+													"translate": [3, 1, 2],
+													"boxes": [
+														{"coordinates": [0, -1, -3, 0, 17, 23], "textureOffset": [64, 24], "sizeAdd": 0.015}
+													]
+												}
+											]
+										},
+										{
+											"id": "horsebat_neck2",
+											"invertAxis": "xy",
+											"translate": [0, 4.2, -3],
+											"submodels": [
+												{
+													"id": "horsebat_neck2_rt",
+													"invertAxis": "xy",
+													"translate": [0, 0, 0],
+													"boxes": [
+														{"coordinates": [-1.5, -2, -2, 3, 10, 4], "textureOffset": [0, 26]}
+													]
+												},
+												{
+													"id": "horsebat_neck2_alt_rt",
+													"invertAxis": "xy",
+													"translate": [0, 0, 0],
+													"boxes": [
+														{"coordinates": [-1.5, -2, -2, 3, 10, 4], "textureOffset": [64, 26]}
+													]
+												},
+												{
+													"id": "horsebat_skull2",
+													"invertAxis": "xy",
+													"translate": [0, 7.8, 1],
+													"boxes": [
+														{"coordinates": [-4, -2.5, -5, 8, 7, 8], "textureOffset": [0, 0]},
+														{"coordinates": [-3, 1.5, -9, 6, 2, 4], "textureOffset": [24, 0]},
+														{"coordinates": [-3, -2.5, -12, 6, 4, 7], "textureOffset": [0, 15]}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"id": "nothedorah_rotation",
+							"invertAxis": "xy",
+							"translate": [0, -7.5, 0],
+							"submodels": [
+								{
+									"id": "horsebat",
+									"invertAxis": "xy",
+									"translate": [0, 40, 1],
+									"texture": "textures/entity/multipasta/nothedorah/horsebat.png",
+									"submodels": [
+										{
+											"id": "horsebat_body_rotation",
+											"invertAxis": "xy",
+											"translate": [0, -6, 0],
+											"submodels": [
+												{
+													"id": "horsebat_body",
+													"invertAxis": "xy",
+													"translate": [0, 0, 0],
+													"boxes": [
+														{"coordinates": [-3, -5, -4, 6, 10, 8], "textureOffset": [36, 0]},
+														{"coordinates": [-3, -5, -4, 6, 10, 8], "textureOffset": [36, 18], "sizeAdd": 0.65}
+													],
+													"submodels": [
+														{
+															"id": "horsebat_tail",
+															"invertAxis": "xy",
+															"translate": [0, -5, -3],
+															"boxes": [
+																{
+																	"coordinates": [0, -8, -11, 0, 9, 15],
+																	"uvEast": [15, 27, 30, 36]
+																}
+															]
+														},
+														{
+															"id": "horsebat_leftwing",
+															"invertAxis": "xy",
+															"mirrorTexture": "u",
+															"translate": [-3, 1, 2],
+															"boxes": [
+																{"coordinates": [0, -1, -3, 0, 17, 23], "textureOffset": [0, 24], "sizeAdd": 0.015}
+															]
+														},
+														{
+															"id": "horsebat_rightwing",
+															"invertAxis": "xy",
+															"translate": [3, 1, 2],
+															"boxes": [
+																{"coordinates": [0, -1, -3, 0, 17, 23], "textureOffset": [0, 24], "sizeAdd": 0.015}
+															]
+														}
+													]
+												},
+												{
+													"id": "horsebat_neck",
+													"invertAxis": "xy",
+													"translate": [0, 4.2, -3],
+													"boxes": [
+														{"coordinates": [-1.5, -2, -2, 3, 10, 4], "textureOffset": [0, 26]}
+													],
+													"submodels": [
+														{
+															"id": "horsebat_skull",
+															"invertAxis": "xy",
+															"translate": [0, 7.8, 1],
+															"boxes": [
+																{"coordinates": [-4, -2.5, -5, 8, 7, 8], "textureOffset": [0, 0]},
+																{"coordinates": [-3, 1.5, -9, 6, 2, 4], "textureOffset": [24, 0]},
+																{"coordinates": [-3, -2.5, -12, 6, 4, 7], "textureOffset": [0, 15]}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"id": "nothedorah",
+									"invertAxis": "xy",
+									"translate": [0, 0, 0],
+									"submodels": [
+										{
+											"id": "nothedorah_body",
+											"invertAxis": "xy",
+											"translate": [0, 6, -0.5],
+											"submodels": [
+												{
+													"id": "nothedorah_body_rotation",
+													"invertAxis": "xy",
+													"translate": [0, 0, 0],
+													"boxes": [
+														{"coordinates": [-5, -6, -8.5, 10, 12, 17], "textureOffset": [10, 35]}
+													],
+													"submodels": [
+														{
+															"id": "nothedorah_neck",
+															"invertAxis": "xy",
+															"translate": [0, 1, -6.5],
+															"boxes": [
+																{"coordinates": [-3, -2, -3, 6, 17, 7], "textureOffset": [0, 18]}
+															],
+															"submodels": [
+																{
+																	"id": "nothedorah_head",
+																	"invertAxis": "xy",
+																	"translate": [0, 14, 0.5],
+																	"boxes": [
+																		{"coordinates": [-4, -2, -6.3, 8, 8, 10], "textureOffset": [0, 0]},
+																		{"coordinates": [-3, 3, -12.3, 6, 2, 6], "textureOffset": [27, 1]},
+																		{"coordinates": [-3, 0, -18.3, 6, 3, 12], "textureOffset": [27, 10]}
+																	],
+																	"submodels": [
+																		{
+																			"id": "nothedorah_eyes",
+																			"invertAxis": "xy",
+																			"translate": [0, 0, 0.2],
+																			"submodels": [
+																				{
+																					"id": "nothedorah_eyes1",
+																					"invertAxis": "xy",
+																					"translate": [0, 3, -3],
+																					"boxes": [
+																						{
+																							"coordinates": [-4, -1, -1.5, 8, 2, 3],
+																							"uvEast": [0, 43, 3, 45],
+																							"uvWest": [4, 43, 7, 45]
+																						}
+																					]
+																				},
+																				{
+																					"id": "nothedorah_eyes2",
+																					"invertAxis": "xy",
+																					"translate": [0, 3, -3],
+																					"boxes": [
+																						{
+																							"coordinates": [-4, -1, -1.5, 8, 2, 3],
+																							"uvEast": [0, 46, 3, 48],
+																							"uvWest": [4, 46, 7, 48]
+																						}
+																					]
+																				},
+																				{
+																					"id": "nothedorah_eyes3",
+																					"invertAxis": "xy",
+																					"translate": [0, 3, -3],
+																					"boxes": [
+																						{
+																							"coordinates": [-4, -1, -1.5, 8, 2, 3],
+																							"uvEast": [0, 49, 3, 51],
+																							"uvWest": [4, 49, 7, 51]
+																						}
+																					]
+																				}
+																			]
+																		},
+																		{
+																			"id": "nothedorah_deatheyes",
+																			"invertAxis": "xy",
+																			"translate": [0, 3, -2.8],
+																			"boxes": [
+																				{
+																					"coordinates": [-4, -1, -1.5, 8, 2, 3],
+																					"uvEast": [0, 52, 3, 54],
+																					"uvWest": [4, 52, 7, 54]
+																				}
+																			]
+																		},
+																		{
+																			"id": "nothedorah_jaw",
+																			"invertAxis": "xy",
+																			"translate": [0, 0, -6.3],
+																			"boxes": [
+																				{"coordinates": [-3, -2, -12, 6, 2, 12], "textureOffset": [71, 8]}
+																			]
+																		}
+																	]
+																}
+															]
+														},
+														{
+															"id": "nothedorah_leftshoulder",
+															"invertAxis": "xy",
+															"translate": [-5, 3, -4.5],
+															"boxes": [
+																{"coordinates": [-2, -10, -2, 2, 12, 4], "textureOffset": [52, 0]}
+															],
+															"submodels": [
+																{
+																	"id": "nothedorah_lefthand",
+																	"invertAxis": "xy",
+																	"translate": [-2, -9, -1],
+																	"boxes": [
+																		{"coordinates": [-1, -1, -12, 2, 2, 13], "textureOffset": [52, 4]}
+																	],
+																	"submodels": [
+																		{
+																			"id": "nothedorah_leftclaw1",
+																			"invertAxis": "xy",
+																			"translate": [1, 0, -12],
+																			"boxes": [
+																				{
+																					"coordinates": [0, -7, -6, 0, 8, 8],
+																					"uvWest": [27, 26, 35, 34]
+																				}
+																			]
+																		},
+																		{
+																			"id": "nothedorah_leftclaw2",
+																			"invertAxis": "xy",
+																			"translate": [-1, -1, -12],
+																			"boxes": [
+																				{
+																					"coordinates": [0, -7, -3, 0, 8, 8],
+																					"uvWest": [36, 26, 44, 34]
+																				}
+																			]
+																		}
+																	]
+																}
+															]
+														},
+														{
+															"id": "nothedorah_rightshoulder",
+															"invertAxis": "xy",
+															"mirrorTexture": "u",
+															"translate": [5, 3, -4.5],
+															"boxes": [
+																{"coordinates": [0, -10, -2, 2, 12, 4], "textureOffset": [52, 0]}
+															],
+															"submodels": [
+																{
+																	"id": "nothedorah_righthand",
+																	"invertAxis": "xy",
+																	"mirrorTexture": "u",
+																	"translate": [2, -9, -1],
+																	"boxes": [
+																		{"coordinates": [-1, -1, -12, 2, 2, 13], "textureOffset": [52, 4]}
+																	],
+																	"submodels": [
+																		{
+																			"id": "nothedorah_rightclaw1",
+																			"invertAxis": "xy",
+																			"mirrorTexture": "u",
+																			"translate": [-1, 0, -12],
+																			"boxes": [
+																				{
+																					"coordinates": [0, -7, -6, 0, 8, 8],
+																					"uvEast": [35, 26, 27, 34]
+																				}
+																			]
+																		},
+																		{
+																			"id": "nothedorah_rightclaw2",
+																			"invertAxis": "xy",
+																			"mirrorTexture": "u",
+																			"translate": [1, -1, -12],
+																			"boxes": [
+																				{
+																					"coordinates": [0, -7, -3, 0, 8, 8],
+																					"uvEast": [44, 26, 36, 34]
+																				}
+																			]
+																		}
+																	]
+																}
+															]
+														}
+													]
+												},
+												{
+													"id": "nothedorah_bodytail",
+													"invertAxis": "xy",
+													"translate": [0, -2, 8.5],
+													"boxes": [
+														{"coordinates": [-4, -4, -2, 8, 9, 15], "textureOffset": [48, 27]}
+													],
+													"submodels": [
+														{
+															"id": "nothedorah_bodytail2",
+															"invertAxis": "xy",
+															"translate": [0, -1, 13],
+															"boxes": [
+																{"coordinates": [-3, -3, -2, 6, 7, 17], "textureOffset": [78, 40]}
+															],
+															"submodels": [
+																{
+																	"id": "nothedorah_bodytail3",
+																	"invertAxis": "xy",
+																	"translate": [0, -1, 15],
+																	"boxes": [
+																		{"coordinates": [-2, -2, -2, 4, 5, 10], "textureOffset": [80, 24]}
+																	],
+																	"submodels": [
+																		{
+																			"id": "nothedorah_bodytail4",
+																			"invertAxis": "xy",
+																			"translate": [0, 0, 8],
+																			"boxes": [
+																				{
+																					"coordinates": [0, -4, -1, 0, 16, 16],
+																					"uvWest": [108, 40, 124, 56]
+																				}
+																			]
+																		}
+																	]
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"id": "nothedorah_explosions",
+									"invertAxis": "xy",
+									"translate": [0, 14, 0],
+									"texture": "multipasta:textures/a/nesgodzilla_explosions.png",
+									"textureSize": [32, 32],
+									"boxes": [
+										{
+											"coordinates": [-16, -16, 0, 32, 32, 0],
+											"uvNorth": [0, 0, 32, 32]
+										}
+									]
+								}
+							]
+						},
+						{
+							"id": "hedorah",
+							"invertAxis": "xy",
+							"translate": [0, -7.5, 1],
+							"texture": "textures/entity/multipasta/nothedorah/hedorah.png",
+							"submodels": [
+								{
+									"id": "hedorah_rt",
+									"invertAxis": "xy",
+									"translate": [0, 19, 0],
+									"submodels": [
+										{
+											"id": "hedorah_body",
+											"invertAxis": "xy",
+											"translate": [0, -7, 0],
+											"boxes": [
+												{"coordinates": [-6, -1, -6, 12, 15, 12], "textureOffset": [0, 23]}
+											],
+											"submodels": [
+												{
+													"id": "hedorah_lefthand",
+													"invertAxis": "xy",
+													"translate": [-6.5, 6.5, 2.5],
+													"boxes": [
+														{"coordinates": [-2, -5.5, -19, 7, 11, 19], "textureOffset": [69, 0]},
+														{
+															"coordinates": [-2, -0.5, -19, 7, 0, 19],
+															"uvDown": [109, 0, 102, 19]
+														}
+													]
+												},
+												{
+													"id": "hedorah_righthand",
+													"invertAxis": "xy",
+													"mirrorTexture": "u",
+													"translate": [6.5, 6.5, 2.5],
+													"boxes": [
+														{"coordinates": [-5, -5.5, -19, 7, 11, 19], "textureOffset": [69, 0]},
+														{
+															"coordinates": [-5, -0.5, -19, 7, 0, 19],
+															"uvDown": [102, 0, 109, 19]
+														}
+													]
+												},
+												{
+													"id": "hedorah_head",
+													"invertAxis": "xy",
+													"translate": [0, 13, 0],
+													"submodels": [
+														{
+															"id": "hedorah_head_rt",
+															"invertAxis": "xy",
+															"translate": [0, 1.5, 0],
+															"boxes": [
+																{"coordinates": [-5, -1.5, -5, 10, 13, 10], "textureOffset": [0, 0]}
+															]
+														},
+														{
+															"id": "hedorah_mane",
+															"invertAxis": "xy",
+															"translate": [0, 0, 0],
+															"boxes": [
+																{"coordinates": [-6, -6, -6, 12, 7, 12], "textureOffset": [40, 0], "sizeAdd": 0.6}
+															]
+														}
+													]
+												},
+												{
+													"id": "hedorah_tail",
+													"invertAxis": "xy",
+													"translate": [0.5, 1, 4],
+													"rotate": [47.5, 0, 0],
+													"boxes": [
+														{"coordinates": [-5, -3, -1, 9, 6, 12], "textureOffset": [78, 30]}
+													],
+													"submodels": [
+														{
+															"id": "hedorah_tail2",
+															"invertAxis": "xy",
+															"translate": [-0.5, -0.13334, 9.91475],
+															"rotate": [-55, 0, 0],
+															"boxes": [
+																{"coordinates": [-3, -2.52511, -1.54266, 6, 5, 11], "textureOffset": [76, 48]}
+															],
+															"submodels": [
+																{
+																	"id": "hedorah_tail3",
+																	"invertAxis": "xy",
+																	"translate": [0, 0.95062, 7.80804],
+																	"rotate": [17.5, 0, 0],
+																	"boxes": [
+																		{
+																			"coordinates": [0, -7.01361, -1.23535, 0, 14, 18],
+																			"uvWest": [110, 50, 128, 64]
+																		}
+																	]
+																}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"id": "hedorah_leftleg",
+											"invertAxis": "xy",
+											"translate": [-3, -7.5, 0],
+											"boxes": [
+												{"coordinates": [-3, -11.5, -4.5, 6, 13, 9], "textureOffset": [48, 26]},
+												{
+													"coordinates": [-8, -11.5, -9.5, 11, 0, 16],
+													"uvUp": [59, 64, 48, 48]
+												}
+											]
+										},
+										{
+											"id": "hedorah_rightleg",
+											"invertAxis": "xy",
+											"mirrorTexture": "u",
+											"translate": [3, -7.5, 0],
+											"boxes": [
+												{"coordinates": [-3, -11.5, -4.5, 6, 13, 9], "textureOffset": [48, 26]}
+											],
+											"submodels": [
+												{
+													"id": "body_sub_61",
+													"invertAxis": "xy",
+													"mirrorTexture": "u",
+													"translate": [0, 0, 0],
+													"boxes": [
+														{
+															"coordinates": [-3, -11.5, -9.5, 11, 0, 16],
+															"uvUp": [48, 64, 59, 48]
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"id": "synth_notvaran_rt",
+							"invertAxis": "xy",
+							"translate": [0, 7.5, -14],
+							"submodels": [
+								{
+									"id": "synth_notvaran",
+									"invertAxis": "xy",
+									"translate": [0, -15, 1],
+									"texture": "textures/entity/multipasta/nothedorah/synth_notvaran.png",
+									"textureSize": [128, 128],
+									"submodels": [
+										{
+											"id": "synth_notvaran_body",
+											"invertAxis": "xy",
+											"translate": [0, 14.5, 0],
+											"rotate": [12.5, 0, 0],
+											"boxes": [
+												{"coordinates": [-13, -2.5, -6, 26, 5, 11], "textureOffset": [0, 0]},
+												{
+													"coordinates": [4, -0.5, -4, 11, 10, 0],
+													"uvNorth": [0, 1, 11, 11]
+												}
+											],
+											"submodels": [
+												{
+													"id": "body_sub_65",
+													"invertAxis": "xy",
+													"mirrorTexture": "u",
+													"translate": [0, 0, 0],
+													"boxes": [
+														{
+															"coordinates": [-15, -0.5, -4, 11, 10, 0],
+															"uvNorth": [11, 1, 0, 11]
+														}
+													]
+												},
+												{
+													"id": "synth_notvaran_neck",
+													"invertAxis": "xy",
+													"translate": [0, -0.5, -6.7],
+													"rotate": [-15, 0, 0],
+													"boxes": [
+														{"coordinates": [-3.5, -1, -3.5, 7, 12, 7], "textureOffset": [68, 10]},
+														{"coordinates": [-3.5, -1, -3.5, 7, 12, 7], "textureOffset": [97, 10], "sizeAdd": 0.7}
+													],
+													"submodels": [
+														{
+															"id": "synth_notvaran_head",
+															"invertAxis": "xy",
+															"translate": [-0.1, 11.01204, -0.32704],
+															"boxes": [
+																{"coordinates": [-3, 0, -3, 6, 6, 6], "textureOffset": [17, 17]},
+																{"coordinates": [-3, 0, -3, 6, 6, 6], "textureOffset": [41, 17], "sizeAdd": 0.4}
+															],
+															"submodels": [
+																{
+																	"id": "synth_notvaran_beaktop",
+																	"invertAxis": "xy",
+																	"translate": [0, 3, 3],
+																	"boxes": [
+																		{"coordinates": [-2, -1, 0, 4, 2, 3], "textureOffset": [64, 0]},
+																		{"coordinates": [0, -1, 3, 0, 2, 2], "textureOffset": [76, -1]}
+																	]
+																},
+																{
+																	"id": "synth_notvaran_beaklower",
+																	"invertAxis": "xy",
+																	"translate": [0, 1, 3],
+																	"rotate": [22.5, 0, 0],
+																	"boxes": [
+																		{"coordinates": [-2, -2, 0, 4, 2, 3], "textureOffset": [78, 0]},
+																		{"coordinates": [0, -2, 3, 0, 2, 2], "textureOffset": [90, -1]}
+																	]
+																}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"id": "synth_notvaranlegs",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"submodels": [
+												{
+													"id": "synth_notvaran_leftleg",
+													"invertAxis": "xy",
+													"translate": [-2, 12, -1.5],
+													"rotate": [0, 0, -22.5],
+													"boxes": [
+														{
+															"coordinates": [0, -13, -8.5, 0, 16, 16],
+															"uvWest": [0, 16, 16, 32]
+														}
+													]
+												},
+												{
+													"id": "synth_notvaran_rightleg",
+													"invertAxis": "xy",
+													"mirrorTexture": "u",
+													"translate": [2, 12, -1.5],
+													"rotate": [0, 0, 22.5],
+													"boxes": [
+														{
+															"coordinates": [0, -13, -8.5, 0, 16, 16],
+															"uvEast": [16, 16, 0, 32]
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"id": "synth_notvaran2",
+									"invertAxis": "xy",
+									"translate": [0, -15, 1],
+									"texture": "textures/entity/multipasta/nothedorah/synth_notvaran.png",
+									"textureSize": [128, 128],
+									"submodels": [
+										{
+											"id": "synth_notvaran_body2",
+											"invertAxis": "xy",
+											"translate": [0, 14.5, 0],
+											"rotate": [12.5, 0, 0],
+											"boxes": [
+												{"coordinates": [-13, -2.5, -6, 26, 5, 11], "textureOffset": [0, 32]},
+												{
+													"coordinates": [4, -0.5, -4, 11, 10, 0],
+													"uvNorth": [0, 33, 11, 43]
+												}
+											],
+											"submodels": [
+												{
+													"id": "body_sub_75",
+													"invertAxis": "xy",
+													"mirrorTexture": "u",
+													"translate": [0, 0, 0],
+													"boxes": [
+														{
+															"coordinates": [-15, -0.5, -4, 11, 10, 0],
+															"uvNorth": [11, 33, 0, 43]
+														}
+													]
+												},
+												{
+													"id": "synth_notvaran_neck2",
+													"invertAxis": "xy",
+													"translate": [0, -0.5, -6.7],
+													"rotate": [-15, 0, 0],
+													"boxes": [
+														{"coordinates": [-3.5, -1, -3.5, 7, 12, 7], "textureOffset": [68, 42]},
+														{"coordinates": [-3.5, -1, -3.5, 7, 12, 7], "textureOffset": [97, 42], "sizeAdd": 0.7}
+													],
+													"submodels": [
+														{
+															"id": "synth_notvaran_head2",
+															"invertAxis": "xy",
+															"translate": [-0.1, 11.01204, -0.32704],
+															"boxes": [
+																{"coordinates": [-3, 0, -3, 6, 6, 6], "textureOffset": [17, 49]},
+																{"coordinates": [-3, 0, -3, 6, 6, 6], "textureOffset": [41, 49], "sizeAdd": 0.4}
+															],
+															"submodels": [
+																{
+																	"id": "synth_notvaran_beaktop2",
+																	"invertAxis": "xy",
+																	"translate": [0, 3, 3],
+																	"boxes": [
+																		{"coordinates": [-2, -1, 0, 4, 2, 3], "textureOffset": [64, 32]},
+																		{"coordinates": [0, -1, 3, 0, 2, 2], "textureOffset": [76, 31]}
+																	]
+																},
+																{
+																	"id": "synth_notvaran_beaklower2",
+																	"invertAxis": "xy",
+																	"translate": [0, 1, 3],
+																	"rotate": [22.5, 0, 0],
+																	"boxes": [
+																		{"coordinates": [-2, -2, 0, 4, 2, 3], "textureOffset": [78, 32]},
+																		{"coordinates": [0, -2, 3, 0, 2, 2], "textureOffset": [90, 31]}
+																	]
+																}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"id": "synth_notvaranlegs2",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"submodels": [
+												{
+													"id": "synth_notvaran_leftleg2",
+													"invertAxis": "xy",
+													"translate": [-2, 12, -1.5],
+													"rotate": [0, 0, -22.5],
+													"boxes": [
+														{
+															"coordinates": [0, -13, -8.5, 0, 16, 16],
+															"uvWest": [0, 48, 16, 64]
+														}
+													]
+												},
+												{
+													"id": "synth_notvaran_rightleg2",
+													"invertAxis": "xy",
+													"mirrorTexture": "u",
+													"translate": [2, 12, -1.5],
+													"rotate": [0, 0, 22.5],
+													"boxes": [
+														{
+															"coordinates": [0, -13, -8.5, 0, 16, 16],
+															"uvEast": [16, 48, 0, 64]
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"id": "synth_notvaran3",
+									"invertAxis": "xy",
+									"translate": [0, -15, 1],
+									"texture": "textures/entity/multipasta/nothedorah/synth_notvaran.png",
+									"textureSize": [128, 128],
+									"submodels": [
+										{
+											"id": "synth_notvaran_body3",
+											"invertAxis": "xy",
+											"translate": [0, 14.5, 0],
+											"rotate": [12.5, 0, 0],
+											"boxes": [
+												{"coordinates": [-13, -2.5, -6, 26, 5, 11], "textureOffset": [0, 64]},
+												{
+													"coordinates": [4, -0.5, -4, 11, 10, 0],
+													"uvNorth": [0, 65, 11, 75]
+												}
+											],
+											"submodels": [
+												{
+													"id": "body_sub_85",
+													"invertAxis": "xy",
+													"mirrorTexture": "u",
+													"translate": [0, 0, 0],
+													"boxes": [
+														{
+															"coordinates": [-15, -0.5, -4, 11, 10, 0],
+															"uvNorth": [11, 65, 0, 75]
+														}
+													]
+												},
+												{
+													"id": "synth_notvaran_neck3",
+													"invertAxis": "xy",
+													"translate": [0, -0.5, -6.7],
+													"rotate": [-15, 0, 0],
+													"boxes": [
+														{"coordinates": [-3.5, -1, -3.5, 7, 12, 7], "textureOffset": [68, 74]},
+														{"coordinates": [-3.5, -1, -3.5, 7, 12, 7], "textureOffset": [97, 74], "sizeAdd": 0.7}
+													],
+													"submodels": [
+														{
+															"id": "synth_notvaran_head3",
+															"invertAxis": "xy",
+															"translate": [-0.1, 11.01204, -0.32704],
+															"boxes": [
+																{"coordinates": [-3, 0, -3, 6, 6, 6], "textureOffset": [17, 81]},
+																{"coordinates": [-3, 0, -3, 6, 6, 6], "textureOffset": [41, 81], "sizeAdd": 0.4}
+															],
+															"submodels": [
+																{
+																	"id": "synth_notvaran_beaktop3",
+																	"invertAxis": "xy",
+																	"translate": [0, 3, 3],
+																	"boxes": [
+																		{"coordinates": [-2, -1, 0, 4, 2, 3], "textureOffset": [64, 64]},
+																		{"coordinates": [0, -1, 3, 0, 2, 2], "textureOffset": [76, 63]}
+																	]
+																},
+																{
+																	"id": "synth_notvaran_beaklower3",
+																	"invertAxis": "xy",
+																	"translate": [0, 1, 3],
+																	"rotate": [22.5, 0, 0],
+																	"boxes": [
+																		{"coordinates": [-2, -2, 0, 4, 2, 3], "textureOffset": [78, 64]},
+																		{"coordinates": [0, -2, 3, 0, 2, 2], "textureOffset": [90, 63]}
+																	]
+																}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"id": "synth_notvaranlegs3",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"submodels": [
+												{
+													"id": "synth_notvaran_leftleg3",
+													"invertAxis": "xy",
+													"translate": [-2, 12, -1.5],
+													"rotate": [0, 0, -22.5],
+													"boxes": [
+														{
+															"coordinates": [0, -13, -8.5, 0, 16, 16],
+															"uvWest": [0, 80, 16, 96]
+														}
+													]
+												},
+												{
+													"id": "synth_notvaran_rightleg3",
+													"invertAxis": "xy",
+													"mirrorTexture": "u",
+													"translate": [2, 12, -1.5],
+													"rotate": [0, 0, 22.5],
+													"boxes": [
+														{
+															"coordinates": [0, -13, -8.5, 0, 16, 16],
+															"uvEast": [16, 80, 0, 96]
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"id": "synth_notvaran4",
+									"invertAxis": "xy",
+									"translate": [0, -15, 1],
+									"texture": "textures/entity/multipasta/nothedorah/synth_notvaran.png",
+									"textureSize": [128, 128],
+									"submodels": [
+										{
+											"id": "synth_notvaran_body4",
+											"invertAxis": "xy",
+											"translate": [0, 14.5, 0],
+											"rotate": [12.5, 0, 0],
+											"boxes": [
+												{"coordinates": [-13, -2.5, -6, 26, 5, 11], "textureOffset": [0, 96]},
+												{
+													"coordinates": [4, -0.5, -4, 11, 10, 0],
+													"uvNorth": [0, 97, 11, 107]
+												}
+											],
+											"submodels": [
+												{
+													"id": "body_sub_95",
+													"invertAxis": "xy",
+													"mirrorTexture": "u",
+													"translate": [0, 0, 0],
+													"boxes": [
+														{
+															"coordinates": [-15, -0.5, -4, 11, 10, 0],
+															"uvNorth": [11, 97, 0, 107]
+														}
+													]
+												},
+												{
+													"id": "synth_notvaran_neck4",
+													"invertAxis": "xy",
+													"translate": [0, -0.5, -6.7],
+													"rotate": [-15, 0, 0],
+													"boxes": [
+														{"coordinates": [-3.5, -1, -3.5, 7, 12, 7], "textureOffset": [68, 106]},
+														{"coordinates": [-3.5, -1, -3.5, 7, 12, 7], "textureOffset": [97, 106], "sizeAdd": 0.7}
+													],
+													"submodels": [
+														{
+															"id": "synth_notvaran_head4",
+															"invertAxis": "xy",
+															"translate": [-0.1, 11.01204, -0.32704],
+															"boxes": [
+																{"coordinates": [-3, 0, -3, 6, 6, 6], "textureOffset": [17, 113]},
+																{"coordinates": [-3, 0, -3, 6, 6, 6], "textureOffset": [41, 113], "sizeAdd": 0.4}
+															],
+															"submodels": [
+																{
+																	"id": "synth_notvaran_beaktop4",
+																	"invertAxis": "xy",
+																	"translate": [0, 3, 3],
+																	"boxes": [
+																		{"coordinates": [-2, -1, 0, 4, 2, 3], "textureOffset": [64, 96]},
+																		{"coordinates": [0, -1, 3, 0, 2, 2], "textureOffset": [76, 95]}
+																	]
+																},
+																{
+																	"id": "synth_notvaran_beaklower4",
+																	"invertAxis": "xy",
+																	"translate": [0, 1, 3],
+																	"rotate": [22.5, 0, 0],
+																	"boxes": [
+																		{"coordinates": [-2, -2, 0, 4, 2, 3], "textureOffset": [78, 96]},
+																		{"coordinates": [0, -2, 3, 0, 2, 2], "textureOffset": [90, 95]}
+																	]
+																}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"id": "synth_notvaranlegs4",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"submodels": [
+												{
+													"id": "synth_notvaran_leftleg4",
+													"invertAxis": "xy",
+													"translate": [-2, 12, -1.5],
+													"rotate": [0, 0, -22.5],
+													"boxes": [
+														{
+															"coordinates": [0, -13, -8.5, 0, 16, 16],
+															"uvWest": [0, 112, 16, 128]
+														}
+													]
+												},
+												{
+													"id": "synth_notvaran_rightleg4",
+													"invertAxis": "xy",
+													"mirrorTexture": "u",
+													"translate": [2, 12, -1.5],
+													"rotate": [0, 0, 22.5],
+													"boxes": [
+														{
+															"coordinates": [0, -13, -8.5, 0, 16, 16],
+															"uvEast": [16, 112, 0, 128]
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"id": "void3",
+							"invertAxis": "xy",
+							"translate": [0, -7.5, 0],
+							"texture": "textures/entity/multipasta/nothedorah/ghigan.png",
+							"submodels": [
+								{
+									"id": "void3stuff",
+									"invertAxis": "xy",
+									"translate": [0, 0, 0],
+									"submodels": [
+										{
+											"id": "ghigan_rt",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"submodels": [
+												{
+													"id": "ghigan",
+													"invertAxis": "xy",
+													"translate": [0, 3, 0],
+													"submodels": [
+														{
+															"id": "ghigan_body_top",
+															"invertAxis": "xy",
+															"translate": [0, 6, 0],
+															"boxes": [
+																{"coordinates": [-3, 0, -1, 6, 5, 6], "textureOffset": [17, 53]},
+																{
+																	"coordinates": [0, 2, 4, 0, 4, 2],
+																	"uvWest": [20, 53.1, 22, 57.1]
+																}
+															],
+															"submodels": [
+																{
+																	"id": "ghigan_neckleft",
+																	"invertAxis": "xy",
+																	"translate": [-2, 2, 0],
+																	"rotate": [0, 35, 0],
+																	"boxes": [
+																		{"coordinates": [-1, -1, -5, 2, 2, 5], "textureOffset": [41, 57]}
+																	],
+																	"submodels": [
+																		{
+																			"id": "ghigan_headleft",
+																			"invertAxis": "xy",
+																			"translate": [0, 0, -4],
+																			"boxes": [
+																				{"coordinates": [-1.5, -1.5, -4, 3, 3, 4], "textureOffset": [55, 57]}
+																			],
+																			"submodels": [
+																				{
+																					"id": "ghigan_lefthorns",
+																					"invertAxis": "xy",
+																					"translate": [0.5, 1.5, -2],
+																					"rotate": [-30, 0, 0],
+																					"boxes": [
+																						{
+																							"coordinates": [-3, 0, 0, 5, 0, 3],
+																							"uvUp": [40, 58, 35, 55]
+																						}
+																					]
+																				}
+																			]
+																		}
+																	]
+																},
+																{
+																	"id": "ghigan_neckright",
+																	"invertAxis": "xy",
+																	"mirrorTexture": "u",
+																	"translate": [0, 4, 0],
+																	"boxes": [
+																		{"coordinates": [-1, -1, -5, 2, 2, 5], "textureOffset": [41, 57]}
+																	],
+																	"submodels": [
+																		{
+																			"id": "ghigan_headright",
+																			"invertAxis": "xy",
+																			"mirrorTexture": "u",
+																			"translate": [0, 0, -4],
+																			"boxes": [
+																				{"coordinates": [-1.5, -1.5, -4, 3, 3, 4], "textureOffset": [55, 57]}
+																			],
+																			"submodels": [
+																				{
+																					"id": "ghigan_righthorns",
+																					"invertAxis": "xy",
+																					"mirrorTexture": "u",
+																					"translate": [-0.5, 1.5, -2],
+																					"rotate": [-30, 0, 0],
+																					"boxes": [
+																						{
+																							"coordinates": [-2, 0, 0, 5, 0, 3],
+																							"uvUp": [35, 58, 40, 55]
+																						}
+																					]
+																				}
+																			]
+																		}
+																	]
+																}
+															]
+														},
+														{
+															"id": "ghigan_body_low",
+															"invertAxis": "xy",
+															"translate": [0, 6, 0],
+															"boxes": [
+																{"coordinates": [-3, -6, -5, 6, 6, 8], "textureOffset": [0, 0]},
+																{
+																	"coordinates": [0, -7, 3, 0, 7, 2],
+																	"uvWest": [5, 0, 7, 7]
+																}
+															],
+															"submodels": [
+																{
+																	"id": "ghigan_pendulum",
+																	"invertAxis": "xy",
+																	"translate": [0, -6, -5],
+																	"boxes": [
+																		{
+																			"coordinates": [-2, -7, 0, 4, 7, 0],
+																			"uvNorth": [17, 21, 21, 28]
+																		}
+																	]
+																},
+																{
+																	"id": "ghigan_headalt",
+																	"invertAxis": "xy",
+																	"translate": [0, -6, 2],
+																	"boxes": [
+																		{"coordinates": [-2, -7, -2, 4, 4, 4], "textureOffset": [0, 14]},
+																		{
+																			"coordinates": [0, -4, -2, 0, 4, 5],
+																			"uvWest": [12, 14, 17, 18]
+																		}
+																	],
+																	"submodels": [
+																		{
+																			"id": "ghigan_beak",
+																			"invertAxis": "xy",
+																			"translate": [0, -6.5, -0.9],
+																			"rotate": [-10, 0, 0],
+																			"boxes": [
+																				{"coordinates": [-1, -1.40152, -2.98264, 2, 3, 3], "textureOffset": [18, 14]},
+																				{
+																					"coordinates": [-4, 0.5, -4.1, 8, 0, 5],
+																					"uvUp": [28, 5, 20, 0]
+																				}
+																			]
+																		}
+																	]
+																},
+																{
+																	"id": "ghigan_leftleg",
+																	"invertAxis": "xy",
+																	"translate": [-3, -3, -0.5],
+																	"rotate": [0, 0, -15],
+																	"boxes": [
+																		{"coordinates": [-1.5, -4, -2.5, 3, 5, 5], "textureOffset": [0, 22]}
+																	]
+																},
+																{
+																	"id": "ghigan_rightleg",
+																	"invertAxis": "xy",
+																	"mirrorTexture": "u",
+																	"translate": [3, -3, -0.5],
+																	"rotate": [0, 0, 15],
+																	"boxes": [
+																		{"coordinates": [-1.5, -4, -2.5, 3, 5, 5], "textureOffset": [0, 22]}
+																	]
+																}
+															]
+														},
+														{
+															"id": "ghigan_body_low2",
+															"invertAxis": "xy",
+															"translate": [0, 6, 0],
+															"boxes": [
+																{"coordinates": [-3, -6, -5, 6, 6, 8], "textureOffset": [0, 32]},
+																{
+																	"coordinates": [0, -7, 3, 0, 7, 2],
+																	"uvWest": [5, 32, 7, 39]
+																}
+															],
+															"submodels": [
+																{
+																	"id": "ghigan_pendulum_frames",
+																	"invertAxis": "xy",
+																	"translate": [0, -6, -5],
+																	"submodels": [
+																		{
+																			"id": "ghigan_pendulum_fr0",
+																			"invertAxis": "xy",
+																			"translate": [0, 0, 0],
+																			"boxes": [
+																				{
+																					"coordinates": [-2, -7, 0, 4, 7, 0],
+																					"uvNorth": [33, 0, 37, 7]
+																				}
+																			]
+																		},
+																		{
+																			"id": "ghigan_pendulum_fr1",
+																			"invertAxis": "xy",
+																			"translate": [0, 0, 0],
+																			"boxes": [
+																				{
+																					"coordinates": [-2, -7, 0, 6, 7, 0],
+																					"uvNorth": [31, 8, 37, 15]
+																				}
+																			]
+																		},
+																		{
+																			"id": "ghigan_pendulum_fr2",
+																			"invertAxis": "xy",
+																			"translate": [0, 0, 0],
+																			"boxes": [
+																				{
+																					"coordinates": [-2, -7, 0, 8, 7, 0],
+																					"uvNorth": [29, 16, 37, 23]
+																				}
+																			]
+																		},
+																		{
+																			"id": "ghigan_pendulum_fr3",
+																			"invertAxis": "xy",
+																			"translate": [0, 0, 0],
+																			"boxes": [
+																				{
+																					"coordinates": [-2, -7, 0, 8, 7, 0],
+																					"uvNorth": [29, 23, 37, 30]
+																				}
+																			]
+																		},
+																		{
+																			"id": "ghigan_pendulum_fr4",
+																			"invertAxis": "xy",
+																			"translate": [0, 0, 0],
+																			"boxes": [
+																				{
+																					"coordinates": [-4, -7, 0, 6, 7, 0],
+																					"uvNorth": [33, 30, 39, 37]
+																				}
+																			]
+																		},
+																		{
+																			"id": "ghigan_pendulum_fr5",
+																			"invertAxis": "xy",
+																			"translate": [0, 0, 0],
+																			"boxes": [
+																				{
+																					"coordinates": [-6, -7, 0, 8, 7, 0],
+																					"uvNorth": [33, 38, 41, 45]
+																				}
+																			]
+																		},
+																		{
+																			"id": "ghigan_pendulum_fr6",
+																			"invertAxis": "xy",
+																			"translate": [0, 0, 0],
+																			"boxes": [
+																				{
+																					"coordinates": [-6, -7, 0, 8, 7, 0],
+																					"uvNorth": [33, 45, 41, 52]
+																				}
+																			]
+																		}
+																	]
+																},
+																{
+																	"id": "ghigan_headalt2",
+																	"invertAxis": "xy",
+																	"translate": [0, -6, 2],
+																	"boxes": [
+																		{"coordinates": [-2, -7, -2, 4, 4, 4], "textureOffset": [0, 46]},
+																		{
+																			"coordinates": [0, -4, -2, 0, 4, 5],
+																			"uvWest": [12, 46, 17, 50]
+																		}
+																	],
+																	"submodels": [
+																		{
+																			"id": "ghigan_beak2",
+																			"invertAxis": "xy",
+																			"translate": [0, -6.5, -0.9],
+																			"rotate": [-10, 0, 0],
+																			"boxes": [
+																				{"coordinates": [-1, -1.40152, -2.98264, 2, 3, 3], "textureOffset": [18, 46]},
+																				{
+																					"coordinates": [-4, 0.5, -4.1, 8, 0, 5],
+																					"uvUp": [28, 37, 20, 32]
+																				}
+																			]
+																		}
+																	]
+																},
+																{
+																	"id": "ghigan_leftleg2",
+																	"invertAxis": "xy",
+																	"translate": [-3, -3, -0.5],
+																	"rotate": [0, 0, -15],
+																	"boxes": [
+																		{"coordinates": [-1.5, -4, -2.5, 3, 5, 5], "textureOffset": [0, 54]}
+																	]
+																},
+																{
+																	"id": "ghigan_rightleg2",
+																	"invertAxis": "xy",
+																	"mirrorTexture": "u",
+																	"translate": [3, -3, -0.5],
+																	"rotate": [0, 0, 15],
+																	"boxes": [
+																		{"coordinates": [-1.5, -4, -2.5, 3, 5, 5], "textureOffset": [0, 54]}
+																	]
+																}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"id": "ghigan_rt_void",
+											"invertAxis": "xy",
+											"translate": [0, 7.5, 0]
+										},
+										{
+											"id": "ghigan_spawn",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"submodels": [
+												{
+													"id": "ghigan_spawn_fr1",
+													"invertAxis": "xy",
+													"translate": [0, 2, 0],
+													"boxes": [
+														{
+															"coordinates": [-20, -13, 0, 40, 26, 0],
+															"uvNorth": [42, 0, 82, 26]
+														}
+													]
+												},
+												{
+													"id": "ghigan_spawn_fr2",
+													"invertAxis": "xy",
+													"translate": [0, 2, 0],
+													"boxes": [
+														{
+															"coordinates": [-20, -13, 0, 40, 26, 0],
+															"uvNorth": [42, 28, 82, 54]
+														}
+													]
+												},
+												{
+													"id": "ghigan_spawn_fr3",
+													"invertAxis": "xy",
+													"translate": [0, 2, 0],
+													"boxes": [
+														{
+															"coordinates": [-8, -9, 0, 16, 18, 0],
+															"uvNorth": [83, 0, 99, 18]
+														}
+													]
+												},
+												{
+													"id": "ghigan_spawn_fr4",
+													"invertAxis": "xy",
+													"translate": [0, 2, 0],
+													"boxes": [
+														{
+															"coordinates": [-1, -2, 0, 2, 4, 0],
+															"uvNorth": [90, 21, 92, 25]
+														}
+													]
+												}
+											]
+										},
+										{
+											"id": "ghigan_boom",
+											"invertAxis": "xy",
+											"translate": [0.5, 0, 0],
+											"submodels": [
+												{
+													"id": "ghigan_boom_fr1",
+													"invertAxis": "xy",
+													"translate": [-0.5, 2.5, 0],
+													"boxes": [
+														{
+															"coordinates": [-6.5, -6.5, 0, 13, 13, 0],
+															"uvNorth": [100, 0, 113, 13]
+														}
+													]
+												},
+												{
+													"id": "ghigan_boom_fr2",
+													"invertAxis": "xy",
+													"translate": [-0.5, 2.5, 0],
+													"boxes": [
+														{
+															"coordinates": [-4, -4, 0, 8, 8, 0],
+															"uvNorth": [102, 15, 110, 23]
+														}
+													]
+												},
+												{
+													"id": "ghigan_boom_fr3",
+													"invertAxis": "xy",
+													"translate": [-0.5, 2.5, 0],
+													"boxes": [
+														{
+															"coordinates": [-2.5, -2.5, 0, 5, 5, 0],
+															"uvNorth": [104, 25, 109, 30]
+														}
+													]
+												},
+												{
+													"id": "ghigan_boom_fr4",
+													"invertAxis": "xy",
+													"translate": [-0.5, 2.5, 0],
+													"boxes": [
+														{
+															"coordinates": [-5.5, -5.5, 0, 11, 11, 0],
+															"uvNorth": [101, 32, 112, 43]
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"part": "left_wing",
+			"id": "left_wing",
+			"invertAxis": "xy",
+			"translate": [1.5, -7.1, 0.8]
+		},
+		{
+			"part": "right_wing",
+			"id": "right_wing",
+			"invertAxis": "xy",
+			"translate": [-1.5, -7.1, 0.8]
+		},
+		{
+			"part": "left_leg",
+			"id": "left_leg",
+			"invertAxis": "xy",
+			"translate": [1, -2, 1]
+		},
+		{
+			"part": "right_leg",
+			"id": "right_leg",
+			"invertAxis": "xy",
+			"translate": [-1, -2, 1]
+		},
+		{
+			"part": "tail",
+			"id": "tail",
+			"invertAxis": "xy",
+			"translate": [0, -2.9, -1.2]
+		}
+	]
+}

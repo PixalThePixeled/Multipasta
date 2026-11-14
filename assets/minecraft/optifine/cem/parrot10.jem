@@ -1,0 +1,229 @@
+{
+	"credit": "Model, Texture & Animations by Kotisimo",
+	"texture": "textures/entity/multipasta/weeper/weeper.png",
+	"textureSize": [32, 32],
+	"models": [
+		{
+			"part": "head",
+			"id": "head",
+			"invertAxis": "xy",
+			"translate": [0, -8, 0.5],
+			"animations": [
+				{
+					"var.time": "time - pi/random(id)",
+					"body.rx": 0,
+					"body.tx": 0,
+					"body.ty": 16.5,
+					"body.tz": 0,
+					"rotation.rz": "if(death_time > 0, -torad(min(sqrt((death_time - 1) / 20 * 1.6), 1) * 90), 0)",
+					"var.dance": "todeg(sin(torad(clamp(if(right_leg.rz!=0&&is_on_ground, var.dance-0.15 * frame_time * 20, var.dance+0.15 * frame_time * 20), 0, 1))))",
+					"var.weeper_ground": "todeg(sin(torad(clamp(if((is_on_ground||is_on_shoulder) || is_riding, var.weeper_ground-0.08 * frame_time * 20, var.weeper_ground+0.07 * frame_time * 20), 0, 1))))",
+					"var.weeper_sit": "todeg(sin(torad(clamp(if(is_sitting, var.weeper_sit-0.2 * frame_time * 20, var.weeper_sit+0.1 * frame_time * 20), 0, 1))))",
+					"var.weeperhurt": "+if(round(age/1.2) % 2 < 1, 0, -9999999)",
+					"var.limb_swing": "limb_swing*1.3",
+					"var.limb_speed": "limb_speed*8"
+				},
+				{
+					"weeper.tz": "if(is_alive, -1 +(var.weeperhurt * hurt_time), -1 +var.weeperhurt)",
+					"weeper_head.tz": "   lerp(var.dance, 0,                                                      lerp(var.weeper_ground, lerp(var.weeper_sit, 0.7, 0), 0)    )",
+					"weeper_head.rx": "   lerp(var.dance, -torad(16) -pow(sin(var.time/6+pi/6), 2)/1.8,           lerp(var.weeper_ground, -torad(16) +(( cos(var.limb_swing)/8)-torad(22)) *var.limb_speed/6 +if(is_riding, 0,  +torad(head_pitch/2)) -pow(sin(var.time/7+pi/3.3),1)/12 +lerp(var.weeper_sit, +torad(16) +torad(head_pitch/2), 0), -torad(58) +torad(head_pitch) -pow(sin(var.time/3.5+pi/4.1),1)/6)    )",
+					"weeper_head.ry": "   lerp(var.dance, -sin(var.time/6) * torad(13),                           lerp(var.weeper_ground, (( -sin(var.limb_swing+pi)/6)) *var.limb_speed/4 +if(is_riding, 0, +torad(head_yaw/2)), +torad(head_yaw/2))    )",
+					"weeper_head.rz": "   lerp(var.dance, +cos(var.time/6) * torad(10),                           lerp(var.weeper_ground, if(is_riding, 0, +torad(head_yaw/4)), -torad(head_yaw/2))    )",
+					"weeper_body.ty": "   lerp(var.dance, +2.5,                                                   lerp(var.weeper_ground, 2.5 +if(is_sitting, +1, +(( sin(var.limb_swing*1.5))-0.5) *var.limb_speed/8 ), +3 +pow(sin(var.time/7), 2)*2)    )",
+					"weeper_body.rx": "   lerp(var.dance, +torad(18),                                             lerp(var.weeper_ground, torad(18) +lerp(var.weeper_sit, -torad(18), 0), +torad(66) -(torad(8) * hurt_time) -torad(head_pitch) +pow(sin(var.time/7), 4)/6)    )",
+					"weeper_body.ry": "   lerp(var.dance, 0,                                                      lerp(var.weeper_ground, +if(is_riding, 0, +torad(head_yaw/2)), +torad(head_yaw/2))    )",
+					"weeper_body_rt.rx": "lerp(var.dance, 0,  lerp(var.weeper_ground, +(( cos(var.limb_swing)/8)+torad(26)) *var.limb_speed/6, 0)    )",
+					"weeper_body_rt.ry": "lerp(var.dance, -cos(var.time/6) * torad(4) -torad(head_yaw/2),  lerp(var.weeper_ground, (( sin(var.limb_swing+pi)/6)) *var.limb_speed/4, 0)    )",
+					"weeper_body_rt.rz": "lerp(var.dance, -sin(var.time/6) * torad(12), 0)",
+					"weeper_tail.rx": "   lerp(var.dance, +torad(30) +pow(sin(var.time/6), 2)/1.8,                lerp(var.weeper_ground, torad(32) -pow(sin(var.time/7+pi/4.1),1)/8 +lerp(var.weeper_sit, -torad(28), +(( cos(var.limb_swing)/6)+torad(17)) *var.limb_speed/2), +sin(var.time/3.5) * torad(16))    )"
+				},
+				{
+					"weeper_leftwing.rx": "       lerp(var.dance, 0,                                              lerp(var.weeper_ground, +torad(16) +pow(sin(var.time/14), 4)/6 +lerp(var.weeper_sit, -torad(7), 0), +cos(var.time/3.5) * torad(16))    )",
+					"weeper_leftwing.ry": "       lerp(var.dance, +torad(12) +cos(var.time/3) * torad(42),        lerp(var.weeper_ground, +torad(46) +lerp(var.weeper_sit, +torad(16), 0), +cos(var.time/3.5) * torad(58))    )",
+					"weeper_outer_leftwing.ry": " lerp(var.dance, +torad(19) +sin(var.time/3) * torad(29),        lerp(var.weeper_ground, +torad(100) +pow(sin(var.time/7+pi/4.1),1)/9 +lerp(var.weeper_sit, +torad(18), 0), +torad(16) +sin(var.time/3.5) * torad(42))    )",
+					"weeper_rightwing.rx": "+weeper_leftwing.rx",
+					"weeper_rightwing.ry": "      lerp(var.dance, -torad(12) -cos(var.time/3) * torad(42),       -lerp(var.weeper_ground, +torad(46) +lerp(var.weeper_sit, +torad(25), 0), +cos(var.time/3.5) * torad(58))    )",
+					"weeper_outer_rightwing.ry": "lerp(var.dance, -torad(19) -sin(var.time/3) * torad(29),       -lerp(var.weeper_ground, +torad(90) +pow(sin(var.time/7+pi/4.1),1)/8 +lerp(var.weeper_sit, -torad(6), 0), +torad(16) +sin(var.time/3.5) * torad(42))    )",
+					"weeper_leftleg.ty": "        lerp(var.dance, 0,                                              lerp(var.weeper_ground, min(0, (sin(var.limb_swing+pi/2)+0.3)*var.limb_speed/1.4), 0 )    )",
+					"weeper_leftleg.rx": "        lerp(var.dance, 0,                                              lerp(var.weeper_ground, lerp(var.weeper_sit, 0, (( sin(var.limb_swing)/5)) *var.limb_speed/2), -torad(36) -pow(sin(var.time/3.5+pi/4.1),1)/6)    )",
+					"weeper_leftleg.ry": "        lerp(var.dance, -pow(sin(var.time/6+pi/6), 1)/7, 0)",
+					"weeper_rightleg.ty": "       lerp(var.dance, 0,                                              lerp(var.weeper_ground, min(0, (-sin(var.limb_swing+pi/2)+0.3)*var.limb_speed/1.4), 0 )    )",
+					"weeper_rightleg.rx": "       lerp(var.dance, 0,                                              lerp(var.weeper_ground, lerp(var.weeper_sit, 0, (( -sin(var.limb_swing)/5)) *var.limb_speed/2), -torad(36) -pow(sin(var.time/3.5+pi/4.1),1)/6)    )",
+					"weeper_rightleg.ry": "       lerp(var.dance, +pow(sin(var.time/6+pi/6), 1)/7, 0)",
+					"weeper_legs.rx": "           lerp(var.dance, -torad(18),                                     lerp(var.weeper_ground, -torad(18) +lerp(var.weeper_sit, +torad(18), 0), 0)    )",
+					"weeper_legs_rotation.ty": "  lerp(var.dance, 3,                                              lerp(var.weeper_ground, 3 +if(is_sitting, -1, 0), 3))",
+					"weeper_legs_rotation.ry": "  lerp(var.dance, -torad(head_yaw/6.5),                           lerp(var.weeper_ground, if(is_riding, 0, -torad(head_yaw/2.5)), 0))"
+				}
+			]
+		},
+		{
+			"part": "body",
+			"id": "body",
+			"invertAxis": "xy",
+			"translate": [0, -7.5, 1],
+			"submodels": [
+				{
+					"id": "rotation",
+					"invertAxis": "xy",
+					"translate": [0, 7.5, -1],
+					"submodels": [
+						{
+							"id": "weeper",
+							"invertAxis": "xy",
+							"translate": [-3, 0, -1],
+							"submodels": [
+								{
+									"id": "weeper_body",
+									"invertAxis": "xy",
+									"translate": [3, -2.5, 1.5],
+									"submodels": [
+										{
+											"id": "weeper_body_rt",
+											"invertAxis": "xy",
+											"translate": [0, -2, 0],
+											"boxes": [
+												{"coordinates": [-2, -1, -1.5, 4, 6, 3], "textureOffset": [1, 6]}
+											],
+											"submodels": [
+												{
+													"id": "weeper_head",
+													"invertAxis": "xy",
+													"translate": [0, 5, 0],
+													"boxes": [
+														{"coordinates": [-1.5, 0, -2.5, 3, 3, 3], "textureOffset": [1, 0]}
+													]
+												},
+												{
+													"id": "weeper_leftwing",
+													"invertAxis": "xy",
+													"translate": [-2, 3, 1.5],
+													"boxes": [
+														{
+															"coordinates": [-4, -3, 0, 4, 6, 0],
+															"uvNorth": [13, 3, 17, 9],
+															"uvSouth": [21, 2, 22, 3]
+														}
+													],
+													"submodels": [
+														{
+															"id": "weeper_outer_leftwing",
+															"invertAxis": "xy",
+															"translate": [-4, 0, 0],
+															"boxes": [
+																{
+																	"coordinates": [-6, -3, 0, 6, 6, 0],
+																	"uvNorth": [17, 3, 23, 9],
+																	"uvSouth": [21, 2, 22, 3]
+																}
+															]
+														}
+													]
+												},
+												{
+													"id": "weeper_rightwing",
+													"invertAxis": "xy",
+													"translate": [2, 3, 1.5],
+													"boxes": [
+														{
+															"coordinates": [0, -3, 0, 4, 6, 0],
+															"uvNorth": [17, 3, 13, 9],
+															"uvSouth": [22, 2, 21, 3]
+														}
+													],
+													"submodels": [
+														{
+															"id": "weeper_outer_rightwing",
+															"invertAxis": "xy",
+															"translate": [4, 0, 0],
+															"boxes": [
+																{
+																	"coordinates": [0, -3, 0, 6, 6, 0],
+																	"uvNorth": [23, 3, 17, 9],
+																	"uvSouth": [22, 2, 21, 3]
+																}
+															]
+														}
+													]
+												},
+												{
+													"id": "weeper_tail",
+													"invertAxis": "xy",
+													"mirrorTexture": "u",
+													"translate": [0, -1, 1.5],
+													"boxes": [
+														{"coordinates": [-2, -4, 0, 4, 4, 0], "textureOffset": [11, 15]}
+													]
+												}
+											]
+										},
+										{
+											"id": "weeper_legs",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"submodels": [
+												{
+													"id": "weeper_legs_rotation",
+													"invertAxis": "xy",
+													"translate": [0, -3, 0.5],
+													"submodels": [
+														{
+															"id": "weeper_leftleg",
+															"invertAxis": "xy",
+															"mirrorTexture": "u",
+															"translate": [-1.5, 0, 0],
+															"boxes": [
+																{"coordinates": [-2.5, -2, -3, 3, 3, 3], "textureOffset": [0, 15]}
+															]
+														},
+														{
+															"id": "weeper_rightleg",
+															"invertAxis": "xy",
+															"translate": [1.5, 0, 0],
+															"boxes": [
+																{"coordinates": [-0.5, -2, -3, 3, 3, 3], "textureOffset": [0, 15]}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"part": "left_wing",
+			"id": "left_wing",
+			"invertAxis": "xy",
+			"translate": [1.5, -7.1, 0.8]
+		},
+		{
+			"part": "right_wing",
+			"id": "right_wing",
+			"invertAxis": "xy",
+			"translate": [-1.5, -7.1, 0.8]
+		},
+		{
+			"part": "left_leg",
+			"id": "left_leg",
+			"invertAxis": "xy",
+			"translate": [1, -2, 1]
+		},
+		{
+			"part": "right_leg",
+			"id": "right_leg",
+			"invertAxis": "xy",
+			"translate": [-1, -2, 1]
+		},
+		{
+			"part": "tail",
+			"id": "tail",
+			"invertAxis": "xy",
+			"translate": [0, -2.9, -1.2]
+		}
+	]
+}

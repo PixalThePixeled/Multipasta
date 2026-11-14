@@ -1,0 +1,343 @@
+{
+	"credit": "Animations by Kotisimo; Model, Texture & Smoke Animations by PixalThePixeled",
+	"textureSize": [64, 32],
+	"texture": "textures/entity/multipasta/charon/gastly.png",
+	"models": [
+		{
+			"part": "head",
+			"id": "head",
+			"invertAxis": "xy",
+			"translate": [0, -8, 0.5],
+			"animations": [
+				{
+					"var.time": "time - pi/random(id)",
+					"body.rx": 0,
+					"body.tx": 0,
+					"body.ty": 16.5,
+					"body.tz": 0,
+					"rotation.rz": "if(death_time > 0, -torad(min(sqrt((death_time - 1) / 20 * 1.6), 1) * 90), 0)",
+					"var.damage": "hurt_time/0.25",
+					"var.fainted": "death_time",
+					"var.gastly_shoulder": "todeg(sin(torad(clamp(if(is_on_shoulder, var.gastly_shoulder+0.08 * frame_time * 20, var.gastly_shoulder-0.15 * frame_time * 20), 0, 1))))",
+					"var.gastly_sit": "todeg(sin(torad(clamp(if(is_sitting, var.gastly_sit+0.06 * frame_time * 20, var.gastly_sit-0.06 * frame_time * 20), 0, 1))))"
+				},
+				{
+					"var.smoke": "(var.time / 6) % 4",
+					"var.smoke2": "(var.time / 6) % 8",
+					"var.partposx1": "if(between(var.smoke, 0, 1), pos_x, var.partposx1)",
+					"var.partposy1": "if(between(var.smoke, 0, 1), pos_y, var.partposy1)",
+					"var.partposz1": "if(between(var.smoke, 0, 1), pos_z, var.partposz1)",
+					"var.partposx2": "if(between(var.smoke, 1, 2), pos_x, var.partposx2)",
+					"var.partposy2": "if(between(var.smoke, 1, 2), pos_y, var.partposy2)",
+					"var.partposz2": "if(between(var.smoke, 1, 2), pos_z, var.partposz2)",
+					"var.partposx3": "if(between(var.smoke, 2, 3), pos_x, var.partposx3)",
+					"var.partposy3": "if(between(var.smoke, 2, 3), pos_y, var.partposy3)",
+					"var.partposz3": "if(between(var.smoke, 2, 3), pos_z, var.partposz3)",
+					"var.partposx4": "if(between(var.smoke, 0.5, 1.5), pos_x, var.partposx4)",
+					"var.partposy4": "if(between(var.smoke, 0.5, 1.5), pos_y, var.partposy4)",
+					"var.partposz4": "if(between(var.smoke, 0.5, 1.5), pos_z, var.partposz4)",
+					"var.partposx5": "if(between(var.smoke, 1.5, 2.5), pos_x, var.partposx5)",
+					"var.partposy5": "if(between(var.smoke, 1.5, 2.5), pos_y, var.partposy5)",
+					"var.partposz5": "if(between(var.smoke, 1.5, 2.5), pos_z, var.partposz5)",
+					"var.partposx6": "if(between(var.smoke, 2.5, 3.5), pos_x, var.partposx6)",
+					"var.partposy6": "if(between(var.smoke, 2.5, 3.5), pos_y, var.partposy6)",
+					"var.partposz6": "if(between(var.smoke, 2.5, 3.5), pos_z, var.partposz6)",
+					"var.partposx7": "if(between(var.smoke, 3.5, 4) || between(var.smoke, 0, 0.5), pos_x, var.partposx7)",
+					"var.partposy7": "if(between(var.smoke, 3.5, 4) || between(var.smoke, 0, 0.5), pos_y, var.partposy7)",
+					"var.partposz7": "if(between(var.smoke, 3.5, 4) || between(var.smoke, 0, 0.5), pos_z, var.partposz7)",
+					"smokeR.ry": "-rot_y",
+					"smoke.tx": "-sin(player_rot_y)*3",
+					"smoke.ty": " sin(player_rot_x)*6 +1 -lerp(var.gastly_shoulder, 0, 5)",
+					"smoke.tz": "-cos(player_rot_y)*3 -1 +lerp(var.gastly_shoulder, 0, 14.5)"
+				},
+				{
+					"smoke1.visible": "!between(var.smoke, 0, 1)",
+					"var.smoke1": "if(smoke1.visible, var.smoke1+0.3 *frame_time*20, 0)",
+					"smoke1.rx": "-player_rot_x",
+					"smoke1.ry": " player_rot_y +torad(180)",
+					"smoke1.tx": "-pos_x*16 +var.partposx1*16",
+					"smoke1.ty": " pos_y*16 -var.partposy1*16",
+					"smoke1.tz": " pos_z*16 -var.partposz1*16 +var.smoke1 -1",
+					"smoke1.sx": "max(0, if(smoke1.visible, smoke1.sx-0.05 *frame_time*20, 1))",
+					"smoke1.sy": "smoke1.sx"
+				},
+				{
+					"smoke2.visible": "!between(var.smoke, 1, 2)",
+					"var.smoke2": "if(smoke2.visible, var.smoke2+0.3 *frame_time*20, 0)",
+					"smoke2.rx": "-player_rot_x",
+					"smoke2.ry": " player_rot_y +torad(180)",
+					"smoke2.tx": "-pos_x*16 +var.partposx2*16",
+					"smoke2.ty": " pos_y*16 -var.partposy2*16",
+					"smoke2.tz": " pos_z*16 -var.partposz2*16 +var.smoke2 -1",
+					"smoke2.sx": "max(0, if(smoke2.visible, smoke2.sx-0.05 *frame_time*20, 1))",
+					"smoke2.sy": "smoke2.sx"
+				},
+				{
+					"smoke3.visible": "!between(var.smoke, 2, 3)",
+					"var.smoke3": "if(smoke3.visible, var.smoke3+0.3 *frame_time*20, 0)",
+					"smoke3.rx": "-player_rot_x",
+					"smoke3.ry": " player_rot_y +torad(180)",
+					"smoke3.tx": "-pos_x*16 +var.partposx3*16",
+					"smoke3.ty": " pos_y*16 -var.partposy3*16",
+					"smoke3.tz": " pos_z*16 -var.partposz3*16 +var.smoke3 -1",
+					"smoke3.sx": "max(0, if(smoke3.visible, smoke3.sx-0.05 *frame_time*20, 1))",
+					"smoke3.sy": "smoke3.sx"
+				},
+				{
+					"smoke4.visible": "!between(var.smoke, 0.5, 1.5)",
+					"var.smoke4": "if(smoke4.visible, var.smoke4+0.3 *frame_time*20, 0)",
+					"smoke4.rx": "-player_rot_x",
+					"smoke4.ry": " player_rot_y +torad(180)",
+					"smoke4.tx": "-pos_x*16 +var.partposx4*16",
+					"smoke4.ty": " pos_y*16 -var.partposy4*16",
+					"smoke4.tz": " pos_z*16 -var.partposz4*16 +var.smoke4 -1",
+					"smoke4.sx": "max(0, if(smoke4.visible, smoke4.sx-0.05 *frame_time*20, 1))",
+					"smoke4.sy": "smoke4.sx"
+				},
+				{
+					"smoke5.visible": "!between(var.smoke, 1.5, 2.5)",
+					"var.smoke5": "if(smoke5.visible, var.smoke5+0.3 *frame_time*20, 0)",
+					"smoke5.rx": "-player_rot_x",
+					"smoke5.ry": " player_rot_y +torad(180)",
+					"smoke5.tx": "-pos_x*16 +var.partposx5*16",
+					"smoke5.ty": " pos_y*16 -var.partposy5*16",
+					"smoke5.tz": " pos_z*16 -var.partposz5*16 +var.smoke5 -1",
+					"smoke5.sx": "max(0, if(smoke5.visible, smoke5.sx-0.05 *frame_time*20, 1))",
+					"smoke5.sy": "smoke5.sx"
+				},
+				{
+					"smoke6.visible": "!between(var.smoke, 2.5, 3.5)",
+					"var.smoke6": "if(smoke6.visible, var.smoke6+0.3 *frame_time*20, 0)",
+					"smoke6.rx": "-player_rot_x",
+					"smoke6.ry": " player_rot_y +torad(180)",
+					"smoke6.tx": "-pos_x*16 +var.partposx6*16",
+					"smoke6.ty": " pos_y*16 -var.partposy6*16",
+					"smoke6.tz": " pos_z*16 -var.partposz6*16 +var.smoke6 -1",
+					"smoke6.sx": "max(0, if(smoke6.visible, smoke6.sx-0.05 *frame_time*20, 1))",
+					"smoke6.sy": "smoke6.sx"
+				},
+				{
+					"smoke7.visible": "!(between(var.smoke, 3.5, 4) || between(var.smoke, 0, 0.5))",
+					"var.smoke7": "if(smoke7.visible, var.smoke7+0.3 *frame_time*20, 0)",
+					"smoke7.rx": "-player_rot_x",
+					"smoke7.ry": " player_rot_y +torad(180)",
+					"smoke7.tx": "-pos_x*16 +var.partposx7*16",
+					"smoke7.ty": " pos_y*16 -var.partposy7*16",
+					"smoke7.tz": " pos_z*16 -var.partposz7*16 +var.smoke7 -1",
+					"smoke7.sx": "max(0, if(smoke7.visible, smoke7.sx-0.05 *frame_time*20, 1))",
+					"smoke7.sy": "smoke7.sx"
+				},
+				{
+					"gastly.tx": "+cos(var.damage)*2 -2 +if(is_riding, 0, +lerp(var.gastly_sit, 0, 0))",
+					"gastly.ty": "var.fainted*1.5 +if(is_riding, -1 -cos(var.time/7.5) * 2.8, lerp(var.gastly_sit, +2.5 -cos(var.time/7.5) * 2.8, +5.5 +pow(sin(var.time/15+pi/4), 4)/1.5) -lerp(var.gastly_shoulder, 0, 5))",
+					"gastly.tz": "lerp(var.gastly_shoulder, 0, 14.5)"
+				},
+				{
+					"gastly_head.rx": "if(is_riding, torad(2) -sin(var.time/7.5) * torad(6), +torad(max(head_pitch,-50))/4 +lerp(var.gastly_sit, torad(2) -sin(var.time/7.5) * torad(6), -torad(12) -cos(var.time/7.5) * torad(6)))",
+					"gastly_head.ry": "if(is_riding, 0, torad(head_yaw)/2)",
+					"gastly_head.rz": "if(is_riding, 0, torad(head_yaw)/8 +lerp(var.gastly_sit, 0, -sin(var.time/7.5) * torad(2)))",
+					"gastly_lefteye.tx": "if(is_riding, +2.5, +torad(max(-head_yaw,-20)) +2.5  )",
+					"gastly_lefteye.ty": "if(is_riding, -1, +head_pitch/80 -1  )",
+					"gastly_righteye.tx": "if(is_riding, -2.5, -torad(max(head_yaw,-20)) -2.5  )",
+					"gastly_righteye.ty": "if(is_riding, -1, +head_pitch/80 -1  )"
+				}
+			]
+		},
+		{
+			"part": "body",
+			"id": "body",
+			"invertAxis": "xy",
+			"translate": [0, -7.5, 1],
+			"submodels": [
+				{
+					"id": "rotation",
+					"invertAxis": "xy",
+					"translate": [0, 7.5, -1],
+					"submodels": [
+						{
+							"id": "gastly",
+							"invertAxis": "xy",
+							"translate": [0, -7.5, 1],
+							"submodels": [
+								{
+									"id": "gastly_rotation",
+									"invertAxis": "xy",
+									"translate": [0, 0, 0],
+									"submodels": [
+										{
+											"id": "gastly_body",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"submodels": [
+												{
+													"id": "gastly_head",
+													"invertAxis": "xy",
+													"translate": [0, 5, 0],
+													"boxes": [
+														{"coordinates": [-5, -5, -5, 10, 10, 10], "textureOffset": [0, 0]},
+														{
+															"coordinates": [-7, -6, -5.3, 14, 11, 0],
+															"uvNorth": [1, 21, 15, 32]
+														}
+													],
+													"submodels": [
+														{
+															"id": "gastly_lefteye",
+															"invertAxis": "xy",
+															"translate": [-2.5, 1, -5.315],
+															"boxes": [
+																{
+																	"coordinates": [-0.5, -1, 0, 1, 2, 0],
+																	"uvNorth": [16, 21, 17, 23]
+																}
+															]
+														},
+														{
+															"id": "gastly_righteye",
+															"invertAxis": "xy",
+															"mirrorTexture": "u",
+															"translate": [2.5, 1, -5.315],
+															"boxes": [
+																{
+																	"coordinates": [-0.5, -1, 0, 1, 2, 0],
+																	"uvNorth": [17, 21, 16, 23]
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"id": "smokeR",
+							"invertAxis": "xy",
+							"translate": [0, 3.5, 1],
+							"texture": "textures/entity/multipasta/charon/gastly_smoke.png",
+							"textureSize": [32, 32],
+							"submodels": [
+								{
+									"id": "smoke",
+									"invertAxis": "xy",
+									"translate": [0, 0, 0],
+									"submodels": [
+										{
+											"id": "smoke1",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"boxes": [
+												{
+													"coordinates": [-14, -14, 0, 28, 28, 0],
+													"uvNorth": [0, 0, 28, 28]
+												}
+											]
+										},
+										{
+											"id": "smoke2",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"boxes": [
+												{
+													"coordinates": [-12, -15, 0, 28, 28, 0],
+													"uvNorth": [0, 0, 28, 28]
+												}
+											]
+										},
+										{
+											"id": "smoke3",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"boxes": [
+												{
+													"coordinates": [-15, -15, 0, 28, 28, 0],
+													"uvNorth": [0, 0, 28, 28]
+												}
+											]
+										},
+										{
+											"id": "smoke4",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"boxes": [
+												{
+													"coordinates": [-14, -12, 0, 28, 28, 0],
+													"uvNorth": [0, 0, 28, 28]
+												}
+											]
+										},
+										{
+											"id": "smoke5",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"boxes": [
+												{
+													"coordinates": [-15, -14, 0, 28, 28, 0],
+													"uvNorth": [0, 0, 28, 28]
+												}
+											]
+										},
+										{
+											"id": "smoke6",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"boxes": [
+												{
+													"coordinates": [-14, -17, 0, 28, 28, 0],
+													"uvNorth": [0, 0, 28, 28]
+												}
+											]
+										},
+										{
+											"id": "smoke7",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"boxes": [
+												{
+													"coordinates": [-13, -11, 0, 28, 28, 0],
+													"uvNorth": [0, 0, 28, 28]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"part": "left_wing",
+			"id": "left_wing",
+			"invertAxis": "xy",
+			"translate": [1.5, -7.1, 0.8]
+		},
+		{
+			"part": "right_wing",
+			"id": "right_wing",
+			"invertAxis": "xy",
+			"translate": [-1.5, -7.1, 0.8]
+		},
+		{
+			"part": "left_leg",
+			"id": "left_leg",
+			"invertAxis": "xy",
+			"translate": [1, -2, 1]
+		},
+		{
+			"part": "right_leg",
+			"id": "right_leg",
+			"invertAxis": "xy",
+			"translate": [-1, -2, 1]
+		},
+		{
+			"part": "tail",
+			"id": "tail",
+			"invertAxis": "xy",
+			"translate": [0, -2.9, -1.2]
+		}
+	]
+}

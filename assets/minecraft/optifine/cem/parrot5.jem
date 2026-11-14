@@ -1,0 +1,337 @@
+{
+	"credit": "Model & Animations by kotisimo, Texture by moro2610",
+	"texture": "textures/entity/multipasta/mysticism/mysticism.png",
+	"textureSize": [128, 64],
+	"models": [
+		{
+			"part": "head",
+			"id": "head",
+			"invertAxis": "xy",
+			"translate": [0, -8, 0.5],
+			"animations": [
+				{
+					"var.time": "time - pi/random(id)",
+					"body.rx": 0,
+					"body.tx": 0,
+					"body.ty": 16.5,
+					"body.tz": 0,
+					"rotation.rz": "if(death_time > 0, -torad(min(sqrt((death_time - 1) / 20 * 1.6), 1) * 90), 0)",
+					"var.ground": "if(is_on_ground && !is_riding, 1 +var.nothing, 0)",
+					"var.nothing": "if(sin(var.time/89)>0.5, 1, 0)",
+					"var.blinking": "+if(sin(var.time/0.2)>0.1, -9999999, 0)",
+					"var.movement": "if(cos(var.time/96)>0.5, 0, 48)",
+					"var.movement2": "if(-sin(var.time/48)>0.2, -28, 0)"
+				},
+				{
+					"leggy.ry": "-rot_y",
+					"leggy.ty": "+if(is_sitting, 7.5, 7.5)",
+					"leggy.visible": "between(var.ground, 1, 1)",
+					"leggy_rotation.ry": "player_rot_y+pi",
+					"leggy_rotation.tx": "-22 +var.movement +var.movement2 +if(cos(time/48)>0.98,+sin(time/0.11) * torad(55) +var.blinking*frame_time*20, 0)",
+					"leggy_rotation.tz": "22 +var.movement2 -var.movement",
+					"leggy_left_arm.rx": "cos(var.time/16) * torad(2.5)",
+					"leggy_left_arm.ry": "sin(var.time/16) * torad(2.5)",
+					"leggy_left_arm.rz": "sin(var.time/16) * torad(2.5)-0.07",
+					"leggy_right_arm.rx": "-leggy_left_arm.rx",
+					"leggy_right_arm.ry": "-leggy_left_arm.ry",
+					"leggy_right_arm.rz": "-leggy_left_arm.rz",
+					"flowerman_flower.ry": "torad(45)",
+					"flowerman_left_arm.rx": "leggy_left_arm.rx",
+					"flowerman_left_arm.ry": "leggy_left_arm.ry",
+					"flowerman_left_arm.rz": "sin(var.time/16) * torad(2.5)-0.09",
+					"flowerman_right_arm.rx": "-leggy_left_arm.rx",
+					"flowerman_right_arm.ry": "-leggy_left_arm.ry",
+					"flowerman_right_arm.rz": "-leggy_left_arm.rz"
+				},
+				{
+					"omen_head.rx": "-sin(var.time/14) * torad(5)",
+					"omen_head.rz": "cos(var.time/14) * torad(5.5)",
+					"omen_body.rx": "-cos(var.time/14) * torad(2)",
+					"omen_body.rz": "-sin(var.time/14) * torad(2)",
+					"omen_left_arm.rx": "cos(var.time/14) * torad(3.5)",
+					"omen_left_arm.ry": "sin(var.time/14) * torad(3.5)",
+					"omen_left_arm.rz": "sin(var.time/14) * torad(22)-torad(56)",
+					"omen_left_arm.ty": "cos(var.time/14) * 1 -45",
+					"omen_right_arm.rx": "-omen_left_arm.rx",
+					"omen_right_arm.ry": "-omen_left_arm.ry",
+					"omen_right_arm.rz": "-omen_left_arm.rz",
+					"omen_right_arm.ty": "omen_left_arm.ty",
+					"omen_left_leg.ry": "+torad(9)",
+					"omen_left_leg.rz": "-torad(2)",
+					"omen_right_leg.ry": "-omen_left_leg.ry",
+					"omen_right_leg.rz": "-omen_left_leg.rz"
+				},
+				{
+					"var.triangle_shoulder": "todeg(sin(torad(clamp(if(is_on_shoulder, var.triangle_shoulder-0.06 * frame_time * 20, var.triangle_shoulder+0.085 * frame_time * 20), 0, 1))))",
+					"var.triangle_sit": "todeg(sin(torad(clamp(if(is_sitting, var.triangle_sit-0.035 * frame_time * 20, var.triangle_sit+0.035 * frame_time * 20), 0, 1))))",
+					"triangle_rotation.tx": "-2 +lerp(var.triangle_sit, -sin(var.time/6) * 4, 0) +if(is_riding, 10, 0)",
+					"triangle_rotation.ty": "lerp(var.triangle_sit, -10 -cos(var.time/6) * 2, -10 -cos(var.time/6) * 2) -lerp(var.triangle_shoulder, 6, 0)",
+					"triangle_rotation.tz": "+lerp(var.triangle_shoulder, 16, 0) +lerp(var.triangle_sit, -cos(var.time/6) * 4, 0)",
+					"triangle_rotation.rx": "+torad(head_pitch) +cos(var.time/7) * hurt_time *torad(6) +if(is_in_water, -(var.time/8) * 2, 0)",
+					"triangle_rotation.ry": "if(is_riding, 0, +torad(head_yaw)) +cos(var.time/4) * hurt_time *torad(32)",
+					"triangle_rotation.rz": "if(is_riding, 0, +torad(head_yaw))",
+					"triangle_body.rx": "-40",
+					"triangle_body.rz": "40"
+				}
+			]
+		},
+		{
+			"part": "body",
+			"id": "body",
+			"invertAxis": "xy",
+			"translate": [0, -7.5, 1],
+			"submodels": [
+				{
+					"id": "rotation",
+					"invertAxis": "xy",
+					"translate": [0, 7.5, -1],
+					"submodels": [
+						{
+							"id": "leggy",
+							"invertAxis": "xy",
+							"translate": [0, -7.5, 0],
+							"texture": "textures/entity/multipasta/mysticism/leggy.png",
+							"textureSize": [256, 64],
+							"submodels": [
+								{
+									"id": "leggy_rotation",
+									"invertAxis": "xy",
+									"translate": [0, 32, 0],
+									"submodels": [
+										{
+											"id": "leggy_body",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"boxes": [
+												{"coordinates": [-4, -7, -2, 8, 16, 4], "textureOffset": [16, 16]}
+											],
+											"submodels": [
+												{
+													"id": "leggy_head",
+													"invertAxis": "xy",
+													"translate": [0, 9, 0],
+													"boxes": [
+														{"coordinates": [-4, 0, -4, 8, 8, 8], "textureOffset": [0, 0]}
+													]
+												},
+												{
+													"id": "leggy_left_arm",
+													"invertAxis": "xy",
+													"mirrorTexture": "u",
+													"translate": [-4, 7, 0],
+													"boxes": [
+														{"coordinates": [-4, -15, -2, 4, 12, 4], "textureOffset": [40, 0], "sizeAdd": 0.25},
+														{"coordinates": [-4, -22, -2, 4, 24, 4], "textureOffset": [40, 16]}
+													]
+												},
+												{
+													"id": "leggy_right_arm",
+													"invertAxis": "xy",
+													"translate": [4, 7, 0],
+													"boxes": [
+														{"coordinates": [0, -15, -2, 4, 12, 4], "textureOffset": [40, 0], "sizeAdd": 0.25},
+														{"coordinates": [0, -22, -2, 4, 24, 4], "textureOffset": [40, 16]}
+													]
+												},
+												{
+													"id": "leggy_left_leg",
+													"invertAxis": "xy",
+													"translate": [-2, -7, 0],
+													"boxes": [
+														{"coordinates": [-2, -25, -2, 4, 25, 4], "textureOffset": [56, 0]}
+													]
+												},
+												{
+													"id": "leggy_right_leg",
+													"invertAxis": "xy",
+													"translate": [2, -7, 0],
+													"boxes": [
+														{"coordinates": [-2, -25, -2, 4, 25, 4], "textureOffset": [0, 16]}
+													]
+												}
+											]
+										},
+										{
+											"id": "flowerman_body",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"boxes": [
+												{
+													"coordinates": [-8, 0, -8, 16, 16, 16],
+													"uvNorth": [90, 16, 106, 32],
+													"uvEast": [90, 16, 106, 32],
+													"uvSouth": [90, 16, 106, 32],
+													"uvWest": [90, 16, 106, 32],
+													"uvUp": [90, 16, 74, 0],
+													"uvDown": [90, 16, 74, 32]
+												}
+											],
+											"submodels": [
+												{
+													"id": "flowerman_flower",
+													"invertAxis": "xy",
+													"mirrorTexture": "u",
+													"translate": [0, 16, 0],
+													"boxes": [
+														{"coordinates": [-3, 0, 0, 6, 10, 0], "textureOffset": [95, 5]},
+														{"coordinates": [0, 0, -3, 0, 10, 6], "textureOffset": [95, -1]}
+													]
+												},
+												{
+													"id": "flowerman_left_arm",
+													"invertAxis": "xy",
+													"mirrorTexture": "u",
+													"translate": [-8, 10, 1],
+													"boxes": [
+														{"coordinates": [-4, -23, -4, 4, 26, 6], "textureOffset": [74, 32]}
+													]
+												},
+												{
+													"id": "flowerman_right_arm",
+													"invertAxis": "xy",
+													"translate": [8, 10, 1],
+													"boxes": [
+														{"coordinates": [0, -23, -4, 4, 26, 6], "textureOffset": [74, 32]}
+													]
+												},
+												{
+													"id": "flowerman_left_leg",
+													"invertAxis": "xy",
+													"mirrorTexture": "u",
+													"translate": [-5, 0, 0],
+													"boxes": [
+														{"coordinates": [-5, -32, 0, 10, 32, 0], "textureOffset": [106, 16]},
+														{"coordinates": [0, -32, -6, 0, 32, 10], "textureOffset": [106, 6]}
+													]
+												},
+												{
+													"id": "flowerman_right_leg",
+													"invertAxis": "xy",
+													"translate": [5, 0, 0],
+													"boxes": [
+														{"coordinates": [-5, -32, 0, 10, 32, 0], "textureOffset": [106, 16]},
+														{"coordinates": [0, -32, -6, 0, 32, 10], "textureOffset": [106, 6]}
+													]
+												}
+											]
+										},
+										{
+											"id": "omen_body",
+											"invertAxis": "xy",
+											"translate": [0, -32, 0],
+											"boxes": [
+												{"coordinates": [-4, 32, -2, 8, 16, 4], "textureOffset": [151, 15]}
+											],
+											"submodels": [
+												{
+													"id": "omen_head",
+													"invertAxis": "xy",
+													"translate": [0, 48, 0],
+													"boxes": [
+														{"coordinates": [-3, 0, -4, 6, 11, 8], "textureOffset": [127, 0]}
+													]
+												},
+												{
+													"id": "omen_left_arm",
+													"invertAxis": "xy",
+													"mirrorTexture": "u",
+													"translate": [-4, 46, 0],
+													"boxes": [
+														{"coordinates": [-4, -22, -2, 4, 24, 4], "textureOffset": [144, 36]}
+													]
+												},
+												{
+													"id": "omen_right_arm",
+													"invertAxis": "xy",
+													"translate": [4, 46, 0],
+													"boxes": [
+														{"coordinates": [0, -22, -2, 4, 24, 4], "textureOffset": [144, 36]}
+													]
+												},
+												{
+													"id": "omen_left_leg",
+													"invertAxis": "xy",
+													"translate": [-2, 32, 0],
+													"boxes": [
+														{"coordinates": [-2, -32, -2, 4, 32, 4], "textureOffset": [127, 19]}
+													]
+												},
+												{
+													"id": "omen_right_leg",
+													"invertAxis": "xy",
+													"translate": [2, 32, 0],
+													"boxes": [
+														{"coordinates": [-2, -32, -2, 4, 32, 4], "textureOffset": [127, 19]}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"id": "mysticism",
+							"invertAxis": "xy",
+							"translate": [0, 1.5, 0],
+							"submodels": [
+								{
+									"id": "triangle",
+									"invertAxis": "xy",
+									"translate": [0, 0, 1],
+									"submodels": [
+										{
+											"id": "triangle_rotation",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"submodels": [
+												{
+													"id": "triangle_body",
+													"invertAxis": "xy",
+													"translate": [0, 0, 0],
+													"boxes": [
+														{"coordinates": [-9, -9, -9, 18, 18, 18], "textureOffset": [0, 0]}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"part": "left_wing",
+			"id": "left_wing",
+			"invertAxis": "xy",
+			"translate": [1.5, -7.1, 0.8]
+		},
+		{
+			"part": "right_wing",
+			"id": "right_wing",
+			"invertAxis": "xy",
+			"translate": [-1.5, -7.1, 0.8]
+		},
+		{
+			"part": "left_leg",
+			"id": "left_leg",
+			"invertAxis": "xy",
+			"translate": [1, -2, 1]
+		},
+		{
+			"part": "right_leg",
+			"id": "right_leg",
+			"invertAxis": "xy",
+			"translate": [-1, -2, 1]
+		},
+		{
+			"part": "tail",
+			"id": "tail",
+			"invertAxis": "xy",
+			"translate": [0, -2.9, -1.2]
+		}
+	]
+}

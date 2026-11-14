@@ -1,0 +1,476 @@
+{
+	"credit": "Model, Texture & Animations by kotisimo",
+	"textureSize": [256, 64],
+	"texture": "textures/entity/multipasta/notmogueras_consilium.png",
+	"models": [
+		{
+			"part": "head",
+			"id": "head",
+			"invertAxis": "xy",
+			"translate": [0, -8, 0.5],
+			"animations": [
+				{
+					"var.time": "time - pi/random(id)",
+					"body.rx": 0,
+					"body.tx": 0,
+					"body.ty": 16.5,
+					"body.tz": 0,
+					"rotation.rz": "if(death_time > 0, -torad(min(sqrt((death_time - 1) / 20 * 1.6), 1) * 90), 0)",
+					"var.dance": "                todeg(sin(torad(clamp(if(right_leg.rz!=0&&is_on_ground, var.dance-0.15 * frame_time * 20, var.dance+0.15 * frame_time * 20), 0, 1))))",
+					"var.notmoguera_shoulder": "  todeg(sin(torad(clamp(if(is_on_shoulder, var.notmoguera_shoulder-0.035 * frame_time * 20, var.notmoguera_shoulder+0.07 * frame_time * 20), 0, 1))))",
+					"var.notmoguera_ground": "    todeg(sin(torad(clamp(if(is_on_ground || is_riding, var.notmoguera_ground-0.1 * frame_time * 20, var.notmoguera_ground+0.08 * frame_time * 20), 0, 1))))",
+					"var.notmoguera_groundtail": "todeg(sin(torad(clamp(if(is_on_ground || is_riding, var.notmoguera_groundtail-0.18 * frame_time * 20, var.notmoguera_groundtail+0.07 * frame_time * 20), 0, 1))))",
+					"var.notmoguera_sit": "       todeg(sin(torad(clamp(if(is_sitting||is_riding && !is_on_shoulder, var.notmoguera_sit-0.09 * frame_time * 20, var.notmoguera_sit+0.08 * frame_time * 20), 0, 1))))"
+				},
+				{
+					"notmoguera.ty": "            lerp(var.dance, -19.5 -(pow(sin(var.time/1.75), 1)*2),                     lerp(var.notmoguera_ground, -16.5 -pow(sin(time/16), 4)*4 +lerp(var.notmoguera_sit, +7.4 +torad(44) -pow(sin(time/16), 4)*4, -2), -12)      )",
+					"notmoguera.tz": "            lerp(var.dance, +2,                                                        lerp(var.notmoguera_shoulder, +24, +2)      )",
+					"notmoguera.rx": "            lerp(var.dance, 0,                                                         lerp(var.notmoguera_ground, -torad(6) +lerp(var.notmoguera_sit, -torad(8.5), 0), -torad(0)) +if(is_riding, 0, +torad(head_pitch/2))      )",
+					"notmoguera.rz": "            lerp(var.dance, 0,                  if(is_riding, 0, -torad(head_yaw/4))      )",
+					"notmoguera.ry": "            lerp(var.dance, 0,                  if(is_riding, 0, torad(head_yaw/2))      )",
+					"notmoguera_body.rx": "       lerp(var.dance, 0,                  -torad(2) * hurt_time      )",
+					"notmoguera_body.ry": "       lerp(var.dance, -cos(var.time/3.5+pi/1.8) * torad(10) +torad(head_yaw/4),                  0     )",
+					"notmoguera_body.rz": "       lerp(var.dance, -sin(var.time/3.5+pi/1.8) * torad(8) -torad(head_yaw/6),   lerp(var.notmoguera_sit, 0, +sin(time/4) * torad(3.5))      )",
+					"notmoguera_head.rx": "       lerp(var.dance, +torad(6.5),                  +torad(6.5) +pow(sin(time/8+pi/3),1)/8 -torad(8) * hurt_time +lerp(var.notmoguera_sit, torad(10) +if(is_riding, 0, torad(head_pitch/2)) +pow(sin(time/8+pi/3.7),1)/7, 0 +torad(head_pitch/2))      )",
+					"notmoguera_head.ry": "       lerp(var.dance, +cos(var.time/3.5+pi/1.3) * torad(10) +torad(head_yaw/2),          if(is_riding, 0, torad(head_yaw/2))      )",
+					"notmoguera_head.rz": "       lerp(var.dance, +sin(var.time/3.5+pi/1.8) * torad(6) +torad(head_yaw/4),   lerp(var.notmoguera_sit, +if(is_riding, 0, +torad(head_yaw/4)), -cos(time/4) * torad(3.5))      )",
+					"notmoguera_head.tx": "       lerp(var.dance, 0,                                                         lerp(var.notmoguera_sit, 0, 0 +sin(time/4) * torad(7))      )",
+					"notmoguera_head.ty": "       lerp(var.dance, 0,       -(0.15 * hurt_time)      ) -8.9",
+					"notmoguera_drillhead.rz": "  lerp(var.dance, 0,        (hurt_time *torad(64))  )",
+					"notmoguera_drillhead.tz": "  lerp(var.dance, 0,       -(0.55 * hurt_time)      ) +3.1",
+					"notmoguera_drillspring.sz": "lerp(var.dance, 0,        (0.15 * hurt_time)      ) +1",
+					"notmoguera_drill.tz": "      lerp(var.dance, 0,       -(1.2 * hurt_time)       ) -7"
+				},
+				{
+					"var.alive": "if(is_alive, 0, 1)",
+					"notmoguera_explosions.visible": "between(var.alive, 1, 1)",
+					"notmoguera_explosions.ty": "1",
+					"notmoguera_explosions.tz": "-2",
+					"notmoguera_explosions.rx": "-player_rot_x",
+					"notmoguera_explosions.ry": "player_rot_y-rot_y+pi"
+				},
+				{
+					"notmoguera_hand_left_rotation.rx": "lerp(var.dance, +torad(12),                lerp(var.notmoguera_ground, +torad(12) +lerp(var.notmoguera_sit, +torad(16) +pow(sin(time/8), 1)/7.5, -torad(0)), +torad(6.5))      )",
+					"notmoguera_hand_left_rotation.ry": "lerp(var.dance, -torad(28),               -torad(28)      )",
+					"notmoguera_hand_left_thing_rotation.rx": "lerp(var.dance, 0,                   lerp(var.notmoguera_ground, +torad(0) +lerp(var.notmoguera_sit, +torad(6) -pow(sin(time/8+pi/3),1)/8, -torad(0)), +torad(0))      )",
+					"notmoguera_hand_left_thing.rx": "   lerp(var.dance, +torad(5),                 lerp(var.notmoguera_ground, +torad(6) +lerp(var.notmoguera_sit, -torad(6) -pow(sin(time/8+pi/3),1)/6, -torad(0)), +torad(6))      )",
+					"notmoguera_hand_left_thing.rz": "   lerp(var.dance, +torad(6),                 if(is_sitting, +torad(4), +torad(6))      )",
+					"notmoguera_hand_right_rotation.rx": "notmoguera_hand_left_rotation.rx",
+					"notmoguera_hand_right_rotation.ry": "-notmoguera_hand_left_rotation.ry",
+					"notmoguera_hand_right_thing_rotation.rx": "notmoguera_hand_left_thing_rotation.rx",
+					"notmoguera_hand_right_thing.rx": "notmoguera_hand_left_thing.rx",
+					"notmoguera_hand_right_thing.rz": "-notmoguera_hand_left_thing.rz",
+					"notmoguera_left_weaponry.rz": "     lerp(var.dance, -torad(45) -(time/1),                 if(round(age/20) % 35 < 30, -torad(45), -torad(45) -(time/1))      )",
+					"notmoguera_right_weaponry.rz": "-notmoguera_left_weaponry.rz",
+					"notmoguera_tentacle_left.rx": "     lerp(var.dance, -torad(32),                 lerp(var.notmoguera_sit, +torad(44) -pow(sin(time/16), 4)/2, -torad(head_pitch)) -sin(time/6) * torad(14)      )",
+					"notmoguera_tentacle_left.ry": "     lerp(var.dance, torad(10),                  0      )",
+					"notmoguera_tentacle_left.rz": "     lerp(var.dance, -torad(62) +(pow(sin(var.time/3.5+pi/2), 2)/1.5),                 -torad(12) * hurt_time +lerp(var.notmoguera_ground, -torad(32) -cos(time/6) * torad(14) +if(is_riding, 0, torad(head_pitch/2)) +lerp(var.notmoguera_sit, +if(is_riding, 0, torad(head_pitch)) -torad(46) +pow(sin(time/16), 4)/2, 0), -torad(26) +torad(head_pitch/2) -pow(sin(time/16), 4)/2)      )",
+					"notmoguera_tentacle_right.rx": "notmoguera_tentacle_left.rx",
+					"notmoguera_tentacle_right.ry": "-notmoguera_tentacle_left.ry",
+					"notmoguera_tentacle_right.rz": "-notmoguera_tentacle_left.rz",
+					"notmoguera_tail.tx": "              lerp(var.dance, 0,                          lerp(var.notmoguera_groundtail, 0, +cos(time/1) * torad(42))      )",
+					"notmoguera_tail.rx": "              lerp(var.dance, -torad(34),                 -torad(6) * hurt_time +lerp(var.notmoguera_groundtail, -torad(19.5) +pow(sin(time/16), 4)/4 +lerp(var.notmoguera_sit, -torad(25) +pow(sin(time/16), 4)/4, -torad(8)), -torad(6))      )",
+					"notmoguera_tail.ry": "              lerp(var.dance, 0,                 if(is_riding, 0, +torad(head_yaw/4))      )",
+					"notmoguera_tail.rz": "              lerp(var.dance, -sin(var.time/1.75*2) * torad(12),                 -cos(time/1) * torad(7) +if(is_riding, 0, +torad(head_yaw/2))      )",
+					"notmoguera_tail2.rz": "             lerp(var.dance, cos(var.time/1.75*2) * torad(18),                 -cos(time/1) * torad(14)      )",
+					"notmoguera_tail2.rx": "             lerp(var.dance, -torad(34),    -torad(4) * hurt_time +lerp(var.notmoguera_groundtail, -torad(24) +lerp(var.notmoguera_sit, -torad(28), -torad(8)), -torad(16))      )",
+					"notmoguera_tail3.tx": "             lerp(var.dance, 0,                 cos(time/1) * torad(42)      )",
+					"notmoguera_tail3.rz": "             lerp(var.dance, cos(var.time/1.75*2) * torad(32),                 -sin(time/1) * torad(42)      )"
+				}
+			]
+		},
+		{
+			"part": "body",
+			"id": "body",
+			"invertAxis": "xy",
+			"translate": [0, -7.5, 1],
+			"submodels": [
+				{
+					"id": "rotation",
+					"invertAxis": "xy",
+					"translate": [0, 7.5, -1],
+					"submodels": [
+						{
+							"id": "notmoguera",
+							"invertAxis": "xy",
+							"translate": [0, 5.5, 1],
+							"submodels": [
+								{
+									"id": "notmoguera_body",
+									"invertAxis": "xy",
+									"translate": [0, -2, 0],
+									"boxes": [
+										{
+											"coordinates": [-4, -5, -5, 8, 14, 10],
+											"uvNorth": [113, 0, 121, 14],
+											"uvEast": [131, 0, 121, 14],
+											"uvSouth": [131, 0, 139, 14],
+											"uvWest": [121, 0, 131, 14],
+											"uvUp": [121, 24, 129, 14],
+											"uvDown": [113, 14, 121, 24]
+										},
+										{
+											"coordinates": [0, -3, 3, 0, 14, 4],
+											"uvEast": [163, 0, 159, 14],
+											"uvWest": [159, 0, 163, 14]
+										}
+									],
+									"submodels": [
+										{
+											"id": "notmoguera_hand_left",
+											"invertAxis": "xy",
+											"translate": [-4.5, 6.5, -3.5],
+											"submodels": [
+												{
+													"id": "notmoguera_hand_left_rotation",
+													"invertAxis": "xy",
+													"mirrorTexture": "u",
+													"translate": [0, 0, 0],
+													"boxes": [
+														{
+															"coordinates": [-1.5, -1.5, -12.5, 3, 3, 13],
+															"uvNorth": [143, 20, 146, 23],
+															"uvEast": [144, 33, 131, 36],
+															"uvSouth": [149, 20, 146, 23],
+															"uvWest": [131, 29, 144, 32],
+															"uvUp": [136, 29, 133, 16],
+															"uvDown": [139, 16, 142, 29]
+														}
+													],
+													"submodels": [
+														{
+															"id": "notmoguera_hand_left_thing",
+															"invertAxis": "xy",
+															"translate": [-0.5, -1.5, -4.5],
+															"submodels": [
+																{
+																	"id": "notmoguera_hand_left_thing_rotation",
+																	"invertAxis": "xy",
+																	"mirrorTexture": "u",
+																	"translate": [0, -8, 4],
+																	"boxes": [
+																		{
+																			"coordinates": [0, 0, -5, 0, 9, 6],
+																			"uvEast": [146, 33, 145, 34],
+																			"uvWest": [145, 23, 151, 32]
+																		}
+																	]
+																}
+															]
+														},
+														{
+															"id": "notmoguera_left_weaponry",
+															"invertAxis": "xy",
+															"translate": [0, 0, -12.5],
+															"rotate": [0, 0, 45],
+															"boxes": [
+																{
+																	"coordinates": [0, -1.5, -6, 0, 3, 6],
+																	"uvNorth": [124, 32, 124, 35],
+																	"uvEast": [150, 17, 149, 18],
+																	"uvSouth": [124, 32, 124, 35],
+																	"uvWest": [142, 16, 148, 19],
+																	"uvUp": [124, 32, 124, 38],
+																	"uvDown": [124, 32, 124, 38]
+																}
+															],
+															"submodels": [
+																{
+																	"id": "notmoguera_left_weaponry2",
+																	"invertAxis": "xy",
+																	"translate": [0, 0, 0],
+																	"rotate": [0, 0, 90],
+																	"boxes": [
+																		{
+																			"coordinates": [0, -1.5, -6, 0, 3, 6],
+																			"uvNorth": [124, 32, 124, 35],
+																			"uvEast": [150, 17, 149, 18],
+																			"uvSouth": [124, 32, 124, 35],
+																			"uvWest": [142, 16, 148, 19],
+																			"uvUp": [124, 32, 124, 38],
+																			"uvDown": [124, 32, 124, 38]
+																		}
+																	]
+																}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"id": "notmoguera_hand_right",
+											"invertAxis": "xy",
+											"translate": [4.5, 6.5, -3.5],
+											"submodels": [
+												{
+													"id": "notmoguera_hand_right_rotation",
+													"invertAxis": "xy",
+													"mirrorTexture": "u",
+													"translate": [0, 0, 0],
+													"boxes": [
+														{
+															"coordinates": [-1.5, -1.5, -12.5, 3, 3, 13],
+															"uvNorth": [146, 20, 143, 23],
+															"uvEast": [144, 29, 131, 32],
+															"uvSouth": [146, 20, 149, 23],
+															"uvWest": [131, 33, 144, 36],
+															"uvUp": [133, 29, 136, 16],
+															"uvDown": [142, 16, 139, 29]
+														}
+													],
+													"submodels": [
+														{
+															"id": "notmoguera_hand_right_thing",
+															"invertAxis": "xy",
+															"translate": [0.5, -1.5, -4.5],
+															"submodels": [
+																{
+																	"id": "notmoguera_hand_right_thing_rotation",
+																	"invertAxis": "xy",
+																	"mirrorTexture": "u",
+																	"translate": [0, -8, 4],
+																	"boxes": [
+																		{
+																			"coordinates": [0, 0, -5, 0, 9, 6],
+																			"uvEast": [151, 23, 145, 32],
+																			"uvWest": [145, 33, 146, 34]
+																		}
+																	]
+																}
+															]
+														},
+														{
+															"id": "notmoguera_right_weaponry",
+															"invertAxis": "xy",
+															"translate": [0, 0, -12.5],
+															"rotate": [0, 0, -45],
+															"boxes": [
+																{
+																	"coordinates": [0, -1.5, -6, 0, 3, 6],
+																	"uvNorth": [124, 32, 124, 35],
+																	"uvEast": [148, 16, 142, 19],
+																	"uvSouth": [124, 32, 124, 35],
+																	"uvWest": [149, 17, 150, 18],
+																	"uvUp": [124, 32, 124, 38],
+																	"uvDown": [124, 32, 124, 38]
+																}
+															],
+															"submodels": [
+																{
+																	"id": "notmoguera_right_weaponry2",
+																	"invertAxis": "xy",
+																	"translate": [0, 0, 0],
+																	"rotate": [0, 0, -90],
+																	"boxes": [
+																		{
+																			"coordinates": [0, -1.5, -6, 0, 3, 6],
+																			"uvNorth": [124, 32, 124, 35],
+																			"uvEast": [148, 16, 142, 19],
+																			"uvSouth": [124, 32, 124, 35],
+																			"uvWest": [149, 17, 150, 18],
+																			"uvUp": [124, 32, 124, 38],
+																			"uvDown": [124, 32, 124, 38]
+																		}
+																	]
+																}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"id": "notmoguera_tentacle_left",
+											"invertAxis": "xy",
+											"translate": [-4, -3, 4],
+											"boxes": [
+												{
+													"coordinates": [0, -16, -3, 0, 16, 10],
+													"uvEast": [152, 17, 151, 18],
+													"uvWest": [153, 17, 163, 33]
+												}
+											]
+										},
+										{
+											"id": "notmoguera_tentacle_right",
+											"invertAxis": "xy",
+											"translate": [4, -3, 4],
+											"boxes": [
+												{
+													"coordinates": [0, -16, -3, 0, 16, 10],
+													"uvEast": [163, 17, 153, 33],
+													"uvWest": [151, 17, 152, 18]
+												}
+											]
+										},
+										{
+											"id": "notmoguera_tail",
+											"invertAxis": "xy",
+											"translate": [0, -5, 1],
+											"boxes": [
+												{
+													"coordinates": [-3, -7, -3, 6, 8, 6],
+													"uvNorth": [113, 31, 119, 39],
+													"uvEast": [125, 31, 119, 39],
+													"uvSouth": [125, 31, 131, 39],
+													"uvWest": [119, 31, 125, 39],
+													"uvUp": [119, 25, 125, 31],
+													"uvDown": [119, 31, 125, 25]
+												}
+											],
+											"submodels": [
+												{
+													"id": "notmoguera_tail2",
+													"invertAxis": "xy",
+													"translate": [0, -7, -0.5],
+													"boxes": [
+														{
+															"coordinates": [-2, -6, -2.5, 4, 7, 5],
+															"uvNorth": [118, 40, 122, 47],
+															"uvEast": [113, 40, 118, 47],
+															"uvSouth": [122, 40, 126, 47],
+															"uvWest": [118, 40, 113, 47],
+															"uvUp": [113, 47, 117, 52],
+															"uvDown": [113, 52, 117, 47]
+														}
+													],
+													"submodels": [
+														{
+															"id": "notmoguera_tail3",
+															"invertAxis": "xy",
+															"translate": [0, -5, 0],
+															"boxes": [
+																{
+																	"coordinates": [0, -9, -8.5, 0, 9, 17],
+																	"uvEast": [133, 38, 132, 39],
+																	"uvWest": [127, 40, 144, 49]
+																}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"id": "notmoguera_head",
+											"invertAxis": "xy",
+											"translate": [0, 9, -2.5],
+											"boxes": [
+												{
+													"coordinates": [-3, 0, -4, 6, 7, 8],
+													"uvNorth": [139, 0, 145, 7],
+													"uvEast": [153, 0, 145, 7],
+													"uvSouth": [153, 0, 159, 7],
+													"uvWest": [145, 0, 153, 7],
+													"uvUp": [139, 7, 145, 15],
+													"uvDown": [145, 7, 151, 15]
+												}
+											],
+											"submodels": [
+												{
+													"id": "notmoguera_drillhead",
+													"invertAxis": "xy",
+													"translate": [0, 3.5, 3],
+													"submodels": [
+														{
+															"id": "notmoguera_drillspring",
+															"invertAxis": "xy",
+															"translate": [0, 0, 1],
+															"boxes": [
+																{
+																	"coordinates": [-2, -2.5, -8, 4, 5, 7],
+																	"uvNorth": [145, 34, 149, 39],
+																	"uvEast": [160, 39, 153, 44],
+																	"uvSouth": [156, 34, 160, 39],
+																	"uvWest": [149, 34, 156, 39],
+																	"uvUp": [145, 39, 149, 46],
+																	"uvDown": [149, 39, 153, 46]
+																}
+															]
+														},
+														{
+															"id": "notmoguera_drill",
+															"invertAxis": "xy",
+															"translate": [0, -0.001, -7],
+															"rotate": [0, 0, 45],
+															"boxes": [
+																{
+																	"coordinates": [0, -4, -6, 0, 8, 6],
+																	"uvEast": [160, 15, 159, 16],
+																	"uvWest": [152, 8, 158, 16]
+																}
+															],
+															"submodels": [
+																{
+																	"id": "notmoguera_drill2",
+																	"invertAxis": "xy",
+																	"translate": [0, 0, 0],
+																	"rotate": [0, 0, 90],
+																	"boxes": [
+																		{
+																			"coordinates": [0, -4, -6, 0, 8, 6],
+																			"uvEast": [160, 15, 159, 16],
+																			"uvWest": [152, 16, 158, 8]
+																		}
+																	]
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"id": "notmoguera_explosions",
+									"invertAxis": "xy",
+									"translate": [0, 1, 0],
+									"texture": "multipasta:textures/a/nesgodzilla_explosions.png",
+									"textureSize": [32, 32],
+									"boxes": [
+										{
+											"coordinates": [-16, -16, 0, 32, 32, 0],
+											"uvSouth": [32, 0, 0, 32]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"part": "left_wing",
+			"id": "left_wing",
+			"invertAxis": "xy",
+			"translate": [1.5, -7.1, 0.8]
+		},
+		{
+			"part": "right_wing",
+			"id": "right_wing",
+			"invertAxis": "xy",
+			"translate": [-1.5, -7.1, 0.8]
+		},
+		{
+			"part": "left_leg",
+			"id": "left_leg",
+			"invertAxis": "xy",
+			"translate": [1, -2, 1]
+		},
+		{
+			"part": "right_leg",
+			"id": "right_leg",
+			"invertAxis": "xy",
+			"translate": [-1, -2, 1]
+		},
+		{
+			"part": "tail",
+			"id": "tail",
+			"invertAxis": "xy",
+			"translate": [0, -2.9, -1.2]
+		}
+	]
+}

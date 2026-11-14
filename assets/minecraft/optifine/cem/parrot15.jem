@@ -1,0 +1,390 @@
+{
+	"credit": "Model & Texture of Roseate & Lonely by PJTheSqueepess, Animations by Kotisimo, From The Fog by LunarEclipseStudios",
+	"texture": "textures/entity/multipasta/herobrine/herobrine.png",
+	"textureSize": [128, 64],
+	"models": [
+		{
+			"part": "head",
+			"id": "head",
+			"invertAxis": "xy",
+			"translate": [0, -8, 0.5],
+			"animations": [
+				{
+					"var.time": "time - pi/random(id)",
+					"body.rx": 0,
+					"body.tx": 0,
+					"body.ty": 16.5,
+					"body.tz": 0,
+					"rotation.rz": "if(death_time > 0, -torad(min(sqrt((death_time - 1) / 20 * 1.6), 1) * 90), 0)",
+					"var.alive": "if((is_alive && !is_on_shoulder), 1 , 0)",
+					"rotation.visible": "between(var.alive, 1, 1)",
+					"var.herobrine_stand": "todeg(sin(torad(clamp(if((is_on_ground || is_sitting || is_riding) && !is_on_shoulder && is_alive, var.herobrine_stand-0.1 * frame_time * 20, var.herobrine_stand+0.065 * frame_time * 20), 0, 1))))",
+					"var.herobrine_sit": "  todeg(sin(torad(clamp(if((is_riding||is_sitting) && !is_on_shoulder, var.herobrine_sit-0.3 * frame_time * 20, var.herobrine_sit+0.35 * frame_time * 20), 0, 1))))",
+					"var.herobrine_sit2": "  todeg(sin(torad(clamp(if((is_riding||is_sitting) && !is_on_shoulder, var.herobrine_sit2-0.66 * frame_time * 20, var.herobrine_sit2+0.3 * frame_time * 20), 0, 1))))",
+					"var.red_torches": "  todeg(sin(torad(clamp(if(is_sitting, var.red_torches-0.02 * frame_time * 20, var.red_torches+0.07 * frame_time * 20), 0, 1))))",
+					"var.red_torchesalt": "  todeg(sin(torad(clamp(if(is_sitting, var.red_torchesalt-0.1 * frame_time * 20, var.red_torchesalt+0.04 * frame_time * 20), 0, 1))))",
+					"var.red_torch1": "  todeg(sin(torad(clamp(if(is_sitting, var.red_torch1-0.03 * frame_time * 20, var.red_torch1+0.082 * frame_time * 20), 0, 1))))",
+					"var.red_torch2": "  todeg(sin(torad(clamp(if(is_sitting, var.red_torch2-0.025 * frame_time * 20, var.red_torch2+0.076 * frame_time * 20), 0, 1))))",
+					"var.red_torch3": "  todeg(sin(torad(clamp(if(is_sitting, var.red_torch3-0.02 * frame_time * 20, var.red_torch3+0.071 * frame_time * 20), 0, 1))))"
+				},
+				{
+					"red_torches.ry": "-rot_y +lerp(var.red_torches, 0, -torad(505))",
+					"red_torch1.sx": "+lerp(var.red_torchesalt, 1, 0)",
+					"red_torch1.sy": "+lerp(var.red_torchesalt, 1, 0)",
+					"red_torch1.sz": "+lerp(var.red_torchesalt, 1, 0)",
+					"red_torch1.tx": "+17 +(sin(var.time/12) * 6)/2",
+					"red_torch1.ty": "+2 +(cos(var.time/12) * 8)/2 +lerp(var.red_torch1, -16, -66)",
+					"red_torch1.tz": "-3 +(cos(var.time/12) * 6)/2",
+					"red_torch2.sx": "+lerp(var.red_torchesalt, 1, 0)",
+					"red_torch2.sy": "+lerp(var.red_torchesalt, 1, 0)",
+					"red_torch2.sz": "+lerp(var.red_torchesalt, 1, 0)",
+					"red_torch2.tx": "-10 -(sin(var.time/12) * 6)/2",
+					"red_torch2.ty": "-4 -(cos(var.time/12) * 8)/2 +lerp(var.red_torch2, -16, -66)",
+					"red_torch2.tz": "+16 -(cos(var.time/12) * 6)/2",
+					"red_torch3.sx": "+lerp(var.red_torchesalt, 1, 0)",
+					"red_torch3.sy": "+lerp(var.red_torchesalt, 1, 0)",
+					"red_torch3.sz": "+lerp(var.red_torchesalt, 1, 0)",
+					"red_torch3.tx": "-17 -(cos(var.time/12) * 6)/2",
+					"red_torch3.ty": "+8 -(sin(var.time/12) * 8)/2 +lerp(var.red_torch3, -16, -66)",
+					"red_torch3.tz": "-15 -(sin(var.time/12) * 6)/2"
+				},
+				{
+					"lonely_body.ty": "+lerp(var.herobrine_sit, -4, 0)",
+					"lonely_head.ty": "+lerp(var.herobrine_sit, -3.70, 0)",
+					"lonely_left_arm.ty": "+lerp(var.herobrine_sit, -3.70, 0)",
+					"lonely_left_arm.tz": "+lerp(var.herobrine_sit, -0.7, 0)",
+					"lonely_left_arm.rx": "+lerp(var.herobrine_sit, -torad(12), 0)",
+					"lonely_left_arm.ry": "+lerp(var.herobrine_sit, +torad(7.5), 0)",
+					"lonely_left_arm.rz": "+lerp(var.herobrine_sit, -torad(6), 0)",
+					"lonely_right_arm.ty": "+lerp(var.herobrine_sit, -3.70, 0)",
+					"lonely_right_arm.tz": "+lerp(var.herobrine_sit, -0.7, 0)",
+					"lonely_right_arm.rx": "+lerp(var.herobrine_sit, -torad(12), 0)",
+					"lonely_right_arm.ry": "+lerp(var.herobrine_sit, -torad(6), 0)",
+					"lonely_right_arm.rz": "+lerp(var.herobrine_sit, +torad(6), 0)",
+					"lonely_left_leg.ty": "+lerp(var.herobrine_sit, +0.5, +3)",
+					"lonely_right_leg.ty": "+lerp(var.herobrine_sit, +0.5, +3)"
+				},
+				{
+					"herobrine_body_rotation.ty": "lerp(var.herobrine_stand, +lerp(var.herobrine_sit, +10, +(( cos(limb_swing)/3)-0.3) *limb_speed*3), -1.5 -(sin(var.time/12) * 2))",
+					"herobrine_body_rotation.tz": "lerp(var.herobrine_stand, 0, +limb_speed * 3.3)",
+					"herobrine_body_rotation.rx": "lerp(var.herobrine_stand, 0, -(cos(var.time/12) * torad(5)) +limb_speed * torad(16) +torad(max(head_pitch,-10)/3 ))",
+					"herobrine_body_rotation.rz": "lerp(var.herobrine_stand, +(sin(var.time/8) * torad(1)), 0)",
+					"herobrine_body.rx": "lerp(var.herobrine_stand, +torad(3) +lerp(var.herobrine_sit2, 0, 0 +(limb_speed * torad(8))), +torad(head_yaw/8))",
+					"herobrine_body.ry": "lerp(var.herobrine_stand, -(sin(var.time/8) * torad(3)) +if(is_riding, 0, +torad(head_yaw/3)) +lerp(var.herobrine_sit2, 0, 0 -(sin(limb_swing/2) * limb_speed)/6), +torad(head_yaw/3))",
+					"herobrine_body.rz": "lerp(var.herobrine_stand, -(cos(var.time/8) * torad(1.5)) +if(is_riding, 0, -torad(head_yaw/10)), -torad(head_yaw/10))",
+					"herobrine_head.rz": "lerp(var.herobrine_stand, +(sin(var.time/8) * torad(1)) +if(is_riding, 0, +torad(head_yaw/5)), +torad(head_yaw/5))",
+					"herobrine_head.rx": "lerp(var.herobrine_stand, +if(is_riding, 0, +torad(max(head_pitch,-10))) -torad(3) -(sin(var.time/8) * torad(2)) +lerp(var.herobrine_sit2, 0, 0 -(limb_speed * torad(8))), +torad(max(head_pitch,-74)/3) +torad(6) +(cos(var.time/12) * torad(34))/4)",
+					"herobrine_head.ry": "lerp(var.herobrine_stand, +(-cos(var.time/8) * torad(2) +if(is_riding, 0, +torad(head_yaw/2))), +torad(head_yaw/2))"
+				},
+				{
+					"herobrine_legs.rx": "lerp(var.herobrine_stand, 0, -torad(head_yaw/3) )",
+					"herobrine_legs.rz": "lerp(var.herobrine_stand, if(is_riding, 0, -torad(head_yaw/17)), 0)",
+					"herobrine_legs.ry": "lerp(var.herobrine_stand, +(cos(var.time/8) * torad(2)) +if(is_riding, 0, +torad(head_yaw/5.5)), +torad(head_yaw/5.5))",
+					"herobrine_left_leg.ty": "lerp(var.herobrine_stand, 0 +lerp(var.herobrine_sit2, 0, 0 -(limb_speed * 1.4) -(cos(limb_swing/2) * limb_speed*1.5)), -0.5 -(sin(var.time/12) * 0.5))",
+					"herobrine_left_leg.tz": "lerp(var.herobrine_stand, 0 +lerp(var.herobrine_sit2, +1.2, 0 -(limb_speed * 0.7) -(sin(limb_swing/2) * limb_speed*4)/12), -0.5)",
+					"herobrine_left_leg.rx": "lerp(var.herobrine_stand, +lerp(var.herobrine_sit2, -torad(90), 0 -(sin(limb_swing/2) * limb_speed)/1.5), +(sin(var.time/12) * torad(14))/2 +torad(6)) -cos(var.time/8) * hurt_time *torad(8)",
+					"herobrine_left_leg.ry": "lerp(var.herobrine_stand, -(sin(var.time/8) * torad(3)) +if(is_riding, 0, -torad(max(-head_yaw,+5))/2) +lerp(var.herobrine_sit2, -torad(16), 0), -torad(12))",
+					"herobrine_left_leg.rz": "lerp(var.herobrine_stand, if(is_riding, 0, -torad(max(-head_yaw,+5))/4), 0)",
+					"herobrine_right_leg.ty": "lerp(var.herobrine_stand, 0  +lerp(var.herobrine_sit2, 0, 0 -(limb_speed * 1.4) +(cos(limb_swing/2) * limb_speed*1.5)), -1 -(sin(var.time/12) * 0.5))",
+					"herobrine_right_leg.tz": "lerp(var.herobrine_stand, 0 +lerp(var.herobrine_sit2, +1.2, 0 -(limb_speed * 0.7) +(sin(limb_swing/2) * limb_speed*4)/12), -2.5)",
+					"herobrine_right_leg.rx": "lerp(var.herobrine_stand, +lerp(var.herobrine_sit2, -torad(90), 0 +(sin(limb_swing/2) * limb_speed)/1.5), +(cos(var.time/12) * torad(12))/2 +torad(12)) -sin(var.time/8) * hurt_time *torad(4)",
+					"herobrine_right_leg.ry": "lerp(var.herobrine_stand, +(cos(var.time/8) * torad(3)) +if(is_riding, 0, +torad(max(+head_yaw,+5))/2) +lerp(var.herobrine_sit2, +torad(16), 0), +torad(12))",
+					"herobrine_right_leg.rz": "lerp(var.herobrine_stand, if(is_riding, 0, +torad(max(+head_yaw,+5))/4), 0)"
+				},
+				{
+					"herobrine_left_arm.ty": "lerp(var.herobrine_stand, -11 +lerp(var.herobrine_sit2, 0, 0 +(sin(limb_swing/2) * limb_speed)/2), -10.5 +(cos(var.time/12) * 0.45))",
+					"herobrine_left_arm.rx": "lerp(var.herobrine_stand, -torad(5) -(cos(var.time/8)/1.5) * torad(2.5) +lerp(var.herobrine_sit2, -torad(9), 0 -(cos(limb_swing/2) * limb_speed)/2), -torad(5)) +cos(var.time/8) * hurt_time *torad(8)",
+					"herobrine_left_arm.ry": "lerp(var.herobrine_stand, +sin(var.time/8)/1.5 * torad(2.5), 0)",
+					"herobrine_left_arm.rz": "lerp(var.herobrine_stand, -torad(3) +(sin(var.time/8)/1.5) * torad(2.5)-0.07, -torad(3))",
+					"herobrine_right_arm.ty": "lerp(var.herobrine_stand, -11 +lerp(var.herobrine_sit2, 0, 0 -(sin(limb_swing/2) * limb_speed)/2), -10.5 +(sin(time/12) * 0.45))",
+					"herobrine_right_arm.rx": "lerp(var.herobrine_stand, -torad(5) +(cos(var.time/8)/1.5) * torad(2.5) +lerp(var.herobrine_sit2, -torad(9), 0 +(cos(limb_swing/2) * limb_speed)/2), -torad(5)) +sin(var.time/8) * hurt_time *torad(8)",
+					"herobrine_right_arm.ry": "lerp(var.herobrine_stand, -(sin(var.time/8)/1.5) * torad(2.5), 0)",
+					"herobrine_right_arm.rz": "lerp(var.herobrine_stand, +torad(3) -(sin(var.time/8)/1.5) * torad(2.5)+0.07, +torad(3))"
+				}
+			]
+		},
+		{
+			"part": "body",
+			"id": "body",
+			"invertAxis": "xy",
+			"translate": [0, -7.5, 1],
+			"submodels": [
+				{
+					"id": "rotation",
+					"invertAxis": "xy",
+					"translate": [0, 0, 2],
+					"submodels": [
+						{
+							"id": "herobrine",
+							"invertAxis": "xy",
+							"translate": [0, 0, -2],
+							"submodels": [
+								{
+									"id": "herobrine_body_rotation",
+									"invertAxis": "xy",
+									"translate": [0, 0, 0],
+									"submodels": [
+										{
+											"id": "herobrine_body",
+											"invertAxis": "xy",
+											"translate": [0, 12, 0],
+											"boxes": [
+												{"coordinates": [-4, 0, -2, 8, 12, 4], "textureOffset": [16, 16]},
+												{"coordinates": [-4, 0, -2, 8, 12, 4], "textureOffset": [16, 32], "sizeAdd": 0.25}
+											],
+											"submodels": [
+												{
+													"id": "lonely_body",
+													"invertAxis": "xy",
+													"translate": [0, 0, 0],
+													"boxes": [
+														{"coordinates": [-4, -4, -3, 8, 16, 6], "textureOffset": [70, 2]}
+													]
+												},
+												{
+													"id": "herobrine_head",
+													"invertAxis": "xy",
+													"translate": [0, 12.1, 0],
+													"boxes": [
+														{"coordinates": [-4, 0, -4, 8, 8, 8], "textureOffset": [0, 0]},
+														{"coordinates": [-4, 0, -4, 8, 8, 8], "textureOffset": [32, 0], "sizeAdd": 0.5}
+													],
+													"submodels": [
+														{
+															"id": "lonely_head",
+															"invertAxis": "xy",
+															"translate": [0, 0, 0],
+															"boxes": [
+																{"coordinates": [-4, 0, -4, 8, 8, 8], "textureOffset": [84, 43]}
+															]
+														}
+													]
+												},
+												{
+													"id": "herobrine_left_arm",
+													"invertAxis": "xy",
+													"translate": [-4, 11, 0],
+													"boxes": [
+														{"coordinates": [-4, -11, -2, 4, 12, 4], "textureOffset": [32, 48]},
+														{"coordinates": [-4, -11, -2, 4, 12, 4], "textureOffset": [48, 48], "sizeAdd": 0.25}
+													],
+													"submodels": [
+														{
+															"id": "lonely_left_arm",
+															"invertAxis": "xy",
+															"translate": [0, 0, 0],
+															"boxes": [
+																{"coordinates": [-4, -17, -2.5, 4, 18, 5], "textureOffset": [70, 24]}
+															]
+														}
+													]
+												},
+												{
+													"id": "herobrine_right_arm",
+													"invertAxis": "xy",
+													"translate": [4, 11, 0],
+													"boxes": [
+														{"coordinates": [0, -11, -2, 4, 12, 4], "textureOffset": [40, 16]},
+														{"coordinates": [0, -11, -2, 4, 12, 4], "textureOffset": [40, 32], "sizeAdd": 0.25}
+													],
+													"submodels": [
+														{
+															"id": "lonely_right_arm",
+															"invertAxis": "xy",
+															"translate": [0, 0, 0],
+															"boxes": [
+																{"coordinates": [0, -18, -3.5, 4, 19, 7], "textureOffset": [91, 17]}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"id": "herobrine_legs",
+											"invertAxis": "xy",
+											"translate": [0, 12, 0],
+											"submodels": [
+												{
+													"id": "herobrine_left_leg",
+													"invertAxis": "xy",
+													"translate": [-1.1, 0, 0],
+													"boxes": [
+														{"coordinates": [-2.9, -12, -2, 4, 12, 4], "textureOffset": [16, 48]},
+														{"coordinates": [-2.9, -12, -2, 4, 12, 4], "textureOffset": [0, 48], "sizeAdd": 0.25}
+													],
+													"submodels": [
+														{
+															"id": "lonely_left_leg",
+															"invertAxis": "xy",
+															"translate": [0.1, -3, 0],
+															"boxes": [
+																{"coordinates": [-3, -9, -2, 4, 9, 4], "textureOffset": [98, 2]}
+															]
+														}
+													]
+												},
+												{
+													"id": "herobrine_right_leg",
+													"invertAxis": "xy",
+													"translate": [1.1, 0, 0],
+													"boxes": [
+														{"coordinates": [-1.1, -12, -2, 4, 12, 4], "textureOffset": [0, 16]},
+														{"coordinates": [-1.1, -12, -2, 4, 12, 4], "textureOffset": [0, 32], "sizeAdd": 0.25}
+													],
+													"submodels": [
+														{
+															"id": "lonely_right_leg",
+															"invertAxis": "xy",
+															"translate": [-0.1, -3, 0],
+															"boxes": [
+																{"coordinates": [-1, -9, -2, 4, 9, 4], "textureOffset": [110, 11]}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"id": "red_torches",
+							"invertAxis": "xy",
+							"translate": [0, 0, -2],
+							"submodels": [
+								{
+									"id": "red_torch1",
+									"invertAxis": "xy",
+									"translate": [0, 0, 0],
+									"boxes": [
+										{
+											"coordinates": [-1, 0, -1, 2, 10, 2],
+											"uvNorth": [57, 20, 59, 30],
+											"uvEast": [57, 20, 59, 30],
+											"uvSouth": [57, 20, 59, 30],
+											"uvWest": [57, 20, 59, 30],
+											"uvUp": [59, 22, 57, 20],
+											"uvDown": [59, 28, 57, 30]
+										},
+										{"coordinates": [-2, 8, -1, 4, 2, 0], "textureOffset": [59, 17]},
+										{"coordinates": [-2, 8, 1, 4, 2, 0], "textureOffset": [59, 17]},
+										{"coordinates": [-1, 8, -2, 0, 2, 4], "textureOffset": [55, 13]},
+										{"coordinates": [1, 8, -2, 0, 2, 4], "textureOffset": [55, 13]},
+										{"coordinates": [-1, 10, -1, 2, 1, 2], "textureOffset": [60, 21]}
+									],
+									"submodels": [
+										{
+											"id": "rose1",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"boxes": [
+												{"coordinates": [-3, 0, 0, 6, 11, 0], "textureOffset": [71, 52]},
+												{"coordinates": [0, 0, -3, 0, 11, 6], "textureOffset": [65, 46]}
+											]
+										}
+									]
+								},
+								{
+									"id": "red_torch2",
+									"invertAxis": "xy",
+									"translate": [0, 0, 0],
+									"boxes": [
+										{
+											"coordinates": [-1, 0, -1, 2, 10, 2],
+											"uvNorth": [57, 20, 59, 30],
+											"uvEast": [57, 20, 59, 30],
+											"uvSouth": [57, 20, 59, 30],
+											"uvWest": [57, 20, 59, 30],
+											"uvUp": [59, 22, 57, 20],
+											"uvDown": [59, 28, 57, 30]
+										},
+										{"coordinates": [-2, 8, -1, 4, 2, 0], "textureOffset": [59, 17]},
+										{"coordinates": [-2, 8, 1, 4, 2, 0], "textureOffset": [59, 17]},
+										{"coordinates": [-1, 8, -2, 0, 2, 4], "textureOffset": [55, 13]},
+										{"coordinates": [1, 8, -2, 0, 2, 4], "textureOffset": [55, 13]},
+										{"coordinates": [-1, 10, -1, 2, 1, 2], "textureOffset": [60, 21]}
+									],
+									"submodels": [
+										{
+											"id": "rose2",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"boxes": [
+												{"coordinates": [-3, 0, 0, 6, 11, 0], "textureOffset": [71, 52]},
+												{"coordinates": [0, 0, -3, 0, 11, 6], "textureOffset": [65, 46]}
+											]
+										}
+									]
+								},
+								{
+									"id": "red_torch3",
+									"invertAxis": "xy",
+									"translate": [0, 0, 0],
+									"boxes": [
+										{
+											"coordinates": [-1, 0, -1, 2, 10, 2],
+											"uvNorth": [57, 20, 59, 30],
+											"uvEast": [57, 20, 59, 30],
+											"uvSouth": [57, 20, 59, 30],
+											"uvWest": [57, 20, 59, 30],
+											"uvUp": [59, 22, 57, 20],
+											"uvDown": [59, 28, 57, 30]
+										},
+										{"coordinates": [-2, 8, -1, 4, 2, 0], "textureOffset": [59, 17]},
+										{"coordinates": [-2, 8, 1, 4, 2, 0], "textureOffset": [59, 17]},
+										{"coordinates": [-1, 8, -2, 0, 2, 4], "textureOffset": [55, 13]},
+										{"coordinates": [1, 8, -2, 0, 2, 4], "textureOffset": [55, 13]},
+										{"coordinates": [-1, 10, -1, 2, 1, 2], "textureOffset": [60, 21]}
+									],
+									"submodels": [
+										{
+											"id": "rose3",
+											"invertAxis": "xy",
+											"translate": [0, 0, 0],
+											"boxes": [
+												{"coordinates": [-3, 0, 0, 6, 11, 0], "textureOffset": [71, 52]},
+												{"coordinates": [0, 0, -3, 0, 11, 6], "textureOffset": [65, 46]}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"part": "left_wing",
+			"id": "left_wing",
+			"invertAxis": "xy",
+			"translate": [1.5, -7.1, 0.8]
+		},
+		{
+			"part": "right_wing",
+			"id": "right_wing",
+			"invertAxis": "xy",
+			"translate": [-1.5, -7.1, 0.8]
+		},
+		{
+			"part": "left_leg",
+			"id": "left_leg",
+			"invertAxis": "xy",
+			"translate": [1, -2, 1]
+		},
+		{
+			"part": "right_leg",
+			"id": "right_leg",
+			"invertAxis": "xy",
+			"translate": [-1, -2, 1]
+		},
+		{
+			"part": "tail",
+			"id": "tail",
+			"invertAxis": "xy",
+			"translate": [0, -2.9, -1.2]
+		}
+	]
+}
