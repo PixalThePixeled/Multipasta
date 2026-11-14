@@ -1,0 +1,40 @@
+{
+"music.game": {
+    "sounds": [
+      {
+        "name": "music/multipasta/wasnt_here",
+        "stream": true,
+        "volume": 0.1
+      },
+      {
+        "name": "music/multipasta/craft_failure",
+        "stream": true,
+        "volume": 0.25
+      },
+      {
+        "name": "music/multipasta/oneiroid",
+        "stream": true,
+        "volume": 1
+      }
+    ]
+  },
+"music.menu": {
+    "sounds": [
+      {
+        "name": "music/multipasta/wasnt_here",
+        "stream": true,
+        "volume": 0.1
+      },
+      {
+        "name": "music/multipasta/craft_failure",
+        "stream": true,
+        "volume": 0.25
+      },
+      {
+        "name": "music/multipasta/oneiroid",
+        "stream": true,
+        "volume": 1
+      }
+    ]
+  }
+}
