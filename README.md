@@ -9,4 +9,4 @@
 ---
 
 ㅤㅤㅤ<p align="center"><img src="description/warning.gif" width="245"/>ㅤㅤㅤㅤㅤㅤㅤㅤ<img src="description/disableddisclaim.gif" width="220"/></p>
-<p align="center"><img src="description/disclaimer-multipasta.gif?raw=true" width="785"/></p>
+<p align="center"><img src="description/disclaimer-multipasta.gif" width="785"/></p>
