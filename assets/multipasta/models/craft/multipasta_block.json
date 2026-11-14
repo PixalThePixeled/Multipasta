@@ -1,7 +1,0 @@
-{
-	"credit": "Made by Moro2610",
-	"parent": "multipasta:a/block",
-	"textures": {
-		"0": "multipasta:item/craft/multipasta_block"
-	}
-}
