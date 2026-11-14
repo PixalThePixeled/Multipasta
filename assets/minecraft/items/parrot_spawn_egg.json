@@ -1,0 +1,292 @@
+{
+    "oversized_in_gui": true,
+    "model": {
+        "type": "minecraft:select",
+        "property": "minecraft:component",
+        "component": "minecraft:custom_name",
+        "cases": [
+            {
+                "when": [
+                    "Five Lined Constellation Fish",
+                    "Пятиполосая рыба созвездие"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/mobspawn/eggs/bathysidus"
+                }
+            },
+            {
+                "when": [
+                    "Compromise",
+                    "Компромисс"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/mobspawn/eggs/compromise"
+                }
+            },
+            {
+                "when": [
+                    "Fuwatty",
+                    "Фуватти"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/mobspawn/eggs/fuwatty"
+                }
+            },
+            {
+                "when": [
+                    "Herobrine",
+                    "Херобрин"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/mobspawn/eggs/herobrine"
+                }
+            },
+            {
+                "when": [
+                    "Horse Bat",
+                    "Мышелошадь"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/mobspawn/eggs/horsebat"
+                }
+            },
+            {
+                "when": [
+                    "John",
+                    "Джон"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/mobspawn/eggs/john"
+                }
+            },
+            {
+                "when": [
+                    "Mothman",
+                    "Человек-мотылёк"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/mobspawn/eggs/mothman"
+                }
+            },
+            {
+                "when": [
+                    "Not Hedorah",
+                    "Не Хедора"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/mobspawn/eggs/nothedorah"
+                }
+            },
+            {
+                "when": [
+                    "Not Moguera",
+                    "Не Могера"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/mobspawn/eggs/pascagoula_scrap"
+                }
+            },
+            {
+                "when": [
+                    "Orga",
+                    "Орга"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/mobspawn/eggs/orga"
+                }
+            },
+            {
+                "when": [
+                    "Sighting",
+                    "Мистика"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/mobspawn/eggs/black_triangle"
+                }
+            },
+            {
+                "when": [
+                    "Puppet Mouse",
+                    "Мышь марионетка"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/lost/puppet_mouse/puppet_mouse"
+                }
+            },
+            {
+                "when": [
+                    "Red",
+                    "Ред"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/mobspawn/eggs/red"
+                }
+            },
+            {
+                "when": [
+                    "Uriel",
+                    "Уриил"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/mobspawn/eggs/uriel"
+                }
+            },
+            {
+                "when": [
+                    "Weeper",
+                    "Плакальщица"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/mobspawn/eggs/weeper"
+                }
+            },
+            {
+                "when": [
+                    "Zalgo",
+                    "Залго"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/mobspawn/eggs/zalgo"
+                }
+            },
+			{
+                "when": [
+                    "DISABLED",
+                    "ИНВАЛИД"
+                ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/mobspawn/eggs/wiggly_icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/pokepasta/pokeball/red"
+					}
+				}
+            },
+            {
+                "when": [
+                    "Bedlam",
+                    "Бедлам"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/mobspawn/eggs/bedlam"
+                }
+            },
+			{
+                "when": [
+                    "Minecraft Classic Hijacking",
+                    "Классический взлом Майнкрафта"
+                ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/mobspawn/eggs/minecraft_classic_hijacking_icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/mobspawn/eggs/minecraft_classic_hijacking"
+					}
+				}
+            },
+            {
+                "when": [
+                    "Curse me pls",
+                    "Прокляни меня пж"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/mobspawn/eggs/curse_me_pls"
+                }
+            },
+            {
+                "when": [
+                    "Gilbert Garfield",
+                    "Гилберт Гарфилд"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/mobspawn/eggs/gilbert_garfield"
+                }
+            },
+			{
+                "when": [
+                    "Gastly",
+                    "Гастли"
+                ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/mobspawn/eggs/gastly_icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/mobspawn/eggs/gastly"
+					}
+				}
+            },
+            {
+                "when": [
+                    "Entity63"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/mobspawn/eggs/entity63"
+                }
+            },
+            {
+                "when": [
+                    "Pepsiman",
+					"Пепсимен"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/mobspawn/eggs/pepsiman"
+                }
+            }
+        ],
+        "fallback": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/parrot_spawn_egg"
+        }
+    }
+}

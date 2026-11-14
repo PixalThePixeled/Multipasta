@@ -1,0 +1,344 @@
+{
+    "oversized_in_gui": false,
+    "model": {
+        "type": "minecraft:select",
+        "property": "minecraft:component",
+        "component": "minecraft:custom_name",
+        "cases": [
+            {
+                "when": [
+                    "Ascension",
+                    "Восхождение"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/ascension"
+                }
+            },
+            {
+                "when": [
+                    "Awakening",
+                    "Пробуждение"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/awakening"
+                }
+            },
+            {
+                "when": [
+                    "Casey's Cave",
+                    "Пещера Кейси"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/caseys_cave"
+                }
+            },
+            {
+                "when": [
+                    "Daybreak",
+                    "Рассвет"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/daybreak"
+                }
+            },
+            {
+                "when": [
+                    "Depth",
+                    "Глубь"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/depth"
+                }
+            },
+            {
+                "when": [
+                    "Digitalized",
+                    "Оцифрованный"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/digitalized"
+                }
+            },
+            {
+                "when": [
+                    "Can't Sing",
+                    "Неспособность петь"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/disable"
+                }
+            },
+            {
+                "when": [
+                    "Enderwoman",
+                    "Эндервуман"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/enderwoman"
+                }
+            },
+            {
+                "when": [
+                    "Euthanasia",
+                    "Эвтаназия"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/euthanasia"
+                }
+            },
+            {
+                "when": [
+                    "Fog",
+                    "Туман"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/fog"
+                }
+            },
+            {
+                "when": [
+                    "Future",
+                    "Будущее"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/future"
+                }
+            },
+            {
+                "when": [
+                    "White Painting",
+                    "Белая картина"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/handpaint"
+                }
+            },
+            {
+                "when": [
+                    "Unown Hieroglyphs",
+                    "Аноун иероглифы"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/hi"
+                }
+            },
+            {
+                "when": [
+                    "Hoop of Pasta",
+                    "Венец пасты"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/hoop_of_pasta"
+                }
+            },
+            {
+                "when": [
+                    "I want to believe",
+                    "Я хочу верить"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/i_want_to_believe"
+                }
+            },
+            {
+                "when": [
+                    "Lullaby",
+                    "Колыбельная"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/lullaby"
+                }
+            },
+            {
+                "when": [
+                    "Myriada",
+                    "Мириада"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/myriad"
+                }
+            },
+            {
+                "when": [
+                    "Mysterious Painting",
+                    "Таинственная картина"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/mysterious_painting"
+                }
+            },
+            {
+                "when": [
+                    "Night of the Living Steaks",
+                    "Ночь живых стейков"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/night_of_the_living_steaks"
+                }
+            },
+            {
+                "when": [
+                    "Portrait",
+                    "Портрет"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/portrait"
+                }
+            },
+            {
+                "when": [
+                    "Purin12",
+                    "Пурин12"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/purin12"
+                }
+            },
+            {
+                "when": [
+                    "Release",
+                    "Освобождение"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/release"
+                }
+            },
+            {
+                "when": [
+                    "Reverse",
+                    "Обратный"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/reverse"
+                }
+            },
+            {
+                "when": [
+                    "The Stage",
+                    "Сцена"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/the_stage"
+                }
+            },
+            {
+                "when": [
+                    "Scarlet Haze",
+                    "Алая мгла"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/scarlet_haze"
+                }
+            },
+            {
+                "when": [
+                    "Soft Light",
+                    "Рассеяный свет"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/soft_light"
+                }
+            },
+            {
+                "when": [
+                    "Spilled Dreams",
+                    "Разлитые мечты"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/spilled_dreams"
+                }
+            },
+            {
+                "when": [
+                    "The Yell",
+                    "Вопль"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/the_yell"
+                }
+            },
+            {
+                "when": [
+                    "Threshold of Consciousness",
+                    "Порог сознания"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/threshold_of_consciousness"
+                }
+            },
+            {
+                "when": [
+                    "Undertow",
+                    "Течение"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/undertow"
+                }
+            },
+            {
+                "when": [
+                    "Valborgsaften",
+                    "Вальборгсафтен"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/valborgsaften"
+                }
+            },
+            {
+                "when": [
+                    "Wonderland",
+                    "Страна чудес"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/wonderland"
+                }
+            },
+            {
+                "when": [
+                    "Oneiroid",
+                    "Онейроид"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/paintings/oneiroid"
+                }
+            }
+        ],
+        "fallback": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/painting"
+        }
+    }
+}

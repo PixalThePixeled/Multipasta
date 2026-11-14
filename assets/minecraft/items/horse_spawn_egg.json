@@ -1,0 +1,59 @@
+{
+    "oversized_in_gui": true,
+    "model": {
+        "type": "minecraft:select",
+        "property": "minecraft:component",
+        "component": "minecraft:custom_name",
+        "cases": [
+            {
+                "when": [
+                    "Ponyta",
+                    "Понита"
+                ],
+                "model": {
+                    "type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": [
+								"gui"
+							],
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/mobspawn/eggs/ponyta_icon"
+							}
+						}
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/mobspawn/eggs/ponyta"
+					}
+                }
+            },
+            {
+                "when": [
+                    "Doomer PonyPuff",
+					"Думер ПониПафф"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/mobspawn/eggs/doomer_ponypuff"
+                }
+            },
+            {
+                "when": [
+                    "Fallow Anteatdeer",
+					"Лань Муравьед"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/mobspawn/eggs/fallow_anteatdeer"
+                }
+            }
+        ],
+        "fallback": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/horse_spawn_egg"
+        }
+    }
+}

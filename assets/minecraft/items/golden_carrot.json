@@ -1,0 +1,88 @@
+{
+	"model": {
+		"type": "minecraft:select",
+		"property": "minecraft:component",
+		"component": "minecraft:custom_name",
+		"cases": [
+			{
+				"when": [
+					"Metaphysical Carrot", 
+					"Метафизическая морковь"
+				],
+				"model": {
+					"type": "minecraft:model",
+					"model": "multipasta:item/lost/beznogim/metaphysical_carrot"
+				}
+			},
+			{
+				"when": [
+					"Depressed Meat", 
+					"Депрессивное мясо"
+				],
+				"model": {
+					"type": "minecraft:model",
+					"model": "multipasta:item/food/depressed_meat"
+				}
+			},
+			{
+				"when": [
+					"Varan of Plenty", 
+					"Варан изобилия"
+				],
+				"model": {
+					"type": "minecraft:model",
+					"model": "multipasta:item/food/varan_of_plenty"
+				}
+			},
+            {
+                "when": [
+                    "Cinderblock Perch",
+                    "Шлакоблокунь"
+                ],
+                "model": {
+                    "type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": [
+								"gui"
+							],
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/food/cinderblock_perch_icon"
+							}
+						}
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/food/cinderblock_perch_icon"
+					}
+                }
+            },
+			{
+				"when": [
+					"Flowering Meat", 
+					"Цветущее мясо"
+				],
+				"model": {
+					"type": "minecraft:model",
+					"model": "multipasta:item/food/flowering_meat"
+				}
+			},
+			{
+				"when": [
+					"Gates of Hell", 
+					"Врата ада"
+				],
+				"model": {
+					"type": "minecraft:model",
+					"model": "multipasta:item/web_nd_analog/yume/hells_gate"
+				}
+			}
+		],
+		"fallback": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/golden_carrot"
+		}
+	}
+}

@@ -1,0 +1,14 @@
+{
+    "sources": [
+        {
+            "type": "directory",
+            "source": "a",
+            "prefix": "a/"
+        },
+        {
+            "type": "directory",
+            "source": "sky",
+            "prefix": "sky/"
+        }
+    ]
+}

@@ -1,0 +1,83 @@
+{
+    "oversized_in_gui": true,
+    "model": {
+        "type": "minecraft:select",
+        "property": "minecraft:component",
+        "component": "minecraft:custom_name",
+        "cases": [
+            {
+                "when": [
+                    "Hoaxer's Fiddle",
+                    "Скрипка Мистификатора"
+                ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/lost/puppet_mouse/doodle_doodle_icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:select",
+						"property": "minecraft:main_hand",
+						"cases": [
+							{
+								"when": "left",
+								"model": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/lost/puppet_mouse/doodle_doodle_left"
+								}
+							}
+						],
+						"fallback": {
+							"type": "minecraft:model",
+							"model": "multipasta:item/lost/puppet_mouse/doodle_doodle"
+						}
+					}
+				}
+            },
+            {
+                "when": [
+                    "Ruby Axe",
+                    "Рубиновый топор"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/craft/ruby/diamond_axe"
+                }
+            },
+            {
+                "when": [
+                    "Luther Axe",
+                    "Якорный топор"
+                ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/web_nd_analog/needlemouse/luther_axe_icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/web_nd_analog/needlemouse/luther_axe"
+					}
+				}
+            }
+        ],
+        "fallback": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/diamond_axe"
+        }
+    }
+}

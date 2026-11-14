@@ -1,0 +1,149 @@
+{
+	"oversized_in_gui": true,
+	"model": {
+		"type": "minecraft:select",
+		"property": "minecraft:component",
+		"component": "minecraft:custom_name",
+		"cases": [
+			{
+				"when": [
+					"White Hand",
+					"Белая рука"
+				],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": [
+								"thirdperson_lefthand",
+								"firstperson_lefthand"
+							],
+							"model": {
+								"type": "minecraft:condition",
+								"property": "minecraft:using_item",
+								"on_false": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/pokepasta/white_hand/white_hand"
+								},
+								"on_true": {
+									"type": "minecraft:range_dispatch",
+									"property": "minecraft:use_duration",
+									"scale": 0.05,
+									"entries": [
+										{"threshold":  0, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/shapeshift_left/0" }},
+										{"threshold":  1, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/shapeshift_left/1" }},
+										{"threshold":  2, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/shapeshift_left/2" }},
+										{"threshold":  3, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/shapeshift_left/3" }},
+										{"threshold":  4, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/shapeshift_left/4" }},
+										{"threshold":  5, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/shapeshift_left/5" }},
+										{"threshold":  6, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/shapeshift_left/6" }},
+										{"threshold":  7, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/shapeshift_left/7" }},
+										{"threshold":  8, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/shapeshift_left/8" }},
+										{"threshold":  9, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/shapeshift_left/9" }},
+										{"threshold": 10, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/shapeshift_left/10"}},
+										{"threshold": 11, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/shapeshift_left/11"}},
+										{"threshold": 12, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/shapeshift_left/12"}},
+										{"threshold": 13, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/shapeshift_left/13"}},
+										{"threshold": 14, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/shapeshift_left/14"}},
+										{"threshold": 15, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/glock"}}
+									],
+									"fallback": {
+										"type": "minecraft:model",
+										"model": "multipasta:item/pokepasta/white_hand/shapeshift_left"
+									}
+								}
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:condition",
+						"property": "minecraft:using_item",
+						"on_false": {
+							"type": "minecraft:model",
+							"model": "multipasta:item/pokepasta/white_hand/white_hand"
+						},
+						"on_true": {
+							"type": "minecraft:range_dispatch",
+							"property": "minecraft:use_duration",
+							"scale": 0.8,
+							"entries": [
+								{"threshold":  0, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/shapeshift/0" }},
+								{"threshold":  1, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/shapeshift/1" }},
+								{"threshold":  2, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/shapeshift/2" }},
+								{"threshold":  3, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/shapeshift/3" }},
+								{"threshold":  4, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/shapeshift/4" }},
+								{"threshold":  5, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/shapeshift/5" }},
+								{"threshold":  6, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/shapeshift/6" }},
+								{"threshold":  7, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/shapeshift/7" }},
+								{"threshold":  8, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/shapeshift/8" }},
+								{"threshold":  9, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/shapeshift/9" }},
+								{"threshold": 10, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/shapeshift/10"}},
+								{"threshold": 11, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/shapeshift/11"}},
+								{"threshold": 12, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/shapeshift/12"}},
+								{"threshold": 13, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/shapeshift/13"}},
+								{"threshold": 14, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/shapeshift/14"}},
+								{"threshold": 15, "model": {"type": "minecraft:model", "model": "multipasta:item/pokepasta/white_hand/glock"}}
+							],
+							"fallback": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/pokepasta/white_hand/shapeshift"
+							}
+						}
+					}
+				}
+			},
+			{
+				"when": [
+					"Cosmic Chaos",
+					"Космический хаос"
+				],
+				"model": {
+					"type": "minecraft:condition",
+					"property": "minecraft:using_item",
+					"on_false": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/godzilla/monster_card/cosmic_chaos"
+					},
+					"on_true": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/godzilla/nes/pathos/cosmic_chaos"
+					}
+				}
+			}
+		],
+		"fallback": {
+			"type": "minecraft:condition",
+			"on_false": {
+				"type": "minecraft:model",
+				"model": "minecraft:item/bow"
+			},
+			"on_true": {
+				"type": "minecraft:range_dispatch",
+				"entries": [
+					{
+						"model": {
+							"type": "minecraft:model",
+							"model": "minecraft:item/bow_pulling_1"
+						},
+						"threshold": 0.65
+					},
+					{
+						"model": {
+							"type": "minecraft:model",
+							"model": "minecraft:item/bow_pulling_2"
+						},
+						"threshold": 0.9
+					}
+				],
+				"fallback": {
+					"type": "minecraft:model",
+					"model": "minecraft:item/bow_pulling_0"
+				},
+				"property": "minecraft:use_duration",
+				"scale": 0.05
+			},
+			"property": "minecraft:using_item"
+		}
+	}
+}

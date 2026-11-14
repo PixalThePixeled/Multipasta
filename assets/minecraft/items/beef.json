@@ -1,0 +1,55 @@
+{
+    "model": {
+        "type": "minecraft:select",
+        "property": "minecraft:component",
+        "component": "minecraft:custom_name",
+        "cases": [
+            {
+                "when": [
+                    "Canidont Meat",
+                    "Мясо Канидонта",
+                    "Dog Meat",
+                    "Собачатина"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/food/raw_canimeat"
+                }
+            },
+            {
+                "when": [
+                    "Disabled Meat",
+                    "Мясо Инвалида"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/food/raw_disabled_meat"
+                }
+            },
+            {
+                "when": [
+                    "Horse Bat Meat",
+                    "Мясо Мышелошади"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/food/raw_horsebat_meat"
+                }
+            },
+            {
+                "when": [
+                    "Doomer Meat",
+                    "Думерское мясо"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/food/raw_doomerpony_meat"
+                }
+            }
+        ],
+        "fallback": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/beef"
+        }
+    }
+}

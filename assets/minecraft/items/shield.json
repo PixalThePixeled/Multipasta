@@ -1,0 +1,242 @@
+{
+    "oversized_in_gui": true,
+    "model": {
+        "type": "minecraft:select",
+        "property": "minecraft:component",
+        "component": "minecraft:custom_name",
+        "cases": [
+            {
+                "when": [
+                    "Painting",
+                    "Картина"
+                ],
+				"model": {
+					"type": "minecraft:condition",
+					"property": "minecraft:using_item",
+					"on_false": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/paintings/shieldpaint"
+					},
+					"on_true": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/paintings/shieldpaint_blocking"
+					}
+				}
+            },
+            {
+                "when": [
+                    "Bible",
+                    "Библия"
+                ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/other/bible_icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:condition",
+						"property": "minecraft:using_item",
+						"on_false": {
+							"type": "minecraft:model",
+							"model": "multipasta:item/other/bible"
+						},
+						"on_true": {
+							"type": "minecraft:model",
+							"model": "multipasta:item/other/bible_blocking"
+						}
+					}
+				}
+            },
+            {
+                "when": [
+                    "Ghost in a Bottle",
+                    "Призрак в бутылке"
+                ],
+				"model": {
+					"type": "minecraft:condition",
+					"property": "minecraft:using_item",
+					"on_false": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/pokepasta/ghost_in_a_bottle"
+					},
+					"on_true": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/pokepasta/ghost_in_a_bottle_blocking"
+					}
+				}
+            },
+            {
+                "when": [
+                    "Glitchy Bucket",
+                    "Ведро глюков"
+                ],
+				"model": {
+					"type": "minecraft:condition",
+					"property": "minecraft:using_item",
+					"on_false": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/godzilla/nes/pathos/glitchy_bucket"
+					},
+					"on_true": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/godzilla/nes/pathos/glitchy_bucket_blocking"
+					}
+				}
+            },
+            {
+                "when": [
+                    "Imposter",
+                    "Импостер"
+                ],
+				"model": {
+					"type": "minecraft:condition",
+					"property": "minecraft:using_item",
+					"on_false": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/other/amogus/imposter"
+					},
+					"on_true": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/other/amogus/imposter_blocking"
+					}
+				}
+            },
+            {
+                "when": [
+                    "Luther Axe",
+                    "Якорный топор"
+                ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/web_nd_analog/needlemouse/luther_axe_icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:condition",
+						"property": "minecraft:using_item",
+						"on_false": {
+							"type": "minecraft:model",
+							"model": "multipasta:item/web_nd_analog/needlemouse/luther_axe"
+						},
+						"on_true": {
+							"type": "minecraft:model",
+							"model": "multipasta:item/web_nd_analog/needlemouse/luther_axe_blocking"
+						}
+					}
+				}
+            },
+			{
+                "when": [
+					"Not Hedorah Skull", 
+					"Череп не хедоры"
+				],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/godzilla/nes/trance/nothedorah_skull_icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:condition",
+						"property": "minecraft:using_item",
+						"on_false": {
+							"type": "minecraft:model",
+							"model": "multipasta:item/godzilla/nes/trance/nothedorah_skull"
+						},
+						"on_true": {
+							"type": "minecraft:model",
+							"model": "multipasta:item/godzilla/nes/trance/nothedorah_skull_blocking"
+						}
+					}
+				}
+            },
+            {
+                "when": [
+                    "Seraphim's Aorta",
+                    "Аорта Серафима"
+                ],
+				"model": {
+					"type": "minecraft:condition",
+					"property": "minecraft:using_item",
+					"on_false": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/godzilla/nes/zenith/seraphim_s_aorta"
+					},
+					"on_true": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/godzilla/nes/zenith/seraphim_s_aorta_blocking"
+					}
+				}
+            },
+            {
+                "when": [
+                    "Unowns",
+                    "Аноуны"
+                ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/pokepasta/lost_silver/unown_shield_icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:condition",
+						"property": "minecraft:using_item",
+						"on_false": {
+							"type": "minecraft:model",
+							"model": "multipasta:item/pokepasta/lost_silver/unown_shield"
+						},
+						"on_true": {
+							"type": "minecraft:model",
+							"model": "multipasta:item/pokepasta/lost_silver/unown_shield_blocking"
+						}
+					}
+				}
+            }
+        ],
+        "fallback": {
+            "type": "minecraft:condition",
+            "on_false": {
+                "type": "minecraft:special",
+                "base": "minecraft:item/shield",
+                "model": {
+                    "type": "minecraft:shield"
+                }
+            },
+            "on_true": {
+                "type": "minecraft:special",
+                "base": "minecraft:item/shield_blocking",
+                "model": {
+                    "type": "minecraft:shield"
+                }
+            },
+            "property": "minecraft:using_item"
+        }
+    }
+}

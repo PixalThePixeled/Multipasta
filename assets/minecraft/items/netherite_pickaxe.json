@@ -1,0 +1,67 @@
+{
+    "oversized_in_gui": true,
+    "model": {
+        "type": "minecraft:select",
+        "property": "minecraft:component",
+        "component": "minecraft:custom_name",
+        "cases": [
+            {
+                "when": [
+                    "Grinning apple",
+                    "Улыбаха яблоко"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/other/grinning_apple_pickaxe/netherite"
+                }
+            },
+            {
+                "when": [
+                    "Minecraft 2 on android 3D",
+                    "Майнкрафт 2 на андроид 3Д"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/craft/minecraft_2_on_android_3d/minecraft_2_on_android_3d"
+                }
+            },
+            {
+                "when": [
+                    "Vector Eventide",
+                    "Векторная заря"
+                ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/aesthetics/frutiger_umbrella/vector_eventide_icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/aesthetics/frutiger_umbrella/vector_eventide"
+					}
+				}
+            },
+			{
+                "when": [
+                    "Data Eater",
+                    "Пожиратель данных"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/other/data_eater"
+                }
+            }
+        ],
+        "fallback": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/netherite_pickaxe"
+        }
+    }
+}

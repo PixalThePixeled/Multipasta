@@ -1,0 +1,34 @@
+{
+    "oversized_in_gui": true,
+    "model": {
+        "type": "minecraft:select",
+        "property": "minecraft:component",
+        "component": "minecraft:custom_name",
+        "cases": [
+            {
+                "when": [
+                    "Candle Hook",
+                    "Свечной крюк"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/lost/candle_cove/piratecove_hook"
+                }
+            },
+            {
+                "when": [
+                    "Ruby Sword",
+                    "Рубиновый меч"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/craft/ruby/diamond_sword"
+                }
+            }
+        ],
+        "fallback": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/diamond_sword"
+        }
+    }
+}

@@ -1,0 +1,2613 @@
+{
+    "oversized_in_gui": true,
+    "model": {
+        "type": "minecraft:select",
+        "property": "minecraft:component",
+        "component": "minecraft:custom_name",
+        "cases": [            
+			{
+"comment": "//////////////// AESTHETICS ////////////////",
+                "when": [
+                    "Deep Dream",
+                    "Глубокий сон"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/aesthetics/deep_dream"
+                }
+            },
+			{
+                "when": [
+                    "Dreamcore",
+                    "Дримкор"
+                ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/aesthetics/dreamcore_icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/aesthetics/dreamcore"
+					}
+				}
+            },
+			{
+"comment": "//////////////// CRAFT ////////////////",
+                "when": [
+                    "Multipasta Block",
+                    "Блок Мультипасты"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/craft/multipasta_block"
+                }
+            },
+			{
+                "when": [
+                    "John Carved Pumpkin",
+                    "Вырезанная тыква Джон"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/craft/john/john_carved_pumpkin"
+                }
+            },
+            {
+                "when": [
+                    "John o'Lantern",
+                    "Светильник Джона"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/craft/john/john_o_lantern"
+                }
+            },
+            {
+                "when": [
+                    "White Carved Pumpkin",
+                    "Белая вырезанная тыква"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/craft/white_pumpkin/white_carved_pumpkin"
+                }
+            },
+            {
+                "when": [
+                    "White Jack o'Lantern",
+                    "Белый светильник Джека"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/craft/white_pumpkin/white_jack_o_lantern"
+                }
+            },
+			{
+"comment": "/////////////// PERSONALIZATION ///////////////",
+                "when": [
+                    "King of This Forest",
+                    "Король этого леса"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/personalization/king_of_this_forest/king_of_this_forest"
+                }
+            },
+            {
+                "when": [
+					"God of This Forest",
+					"Бог этого леса",
+                    "regex:.*King of this Forest.*",
+                    "regex:.*Король этого леса.*"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/personalization/king_of_this_forest/god_of_this_forest"
+                }
+            },
+            {
+                "when": [
+                    "Fingore",
+                    "Фингор"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/personalization/fingore"
+                }
+            },
+            {
+"comment": "/////////////// WEB AND ANALOG ///////////////",
+                "when": "Bomjik321",
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/web_nd_analog/bomjik321"
+                }
+            },
+			{
+                "when": [
+                    "Bonnie plays with matches",
+                    "Бонни играет со спичками"
+                ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": ["gui", "on_shelf"],
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/web_nd_analog/bonnie_plays_with_matches/bonnie_plays_with_matches_icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/web_nd_analog/bonnie_plays_with_matches/flameslaves"
+					}
+				}
+            },
+            {
+                "when": "Local58TV",
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/web_nd_analog/local58tv"
+                }
+            },
+            {
+                "when": [
+                    "Sonichu",
+                    "Соничу"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/web_nd_analog/sonichu/sonichu"
+                }
+            },
+            {
+                "when": [
+                    "TMK",
+                    "Too Much Kirby"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/web_nd_analog/too_much_kirby"
+                }
+            },
+            {
+                "when": [
+                    "Pumpkin Rabbit Mask",
+                    "Маска тыквенного кролика"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/web_nd_analog/walten_files/pumpkin_rabbit"
+                }
+            },
+            {
+                "when": [
+                    "Mesh",
+                    "Мэш"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/web_nd_analog/mesh"
+                }
+            },
+            {
+                "when": [
+                    "Catnap",
+                    "Кот-Дремот"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/web_nd_analog/catnap"
+                }
+            },
+            {
+                "when": [
+                    "Skibidi Toilet",
+                    "Скибиди туалет"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/web_nd_analog/skibidi_toilet/skibidi_toilet"
+                }
+            },
+            {
+                "when": [
+                    "Toilet",
+                    "Туалет"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/web_nd_analog/skibidi_toilet/toilet"
+                }
+            },
+            {
+                "when": [
+                    "TV Man",
+                    "ТВ Мен"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/web_nd_analog/skibidi_toilet/tv_man"
+                }
+            },
+            {
+                "when": [
+                    "TV Woman",
+                    "ТВ Вумен"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/web_nd_analog/skibidi_toilet/tv_woman"
+                }
+            },
+            {
+                "when": [
+                    "Luther",
+                    "Лютер"
+                ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": ["head", "fixed"],
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/web_nd_analog/needlemouse/luther/luther"
+							}
+						},
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/web_nd_analog/needlemouse/luther/icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/web_nd_analog/needlemouse/luther/teumefoxsian"
+					}
+				}
+            },
+            {
+                "when": [
+                    "Needlemouse",
+                    "Игломышь"
+                ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": ["head", "fixed"],
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/web_nd_analog/needlemouse/saric/saric"
+							}
+						},
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/web_nd_analog/needlemouse/saric/icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/web_nd_analog/needlemouse/saric/real_sarah"
+					}
+				}
+            },
+            {
+                "when": [
+                    "Speedduo64",
+                    "Тандем скорости"
+                ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": ["head", "fixed"],
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/web_nd_analog/needlemouse/speedduo"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/web_nd_analog/needlemouse/speedduo_icon"
+					}
+				}
+            },
+            {
+                "when": [
+                    "Mr Hat",
+                    "Мистер Шляпа"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/web_nd_analog/kkhta/mr_hat"
+                }
+            },
+            {
+                "when": [
+                    "Pyonta",
+                    "Пьонта"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/web_nd_analog/kkhta/pyonta"
+                }
+            },
+            {
+                "when": [
+                    "Noose Inflorescence",
+                    "Петлевое соцветие"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/web_nd_analog/noose_inflorescence"
+                }
+            },
+            {
+"comment": "/////////////// LOST ///////////////",
+                "when": [
+                    "Mouse Ears",
+                    "Мышиные уши"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/lost/puppet_mouse/mouse_ears"
+                }
+            },
+            {
+                "when": [
+                    "Puppet Mouse",
+                    "Мышь марионетка"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/lost/puppet_mouse/puppet_mouse"
+                }
+            },
+            {
+                "when": [
+                    "Father... I Crave Cheddar",
+                    "Отец... Я жажду чеддера"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/lost/cheddar"
+                }
+            },
+            {
+                "when": [
+                    "Felix the Cat",
+                    "Кот Феликс"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/lost/felix_the_het"
+                }
+            },
+			{
+                "when": [
+                    "Lies Fish",
+                    "Рыба лжи"
+                ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/lost/lies_fish_icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/lost/lies_fish"
+					}
+				}
+            },
+            {
+                "when": [
+                    "Misfortune",
+                    "Несчастье"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/lost/misfortunegb"
+                }
+            },
+            {
+"comment": "/////////////// POKEPASTA ///////////////",
+                "when": [
+                    "BRVR",
+                    "БРВР"
+                ],
+                "model": {
+                    "type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": [
+								"gui"
+							],
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/pokepasta/brvr_icon"
+							}
+						}
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/pokepasta/brvr"
+					}
+                }
+            },
+            {
+                "when": [
+                    "DISABLED",
+                    "ИНВАЛИД"
+                ],
+                "model": {
+                    "type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": [
+								"gui"
+							],
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/pokepasta/disabled/disabled_icon"
+							}
+						}
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/pokepasta/disabled/disabled"
+					}
+                }
+            },
+            {
+                "when": [
+                    "DISOBLED",
+                    "ИНВОЛИД"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/pokepasta/disabled/disobled"
+                }
+            },
+            {
+                "when": [
+                    "Doll",
+                    "Пусюшечка"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/pokepasta/doll"
+                }
+            },
+            {
+                "when": [
+                    "Drifloon",
+                    "Дрифлун"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/pokepasta/drifloon"
+                }
+            },
+            {
+                "when": [
+                    "Lavender Ghost",
+                    "Лавандовое привидение"
+                ],
+                "model": {
+                    "type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": ["head", "fixed"],
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/pokepasta/ghost"
+							}
+						}
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/pokepasta/ghost_in_the_bucket"
+					}
+                }
+            },
+            {
+                "when": [
+                    "Haunted Jigglypuff",
+                    "Одержимый Джигглипафф"
+                ],
+                "model": {
+                    "type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": [
+								"gui"
+							],
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/pokepasta/haunted_jigglypuff/jigglypuff_icon"
+							}
+						}
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/pokepasta/haunted_jigglypuff/purin13"
+					}
+                }
+            },
+            {
+                "when": [
+                    "Doomerpuff",
+                    "Думерпафф"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/pokepasta/haunted_jigglypuff/doomerpuff"
+                }
+            },
+            {
+                "when": [
+                    "Hell Bell",
+                    "Адский звон"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/pokepasta/hell_bell"
+                }
+            },
+			{
+                "when": [
+                    "Manafetus",
+                    "Манафетус"
+                ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/pokepasta/bad_egg/manafetus_icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/pokepasta/bad_egg/manafetus"
+					}
+				}
+            },
+			{
+                "when": [
+                    "Miki",
+                    "Мики"
+                ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/pokepasta/bad_egg/unhatched_icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/pokepasta/bad_egg/unhatched"
+					}
+				}
+            },
+            {
+                "when": [
+                    "Pikachu Mt Silver",
+                    "Пикачу горы Сильвер"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/pokepasta/mtsilver/frostychu"
+                }
+            },
+            {
+                "when": [
+                    "Holiday Pikachu Mt Silver",
+                    "Праздничный Пикачу горы Сильвер"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/pokepasta/mtsilver/frostychu_holiday"
+                }
+            },
+            {
+                "when": [
+                    "Bad Egg",
+                    "Тухлое яйцо"
+                ],
+                "model": {
+                    "type": "minecraft:select",
+                    "property": "minecraft:main_hand",
+                    "cases": [
+                        {
+                            "when": "right",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_lefthand",
+											"firstperson_lefthand"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/pokepasta/bad_egg/offhand"
+										}
+									},
+									{
+										"when": "gui",
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/pokepasta/bad_egg/icon"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/pokepasta/bad_egg/bad_egg"
+								}
+							}
+                        },
+						{
+                            "when": "left",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_righthand",
+											"firstperson_righthand"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/pokepasta/bad_egg/offhand"
+										}
+									},
+									{
+										"when": "gui",
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/pokepasta/bad_egg/icon"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/pokepasta/bad_egg/bad_egg"
+								}
+							}
+                        }
+                    ],
+					"fallback": {
+						"type": "minecraft:select",
+						"property": "minecraft:display_context",
+						"cases": [
+							{
+								"when": "on_shelf",
+								"model": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/pokepasta/bad_egg/icon"
+								}
+							}
+						],
+						"fallback": {
+							"type": "minecraft:model",
+							"model": "multipasta:item/pokepasta/bad_egg/bad_egg"
+						}
+						
+					}
+                }
+            },
+            {
+                "when": [
+                    "Away",
+                    "Отдаль"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/pokepasta/lost_silver/celebration/celebi"
+                }
+            },
+            {
+                "when": "",
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/pokepasta/lost_silver/celebration/away"
+                }
+            },
+            {
+                "when": [
+                    "Gold",
+                    "Голд"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/pokepasta/lost_silver/gold"
+                }
+            },
+            {
+                "when": "",
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/pokepasta/lost_silver/gold_head"
+                }
+            },
+            {
+                "when": [
+                    "Hurry",
+                    "Шустрик"
+                ],
+				"model": {
+                    "type": "minecraft:select",
+                    "property": "minecraft:main_hand",
+                    "cases": [
+                        {
+                            "when": "right",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_lefthand",
+											"firstperson_lefthand"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/pokepasta/lost_silver/hurry_egg"
+										}
+									},
+									{
+										"when": "gui",
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/pokepasta/lost_silver/hurry_egg_icon"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/pokepasta/lost_silver/hurry"
+								}
+							}
+                        },
+						{
+                            "when": "left",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_righthand",
+											"firstperson_righthand"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/pokepasta/lost_silver/hurry_egg"
+										}
+									},
+									{
+										"when": "gui",
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/pokepasta/lost_silver/hurry_egg_icon"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/pokepasta/lost_silver/hurry"
+								}
+							}
+                        }
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/pokepasta/lost_silver/hurry"
+					}
+                }
+            },
+			{
+                "when": "",
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/pokepasta/lost_silver/hurry_egg_icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/pokepasta/lost_silver/hurry_egg"
+					}
+				}
+            },
+            {
+                "when": [
+                    "Ash Cap",
+                    "Кепка Эша"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/pokepasta/caps/ash"
+                }
+            },
+            {
+                "when": [
+                    "Bootleg Cap",
+                    "Контрабандная кепка"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/pokepasta/caps/grey"
+                }
+            },
+            {
+                "when": [
+                    "Santa Hat",
+                    "Колпак Санты"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/pokepasta/caps/santa"
+                }
+            },
+            {
+                "when": [
+                    "Steven Cap",
+                    "Кепка Стивена"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/pokepasta/caps/steven"
+                }
+            },
+            {
+                "when": [
+                    "Gengar",
+                    "Генгар"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/pokepasta/gengar"
+                }
+            },
+            {
+                "when": [
+                    "White Hand",
+                    "Белая рука"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/pokepasta/white_hand/white_hand"
+                }
+            },
+            {
+                "when": [
+                    "Charizard 'm",
+                    "Чаризард 'м"
+                ],
+                "model": {
+                    "type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": [
+								"gui"
+							],
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/pokepasta/charizard_m_icon"
+							}
+						}
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/pokepasta/charizard_m"
+					}
+                }
+            },
+            {
+                "when": [
+                    "MissingNo",
+                    "Missing One"
+                ],
+                "model": {
+                    "type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": [
+								"gui", 
+								"ground", 
+								"on_shelf"
+							],
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/pokepasta/glitchmon/missingno_icon"
+							}
+						},
+						{
+							"when": [
+								"thirdperson_lefthand",
+								"thirdperson_righthand",
+								"firstperson_lefthand",
+								"firstperson_righthand"
+							],
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/pokepasta/pokeball/glitch"
+							}
+						}
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/pokepasta/glitchmon/missingno"
+					}
+                }
+            },
+            {
+                "when": [
+                    "44Hy",
+                    "4 4 Hy"
+                ],
+                "model": {
+                    "type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": [
+								"firstperson_lefthand", 
+								"firstperson_righthand", 
+								"thirdperson_lefthand", 
+								"thirdperson_righthand"
+							],
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/pokepasta/glitchmon/44hy_inhand"
+							}
+						},
+						{
+							"when": [
+								"on_shelf"
+							],
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/pokepasta/glitchmon/44hy_shelf"
+							}
+						},
+						{
+							"when": [
+								"gui"
+							],
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/pokepasta/glitchmon/44hy_icon"
+							}
+						}
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/pokepasta/glitchmon/44hy"
+					}
+                }
+            },
+            {
+                "when": [
+                    "Wigglytuff Ghost",
+                    "Призрак Вигглитаффа"
+                ],
+                "model": {
+                    "type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": [
+								"gui"
+							],
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/pokepasta/wigglyghost_icon"
+							}
+						}
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/pokepasta/wigglyghost"
+					}
+                }
+            },
+			{
+                "when": [
+                    "Magical Averylinder",
+                    "Магический Эйверлиндр"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/pokepasta/averylinder"
+                }
+            },
+            {
+                "when": [
+                    "Disablinder",
+                    "Инвалиндр"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/pokepasta/disabled/disablinder"
+                }
+            },
+            {
+                "when": [
+                    "Lavender Top Hat",
+                    "Лавандовый цилиндр"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/pokepasta/lavenderhat"
+                }
+            },
+            {
+"comment": "/////////////// NES-GODZILLA ///////////////",
+"comment": "//////////////// EARTH-MARS ////////////////",
+				
+                "when": ["Godzilla", "Годзилла"],
+                "model": {
+                    "type": "minecraft:select",
+                    "property": "minecraft:main_hand",
+                    "cases": [
+                        {
+                            "when": "right",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_lefthand",
+											"firstperson_lefthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/godzilla"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/earth_mars/godzilla"
+								}
+							}
+                        },
+						{
+                            "when": "left",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_righthand",
+											"firstperson_righthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/godzilla"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/earth_mars/godzilla"
+								}
+							}
+                        }
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/godzilla/nes/earth_mars/godzilla"
+					}
+                }
+            },
+			{
+                "when": ["Mothra", "Мотра"],
+                "model": {
+                    "type": "minecraft:select",
+                    "property": "minecraft:main_hand",
+                    "cases": [
+                        {
+                            "when": "right",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_lefthand",
+											"firstperson_lefthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/mothra"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/earth_mars/mothra"
+								}
+							}
+                        },
+						{
+                            "when": "left",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_righthand",
+											"firstperson_righthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/mothra"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/earth_mars/mothra"
+								}
+							}
+                        }
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/godzilla/nes/earth_mars/mothra"
+					}
+                }
+            },
+			{
+                "when": ["Gezora", "Гезора"],
+                "model": {
+                    "type": "minecraft:select",
+                    "property": "minecraft:main_hand",
+                    "cases": [
+                        {
+                            "when": "right",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_lefthand",
+											"firstperson_lefthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/gezora"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/earth_mars/gezora"
+								}
+							}
+                        },
+						{
+                            "when": "left",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_righthand",
+											"firstperson_righthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/gezora"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/earth_mars/gezora"
+								}
+							}
+                        }
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/godzilla/nes/earth_mars/gezora"
+					}
+                }
+            },
+			{
+                "when": ["Dogora","Догора"],
+                "model": {
+                    "type": "minecraft:select",
+                    "property": "minecraft:main_hand",
+                    "cases": [
+                        {
+                            "when": "right",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_lefthand",
+											"firstperson_lefthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/dogora"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/earth_mars/dogora"
+								}
+							}
+                        },
+						{
+                            "when": "left",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_righthand",
+											"firstperson_righthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/dogora"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/earth_mars/dogora"
+								}
+							}
+                        }
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/godzilla/nes/earth_mars/dogora"
+					}
+                }
+            },
+			{
+                "when": ["Moguera", "Могера"],
+                "model": {
+                    "type": "minecraft:select",
+                    "property": "minecraft:main_hand",
+                    "cases": [
+                        {
+                            "when": "right",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_lefthand",
+											"firstperson_lefthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/moguera"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/earth_mars/moguera"
+								}
+							}
+                        },
+						{
+                            "when": "left",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_righthand",
+											"firstperson_righthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/moguera"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/earth_mars/moguera"
+								}
+							}
+                        }
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/godzilla/nes/earth_mars/moguera"
+					}
+                }
+            },
+			{
+                "when": ["Titanosaurus", "Титанозавр"],
+                "model": {
+                    "type": "minecraft:select",
+                    "property": "minecraft:main_hand",
+                    "cases": [
+                        {
+                            "when": "right",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_lefthand",
+											"firstperson_lefthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/titanosaurus"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/earth_mars/titanosaurus"
+								}
+							}
+                        },
+						{
+                            "when": "left",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_righthand",
+											"firstperson_righthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/titanosaurus"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/earth_mars/titanosaurus"
+								}
+							}
+                        }
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/godzilla/nes/earth_mars/titanosaurus"
+					}
+                }
+            },
+			{
+"comment": "//////////////// PATHOS ////////////////",
+				
+                "when": ["Biollante", "Биолланте"],
+                "model": {
+                    "type": "minecraft:select",
+                    "property": "minecraft:main_hand",
+                    "cases": [
+                        {
+                            "when": "right",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_lefthand",
+											"firstperson_lefthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/biollante"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/pathos/biollante"
+								}
+							}
+                        },
+						{
+                            "when": "left",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_righthand",
+											"firstperson_righthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/biollante"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/pathos/biollante"
+								}
+							}
+                        }
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/godzilla/nes/pathos/biollante"
+					}
+                }
+            },
+			{
+                "when": ["Ghost Titanosaurus", "Призрак Титанозавра"],
+                "model": {
+                    "type": "minecraft:select",
+                    "property": "minecraft:main_hand",
+                    "cases": [
+                        {
+                            "when": "right",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_lefthand",
+											"firstperson_lefthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/ghost_titanosaurus"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/pathos/ghost_titanosaurus"
+								}
+							}
+                        },
+						{
+                            "when": "left",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_righthand",
+											"firstperson_righthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/ghost_titanosaurus"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/pathos/ghost_titanosaurus"
+								}
+							}
+                        }
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/godzilla/nes/pathos/ghost_titanosaurus"
+					}
+                }
+            },
+			{
+                "when": ["Not Gezora", "Не Гезора"],
+                "model": {
+                    "type": "minecraft:select",
+                    "property": "minecraft:main_hand",
+                    "cases": [
+                        {
+                            "when": "right",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_lefthand",
+											"firstperson_lefthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/notgezora"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/pathos/notgezora"
+								}
+							}
+                        },
+						{
+                            "when": "left",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_righthand",
+											"firstperson_righthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/notgezora"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/pathos/notgezora"
+								}
+							}
+                        }
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/godzilla/nes/pathos/notgezora"
+					}
+                }
+            },
+			{
+                "when": ["Varan", "Варан"],
+                "model": {
+                    "type": "minecraft:select",
+                    "property": "minecraft:main_hand",
+                    "cases": [
+                        {
+                            "when": "right",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_lefthand",
+											"firstperson_lefthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/varan"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/pathos/varan"
+								}
+							}
+                        },
+						{
+                            "when": "left",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_righthand",
+											"firstperson_righthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/varan"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/pathos/varan"
+								}
+							}
+                        }
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/godzilla/nes/pathos/varan"
+					}
+                }
+            },
+			{
+"comment": "//////////////// TRANCE ////////////////",
+                "when": ["Baku", "Баку"],
+                "model": {
+                    "type": "minecraft:select",
+                    "property": "minecraft:main_hand",
+                    "cases": [
+                        {
+                            "when": "right",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_lefthand",
+											"firstperson_lefthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/baku"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/trance/baku"
+								}
+							}
+                        },
+						{
+                            "when": "left",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_righthand",
+											"firstperson_righthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/baku"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/trance/baku"
+								}
+							}
+                        }
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/godzilla/nes/trance/baku"
+					}
+                }
+            },
+			{
+                "when": ["Carbonated Baku", "Карбонированный Баку"],
+                "model": {
+                    "type": "minecraft:select",
+                    "property": "minecraft:main_hand",
+                    "cases": [
+                        {
+                            "when": "right",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_lefthand",
+											"firstperson_lefthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/baku_carbonated"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/trance/baku_carbonated"
+								}
+							}
+                        },
+						{
+                            "when": "left",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_righthand",
+											"firstperson_righthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/baku_carbonated"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/trance/baku_carbonated"
+								}
+							}
+                        }
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/godzilla/nes/trance/baku_carbonated"
+					}
+                }
+            },
+			{
+                "when": ["Not Varan", "Не Варан"],
+                "model": {
+                    "type": "minecraft:select",
+                    "property": "minecraft:main_hand",
+                    "cases": [
+                        {
+                            "when": "right",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_lefthand",
+											"firstperson_lefthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/notvaran"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/trance/notvaran"
+								}
+							}
+                        },
+						{
+                            "when": "left",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_righthand",
+											"firstperson_righthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/notvaran"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/trance/notvaran"
+								}
+							}
+                        }
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/godzilla/nes/trance/notvaran"
+					}
+                }
+            },
+			{
+                "when": ["Not Moguera", "Не Могера"],
+                "model": {
+                    "type": "minecraft:select",
+                    "property": "minecraft:main_hand",
+                    "cases": [
+                        {
+                            "when": "right",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_lefthand",
+											"firstperson_lefthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/notmoguera_classic"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/trance/notmoguera_classic"
+								}
+							}
+                        },
+						{
+                            "when": "left",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_righthand",
+											"firstperson_righthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/notmoguera_classic"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/trance/notmoguera_classic"
+								}
+							}
+                        }
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/godzilla/nes/trance/notmoguera_classic"
+					}
+                }
+            },
+			{
+                "when": ["Ghigan", "Гиган"],
+				"model": {
+                    "type": "minecraft:select",
+                    "property": "minecraft:main_hand",
+                    "cases": [
+                        {
+                            "when": "right",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_righthand",
+											"firstperson_righthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/ghigan"
+										}
+									},
+									{
+										"when": [
+											"thirdperson_lefthand",
+											"firstperson_lefthand"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/ghigan_offhand"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/trance/ghigan"
+								}
+							}
+                        },
+						{
+                            "when": "left",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_lefthand",
+											"firstperson_lefthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/ghigan"
+										}
+									},
+									{
+										"when": [
+											"thirdperson_righthand",
+											"firstperson_righthand"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/ghigan_offhand"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/trance/ghigan"
+								}
+							}
+                        }
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/godzilla/nes/trance/ghigan"
+					}
+                }
+            },
+			{
+                "when": [
+                    "Horse Bat Skull",
+                    "Череп мышелошади"
+                ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/godzilla/nes/trance/horsebat_skull_icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/godzilla/nes/trance/horsebat_skull"
+					}
+				}
+            },
+			{
+"comment": "//////////////// ZENITH ////////////////",
+                "when": ["Canidont", "Канидонт"],
+                "model": {
+                    "type": "minecraft:select",
+                    "property": "minecraft:main_hand",
+                    "cases": [
+                        {
+                            "when": "right",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_lefthand",
+											"firstperson_lefthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/canidont"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/zenith/canidont"
+								}
+							}
+                        },
+						{
+                            "when": "left",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_righthand",
+											"firstperson_righthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/canidont"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/zenith/canidont"
+								}
+							}
+                        }
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/godzilla/nes/zenith/canidont"
+					}
+                }
+            },
+			{
+                "when": ["Hybrid", "Гибрид"],
+                "model": {
+                    "type": "minecraft:select",
+                    "property": "minecraft:main_hand",
+                    "cases": [
+                        {
+                            "when": "right",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_lefthand",
+											"firstperson_lefthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/hybrid"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/zenith/hybrid"
+								}
+							}
+                        },
+						{
+                            "when": "left",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_righthand",
+											"firstperson_righthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/hybrid"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes/zenith/hybrid"
+								}
+							}
+                        }
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/godzilla/nes/zenith/hybrid"
+					}
+                }
+            },
+            {
+"comment": "////////// NES-GODZILLA REPLAY /////////",
+"comment": "//////////////// CORONA ////////////////",
+                "when": ["King Kong", "Кинг Конг"],
+				"model": {
+                    "type": "minecraft:select",
+                    "property": "minecraft:main_hand",
+                    "cases": [
+                        {
+                            "when": "right",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_lefthand",
+											"firstperson_lefthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/kingkong"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes_replay/corona/kingkong"
+								}
+							}
+                        },
+						{
+                            "when": "left",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_righthand",
+											"firstperson_righthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/kingkong"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/nes_replay/corona/kingkong"
+								}
+							}
+                        }
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/godzilla/nes_replay/corona/kingkong"
+					}
+                }
+            },
+            {
+"comment": "//////////////// OTHER-ZILLA ////////////////",
+                "when": ["Monsterverse Mothra", "Монстерверс Мотра"],
+				"model": {
+                    "type": "minecraft:select",
+                    "property": "minecraft:main_hand",
+                    "cases": [
+                        {
+                            "when": "right",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_lefthand",
+											"firstperson_lefthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/mothra_movie"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/other/goji_movie/mothra"
+								}
+							}
+                        },
+						{
+                            "when": "left",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_righthand",
+											"firstperson_righthand",
+											"gui"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/mothra_movie"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/other/goji_movie/mothra"
+								}
+							}
+                        }
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/godzilla/other/goji_movie/mothra"
+					}
+                }
+            },
+            {
+                "when": ["Cap Sienna", "Каряя кепка"],
+                "model": {
+                    "type": "minecraft:select",
+                    "property": "minecraft:main_hand",
+                    "cases": [
+                        {
+                            "when": "right",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_lefthand",
+											"firstperson_lefthand"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/burnt_sienna"
+										}
+									},
+									{
+										"when": "gui",
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/other/cap_sienna/fjcwyz_icon"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/other/cap_sienna/cap_sienna"
+								}
+							}
+                        },
+						{
+                            "when": "left",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_righthand",
+											"firstperson_righthand"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/monster_card/burnt_sienna"
+										}
+									},
+									{
+										"when": "gui",
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/godzilla/other/cap_sienna/fjcwyz_icon"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/godzilla/other/cap_sienna/cap_sienna"
+								}
+							}
+                        }
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/godzilla/other/cap_sienna/cap_sienna"
+					}
+                }
+            },
+            {
+                "when": ["Capthra", "Кептра"],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/godzilla/other/capthra"
+                }
+            },
+            {
+                "when": ["Top Hatzilla",  "Годзиллиндр"],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/godzilla/other/tophatzilla"
+                }
+            },
+			{
+                "when": ["Not Hedorah Skull", "Череп не хедоры"],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/godzilla/nes/trance/nothedorah_skull_icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/godzilla/nes/trance/nothedorah_skull"
+					}
+				}
+            },
+            {
+"comment": "//////////////// OTHER ////////////////",
+                "when": [
+                    "Dogus",
+                    "Псогус"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/other/amogus/dogus"
+                }
+            },
+            {
+                "when": [
+                    "Neco Arcogus",
+                    "Неко Аркогус"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/other/amogus/neco_arcogus"
+                }
+            },
+            {
+                "when": [
+                    "Sandwich",
+                    "Бутерброд"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/other/kikoriki/sandwich"
+                }
+            },
+            {
+                "when": [
+                    "Antlers",
+                    "Оленьи рога"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/other/kikoriki/antlers"
+                }
+            },
+            {
+                "when": [
+                    "Mystery Man",
+                    "Таинственный мужчина"
+                ],
+                "model": {
+                    "type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": [
+								"gui"
+							],
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/other/undertale/mysteryman_icon"
+							}
+						}
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/other/undertale/mysteryman"
+					}
+                }
+            },
+            {
+                "when": [
+                    "Horror Sans Plush",
+                    "Плюшевый Хоррор Санс"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/other/undertale/horror_sans"
+                }
+            },
+            {
+                "when": [
+                    "Future Top Hat",
+                    "Цилиндр будущего"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/other/future_tophat"
+                }
+            },
+            {
+                "when": [
+                    "Snick.exe",
+                    "Сник.exe"
+                ],
+                "model": {
+                    "type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": [
+								"gui"
+							],
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/other/snickexe_icon"
+							}
+						}
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/other/snickexe"
+					}
+                }
+            },
+            {
+                "when": [
+                    "Pepsi Block",
+                    "Блок Пепси"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/other/pepsi/pepsi_block"
+                }
+            },
+            
+			
+            
+			
+			
+            {
+"comment": "/////////////// CRYPTID ///////////////",
+                "when": [
+                    "Mothlinder",
+                    "Мотылиндр"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/cryptid/mothlinder"
+                }
+            },
+            {
+                "when": [
+                    "Jersey Devil",
+                    "Джерсийский Дьявол"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/cryptid/jersey_devil"
+                }
+            },
+            {
+                "when": [
+                    "Ningen",
+                    "Нинген"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/cryptid/ningen"
+                }
+            },
+            {
+                "when": [
+                    "Nightcrawler Plush",
+                    "Плюшевый ходень"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/cryptid/nightcrawler"
+                }
+            },
+            {
+                "when": [
+                    "Top Hat Nightcrawler Plush",
+                    "Плюшевый ходень в цилиндре"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/cryptid/nightcrawler_tophat"
+                }
+            },
+            {
+                "when": [
+                    "Engineer Nightcrawler Plush",
+                    "Плюшевый ходень инженер"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/cryptid/nightcrawler_engineer"
+                }
+            }
+        ],
+        "fallback": {
+            "type": "minecraft:model",
+            "model": "minecraft:block/carved_pumpkin"
+        }
+    }
+}

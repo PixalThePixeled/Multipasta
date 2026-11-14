@@ -1,0 +1,51 @@
+{
+    "oversized_in_gui": true,
+	"swap_animation_scale": 1.95,
+    "model": {
+        "type": "minecraft:select",
+        "property": "minecraft:component",
+        "component": "minecraft:custom_name",
+        "cases": [
+            {
+                "when": [
+                    "Hellbeast",
+                    "Адский зверь"
+                ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/godzilla/nes/pathos/hellbeast_icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/godzilla/nes/pathos/hellbeast"
+					}
+				}
+            }
+        ],
+        "fallback": {
+			"type": "minecraft:select",
+			"property": "minecraft:display_context",
+			"cases": [
+				{
+					"when": ["gui", "ground", "fixed", "on_shelf"],
+					"model": {
+						"type": "minecraft:model",
+						"model": "minecraft:item/netherite_spear"
+					}
+				}
+			],
+			"fallback": {
+				"type": "minecraft:model",
+				"model": "minecraft:item/netherite_spear_in_hand"
+			}
+		}
+    }
+}

@@ -1,0 +1,327 @@
+{
+    "oversized_in_gui": true,
+    "model": {
+        "type": "minecraft:select",
+        "property": "minecraft:component",
+        "component": "minecraft:custom_name",
+        "cases": [
+            {
+                "when": [
+                    "Sword of Lightining",
+                    "Меч Молней"
+                ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/web_nd_analog/sonichu/shocker_icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/web_nd_analog/sonichu/shocker"
+					}
+				}
+            },
+			{
+                "when": [
+                    "Fur Bearing Trout",
+                    "Пушная форель"
+                ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/cryptid/fur_bearing_trout_icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/cryptid/fur_bearing_trout"
+					}
+				}
+            },
+			{
+                "when": [
+                    "Perpetual Saber",
+                    "Извечная сабля"
+                ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/craft/john/perpetual_saber_icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/craft/john/perpetual_saber"
+					}
+				}
+            },
+            {
+                "when": [
+                    "Candle Hook",
+                    "Свечной крюк"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/lost/candle_cove/piratecove_hook"
+                }
+            },
+            {
+                "when": [
+                    "Ruby Sword",
+                    "Рубиновый меч"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/craft/ruby/netherite_sword"
+                }
+            },
+			{
+                "when": [
+                    "Dolphin Dreams",
+                    "Дельфиньи сны"
+                ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:range_dispatch",
+								"property": "minecraft:damage",
+								"normalize": true,
+								"entries": [
+									{
+										"threshold": 0.5,
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/web_nd_analog/dolphin_dreams/goodbye_icon"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/web_nd_analog/dolphin_dreams/dolphin_dreams_icon"
+								}
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:range_dispatch",
+						"property": "minecraft:damage",
+						"normalize": true,
+						"entries": [
+							{
+								"threshold": 0.5,
+								"model": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/web_nd_analog/dolphin_dreams/goodbye"
+								}
+							}
+						],
+						"fallback": {
+							"type": "minecraft:model",
+							"model": "multipasta:item/web_nd_analog/dolphin_dreams/dolphin_dreams"
+						}
+					}
+				}
+            },
+			{
+                "when": [
+                    "Knife Effect",
+					"Эффект ножа"
+                ],
+                "model": {
+                    "type": "minecraft:select",
+                    "property": "minecraft:main_hand",
+                    "cases": [
+                        {
+                            "when": "right",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_righthand",
+											"firstperson_righthand"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/web_nd_analog/yume/knife_effect"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/web_nd_analog/yume/knife_effect_egg"
+								}
+							}
+                        },
+						{
+                            "when": "left",
+                            "model": {
+								"type": "minecraft:select",
+								"property": "minecraft:display_context",
+								"cases": [
+									{
+										"when": [
+											"thirdperson_lefthand",
+											"firstperson_lefthand"
+										],
+										"model": {
+											"type": "minecraft:model",
+											"model": "multipasta:item/web_nd_analog/yume/knife_effect"
+										}
+									}
+								],
+								"fallback": {
+									"type": "minecraft:model",
+									"model": "multipasta:item/web_nd_analog/yume/knife_effect_egg"
+								}
+							}
+                        }
+                    ],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/web_nd_analog/yume/knife_effect_egg"
+					}
+                }
+            },
+			{
+                "when": [
+                    "Entity Scythe",
+                    "Коса Энтити"
+                ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/craft/entity_scythe_icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/craft/entity_scythe"
+					}
+				}
+            },
+			{
+                "when": [
+                    "Pardis",
+                    "Парадиз"
+                ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/aesthetics/fairycore/pardis_icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/aesthetics/fairycore/pardis"
+					}
+				}
+            },
+            {
+                "when": [
+                    "Tides of Shine",
+                    "Приливы блеска"
+                ],
+                "model": {
+                    "type": "minecraft:composite",
+					"models":[
+						{
+							"type": "minecraft:model",
+							"model": "multipasta:item/aesthetics/fairycore/tides_of_shine_blade"
+						},
+						{
+							"type": "minecraft:model",
+							"model": "multipasta:item/aesthetics/fairycore/tides_of_shine_handle"
+						}
+					]
+                }
+            },
+			{
+                "when": [
+                    "Gethsemane",
+                    "Гефсимания"
+                ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/aesthetics/frutiger_umbrella/gethsemane_icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/aesthetics/frutiger_umbrella/gethsemane"
+					}
+				}
+            },
+			{
+                "when": [
+                    "Cursed Sword",
+                    "Проклятый меч"
+                ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/web_nd_analog/lomando/cursed_sword_icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/web_nd_analog/lomando/cursed_sword"
+					}
+				}
+            }
+        ],
+        "fallback": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/netherite_sword"
+        }
+    }
+}

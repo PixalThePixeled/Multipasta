@@ -1,0 +1,34 @@
+{
+    "oversized_in_gui": true,
+    "model": {
+        "type": "minecraft:select",
+        "property": "minecraft:component",
+        "component": "minecraft:custom_name",
+        "cases": [
+            {
+                "when": [
+                    "Grinning apple",
+                    "Улыбаха яблоко"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/other/grinning_apple_pickaxe/diamond"
+                }
+            },
+            {
+                "when": [
+                    "Minecraft 2 on android 3D",
+                    "Майнкрафт 2 на андроид 3Д"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/craft/minecraft_2_on_android_3d/minecraft_2_on_android_3d"
+                }
+            }
+        ],
+        "fallback": {
+            "type": "minecraft:model",
+            "model": "minecraft:item/diamond_pickaxe"
+        }
+    }
+}

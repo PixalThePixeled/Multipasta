@@ -1,0 +1,23 @@
+{
+	"model": {
+		"type": "minecraft:select",
+		"property": "minecraft:component",
+		"component": "minecraft:custom_name",
+		"cases": [
+			{
+				"when": [
+					"Onion Ring",
+					"Луковое кольцо"
+				],
+				"model": {
+					"type": "minecraft:model",
+					"model": "multipasta:item/other/onion_ring"
+				}
+			}
+		],
+		"fallback": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/carrot"
+		}
+	}
+}

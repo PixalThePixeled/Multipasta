@@ -1,0 +1,60 @@
+{
+	"oversized_in_gui": true,
+	"model": {
+		"type": "minecraft:select",
+		"property": "minecraft:component",
+		"component": "minecraft:custom_name",
+		"cases": [
+			{
+                "when": [
+					"Bad Egg",
+					"Тухлое яйцо"
+                ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/pokepasta/bad_egg/unhatched_icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/pokepasta/bad_egg/unhatched"
+					}
+				}
+            },
+			{
+                "when": [
+					"Pokeball",
+					"Покебол"
+                ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/pokepasta/pokeball/blue_icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/pokepasta/pokeball/blue_thrown"
+					}
+				}
+            }
+		],
+		"fallback": {
+			"type": "minecraft:model",
+			"model": "minecraft:item/blue_egg"
+		}
+	}
+}

@@ -1,0 +1,51 @@
+{
+    "oversized_in_gui": true,
+    "model": {
+        "type": "minecraft:select",
+        "property": "minecraft:component",
+        "component": "minecraft:custom_name",
+        "cases": [
+            {
+                "when": [
+                    "Fatbrine",
+                    "Жиробрин"
+                ],
+                "model": {
+                    "type": "minecraft:model",
+                    "model": "multipasta:item/craft/fatbrine"
+                }
+            },
+            {
+                "when": [
+					"Pokeball",
+					"Покебол"
+                ],
+				"model": {
+					"type": "minecraft:select",
+					"property": "minecraft:display_context",
+					"cases": [
+						{
+							"when": "gui",
+							"model": {
+								"type": "minecraft:model",
+								"model": "multipasta:item/pokepasta/pokeball/glitch_icon"
+							}
+						}
+					],
+					"fallback": {
+						"type": "minecraft:model",
+						"model": "multipasta:item/pokepasta/pokeball/glitch"
+					}
+				}
+            }
+        ],
+        "fallback": {
+            "type": "minecraft:special",
+            "base": "minecraft:item/shulker_box",
+            "model": {
+                "type": "minecraft:shulker_box",
+                "texture": "minecraft:shulker"
+            }
+        }
+    }
+}
