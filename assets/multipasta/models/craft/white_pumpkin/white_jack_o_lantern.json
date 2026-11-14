@@ -1,0 +1,9 @@
+{
+	"credit": "Made by Kotisimo",
+	"parent": "multipasta:item/craft/white_pumpkin/white_carved_pumpkin",
+	"textures": {
+		"front": "multipasta:item/craft/white_pumpkin/white_jack_o_lantern",
+		"side": "multipasta:item/craft/white_pumpkin/white_jack_o_lantern_side",
+		"top": "multipasta:item/craft/white_pumpkin/white_jack_o_lantern_top"
+	}
+}

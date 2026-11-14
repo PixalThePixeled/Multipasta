@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "multipasta:item/cryptid/fur_bearing_trout_icon"
+  }
+}
