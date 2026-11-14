@@ -1,0 +1,29 @@
+{
+    "sounds": [
+	{
+		"name": "entity/parrot/red_sounds/red_ambient1",
+                "volume": 0.95,
+		"weight": 8
+        },
+	{
+		"name": "entity/parrot/red_sounds/red_ambient2",
+                "volume": 0.95,
+		"weight": 8
+        },
+	{
+		"name": "entity/parrot/red_sounds/red_ambient3",
+                "volume": 0.95,
+		"weight": 6
+        },
+	{
+		"name": "entity/parrot/red_sounds/red_ambient4",
+                "volume": 0.95,
+		"weight": 1
+        },
+	{
+		"name": "entity/parrot/red_sounds/red_ambient5",
+                "volume": 0.95,
+		"weight": 1
+	}
+    ]
+}

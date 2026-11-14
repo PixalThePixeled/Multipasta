@@ -1,0 +1,18 @@
+{
+    "sounds": [
+        {
+		"name": "entity/parrot/template_sounds/no_sound",
+		"weight": 5
+        },
+	{
+		"name": "entity/horse/ponyta_sounds/ponyta_ambient1",
+                "volume": 0.5,
+		"weight": 1
+        },
+	{
+		"name": "entity/horse/ponyta_sounds/ponyta_ambient2",
+                "volume": 0.5,
+		"weight": 1
+	}
+    ]
+}
