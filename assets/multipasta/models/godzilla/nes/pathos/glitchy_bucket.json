@@ -1,0 +1,8 @@
+{
+  "credit": "Made by Kotisimo",
+  "parent": "multipasta:a/1xfull",
+  "textures": {
+    "layer0": "multipasta:item/godzilla/nes/pathos/glitchy_bucket",
+    "particle": "multipasta:item/godzilla/nes/pathos/glitchy_bucket"
+  }
+}

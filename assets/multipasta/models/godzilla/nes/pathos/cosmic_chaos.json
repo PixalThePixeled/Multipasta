@@ -1,0 +1,27 @@
+{
+	"credit": "Made by Kotisimo",
+	"parent": "builtin/generated",
+	"textures": {
+		"layer0": "multipasta:item/godzilla/nes/pathos/cosmic_chaos"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-176, 0, -180],
+			"translation": [0, -1.75, -3.25]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [-176, 0, -180],
+			"translation": [0, -1.75, -3.25]
+		},
+		"firstperson_righthand": {
+			"rotation": [19.28, 5.64, 14.95],
+			"translation": [3.13, 3.45, -2.87],
+			"scale": [0.68, 0.68, 0.68]
+		},
+		"firstperson_lefthand": {
+			"rotation": [19.28, 5.64, 14.95],
+			"translation": [3.13, 3.45, -2.87],
+			"scale": [0.68, 0.68, 0.68]
+		}
+	}
+}

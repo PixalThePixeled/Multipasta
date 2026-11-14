@@ -1,0 +1,11 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made by Kotisimo",
+	"parent": "multipasta:item/godzilla/nes/trance/baku",
+	"textures": {
+		"0": "multipasta:item/godzilla/nes/trance/baku_carbonated",
+		"particle": "multipasta:item/godzilla/nes/trance/baku_carbonated"
+	},
+	"gui_light": "front",
+	"display": {}
+}

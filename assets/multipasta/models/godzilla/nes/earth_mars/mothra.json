@@ -1,0 +1,7 @@
+{
+	"credit": "Made by Sp0ty, Kotisimo",
+	"parent": "multipasta:a/mothra",
+	"textures": {
+		"0": "multipasta:item/godzilla/nes/earth_mars/mothra"
+	}
+}
