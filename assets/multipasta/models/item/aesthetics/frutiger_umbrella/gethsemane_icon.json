@@ -1,0 +1,7 @@
+{
+	"credit": "Texture by Sp0ty, Animation by Kotisimo",
+	"parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "multipasta:item/aesthetics/frutiger_umbrella/gethsemane_icon"
+	}
+}

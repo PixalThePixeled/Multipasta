@@ -1,0 +1,7 @@
+{
+  "credit": "Made by Kotisimo",
+  "parent": "multipasta:item/custom_tabs/a",
+  "textures": {
+    "0": "multipasta:item/custom_tabs/godzilla/earth_mars"
+  }
+}

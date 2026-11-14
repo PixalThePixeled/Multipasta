@@ -1,0 +1,7 @@
+{
+	"credit": "Made by PixalThePixeled",
+	"parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "multipasta:item/lost/puppet_mouse/doodle_doodle_icon"
+	}
+}
