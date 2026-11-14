@@ -1,7 +1,0 @@
-{
-	"credit": "Texture by Sp0ty & Poolb, Animation by Kotisimo",
-	"parent": "minecraft:item/generated",
-	"textures": {
-		"layer0": "multipasta:item/mobspawn/eggs/wiggly_icon"
-	}
-}

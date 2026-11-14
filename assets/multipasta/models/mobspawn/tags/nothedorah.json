@@ -1,7 +1,0 @@
-{
-	"credit": "Made by PixalThePixeled",
-	"parent": "minecraft:item/generated",
-	"textures": {
-		"layer0": "multipasta:item/mobspawn/tags/nothedorah"
-	}
-}
