@@ -1,7 +1,0 @@
-{
-	"credit": "Made by Sp0ty",
-	"parent": "minecraft:item/generated",
-	"textures": {
-		"layer0": "multipasta:item/web_nd_analog/zalgo/he_comes"
-	}
-}

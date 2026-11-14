@@ -1,7 +1,0 @@
-{
-  "credit": "Made by moro2610",
-  "parent": "multipasta:item/web_nd_analog/dolphin_dreams/dolphin_dreams",
-  "textures": {
-    "layer0": "multipasta:item/web_nd_analog/dolphin_dreams/goodbye"
-  }
-}
