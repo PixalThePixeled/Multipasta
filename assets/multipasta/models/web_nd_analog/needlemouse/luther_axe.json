@@ -1,0 +1,7 @@
+{
+  "credit": "Made by PixalThePixeled",
+  "parent": "multipasta:a/2xhand",
+  "textures": {
+    "layer0": "multipasta:item/web_nd_analog/needlemouse/luther_axe/luther_axe"
+  }
+}

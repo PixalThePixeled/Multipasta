@@ -1,0 +1,23 @@
+{
+	"format_version": "26.3",
+	"credit": "Made by moro2610",
+	"parent": "multipasta:a/4xhand",
+	"textures": {
+		"layer0": "multipasta:item/web_nd_analog/dolphin_dreams/dolphin_dreams"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [0, -90, 55],
+			"translation": [0, 7.75, 0.5],
+			"scale": [3.4, 3.4, 0.85]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [0, 90, -55],
+			"translation": [0, 7.75, 0.5],
+			"scale": [3.4, 3.4, 0.85]
+		},
+		"gui": {
+			"scale": [4, 4, 1]
+		}
+	}
+}

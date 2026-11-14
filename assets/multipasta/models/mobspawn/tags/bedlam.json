@@ -1,0 +1,7 @@
+{
+	"credit": "PLACEHOLDER",
+	"parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "multipasta:item/mobspawn/tags/bedlam"
+	}
+}

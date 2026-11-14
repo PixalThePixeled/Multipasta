@@ -1,0 +1,20 @@
+{
+	"format_version": "26.3",
+	"credit": "Made by Sp0ty",
+	"parent": "multipasta:a/2xhand",
+	"textures": {
+		"layer0": "multipasta:item/web_nd_analog/zalgo/hellipop"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [0, -90, 55],
+			"translation": [0, 3, 1],
+			"scale": [1.7, 1.7, 0.85]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [0, 90, -55],
+			"translation": [0, 3, 1],
+			"scale": [1.7, 1.7, 0.85]
+		}
+	}
+}

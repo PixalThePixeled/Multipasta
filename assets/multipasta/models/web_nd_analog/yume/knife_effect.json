@@ -1,0 +1,7 @@
+{
+	"credit": "Made by Sp0ty",
+	"parent": "minecraft:item/handheld",
+	"textures": {
+		"layer0": "multipasta:item/web_nd_analog/yume/knife_effect"
+	}
+}

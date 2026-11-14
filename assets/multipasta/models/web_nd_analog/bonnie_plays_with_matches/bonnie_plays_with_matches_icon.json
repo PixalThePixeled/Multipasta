@@ -1,0 +1,7 @@
+{
+	"credit": "Made by Kotisimo",
+	"parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "multipasta:item/web_nd_analog/bonnie_plays_with_matches/bonnie_plays_with_matches_icon"
+	}
+}
