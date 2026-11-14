@@ -1,7 +1,0 @@
-{
-	"credit": "Made by moro2610",
-	"parent": "minecraft:item/generated",
-	"textures": {
-		"layer0": "multipasta:item/food/grinning_apple"
-	}
-}

@@ -1,7 +1,0 @@
-{
-	"credit": "Made by Moro2610 & Sp0ty",
-	"parent": "minecraft:item/generated",
-	"textures": {
-		"layer0": "multipasta:item/food/flowering_meat"
-	}
-}
